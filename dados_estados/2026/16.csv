@@ -1,0 +1,1129 @@
+dt_obito;dt_nascimento;nu_idade;sg_sexo;tp_raca_cor;tp_escolaridade;co_municipio_ibge_residencia;co_municipio_ibge_ocorrencia;co_cid_causa_basica;desc_cid_causa_basica;capitulo_cid_causa_basica;categoria_cid_causa_basica;uf
+2026-05-09;;76;Feminino;Preta;Sem escolaridade;Laranjal do Jari;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-05-08;;59;Feminino;Parda;de 4 a 7 anos;Laranjal do Jari;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-06;;87;Masculino;Parda;de 1 a 3 anos;Calçoene;;I639;CID-10 I639;IX;Doenças circulatórias;AP
+2026-04-28;;64;Feminino;Branca;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-04-30;;35;Feminino;Amarela;Ignorado;Macapá;;C221;CID-10 C221;II;Neoplasias;AP
+2026-05-04;;66;Feminino;Parda;de 1 a 3 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-11;;72;Feminino;Branca;Ignorado;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-05-05;;61;Masculino;Parda;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-11;;80;Feminino;Parda;Ignorado;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-05-13;;71;Masculino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-05-05;;64;Masculino;Parda;Sem escolaridade;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-09;;59;Feminino;Parda;de 4 a 7 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-05-07;;89;Feminino;Branca;de 4 a 7 anos;Macapá;;I690;CID-10 I690;IX;Doenças circulatórias;AP
+2026-04-29;;;Masculino;Parda;Ignorado;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-01-28;;41;Masculino;Parda;Ignorado;Vitória do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-02;;81;Feminino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-03;;63;Masculino;Branca;Ignorado;Oiapoque;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-03;;66;Masculino;Parda;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-03;;66;Masculino;Parda;de 1 a 3 anos;Calçoene;;I351;CID-10 I351;IX;Doenças circulatórias;AP
+2026-07-10;;65;Masculino;Parda;de 8 a 11 anos;Macapá;;E145;CID-10 E145;IV;Diabetes mellitus;AP
+2026-04-04;;80;Feminino;Parda;Sem escolaridade;Laranjal do Jari;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-06;;63;Masculino;Preta;de 1 a 3 anos;Laranjal do Jari;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-08;;33;Masculino;Parda;de 4 a 7 anos;Porto Grande;;I629;CID-10 I629;IX;Doenças circulatórias;AP
+2026-04-16;;89;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-28;;60;Masculino;Branca;12 anos ou mais;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-05-02;;75;Masculino;Branca;Ignorado;Macapá;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-05-02;;71;Masculino;Preta;de 8 a 11 anos;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-05-02;;48;Feminino;Parda;Ignorado;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-03;;67;Masculino;Parda;Ignorado;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-10;;95;Masculino;Parda;Sem escolaridade;Santana;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-09;;90;Feminino;Branca;Ignorado;Santana;;I679;CID-10 I679;IX;Doenças circulatórias;AP
+2026-05-04;;84;Masculino;Parda;Sem escolaridade;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-08;;50;Feminino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-05-01;;50;Feminino;Branca;de 8 a 11 anos;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-05-15;;86;Masculino;Parda;de 8 a 11 anos;Macapá;;C482;CID-10 C482;II;Neoplasias;AP
+2026-05-10;;62;Masculino;Preta;Ignorado;Macapá;;C762;CID-10 C762;II;Neoplasias;AP
+2026-02-14;;30;Feminino;Branca;de 1 a 3 anos;Santana;;C768;CID-10 C768;II;Neoplasias;AP
+2026-05-11;;59;Feminino;Preta;de 1 a 3 anos;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-05-12;;30;Feminino;Parda;Ignorado;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-25;;89;Feminino;Parda;Sem escolaridade;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-05-23;;92;Masculino;Branca;de 8 a 11 anos;Macapá;;I058;CID-10 I058;IX;Doenças circulatórias;AP
+2026-05-20;;79;Feminino;Parda;de 1 a 3 anos;Macapá;;C969;CID-10 C969;II;Neoplasias;AP
+2026-05-23;;75;Feminino;Branca;de 8 a 11 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-05;;65;Masculino;Parda;Ignorado;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-01-23;;81;Feminino;Preta;Sem escolaridade;Porto Grande;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-01-26;;60;Masculino;Amarela;Sem escolaridade;Tartarugalzinho;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-28;;70;Masculino;Parda;de 8 a 11 anos;Macapá;;I255;CID-10 I255;IX;Doenças circulatórias;AP
+2026-01-24;;57;Feminino;Parda;de 1 a 3 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-01-21;;89;Feminino;Parda;Sem escolaridade;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-21;;62;Masculino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-01-20;;61;Masculino;Parda;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-20;;68;Masculino;Parda;de 8 a 11 anos;Macapá;;C920;CID-10 C920;II;Neoplasias;AP
+2026-01-02;;65;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-04;;68;Masculino;Parda;Sem escolaridade;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-01-02;;91;Feminino;Parda;de 4 a 7 anos;Macapá;;J459;CID-10 J459;X;Doenças respiratórias crônicas;AP
+2026-01-02;;68;Masculino;Parda;de 1 a 3 anos;Macapá;;C679;CID-10 C679;II;Neoplasias;AP
+2026-01-03;;86;Masculino;Parda;de 4 a 7 anos;Pedra Branca do Amapari;;C169;CID-10 C169;II;Neoplasias;AP
+2026-01-06;;58;Masculino;Parda;de 4 a 7 anos;Laranjal do Jari;;C153;CID-10 C153;II;Neoplasias;AP
+2026-01-10;;56;Feminino;Branca;de 1 a 3 anos;Vitória do Jari;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-01-05;;80;Masculino;Preta;de 1 a 3 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-26;;53;Masculino;Parda;de 4 a 7 anos;Oiapoque;;I269;CID-10 I269;IX;Doenças circulatórias;AP
+2026-05-25;;51;Feminino;Parda;Ignorado;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-23;;91;Masculino;Preta;de 4 a 7 anos;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-06-01;;89;Feminino;Branca;de 1 a 3 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-06-04;;44;Feminino;Parda;de 4 a 7 anos;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-06-09;;82;Feminino;Branca;de 4 a 7 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-02;;92;Feminino;Parda;Ignorado;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-03-21;;58;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-04;;82;Feminino;Branca;de 8 a 11 anos;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-06-23;;80;Masculino;Branca;de 8 a 11 anos;Santana;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-04-16;;96;Feminino;Parda;Sem escolaridade;Amapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-30;;90;Masculino;Ignorado;Sem escolaridade;Tartarugalzinho;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-19;;;Feminino;Parda;Ignorado;Pedra Branca do Amapari;;J438;CID-10 J438;X;Doenças respiratórias crônicas;AP
+2026-03-01;;99;Feminino;Parda;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-03-07;;63;Feminino;Branca;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-07;;53;Feminino;Parda;de 1 a 3 anos;Macapá;;I613;CID-10 I613;IX;Doenças circulatórias;AP
+2026-03-05;;74;Feminino;Branca;Ignorado;Macapá;;I691;CID-10 I691;IX;Doenças circulatórias;AP
+2026-03-11;;90;Masculino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-08;;54;Masculino;Parda;de 8 a 11 anos;Macapá;;I743;CID-10 I743;IX;Doenças circulatórias;AP
+2026-03-08;;53;Feminino;Parda;de 1 a 3 anos;Macapá;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-03-03;;46;Feminino;Parda;de 1 a 3 anos;Santana;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-03-16;;83;Masculino;Branca;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-19;;84;Feminino;Parda;de 1 a 3 anos;Mazagão;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-03-12;;75;Masculino;Parda;de 1 a 3 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-02-28;;72;Masculino;Branca;Ignorado;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-02-24;;73;Feminino;Parda;Ignorado;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-03-05;;93;Feminino;Parda;de 1 a 3 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-03-09;;79;Masculino;Branca;de 8 a 11 anos;Macapá;;I693;CID-10 I693;IX;Doenças circulatórias;AP
+2026-08-07;;79;Masculino;Branca;de 4 a 7 anos;Santana;;C482;CID-10 C482;II;Neoplasias;AP
+2026-08-04;;100;Feminino;Parda;Sem escolaridade;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-08-09;;44;Masculino;Branca;de 4 a 7 anos;Amapá;;C64;CID-10 C64;II;Neoplasias;AP
+2026-08-09;;82;Feminino;Parda;de 4 a 7 anos;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-08-11;;45;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-08-11;;80;Masculino;Parda;de 4 a 7 anos;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-08-11;;71;Feminino;Branca;de 4 a 7 anos;Mazagão;;C509;CID-10 C509;II;Neoplasias;AP
+2026-06-09;;83;Masculino;Preta;Sem escolaridade;Laranjal do Jari;;C01;CID-10 C01;II;Neoplasias;AP
+2026-06-19;;52;Feminino;Parda;de 1 a 3 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-20;;51;Feminino;Parda;de 4 a 7 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-20;;68;Masculino;Branca;de 4 a 7 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-22;;55;Feminino;Preta;Sem escolaridade;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-18;;91;Masculino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-05-02;;71;Masculino;Parda;de 1 a 3 anos;Mazagão;;C61;CID-10 C61;II;Neoplasias;AP
+2026-05-01;;75;Feminino;Parda;de 1 a 3 anos;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-05-02;;95;Feminino;Parda;Sem escolaridade;Santana;;C969;CID-10 C969;II;Neoplasias;AP
+2026-05-01;;58;Feminino;Parda;de 4 a 7 anos;Macapá;;C795;CID-10 C795;II;Neoplasias;AP
+2026-04-30;;81;Masculino;Parda;Sem escolaridade;Santana;;C269;CID-10 C269;II;Neoplasias;AP
+2026-04-30;;77;Feminino;Ignorado;de 8 a 11 anos;Macapá;;C719;CID-10 C719;II;Neoplasias;AP
+2026-04-28;;40;Feminino;Amarela;de 8 a 11 anos;Macapá;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-04-28;;60;Masculino;Branca;de 8 a 11 anos;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-04-27;;53;Masculino;Branca;Sem escolaridade;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-01-31;;68;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-31;;72;Masculino;Parda;de 8 a 11 anos;Calçoene;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-12;;52;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-04-18;;58;Feminino;Parda;de 1 a 3 anos;Macapá;;I850;CID-10 I850;IX;Doenças circulatórias;AP
+2026-04-22;;63;Masculino;Parda;de 4 a 7 anos;Macapá;;C439;CID-10 C439;II;Neoplasias;AP
+2026-04-21;;63;Feminino;Parda;de 4 a 7 anos;Vitória do Jari;;C539;CID-10 C539;II;Neoplasias;AP
+2026-04-19;;39;Feminino;Branca;de 4 a 7 anos;Oiapoque;;C402;CID-10 C402;II;Neoplasias;AP
+2026-04-19;;52;Feminino;Branca;de 1 a 3 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-04-20;;74;Masculino;Branca;Ignorado;Macapá;;C19;CID-10 C19;II;Neoplasias;AP
+2026-03-29;;50;Feminino;Parda;Sem escolaridade;Macapá;;I429;CID-10 I429;IX;Doenças circulatórias;AP
+2026-01-15;;69;Masculino;Parda;Ignorado;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-04-07;;43;Feminino;Parda;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-03-30;;86;Masculino;Branca;Ignorado;Macapá;;I255;CID-10 I255;IX;Doenças circulatórias;AP
+2026-03-30;;69;Feminino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-06;;63;Feminino;Ignorado;de 1 a 3 anos;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-04-14;;87;Masculino;Parda;de 1 a 3 anos;Santana;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-04-10;;66;Masculino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-12;;80;Masculino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-12;;85;Masculino;Indígena;Ignorado;Oiapoque;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-01-04;;47;Feminino;Parda;Ignorado;Pedra Branca do Amapari;;C499;CID-10 C499;II;Neoplasias;AP
+2026-01-01;;89;Feminino;Preta;Sem escolaridade;Vitória do Jari;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-10;;71;Feminino;Parda;Ignorado;Santana;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-05-01;;22;Masculino;Parda;de 4 a 7 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-05-11;;75;Feminino;Branca;de 4 a 7 anos;Laranjal do Jari;;J459;CID-10 J459;X;Doenças respiratórias crônicas;AP
+2026-05-09;;89;Masculino;Branca;de 8 a 11 anos;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-05-04;;90;Feminino;Parda;de 4 a 7 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-04-14;;80;Masculino;Parda;de 4 a 7 anos;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-04-26;;80;Masculino;Parda;Sem escolaridade;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-14;;95;Feminino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-05-13;;52;Masculino;Parda;de 8 a 11 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-12;;56;Masculino;Preta;de 1 a 3 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-07-09;;66;Feminino;Parda;Ignorado;Mazagão;;E117;CID-10 E117;IV;Diabetes mellitus;AP
+2026-01-20;;62;Masculino;Parda;de 4 a 7 anos;Santana;;C189;CID-10 C189;II;Neoplasias;AP
+2026-01-19;;53;Feminino;Parda;de 4 a 7 anos;Macapá;;E112;CID-10 E112;IV;Diabetes mellitus;AP
+2026-01-18;;64;Masculino;Branca;Ignorado;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-01-17;;65;Feminino;Parda;de 4 a 7 anos;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-03-07;;79;Masculino;Parda;de 4 a 7 anos;Macapá;;I350;CID-10 I350;IX;Doenças circulatórias;AP
+2026-02-16;;67;Feminino;Branca;de 1 a 3 anos;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-02-16;;85;Feminino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-02-20;;57;Feminino;Branca;Ignorado;Macapá;;I429;CID-10 I429;IX;Doenças circulatórias;AP
+2026-02-10;;83;Masculino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-02-10;;38;Feminino;Parda;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-02-03;;68;Feminino;Parda;de 4 a 7 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-02-26;;57;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-01;;95;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-04;;95;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;C61;CID-10 C61;II;Neoplasias;AP
+2026-07-19;;75;Feminino;Branca;de 1 a 3 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-07-18;;58;Masculino;Parda;de 1 a 3 anos;Macapá;;J459;CID-10 J459;X;Doenças respiratórias crônicas;AP
+2026-07-22;;76;Feminino;Preta;Sem escolaridade;Amapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-07-23;;80;Feminino;Parda;Sem escolaridade;Santana;;I119;CID-10 I119;IX;Doenças circulatórias;AP
+2026-07-22;;48;Masculino;Parda;de 8 a 11 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-08-04;;65;Masculino;Branca;de 4 a 7 anos;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-01-13;;55;Masculino;Parda;Sem escolaridade;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-01-08;;68;Masculino;Branca;de 1 a 3 anos;Macapá;;I671;CID-10 I671;IX;Doenças circulatórias;AP
+2026-01-15;;47;Masculino;Parda;de 4 a 7 anos;Itaubal;;I629;CID-10 I629;IX;Doenças circulatórias;AP
+2026-01-10;;59;Masculino;Parda;de 1 a 3 anos;Cutias;;I119;CID-10 I119;IX;Doenças circulatórias;AP
+2026-01-03;;36;Feminino;Parda;Ignorado;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-03;;88;Masculino;Parda;de 1 a 3 anos;Santana;;C787;CID-10 C787;II;Neoplasias;AP
+2026-01-03;;80;Feminino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-01-09;;43;Masculino;Branca;Ignorado;Macapá;;C837;CID-10 C837;II;Neoplasias;AP
+2026-06-15;;71;Masculino;Parda;de 8 a 11 anos;Santana;;C61;CID-10 C61;II;Neoplasias;AP
+2026-06-17;;84;Masculino;Ignorado;de 4 a 7 anos;Santana;;C169;CID-10 C169;II;Neoplasias;AP
+2026-04-05;;61;Masculino;Preta;de 1 a 3 anos;Serra do Navio;;C160;CID-10 C160;II;Neoplasias;AP
+2026-03-17;;77;Masculino;Parda;de 1 a 3 anos;Santana;;I119;CID-10 I119;IX;Doenças circulatórias;AP
+2026-03-08;;41;Masculino;Branca;de 8 a 11 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-24;;64;Feminino;Branca;Ignorado;Santana;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-01-23;;84;Masculino;Parda;de 8 a 11 anos;Santana;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-01-02;;82;Masculino;Branca;Sem escolaridade;Santana;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-04-29;;54;Feminino;Parda;de 8 a 11 anos;Laranjal do Jari;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-04-20;;48;Masculino;Branca;de 8 a 11 anos;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-04-24;;79;Masculino;Preta;de 4 a 7 anos;Macapá;;I729;CID-10 I729;IX;Doenças circulatórias;AP
+2026-04-25;;65;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-04;;68;Feminino;Branca;Ignorado;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-01-18;;69;Masculino;Parda;de 4 a 7 anos;Oiapoque;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-01-11;;39;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-11;;61;Masculino;Parda;de 8 a 11 anos;Macapá;;I420;CID-10 I420;IX;Doenças circulatórias;AP
+2026-01-12;;62;Masculino;Parda;Sem escolaridade;Santana;;C259;CID-10 C259;II;Neoplasias;AP
+2026-01-13;;62;Masculino;Parda;Ignorado;Macapá;;C07;CID-10 C07;II;Neoplasias;AP
+2026-01-17;;76;Masculino;Parda;Sem escolaridade;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-01-15;;70;Masculino;Preta;de 1 a 3 anos;Tartarugalzinho;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-01-17;;99;Feminino;Parda;Sem escolaridade;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-01-21;;49;Feminino;Branca;de 8 a 11 anos;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-13;;59;Feminino;Branca;Ignorado;Macapá;;C859;CID-10 C859;II;Neoplasias;AP
+2026-01-14;;83;Masculino;Parda;de 1 a 3 anos;Amapá;;I350;CID-10 I350;IX;Doenças circulatórias;AP
+2026-01-16;;29;Feminino;Parda;12 anos ou mais;Macapá;;C55;CID-10 C55;II;Neoplasias;AP
+2026-01-17;;27;Feminino;Parda;de 8 a 11 anos;Santana;;C969;CID-10 C969;II;Neoplasias;AP
+2026-01-16;;65;Masculino;Parda;Ignorado;Macapá;;I339;CID-10 I339;IX;Doenças circulatórias;AP
+2026-01-19;;73;Masculino;Parda;Sem escolaridade;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-01-16;;75;Masculino;Parda;Ignorado;Laranjal do Jari;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-16;;82;Masculino;Parda;Sem escolaridade;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-01-02;;71;Feminino;Branca;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-05;;72;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-09;;76;Masculino;Parda;de 8 a 11 anos;Santana;;C260;CID-10 C260;II;Neoplasias;AP
+2026-01-10;;81;Masculino;Parda;de 4 a 7 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-03;;56;Masculino;Parda;Sem escolaridade;Mazagão;;C259;CID-10 C259;II;Neoplasias;AP
+2026-01-06;;70;Masculino;Parda;Ignorado;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-01-06;;28;Masculino;Parda;de 8 a 11 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-01-04;;36;Feminino;Parda;Sem escolaridade;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-17;;71;Feminino;Branca;de 8 a 11 anos;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-01-16;;55;Masculino;Branca;de 8 a 11 anos;Macapá;;I710;CID-10 I710;IX;Doenças circulatórias;AP
+2026-01-15;;76;Feminino;Branca;Ignorado;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-16;;85;Masculino;Branca;de 1 a 3 anos;Macapá;;I718;CID-10 I718;IX;Doenças circulatórias;AP
+2026-01-11;;36;Feminino;Parda;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-01-19;;66;Masculino;Parda;Ignorado;Ferreira Gomes;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-07-16;;19;Feminino;Parda;de 8 a 11 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-08;;86;Masculino;Amarela;Sem escolaridade;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-07-18;;82;Feminino;Branca;Ignorado;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-09;;78;Masculino;Preta;de 4 a 7 anos;Macapá;;E112;CID-10 E112;IV;Diabetes mellitus;AP
+2026-07-11;;90;Feminino;Parda;Ignorado;Santana;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-07-12;;81;Masculino;Parda;de 8 a 11 anos;Tartarugalzinho;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-05;;75;Masculino;Branca;de 1 a 3 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-26;;75;Feminino;Branca;de 8 a 11 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-28;;68;Masculino;Parda;de 8 a 11 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-30;;52;Masculino;Branca;de 8 a 11 anos;Macapá;;I519;CID-10 I519;IX;Doenças circulatórias;AP
+2026-07-04;;89;Masculino;Preta;de 1 a 3 anos;Macapá;;I495;CID-10 I495;IX;Doenças circulatórias;AP
+2026-07-06;;37;Masculino;Parda;Sem escolaridade;Macapá;;J459;CID-10 J459;X;Doenças respiratórias crônicas;AP
+2026-06-29;;64;Feminino;Parda;de 8 a 11 anos;Macapá;;C719;CID-10 C719;II;Neoplasias;AP
+2026-07-01;;61;Feminino;Parda;de 4 a 7 anos;Santana;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-07-02;;27;Masculino;Preta;de 4 a 7 anos;Macapá;;E111;CID-10 E111;IV;Diabetes mellitus;AP
+2026-07-04;;15;Masculino;Parda;de 4 a 7 anos;Vitória do Jari;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-06-24;;65;Masculino;Preta;de 1 a 3 anos;Serra do Navio;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-07-06;;60;Feminino;Preta;de 4 a 7 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-06-19;;37;Feminino;Parda;de 4 a 7 anos;Mazagão;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-21;;91;Masculino;Branca;de 1 a 3 anos;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-06-24;;75;Feminino;Ignorado;Sem escolaridade;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-05;;83;Feminino;Parda;de 1 a 3 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-26;;84;Feminino;Parda;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-04-23;;89;Feminino;Parda;Sem escolaridade;Porto Grande;;I132;CID-10 I132;IX;Doenças circulatórias;AP
+2026-05-04;;66;Masculino;Parda;Sem escolaridade;Porto Grande;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-02;;94;Feminino;Branca;Sem escolaridade;Calçoene;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-05-11;;64;Feminino;Parda;de 1 a 3 anos;Ferreira Gomes;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-04-26;;62;Feminino;Parda;de 8 a 11 anos;Calçoene;;I213;CID-10 I213;IX;Doenças circulatórias;AP
+2026-06-08;;59;Masculino;Parda;12 anos ou mais;Calçoene;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-05;;26;Masculino;Indígena;de 8 a 11 anos;Oiapoque;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-03-16;;75;Feminino;Parda;de 1 a 3 anos;Santana;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-03-21;;70;Masculino;Parda;de 4 a 7 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-03-23;;68;Masculino;Parda;Sem escolaridade;Macapá;;E107;CID-10 E107;IV;Diabetes mellitus;AP
+2026-03-20;;79;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-23;;75;Masculino;Amarela;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-03-25;;64;Masculino;Parda;de 1 a 3 anos;Amapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-23;;83;Feminino;Parda;de 1 a 3 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-03-18;;45;Masculino;Parda;de 4 a 7 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-03-24;;76;Masculino;Branca;Ignorado;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-20;;46;Masculino;Parda;de 4 a 7 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-01-26;;70;Feminino;Preta;de 1 a 3 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-01-27;;81;Masculino;Parda;de 1 a 3 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-01-30;;75;Masculino;Parda;de 4 a 7 anos;Macapá;;I358;CID-10 I358;IX;Doenças circulatórias;AP
+2026-02-05;;56;Feminino;Parda;de 8 a 11 anos;Pracuúba;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-02-05;;86;Masculino;Parda;Sem escolaridade;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-02;;39;Feminino;Ignorado;12 anos ou mais;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-07-21;;26;Masculino;Parda;de 8 a 11 anos;Macapá;;C910;CID-10 C910;II;Neoplasias;AP
+2026-07-11;;14;Masculino;Parda;de 4 a 7 anos;Mazagão;;I351;CID-10 I351;IX;Doenças circulatórias;AP
+2026-07-18;;68;Feminino;Ignorado;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-07-16;;93;Feminino;Parda;Ignorado;Santana;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-22;;82;Feminino;Parda;Sem escolaridade;Santana;;J47;CID-10 J47;X;Doenças respiratórias crônicas;AP
+2026-07-29;;91;Masculino;Branca;de 1 a 3 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-24;;53;Feminino;Parda;de 1 a 3 anos;Macapá;;C56;CID-10 C56;II;Neoplasias;AP
+2026-04-24;;26;Feminino;Parda;de 8 a 11 anos;Macapá;;C383;CID-10 C383;II;Neoplasias;AP
+2026-04-25;;24;Feminino;Parda;de 8 a 11 anos;Macapá;;C530;CID-10 C530;II;Neoplasias;AP
+2026-04-28;;4;Masculino;Parda;Ignorado;Macapá;;C761;CID-10 C761;II;Neoplasias;AP
+2026-04-23;;82;Feminino;Amarela;de 1 a 3 anos;Macapá;;I501;CID-10 I501;IX;Doenças circulatórias;AP
+2026-04-30;;87;Masculino;Parda;Sem escolaridade;Tartarugalzinho;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-25;;97;Masculino;Parda;Ignorado;Santana;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-04-25;;78;Feminino;Parda;de 8 a 11 anos;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-04-22;;60;Masculino;Parda;Sem escolaridade;Pedra Branca do Amapari;;C329;CID-10 C329;II;Neoplasias;AP
+2026-04-30;;51;Masculino;Branca;de 8 a 11 anos;Santana;;C260;CID-10 C260;II;Neoplasias;AP
+2026-05-07;;83;Feminino;Branca;de 1 a 3 anos;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-06-05;;58;Masculino;Parda;de 4 a 7 anos;Tartarugalzinho;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-06-05;;89;Feminino;Parda;Sem escolaridade;Tartarugalzinho;;I119;CID-10 I119;IX;Doenças circulatórias;AP
+2026-06-05;;71;Feminino;Parda;Sem escolaridade;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-30;;90;Feminino;Branca;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-01-17;;73;Masculino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-01-03;;70;Feminino;Parda;de 1 a 3 anos;Macapá;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-01-13;;71;Masculino;Parda;de 1 a 3 anos;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-01-17;;72;Feminino;Parda;de 1 a 3 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-01-20;;61;Masculino;Parda;Ignorado;Macapá;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-01-21;;81;Masculino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-01-30;;50;Feminino;Indígena;de 4 a 7 anos;Oiapoque;;C760;CID-10 C760;II;Neoplasias;AP
+2026-01-30;;58;Masculino;Branca;de 1 a 3 anos;Oiapoque;;C64;CID-10 C64;II;Neoplasias;AP
+2026-04-21;;70;Feminino;Branca;de 8 a 11 anos;Macapá;;I859;CID-10 I859;IX;Doenças circulatórias;AP
+2026-06-08;;68;Feminino;Parda;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-06-06;;85;Masculino;Parda;de 1 a 3 anos;Tartarugalzinho;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-06-12;;76;Masculino;Parda;de 1 a 3 anos;Porto Grande;;C229;CID-10 C229;II;Neoplasias;AP
+2026-06-05;;65;Feminino;Branca;de 8 a 11 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-06-14;;80;Feminino;Parda;Sem escolaridade;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-06-09;;72;Masculino;Parda;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-09;;92;Masculino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-06-16;;75;Masculino;Parda;de 4 a 7 anos;Santana;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-06-07;;78;Masculino;Branca;Ignorado;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-06-06;;84;Masculino;Ignorado;Sem escolaridade;Laranjal do Jari;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-06-12;;70;Feminino;Parda;de 1 a 3 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-06-14;;98;Feminino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-07-08;;82;Feminino;Parda;de 4 a 7 anos;Calçoene;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-14;;45;Feminino;Preta;Ignorado;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-03-05;;69;Feminino;Ignorado;Ignorado;Macapá;;C19;CID-10 C19;II;Neoplasias;AP
+2026-03-05;;69;Feminino;Parda;de 4 a 7 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-03-15;;46;Feminino;Parda;Ignorado;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-03-15;;68;Masculino;Parda;Sem escolaridade;Santana;;C169;CID-10 C169;II;Neoplasias;AP
+2026-07-25;;74;Masculino;Preta;de 1 a 3 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-08-01;;79;Feminino;Preta;Ignorado;Santana;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-07-31;;76;Feminino;Parda;Ignorado;Santana;;I258;CID-10 I258;IX;Doenças circulatórias;AP
+2026-05-26;;87;Masculino;Preta;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-04;;88;Feminino;Branca;Sem escolaridade;Tartarugalzinho;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-01-04;;54;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-08;;59;Masculino;Parda;de 4 a 7 anos;Pedra Branca do Amapari;;C229;CID-10 C229;II;Neoplasias;AP
+2026-07-15;;62;Feminino;Parda;Sem escolaridade;Macapá;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-03-02;;58;Masculino;Preta;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-04;;60;Masculino;Parda;de 8 a 11 anos;Macapá;;C449;CID-10 C449;II;Neoplasias;AP
+2026-03-04;;60;Masculino;Parda;Sem escolaridade;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-03-05;;45;Feminino;Parda;Ignorado;Macapá;;C19;CID-10 C19;II;Neoplasias;AP
+2026-03-07;;72;Feminino;Parda;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-03-17;;50;Masculino;Parda;de 8 a 11 anos;Macapá;;E145;CID-10 E145;IV;Diabetes mellitus;AP
+2026-03-14;;50;Masculino;Parda;Sem escolaridade;Macapá;;C700;CID-10 C700;II;Neoplasias;AP
+2026-01-20;;68;Masculino;Preta;Sem escolaridade;Calçoene;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-24;;38;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-04-26;;67;Masculino;Branca;Ignorado;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-05-20;;57;Masculino;Parda;Ignorado;Macapá;;I269;CID-10 I269;IX;Doenças circulatórias;AP
+2026-01-22;;47;Masculino;Parda;de 1 a 3 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-02-04;;80;Masculino;Parda;de 4 a 7 anos;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-02-09;;75;Masculino;Parda;de 1 a 3 anos;Macapá;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-02-11;;40;Masculino;Parda;de 4 a 7 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-01-25;;96;Feminino;Preta;Sem escolaridade;Santana;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-01-22;;81;Feminino;Ignorado;Ignorado;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-26;;79;Feminino;Parda;Ignorado;Santana;;I200;CID-10 I200;IX;Doenças circulatórias;AP
+2026-01-22;;28;Feminino;Preta;de 1 a 3 anos;Mazagão;;I514;CID-10 I514;IX;Doenças circulatórias;AP
+2026-01-14;;78;Feminino;Parda;de 1 a 3 anos;Santana;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-01-17;;84;Masculino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-18;;54;Masculino;Parda;de 1 a 3 anos;Santana;;I089;CID-10 I089;IX;Doenças circulatórias;AP
+2026-01-10;;68;Feminino;Parda;Ignorado;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-01-20;;67;Feminino;Parda;Sem escolaridade;Santana;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-01-18;;88;Feminino;Branca;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-17;;83;Feminino;Branca;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-02-16;;75;Masculino;Branca;de 8 a 11 anos;Santana;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-11;;39;Feminino;Parda;de 8 a 11 anos;Santana;;I604;CID-10 I604;IX;Doenças circulatórias;AP
+2026-05-12;;49;Feminino;Parda;Ignorado;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-24;;76;Masculino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-05-16;;69;Feminino;Parda;Sem escolaridade;Macapá;;C519;CID-10 C519;II;Neoplasias;AP
+2026-05-24;;68;Feminino;Parda;Sem escolaridade;Santana;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-05-13;;67;Masculino;Parda;de 1 a 3 anos;Serra do Navio;;C108;CID-10 C108;II;Neoplasias;AP
+2026-05-25;;85;Masculino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-24;;62;Masculino;Parda;de 4 a 7 anos;Macapá;;E112;CID-10 E112;IV;Diabetes mellitus;AP
+2026-05-26;;45;Masculino;Parda;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-17;;52;Feminino;Branca;de 8 a 11 anos;Porto Grande;;C189;CID-10 C189;II;Neoplasias;AP
+2026-07-23;;84;Feminino;Parda;de 4 a 7 anos;Calçoene;;C189;CID-10 C189;II;Neoplasias;AP
+2026-08-12;;43;Feminino;Amarela;de 4 a 7 anos;Macapá;;E140;CID-10 E140;IV;Diabetes mellitus;AP
+2026-08-10;;75;Masculino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-19;;81;Masculino;Parda;Sem escolaridade;Pracuúba;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-28;;66;Feminino;Parda;de 1 a 3 anos;Calçoene;;I639;CID-10 I639;IX;Doenças circulatórias;AP
+2026-07-28;;82;Masculino;Parda;Sem escolaridade;Ferreira Gomes;;C710;CID-10 C710;II;Neoplasias;AP
+2026-08-03;;89;Feminino;Amarela;de 8 a 11 anos;Porto Grande;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-08-06;;69;Masculino;Amarela;Ignorado;Santana;;C301;CID-10 C301;II;Neoplasias;AP
+2026-08-07;;76;Masculino;Parda;Ignorado;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-08-08;;60;Masculino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-08-11;;64;Masculino;Preta;de 4 a 7 anos;Tartarugalzinho;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-08-03;;48;Feminino;Branca;de 8 a 11 anos;Vitória do Jari;;C55;CID-10 C55;II;Neoplasias;AP
+2026-08-07;;62;Masculino;Parda;de 1 a 3 anos;Macapá;;I340;CID-10 I340;IX;Doenças circulatórias;AP
+2026-08-05;;82;Feminino;Parda;de 1 a 3 anos;Macapá;;I501;CID-10 I501;IX;Doenças circulatórias;AP
+2026-01-29;;43;Masculino;Branca;Ignorado;Santana;;C499;CID-10 C499;II;Neoplasias;AP
+2026-02-03;;92;Feminino;Branca;de 1 a 3 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-05-04;;56;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-20;;81;Masculino;Branca;Sem escolaridade;Ferreira Gomes;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-02-26;;75;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-01;;48;Feminino;Parda;de 8 a 11 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-04-01;;71;Masculino;Branca;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-04-07;;82;Masculino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-07;;80;Masculino;Branca;de 1 a 3 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-02-17;;54;Feminino;Branca;Ignorado;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-03-21;;86;Masculino;Parda;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-20;;92;Masculino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-15;;66;Masculino;Branca;de 4 a 7 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-01-21;;48;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-22;;95;Masculino;Branca;de 1 a 3 anos;Macapá;;I119;CID-10 I119;IX;Doenças circulatórias;AP
+2026-04-24;;69;Masculino;Ignorado;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-25;;80;Masculino;Branca;de 4 a 7 anos;Macapá;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-08-15;;79;Masculino;Branca;de 4 a 7 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-08-12;;50;Masculino;Parda;Ignorado;Macapá;;I719;CID-10 I719;IX;Doenças circulatórias;AP
+2026-08-12;;69;Feminino;Ignorado;de 4 a 7 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-08-16;;56;Feminino;Parda;de 4 a 7 anos;Serra do Navio;;I088;CID-10 I088;IX;Doenças circulatórias;AP
+2026-08-18;;44;Feminino;Parda;Ignorado;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-08-18;;84;Masculino;Parda;Sem escolaridade;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-08-15;;54;Feminino;Parda;de 1 a 3 anos;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-08-17;;66;Feminino;Parda;Ignorado;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-08-10;;40;Feminino;Parda;de 1 a 3 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-03-09;;53;Masculino;Parda;Ignorado;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-22;;39;Feminino;Parda;Ignorado;Macapá;;C859;CID-10 C859;II;Neoplasias;AP
+2026-06-06;;49;Masculino;Preta;de 4 a 7 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-28;;71;Masculino;Preta;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-03;;69;Feminino;Branca;Ignorado;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-03-09;;90;Masculino;Parda;de 1 a 3 anos;Santana;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-04;;69;Feminino;Parda;de 1 a 3 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-10;;47;Masculino;Parda;Sem escolaridade;Macapá;;C719;CID-10 C719;II;Neoplasias;AP
+2026-03-18;;88;Masculino;Branca;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-03-09;;32;Feminino;Parda;de 8 a 11 anos;Macapá;;C700;CID-10 C700;II;Neoplasias;AP
+2026-03-09;;36;Feminino;Parda;de 8 a 11 anos;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-03-10;;75;Masculino;Parda;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-10;;72;Masculino;Branca;de 4 a 7 anos;Macapá;;C329;CID-10 C329;II;Neoplasias;AP
+2026-03-12;;51;Masculino;Parda;de 4 a 7 anos;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-03-11;;75;Feminino;Parda;de 1 a 3 anos;Macapá;;C471;CID-10 C471;II;Neoplasias;AP
+2026-03-11;;54;Feminino;Parda;12 anos ou mais;Macapá;;I319;CID-10 I319;IX;Doenças circulatórias;AP
+2026-03-12;;61;Feminino;Parda;de 4 a 7 anos;Santana;;C538;CID-10 C538;II;Neoplasias;AP
+2026-03-13;;47;Feminino;Parda;Sem escolaridade;Macapá;;C383;CID-10 C383;II;Neoplasias;AP
+2026-03-13;;79;Feminino;Parda;de 4 a 7 anos;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-02-21;;90;Feminino;Branca;Sem escolaridade;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-02-28;;76;Masculino;Parda;Sem escolaridade;Santana;;C160;CID-10 C160;II;Neoplasias;AP
+2026-02-28;;50;Masculino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-02;;54;Masculino;Parda;de 8 a 11 anos;Santana;;C259;CID-10 C259;II;Neoplasias;AP
+2026-06-13;;51;Masculino;Branca;de 8 a 11 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-08-07;;80;Feminino;Parda;de 1 a 3 anos;Amapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-08-06;;66;Feminino;Parda;Sem escolaridade;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-06-18;;76;Feminino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-22;;71;Feminino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-08-09;;56;Feminino;Parda;de 8 a 11 anos;Santana;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-08-06;;88;Feminino;Branca;Sem escolaridade;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-08-09;;43;Masculino;Branca;de 8 a 11 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-08-08;;60;Masculino;Branca;de 8 a 11 anos;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-08-07;;71;Feminino;Parda;Ignorado;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-08-12;;87;Feminino;Parda;Sem escolaridade;Laranjal do Jari;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-08-16;;57;Masculino;Parda;de 8 a 11 anos;Vitória do Jari;;C349;CID-10 C349;II;Neoplasias;AP
+2026-08-18;;46;Masculino;Preta;de 1 a 3 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-08-19;;68;Masculino;Parda;de 4 a 7 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-22;;75;Feminino;Parda;de 8 a 11 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-22;;72;Feminino;Branca;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-19;;77;Masculino;Branca;de 8 a 11 anos;Macapá;;C319;CID-10 C319;II;Neoplasias;AP
+2026-03-22;;87;Masculino;Parda;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-04-04;;98;Masculino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-05;;58;Masculino;Parda;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-11;;66;Masculino;Parda;Sem escolaridade;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-04-17;;69;Masculino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-19;;75;Masculino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-27;;44;Masculino;Parda;Sem escolaridade;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-04-17;;87;Masculino;Parda;Ignorado;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-13;;78;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-03-17;;89;Feminino;Preta;Sem escolaridade;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-07;;63;Masculino;Parda;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-12;;86;Masculino;Parda;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-10;;52;Feminino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-19;;77;Masculino;Branca;de 1 a 3 anos;Macapá;;I139;CID-10 I139;IX;Doenças circulatórias;AP
+2026-08-12;;62;Feminino;Branca;Ignorado;Macapá;;C829;CID-10 C829;II;Neoplasias;AP
+2026-08-09;;72;Feminino;Parda;Sem escolaridade;Laranjal do Jari;;C539;CID-10 C539;II;Neoplasias;AP
+2026-08-13;;81;Feminino;Parda;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-08-14;;63;Masculino;Parda;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-08-14;;55;Feminino;Parda;de 8 a 11 anos;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-08-16;;66;Masculino;Branca;de 4 a 7 anos;Porto Grande;;C700;CID-10 C700;II;Neoplasias;AP
+2026-08-13;;80;Masculino;Parda;de 4 a 7 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-08-13;;70;Masculino;Branca;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-03-16;;77;Masculino;Parda;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-03-23;;61;Feminino;Parda;Sem escolaridade;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-03-20;;33;Feminino;Parda;Ignorado;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-04-08;;62;Masculino;Preta;Ignorado;Macapá;;I613;CID-10 I613;IX;Doenças circulatórias;AP
+2026-04-01;;64;Masculino;Parda;de 4 a 7 anos;Macapá;;I618;CID-10 I618;IX;Doenças circulatórias;AP
+2026-04-05;;88;Masculino;Branca;de 8 a 11 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-04-05;;62;Masculino;Parda;de 8 a 11 anos;Santana;;I313;CID-10 I313;IX;Doenças circulatórias;AP
+2026-04-02;;83;Masculino;Parda;Ignorado;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-03-20;;62;Feminino;Parda;de 8 a 11 anos;Macapá;;C969;CID-10 C969;II;Neoplasias;AP
+2026-03-22;;68;Feminino;Parda;Sem escolaridade;Macapá;;C900;CID-10 C900;II;Neoplasias;AP
+2026-03-25;;68;Masculino;Branca;de 8 a 11 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-03-26;;86;Masculino;Branca;Ignorado;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-03-25;;63;Masculino;Branca;Ignorado;Macapá;;C20;CID-10 C20;II;Neoplasias;AP
+2026-04-08;;67;Masculino;Parda;Ignorado;Santana;;E112;CID-10 E112;IV;Diabetes mellitus;AP
+2026-03-28;;28;Masculino;Parda;de 8 a 11 anos;Santana;;C609;CID-10 C609;II;Neoplasias;AP
+2026-04-08;;75;Feminino;Parda;Ignorado;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-03-28;;58;Masculino;Branca;Ignorado;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-23;;65;Masculino;Parda;Sem escolaridade;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-29;;79;Masculino;Parda;de 4 a 7 anos;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-03-27;;70;Feminino;Parda;Ignorado;Laranjal do Jari;;I210;CID-10 I210;IX;Doenças circulatórias;AP
+2026-03-30;;79;Masculino;Amarela;de 4 a 7 anos;Mazagão;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-01;;19;Feminino;Parda;12 anos ou mais;Macapá;;J46;CID-10 J46;X;Doenças respiratórias crônicas;AP
+2026-04-03;;62;Masculino;Parda;de 8 a 11 anos;Oiapoque;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-03-30;;72;Masculino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-28;;38;Masculino;Parda;de 1 a 3 anos;Macapá;;C924;CID-10 C924;II;Neoplasias;AP
+2026-03-29;;60;Feminino;Parda;de 1 a 3 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-03-29;;63;Feminino;Branca;Ignorado;Laranjal do Jari;;I358;CID-10 I358;IX;Doenças circulatórias;AP
+2026-01-14;;68;Masculino;Parda;de 4 a 7 anos;Vitória do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-12;;79;Feminino;Parda;de 1 a 3 anos;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-07-10;;74;Masculino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-07-12;;63;Masculino;Preta;de 1 a 3 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-07-18;;75;Masculino;Branca;de 8 a 11 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-07-18;;86;Feminino;Branca;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-07-05;;69;Masculino;Parda;Ignorado;Macapá;;C482;CID-10 C482;II;Neoplasias;AP
+2026-07-06;;76;Masculino;Parda;Sem escolaridade;Macapá;;C449;CID-10 C449;II;Neoplasias;AP
+2026-07-06;;59;Masculino;Parda;de 8 a 11 anos;Santana;;C189;CID-10 C189;II;Neoplasias;AP
+2026-07-06;;83;Feminino;Parda;de 1 a 3 anos;Macapá;;C249;CID-10 C249;II;Neoplasias;AP
+2026-07-07;;57;Masculino;Preta;Ignorado;Mazagão;;C349;CID-10 C349;II;Neoplasias;AP
+2026-07-11;;49;Masculino;Parda;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-02-09;;69;Masculino;Parda;de 1 a 3 anos;Oiapoque;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-02-07;;85;Masculino;Branca;de 1 a 3 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-07;;87;Feminino;Branca;de 4 a 7 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-08;;86;Feminino;Branca;de 1 a 3 anos;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-01-07;;70;Masculino;Parda;Ignorado;Santana;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-08-11;;61;Feminino;Parda;de 8 a 11 anos;Vitória do Jari;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-08-08;;68;Masculino;Parda;de 1 a 3 anos;Tartarugalzinho;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-02-14;;106;Masculino;Preta;Sem escolaridade;Santana;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-02-19;;80;Masculino;Parda;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-02-17;;81;Feminino;Branca;de 1 a 3 anos;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-21;;84;Feminino;Parda;de 1 a 3 anos;Santana;;C220;CID-10 C220;II;Neoplasias;AP
+2026-03-10;;34;Masculino;Parda;Sem escolaridade;Santana;;C349;CID-10 C349;II;Neoplasias;AP
+2026-06-13;;55;Feminino;Branca;de 4 a 7 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-22;;37;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-06-12;;92;Feminino;Parda;de 1 a 3 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-06-26;;80;Masculino;Parda;de 1 a 3 anos;Santana;;C951;CID-10 C951;II;Neoplasias;AP
+2026-06-26;;22;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-04-09;;85;Feminino;Branca;Sem escolaridade;Santana;;E100;CID-10 E100;IV;Diabetes mellitus;AP
+2026-03-19;;65;Masculino;Parda;de 1 a 3 anos;Macapá;;I639;CID-10 I639;IX;Doenças circulatórias;AP
+2026-04-07;;82;Masculino;Parda;Ignorado;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-04-06;;80;Masculino;Preta;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-12;;73;Feminino;Branca;de 1 a 3 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-30;;71;Masculino;Parda;de 8 a 11 anos;Santana;;I501;CID-10 I501;IX;Doenças circulatórias;AP
+2026-04-14;;86;Masculino;Parda;de 4 a 7 anos;Macapá;;I639;CID-10 I639;IX;Doenças circulatórias;AP
+2026-04-11;;90;Masculino;Parda;Ignorado;Santana;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-07-10;;74;Masculino;Parda;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-05;;77;Feminino;Branca;Ignorado;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-03;;62;Masculino;Parda;de 8 a 11 anos;Macapá;;I420;CID-10 I420;IX;Doenças circulatórias;AP
+2026-01-22;;77;Feminino;Parda;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-28;;72;Feminino;Parda;Ignorado;Cutias;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-01-12;;62;Feminino;Parda;de 4 a 7 anos;Pedra Branca do Amapari;;I351;CID-10 I351;IX;Doenças circulatórias;AP
+2026-01-23;;92;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-22;;89;Feminino;Parda;de 4 a 7 anos;Santana;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-06-02;;81;Masculino;Parda;de 4 a 7 anos;Macapá;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-05-13;;45;Feminino;Parda;Ignorado;Macapá;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-06-20;;80;Feminino;Branca;de 8 a 11 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-05-24;;75;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-21;;90;Feminino;Parda;Sem escolaridade;Macapá;;E146;CID-10 E146;IV;Diabetes mellitus;AP
+2026-06-24;;81;Masculino;Parda;Sem escolaridade;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-06-21;;83;Feminino;Parda;de 1 a 3 anos;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-05-23;;65;Masculino;Branca;de 1 a 3 anos;Macapá;;E115;CID-10 E115;IV;Diabetes mellitus;AP
+2026-06-29;;49;Masculino;Parda;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-23;;58;Masculino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-07-18;;54;Masculino;Parda;Ignorado;Mazagão;;C329;CID-10 C329;II;Neoplasias;AP
+2026-07-17;;61;Masculino;Parda;Ignorado;Oiapoque;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-07-09;;71;Feminino;Parda;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-07-08;;51;Feminino;Parda;de 4 a 7 anos;Macapá;;C73;CID-10 C73;II;Neoplasias;AP
+2026-07-18;;;Masculino;Parda;Ignorado;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-01-01;;79;Feminino;Parda;Ignorado;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-01;;74;Masculino;Parda;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-03;;76;Masculino;Parda;Sem escolaridade;Santana;;I213;CID-10 I213;IX;Doenças circulatórias;AP
+2026-03-03;;43;Feminino;Branca;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-03;;81;Masculino;Parda;Sem escolaridade;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-01-27;;45;Feminino;Parda;de 1 a 3 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-02-13;;72;Feminino;Preta;Sem escolaridade;Calçoene;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-02-08;;81;Feminino;Branca;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-06;;45;Masculino;Branca;de 8 a 11 anos;Macapá;;C20;CID-10 C20;II;Neoplasias;AP
+2026-02-08;;30;Feminino;Parda;12 anos ou mais;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-08;;86;Feminino;Parda;de 4 a 7 anos;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-02-09;;65;Feminino;Parda;de 1 a 3 anos;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-02;;71;Feminino;Branca;Sem escolaridade;Macapá;;I269;CID-10 I269;IX;Doenças circulatórias;AP
+2026-03-04;;62;Masculino;Preta;de 8 a 11 anos;Macapá;;E111;CID-10 E111;IV;Diabetes mellitus;AP
+2026-06-10;;84;Feminino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-12;;66;Feminino;Branca;Ignorado;Macapá;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-06-13;;88;Feminino;Parda;de 1 a 3 anos;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-06-12;;94;Feminino;Preta;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-01-25;;55;Masculino;Parda;Sem escolaridade;Macapá;;C329;CID-10 C329;II;Neoplasias;AP
+2026-01-30;;50;Feminino;Parda;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-27;;82;Feminino;Branca;Sem escolaridade;Macapá;;C56;CID-10 C56;II;Neoplasias;AP
+2026-01-29;;61;Feminino;Branca;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-30;;66;Masculino;Branca;de 8 a 11 anos;Santana;;C64;CID-10 C64;II;Neoplasias;AP
+2026-01-31;;37;Feminino;Parda;de 8 a 11 anos;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-03-04;;81;Feminino;Preta;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-03-02;;85;Masculino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-26;;64;Masculino;Preta;Ignorado;Oiapoque;;C710;CID-10 C710;II;Neoplasias;AP
+2026-03-09;;55;Masculino;Parda;de 1 a 3 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-03-09;;89;Feminino;Parda;de 1 a 3 anos;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-03-02;;69;Feminino;Parda;Sem escolaridade;Santana;;C259;CID-10 C259;II;Neoplasias;AP
+2026-03-09;;60;Masculino;Parda;12 anos ou mais;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-03-04;;60;Feminino;Branca;Ignorado;Macapá;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-03-08;;72;Feminino;Preta;de 4 a 7 anos;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-03-09;;64;Feminino;Parda;de 8 a 11 anos;Santana;;C859;CID-10 C859;II;Neoplasias;AP
+2026-03-12;;75;Masculino;Indígena;de 1 a 3 anos;Oiapoque;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-03-21;;37;Masculino;Branca;de 8 a 11 anos;Laranjal do Jari;;E108;CID-10 E108;IV;Diabetes mellitus;AP
+2026-03-14;;69;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;C768;CID-10 C768;II;Neoplasias;AP
+2026-03-20;;68;Masculino;Branca;Sem escolaridade;Laranjal do Jari;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-03-23;;84;Feminino;Parda;Sem escolaridade;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-23;;66;Feminino;Parda;Sem escolaridade;Laranjal do Jari;;C229;CID-10 C229;II;Neoplasias;AP
+2026-05-09;;50;Masculino;Amarela;Ignorado;Macapá;;E118;CID-10 E118;IV;Diabetes mellitus;AP
+2026-05-30;;54;Feminino;Branca;Ignorado;Macapá;;C56;CID-10 C56;II;Neoplasias;AP
+2026-05-17;;53;Masculino;Parda;de 8 a 11 anos;Santana;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-17;;74;Feminino;Branca;de 4 a 7 anos;Mazagão;;C414;CID-10 C414;II;Neoplasias;AP
+2026-05-19;;52;Feminino;Preta;de 1 a 3 anos;Macapá;;C109;CID-10 C109;II;Neoplasias;AP
+2026-07-23;;51;Masculino;Parda;Ignorado;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-01-29;;83;Feminino;Parda;Sem escolaridade;Macapá;;I749;CID-10 I749;IX;Doenças circulatórias;AP
+2026-01-31;;66;Feminino;Parda;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-06;;77;Masculino;Parda;de 8 a 11 anos;Mazagão;;C419;CID-10 C419;II;Neoplasias;AP
+2026-02-28;;72;Feminino;Parda;Sem escolaridade;Mazagão;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-08;;53;Masculino;Preta;Sem escolaridade;Oiapoque;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-02-28;;45;Feminino;Parda;de 1 a 3 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-08-01;;75;Masculino;Parda;de 4 a 7 anos;Macapá;;C785;CID-10 C785;II;Neoplasias;AP
+2026-08-01;;62;Masculino;Preta;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-08-05;;73;Feminino;Parda;Sem escolaridade;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-08-01;;52;Masculino;Parda;Sem escolaridade;Macapá;;C859;CID-10 C859;II;Neoplasias;AP
+2026-08-06;;62;Masculino;Parda;Ignorado;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-08-02;;56;Masculino;Parda;Sem escolaridade;Mazagão;;C109;CID-10 C109;II;Neoplasias;AP
+2026-08-03;;27;Feminino;Branca;de 8 a 11 anos;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-01-10;;80;Masculino;Ignorado;Ignorado;Santana;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-06;;79;Masculino;Parda;Sem escolaridade;Santana;;C131;CID-10 C131;II;Neoplasias;AP
+2026-01-10;;86;Masculino;Ignorado;Ignorado;Porto Grande;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-06-23;;72;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-25;;62;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C108;CID-10 C108;II;Neoplasias;AP
+2026-06-21;;64;Masculino;Preta;Sem escolaridade;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-28;;80;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-29;;65;Masculino;Preta;de 4 a 7 anos;Laranjal do Jari;;C481;CID-10 C481;II;Neoplasias;AP
+2026-06-27;;69;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;E107;CID-10 E107;IV;Diabetes mellitus;AP
+2026-05-26;;75;Feminino;Preta;Sem escolaridade;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-29;;81;Feminino;Preta;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-10;;79;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-26;;47;Feminino;Parda;Ignorado;Santana;;C169;CID-10 C169;II;Neoplasias;AP
+2026-05-30;;76;Masculino;Parda;Sem escolaridade;Santana;;C710;CID-10 C710;II;Neoplasias;AP
+2026-05-19;;42;Feminino;Parda;de 8 a 11 anos;Santana;;C229;CID-10 C229;II;Neoplasias;AP
+2026-05-23;;67;Masculino;Parda;de 4 a 7 anos;Macapá;;C64;CID-10 C64;II;Neoplasias;AP
+2026-05-23;;87;Feminino;Parda;de 4 a 7 anos;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-05-27;;72;Feminino;Branca;de 1 a 3 anos;Santana;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-06-04;;42;Feminino;Parda;de 8 a 11 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-05-20;;51;Feminino;Branca;Ignorado;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-06-09;;81;Feminino;Parda;Ignorado;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-29;;45;Masculino;Ignorado;Ignorado;Macapá;;I209;CID-10 I209;IX;Doenças circulatórias;AP
+2026-06-01;;61;Masculino;Parda;Ignorado;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-06-01;;53;Feminino;Parda;de 1 a 3 anos;Amapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-06-08;;35;Feminino;Preta;de 8 a 11 anos;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-05-31;;53;Feminino;Parda;de 8 a 11 anos;Macapá;;C20;CID-10 C20;II;Neoplasias;AP
+2026-03-24;;68;Feminino;Parda;Ignorado;Macapá;;I719;CID-10 I719;IX;Doenças circulatórias;AP
+2026-03-18;;61;Feminino;Branca;Sem escolaridade;Macapá;;I132;CID-10 I132;IX;Doenças circulatórias;AP
+2026-03-29;;54;Masculino;Preta;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-27;;71;Masculino;Parda;de 4 a 7 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-03-25;;66;Masculino;Parda;Ignorado;Macapá;;E145;CID-10 E145;IV;Diabetes mellitus;AP
+2026-03-25;;71;Masculino;Preta;de 1 a 3 anos;Tartarugalzinho;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-30;;76;Feminino;Parda;Ignorado;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-03-29;;85;Feminino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-30;;104;Feminino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-19;;69;Masculino;Branca;Ignorado;Macapá;;C719;CID-10 C719;II;Neoplasias;AP
+2026-03-27;;66;Feminino;Parda;de 4 a 7 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-03-06;;66;Masculino;Branca;de 8 a 11 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-03-21;;90;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-10;;74;Masculino;Parda;de 1 a 3 anos;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-03-02;;53;Masculino;Branca;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-13;;75;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-19;;85;Feminino;Parda;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-18;;85;Feminino;Parda;Sem escolaridade;Itaubal;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-03-12;;86;Feminino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-17;;77;Masculino;Preta;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-03-12;;76;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-02-12;;61;Feminino;Preta;de 8 a 11 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-03-19;;65;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-14;;70;Feminino;Preta;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-16;;77;Masculino;Branca;de 8 a 11 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-03-24;;74;Feminino;Branca;de 8 a 11 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-03-17;;61;Masculino;Branca;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-30;;86;Feminino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-24;;57;Masculino;Parda;de 4 a 7 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-03-11;;103;Masculino;Preta;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-03-24;;68;Feminino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-15;;;Masculino;Parda;Ignorado;Mazagão;;I615;CID-10 I615;IX;Doenças circulatórias;AP
+2026-03-28;;63;Feminino;Parda;Sem escolaridade;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-07;;67;Masculino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-02;;81;Masculino;Parda;de 1 a 3 anos;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-03-22;;45;Feminino;Parda;de 1 a 3 anos;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-03-21;;77;Masculino;Parda;de 1 a 3 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-03-27;;88;Masculino;Parda;Sem escolaridade;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-02-28;;86;Feminino;Ignorado;Ignorado;Macapá;;E145;CID-10 E145;IV;Diabetes mellitus;AP
+2026-03-09;;57;Feminino;Parda;Sem escolaridade;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-03-31;;68;Feminino;Parda;de 4 a 7 anos;Macapá;;E112;CID-10 E112;IV;Diabetes mellitus;AP
+2026-03-16;;90;Masculino;Branca;de 8 a 11 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-03-21;;37;Feminino;Branca;Ignorado;Macapá;;C19;CID-10 C19;II;Neoplasias;AP
+2026-03-22;;91;Feminino;Branca;de 8 a 11 anos;Macapá;;I350;CID-10 I350;IX;Doenças circulatórias;AP
+2026-03-23;;40;Feminino;Parda;12 anos ou mais;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-17;;58;Feminino;Branca;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-05-30;;85;Masculino;Parda;de 8 a 11 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-31;;54;Masculino;Preta;de 4 a 7 anos;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-05-29;;66;Masculino;Parda;de 1 a 3 anos;Macapá;;I429;CID-10 I429;IX;Doenças circulatórias;AP
+2026-04-12;;95;Masculino;Branca;de 8 a 11 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-10;;77;Masculino;Branca;Sem escolaridade;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-04-12;;38;Masculino;Parda;de 4 a 7 anos;Macapá;;I629;CID-10 I629;IX;Doenças circulatórias;AP
+2026-04-17;;54;Masculino;Parda;de 8 a 11 anos;Macapá;;E148;CID-10 E148;IV;Diabetes mellitus;AP
+2026-04-19;;87;Masculino;Parda;Sem escolaridade;Santana;;I620;CID-10 I620;IX;Doenças circulatórias;AP
+2026-04-11;;69;Feminino;Parda;de 1 a 3 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-04-12;;71;Feminino;Preta;de 8 a 11 anos;Macapá;;C482;CID-10 C482;II;Neoplasias;AP
+2026-04-08;;75;Masculino;Parda;Sem escolaridade;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-04-14;;79;Feminino;Branca;de 1 a 3 anos;Macapá;;I350;CID-10 I350;IX;Doenças circulatórias;AP
+2026-04-16;;78;Feminino;Parda;de 4 a 7 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-20;;80;Feminino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-04-15;;84;Masculino;Branca;Sem escolaridade;Pedra Branca do Amapari;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-04-18;;22;Masculino;Parda;de 8 a 11 anos;Macapá;;I421;CID-10 I421;IX;Doenças circulatórias;AP
+2026-04-17;;93;Feminino;Branca;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-06-30;;92;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;E109;CID-10 E109;IV;Diabetes mellitus;AP
+2026-02-07;;77;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-02-06;;92;Masculino;Branca;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-07;;70;Masculino;Branca;de 8 a 11 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-06;;102;Masculino;Preta;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-07;;59;Masculino;Branca;de 4 a 7 anos;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-02-12;;85;Feminino;Branca;de 8 a 11 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-01-28;;71;Feminino;Branca;Sem escolaridade;Macapá;;C763;CID-10 C763;II;Neoplasias;AP
+2026-02-07;;110;Feminino;Parda;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-21;;82;Feminino;Parda;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-21;;66;Masculino;Parda;de 8 a 11 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-02-01;;66;Feminino;Preta;de 1 a 3 anos;Macapá;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-04-09;;58;Masculino;Parda;de 8 a 11 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-09;;78;Masculino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-08;;79;Masculino;Parda;Sem escolaridade;Macapá;;I501;CID-10 I501;IX;Doenças circulatórias;AP
+2026-04-08;;80;Feminino;Parda;Ignorado;Macapá;;C541;CID-10 C541;II;Neoplasias;AP
+2026-04-06;;72;Masculino;Parda;de 8 a 11 anos;Macapá;;C798;CID-10 C798;II;Neoplasias;AP
+2026-04-12;;74;Feminino;Parda;de 1 a 3 anos;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-04-13;;80;Masculino;Parda;Ignorado;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-04-13;;55;Masculino;Parda;Ignorado;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-04-15;;48;Feminino;Branca;de 1 a 3 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-04-16;;71;Feminino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-22;;75;Masculino;Branca;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-04-19;;83;Masculino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-05-07;;78;Feminino;Branca;de 8 a 11 anos;Macapá;;I718;CID-10 I718;IX;Doenças circulatórias;AP
+2026-04-13;;64;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-08;;56;Masculino;Parda;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-07;;85;Feminino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-27;;51;Feminino;Parda;Ignorado;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-03-27;;57;Masculino;Parda;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-05-07;;98;Masculino;Parda;de 4 a 7 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-03-27;;74;Feminino;Parda;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-05-13;;60;Masculino;Parda;de 4 a 7 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-05-09;;40;Masculino;Preta;Ignorado;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-05-02;;91;Masculino;Parda;de 4 a 7 anos;Macapá;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-04-21;;63;Masculino;Parda;de 4 a 7 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-05-18;;92;Feminino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-18;;78;Feminino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-04-22;;66;Masculino;Parda;Sem escolaridade;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-02-22;;70;Feminino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-12;;70;Feminino;Branca;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-11;;53;Masculino;Branca;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-03;;70;Masculino;Branca;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-05;;87;Feminino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-26;;93;Feminino;Branca;de 4 a 7 anos;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-06-06;;91;Feminino;Branca;Sem escolaridade;Macapá;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-06-10;;87;Feminino;Parda;Sem escolaridade;Macapá;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-06-11;;63;Feminino;Parda;de 1 a 3 anos;Tartarugalzinho;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-06-16;;77;Masculino;Branca;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-08;;94;Feminino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-06-13;;46;Masculino;Branca;de 8 a 11 anos;Macapá;;C179;CID-10 C179;II;Neoplasias;AP
+2026-06-03;;57;Masculino;Branca;de 4 a 7 anos;Vitória do Jari;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-06-06;;71;Masculino;Parda;Ignorado;Vitória do Jari;;I461;CID-10 I461;IX;Doenças circulatórias;AP
+2026-06-06;;50;Masculino;Parda;Ignorado;Vitória do Jari;;I210;CID-10 I210;IX;Doenças circulatórias;AP
+2026-06-10;;56;Masculino;Parda;Ignorado;Vitória do Jari;;C161;CID-10 C161;II;Neoplasias;AP
+2026-07-14;;88;Feminino;Branca;Ignorado;Macapá;;C240;CID-10 C240;II;Neoplasias;AP
+2026-07-10;;65;Masculino;Parda;de 8 a 11 anos;Macapá;;I710;CID-10 I710;IX;Doenças circulatórias;AP
+2026-07-10;;86;Feminino;Parda;Sem escolaridade;Macapá;;I350;CID-10 I350;IX;Doenças circulatórias;AP
+2026-07-13;;75;Masculino;Parda;de 1 a 3 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-07-14;;59;Feminino;Parda;de 4 a 7 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-07-08;;84;Feminino;Parda;Ignorado;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-05-13;;74;Feminino;Parda;de 4 a 7 anos;Santana;;E109;CID-10 E109;IV;Diabetes mellitus;AP
+2026-05-20;;90;Feminino;Parda;Sem escolaridade;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-05-24;;53;Masculino;Parda;de 4 a 7 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-05-19;;;Masculino;Branca;Ignorado;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-05-20;;90;Masculino;Branca;Sem escolaridade;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-05-22;;23;Masculino;Parda;de 8 a 11 anos;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-05-16;;79;Masculino;Parda;de 4 a 7 anos;Amapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-26;;77;Feminino;Parda;Ignorado;Porto Grande;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-05-31;;80;Masculino;Parda;de 4 a 7 anos;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-05-31;;73;Feminino;Parda;Sem escolaridade;Itaubal;;C710;CID-10 C710;II;Neoplasias;AP
+2026-06-06;;64;Feminino;Parda;de 4 a 7 anos;Amapá;;C55;CID-10 C55;II;Neoplasias;AP
+2026-05-28;;63;Masculino;Parda;Ignorado;Porto Grande;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-06-18;;82;Masculino;Branca;de 1 a 3 anos;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-06-05;;44;Feminino;Parda;Ignorado;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-06-13;;61;Feminino;Indígena;de 8 a 11 anos;Oiapoque;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-06-13;;73;Masculino;Branca;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-06-15;;74;Masculino;Parda;Sem escolaridade;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-03-29;;87;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C61;CID-10 C61;II;Neoplasias;AP
+2026-03-30;;72;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-03-29;;84;Feminino;Parda;Sem escolaridade;Macapá;;I802;CID-10 I802;IX;Doenças circulatórias;AP
+2026-02-24;;59;Masculino;Parda;de 8 a 11 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-23;;69;Masculino;Branca;Sem escolaridade;Porto Grande;;E145;CID-10 E145;IV;Diabetes mellitus;AP
+2026-03-20;;18;Feminino;Parda;de 8 a 11 anos;Macapá;;C950;CID-10 C950;II;Neoplasias;AP
+2026-04-19;;29;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-25;;62;Masculino;Branca;12 anos ou mais;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-02-23;;26;Masculino;Parda;de 8 a 11 anos;Santana;;C924;CID-10 C924;II;Neoplasias;AP
+2026-02-28;;67;Masculino;Parda;Ignorado;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-02-09;;81;Feminino;Parda;Sem escolaridade;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-10;;39;Masculino;Parda;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-02-10;;61;Feminino;Parda;de 8 a 11 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-02-11;;75;Feminino;Parda;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-02-13;;74;Feminino;Parda;de 4 a 7 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-19;;79;Masculino;Branca;Ignorado;Macapá;;E115;CID-10 E115;IV;Diabetes mellitus;AP
+2026-02-21;;84;Masculino;Branca;de 8 a 11 anos;Macapá;;C780;CID-10 C780;II;Neoplasias;AP
+2026-02-12;;78;Masculino;Parda;Ignorado;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-02-09;;48;Feminino;Parda;de 1 a 3 anos;Amapá;;I710;CID-10 I710;IX;Doenças circulatórias;AP
+2026-03-01;;75;Masculino;Parda;de 1 a 3 anos;Amapá;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-02-23;;54;Masculino;Parda;Ignorado;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-02-13;;55;Feminino;Parda;de 4 a 7 anos;Santana;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-02-21;;50;Masculino;Preta;de 4 a 7 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-07-13;;92;Feminino;Parda;Sem escolaridade;Cutias;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-07-03;;56;Feminino;Parda;de 1 a 3 anos;Santana;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-07-03;;72;Masculino;Parda;de 1 a 3 anos;Santana;;C851;CID-10 C851;II;Neoplasias;AP
+2026-07-02;;61;Masculino;Branca;Ignorado;Macapá;;C719;CID-10 C719;II;Neoplasias;AP
+2026-07-01;;43;Feminino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-07-01;;40;Feminino;Branca;Ignorado;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-07-01;;43;Feminino;Parda;de 8 a 11 anos;Santana;;C445;CID-10 C445;II;Neoplasias;AP
+2026-07-01;;70;Masculino;Parda;de 1 a 3 anos;Santana;;C159;CID-10 C159;II;Neoplasias;AP
+2026-06-30;;82;Masculino;Parda;de 4 a 7 anos;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-06-28;;66;Masculino;Preta;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-21;;71;Feminino;Parda;de 1 a 3 anos;Santana;;C259;CID-10 C259;II;Neoplasias;AP
+2026-06-16;;70;Feminino;Branca;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-23;;92;Feminino;Parda;de 1 a 3 anos;Macapá;;C969;CID-10 C969;II;Neoplasias;AP
+2026-04-09;;70;Feminino;Parda;Ignorado;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-01-19;;52;Masculino;Ignorado;de 1 a 3 anos;Macapá;;C760;CID-10 C760;II;Neoplasias;AP
+2026-04-04;;90;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C329;CID-10 C329;II;Neoplasias;AP
+2026-04-01;;79;Masculino;Parda;Sem escolaridade;Macapá;;C900;CID-10 C900;II;Neoplasias;AP
+2026-04-02;;67;Feminino;Parda;Ignorado;Santana;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-04-01;;87;Masculino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-04-02;;68;Masculino;Preta;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-03-31;;77;Masculino;Parda;de 4 a 7 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-04-01;;76;Feminino;Parda;de 1 a 3 anos;Santana;;C539;CID-10 C539;II;Neoplasias;AP
+2026-03-31;;52;Masculino;Parda;Sem escolaridade;Macapá;;C139;CID-10 C139;II;Neoplasias;AP
+2026-03-30;;81;Masculino;Preta;Sem escolaridade;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-03-30;;66;Feminino;Branca;de 4 a 7 anos;Macapá;;C179;CID-10 C179;II;Neoplasias;AP
+2026-02-21;;71;Masculino;Preta;Sem escolaridade;Santana;;I213;CID-10 I213;IX;Doenças circulatórias;AP
+2026-02-17;;67;Feminino;Parda;Ignorado;Macapá;;C259;CID-10 C259;II;Neoplasias;AP
+2026-02-16;;86;Feminino;Parda;Ignorado;Macapá;;C921;CID-10 C921;II;Neoplasias;AP
+2026-02-15;;53;Masculino;Parda;Ignorado;Macapá;;C109;CID-10 C109;II;Neoplasias;AP
+2026-02-26;;67;Feminino;Branca;Ignorado;Macapá;;C482;CID-10 C482;II;Neoplasias;AP
+2026-02-14;;57;Masculino;Parda;Ignorado;Santana;;C059;CID-10 C059;II;Neoplasias;AP
+2026-02-20;;82;Masculino;Preta;de 1 a 3 anos;Macapá;;C260;CID-10 C260;II;Neoplasias;AP
+2026-02-19;;77;Masculino;Parda;de 4 a 7 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-02-14;;63;Masculino;Parda;Ignorado;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-02-20;;76;Masculino;Parda;Sem escolaridade;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-02-19;;86;Feminino;Preta;Sem escolaridade;Macapá;;C901;CID-10 C901;II;Neoplasias;AP
+2026-02-14;;35;Feminino;Parda;Ignorado;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-02-19;;78;Masculino;Parda;Sem escolaridade;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-02-17;;77;Feminino;Parda;Ignorado;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-02-12;;55;Masculino;Parda;Ignorado;Macapá;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-01-14;;28;Feminino;Parda;Ignorado;Macapá;;I710;CID-10 I710;IX;Doenças circulatórias;AP
+2026-02-22;;53;Masculino;Ignorado;Ignorado;Macapá;;I209;CID-10 I209;IX;Doenças circulatórias;AP
+2026-02-23;;71;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C029;CID-10 C029;II;Neoplasias;AP
+2026-02-23;;45;Feminino;Parda;de 1 a 3 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-26;;59;Feminino;Branca;de 1 a 3 anos;Santana;;C541;CID-10 C541;II;Neoplasias;AP
+2026-02-25;;34;Feminino;Branca;de 8 a 11 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-02-25;;83;Masculino;Branca;de 4 a 7 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-06-23;;60;Masculino;Branca;12 anos ou mais;Santana;;C950;CID-10 C950;II;Neoplasias;AP
+2026-06-23;;69;Feminino;Branca;de 1 a 3 anos;Macapá;;E142;CID-10 E142;IV;Diabetes mellitus;AP
+2026-06-22;;41;Feminino;Parda;de 8 a 11 anos;Macapá;;C499;CID-10 C499;II;Neoplasias;AP
+2026-07-01;;77;Masculino;Parda;de 8 a 11 anos;Macapá;;C260;CID-10 C260;II;Neoplasias;AP
+2026-06-22;;63;Masculino;Parda;Sem escolaridade;Macapá;;C64;CID-10 C64;II;Neoplasias;AP
+2026-05-26;;74;Masculino;Parda;de 8 a 11 anos;Vitória do Jari;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-06-18;;36;Feminino;Branca;de 1 a 3 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-06-27;;68;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-06-20;;91;Masculino;Branca;de 1 a 3 anos;Macapá;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-06-25;;63;Masculino;Branca;Ignorado;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-06-29;;60;Masculino;Branca;de 8 a 11 anos;Santana;;C719;CID-10 C719;II;Neoplasias;AP
+2026-06-25;;72;Masculino;Parda;de 8 a 11 anos;Macapá;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-06-03;;79;Feminino;Parda;de 1 a 3 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-06-23;;78;Masculino;Branca;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-03;;55;Masculino;Preta;Ignorado;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-05-30;;99;Feminino;Branca;de 8 a 11 anos;Macapá;;C069;CID-10 C069;II;Neoplasias;AP
+2026-07-17;;56;Masculino;Branca;Ignorado;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-25;;61;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;C349;CID-10 C349;II;Neoplasias;AP
+2026-06-15;;41;Masculino;Parda;Ignorado;Santana;;C169;CID-10 C169;II;Neoplasias;AP
+2026-06-15;;50;Feminino;Parda;de 4 a 7 anos;Calçoene;;C539;CID-10 C539;II;Neoplasias;AP
+2026-06-18;;71;Masculino;Parda;de 8 a 11 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-06-18;;84;Masculino;Preta;Sem escolaridade;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-06-19;;60;Masculino;Branca;de 4 a 7 anos;Santana;;C109;CID-10 C109;II;Neoplasias;AP
+2026-06-19;;52;Masculino;Branca;de 8 a 11 anos;Santana;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-27;;76;Masculino;Branca;de 1 a 3 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-06-13;;79;Masculino;Ignorado;de 1 a 3 anos;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-06-14;;88;Feminino;Branca;Sem escolaridade;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-06-21;;55;Masculino;Parda;Sem escolaridade;Mazagão;;C349;CID-10 C349;II;Neoplasias;AP
+2026-06-13;;90;Feminino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-21;;82;Feminino;Parda;Sem escolaridade;Cutias;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-06-19;;87;Masculino;Branca;Sem escolaridade;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-02-08;;82;Masculino;Branca;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-16;;55;Masculino;Preta;de 8 a 11 anos;Santana;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-02-08;;69;Masculino;Ignorado;de 1 a 3 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-02-10;;69;Masculino;Parda;de 1 a 3 anos;Mazagão;;I052;CID-10 I052;IX;Doenças circulatórias;AP
+2026-02-15;;76;Feminino;Parda;de 8 a 11 anos;Macapá;;I671;CID-10 I671;IX;Doenças circulatórias;AP
+2026-02-06;;77;Feminino;Parda;de 8 a 11 anos;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-01-28;;85;Masculino;Parda;Ignorado;Porto Grande;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-02-07;;82;Feminino;Parda;Sem escolaridade;Santana;;C349;CID-10 C349;II;Neoplasias;AP
+2026-02-07;;65;Masculino;Parda;de 1 a 3 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-02-02;;86;Masculino;Parda;de 1 a 3 anos;Santana;;I471;CID-10 I471;IX;Doenças circulatórias;AP
+2026-04-01;;63;Masculino;Parda;de 8 a 11 anos;Porto Grande;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-01;;88;Masculino;Parda;de 4 a 7 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-04-01;;76;Feminino;Parda;de 8 a 11 anos;Macapá;;I269;CID-10 I269;IX;Doenças circulatórias;AP
+2026-04-24;;36;Masculino;Branca;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-02;;78;Feminino;Branca;de 4 a 7 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-24;;47;Feminino;Parda;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-04-28;;90;Feminino;Branca;Sem escolaridade;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-04-19;;87;Feminino;Branca;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-12;;96;Masculino;Branca;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-06;;72;Feminino;Branca;de 8 a 11 anos;Macapá;;I461;CID-10 I461;IX;Doenças circulatórias;AP
+2026-03-18;;51;Feminino;Parda;Ignorado;Macapá;;I424;CID-10 I424;IX;Doenças circulatórias;AP
+2026-03-06;;94;Masculino;Branca;de 4 a 7 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-06;;63;Masculino;Preta;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-05;;74;Masculino;Branca;de 4 a 7 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-06-21;;56;Masculino;Parda;de 8 a 11 anos;Macapá;;C20;CID-10 C20;II;Neoplasias;AP
+2026-06-27;;46;Feminino;Parda;Ignorado;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-06-19;;86;Feminino;Branca;Ignorado;Macapá;;E109;CID-10 E109;IV;Diabetes mellitus;AP
+2026-06-22;;70;Feminino;Parda;de 4 a 7 anos;Macapá;;C64;CID-10 C64;II;Neoplasias;AP
+2026-02-15;;53;Feminino;Preta;de 1 a 3 anos;Oiapoque;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-02-04;;76;Masculino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-31;;76;Masculino;Branca;12 anos ou mais;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-02-01;;53;Feminino;Parda;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-19;;56;Feminino;Branca;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-07;;67;Feminino;Branca;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-02;;80;Feminino;Preta;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-05;;73;Feminino;Parda;de 1 a 3 anos;Santana;;C859;CID-10 C859;II;Neoplasias;AP
+2026-02-05;;57;Masculino;Parda;de 8 a 11 anos;Macapá;;C64;CID-10 C64;II;Neoplasias;AP
+2026-02-06;;51;Feminino;Parda;de 1 a 3 anos;Macapá;;I671;CID-10 I671;IX;Doenças circulatórias;AP
+2026-02-06;;74;Feminino;Branca;de 4 a 7 anos;Macapá;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-05-30;;77;Masculino;Parda;de 1 a 3 anos;Macapá;;C140;CID-10 C140;II;Neoplasias;AP
+2026-05-16;;68;Masculino;Parda;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-05-17;;98;Feminino;Branca;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-21;;101;Feminino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-21;;83;Masculino;Parda;de 1 a 3 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-06-05;;76;Feminino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-14;;68;Masculino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-22;;61;Masculino;Parda;Sem escolaridade;Oiapoque;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-06-23;;70;Feminino;Branca;de 8 a 11 anos;Macapá;;I639;CID-10 I639;IX;Doenças circulatórias;AP
+2026-06-18;;88;Feminino;Branca;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-21;;77;Masculino;Parda;de 8 a 11 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-06-18;;87;Feminino;Parda;de 1 a 3 anos;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-06-19;;46;Feminino;Parda;Sem escolaridade;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-06-17;;47;Masculino;Parda;de 1 a 3 anos;Macapá;;C859;CID-10 C859;II;Neoplasias;AP
+2026-06-19;;71;Masculino;Parda;de 1 a 3 anos;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-02-21;;92;Feminino;Parda;Sem escolaridade;Porto Grande;;C058;CID-10 C058;II;Neoplasias;AP
+2026-03-01;;85;Masculino;Parda;Sem escolaridade;Ferreira Gomes;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-03-02;;77;Masculino;Parda;de 8 a 11 anos;Porto Grande;;C833;CID-10 C833;II;Neoplasias;AP
+2026-03-08;;86;Feminino;Branca;Sem escolaridade;Porto Grande;;C519;CID-10 C519;II;Neoplasias;AP
+2026-02-10;;75;Feminino;Parda;de 4 a 7 anos;Cutias;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-06;;81;Masculino;Parda;Sem escolaridade;Cutias;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-06-12;;58;Masculino;Parda;de 8 a 11 anos;Santana;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-06-12;;86;Feminino;Parda;Sem escolaridade;Santana;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-06-04;;74;Masculino;Parda;Ignorado;Santana;;I258;CID-10 I258;IX;Doenças circulatórias;AP
+2026-05-30;;85;Masculino;Parda;Ignorado;Santana;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-06-08;;90;Feminino;Parda;de 1 a 3 anos;Santana;;I519;CID-10 I519;IX;Doenças circulatórias;AP
+2026-06-04;;70;Feminino;Parda;de 8 a 11 anos;Santana;;J46;CID-10 J46;X;Doenças respiratórias crônicas;AP
+2026-01-25;;97;Feminino;Branca;Sem escolaridade;Oiapoque;;I279;CID-10 I279;IX;Doenças circulatórias;AP
+2026-06-05;;69;Masculino;Parda;Sem escolaridade;Laranjal do Jari;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-01-09;;87;Masculino;Parda;de 4 a 7 anos;Santana;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-01-05;;73;Masculino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-01-04;;60;Masculino;Parda;Sem escolaridade;Mazagão;;C349;CID-10 C349;II;Neoplasias;AP
+2026-01-04;;64;Masculino;Parda;de 1 a 3 anos;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-01-04;;65;Masculino;Branca;Ignorado;Macapá;;I259;CID-10 I259;IX;Doenças circulatórias;AP
+2026-01-14;;80;Feminino;Parda;Sem escolaridade;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-07;;39;Masculino;Parda;Ignorado;Macapá;;I421;CID-10 I421;IX;Doenças circulatórias;AP
+2026-02-06;;96;Feminino;Branca;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-06;;95;Feminino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-05;;81;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-08;;93;Feminino;Parda;Ignorado;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-02-06;;65;Masculino;Ignorado;Ignorado;Mazagão;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-07-07;;66;Masculino;Indígena;de 4 a 7 anos;Oiapoque;;I211;CID-10 I211;IX;Doenças circulatórias;AP
+2026-07-19;;59;Masculino;Parda;de 4 a 7 anos;Oiapoque;;I630;CID-10 I630;IX;Doenças circulatórias;AP
+2026-08-02;;30;Feminino;Parda;12 anos ou mais;Mazagão;;I132;CID-10 I132;IX;Doenças circulatórias;AP
+2026-07-17;;95;Feminino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-07-18;;47;Feminino;Parda;de 1 a 3 anos;Santana;;E117;CID-10 E117;IV;Diabetes mellitus;AP
+2026-07-24;;93;Masculino;Parda;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-08-09;;78;Feminino;Branca;Sem escolaridade;Santana;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-08-18;;53;Feminino;Parda;Ignorado;Santana;;E118;CID-10 E118;IV;Diabetes mellitus;AP
+2026-08-16;;75;Masculino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-08-13;;88;Masculino;Branca;de 1 a 3 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-08-14;;62;Masculino;Parda;de 1 a 3 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-08-11;;52;Feminino;Preta;de 8 a 11 anos;Santana;;I214;CID-10 I214;IX;Doenças circulatórias;AP
+2026-08-20;;54;Masculino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-08-22;;78;Masculino;Ignorado;de 1 a 3 anos;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-02-01;;58;Masculino;Parda;12 anos ou mais;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-02-02;;89;Feminino;Parda;Sem escolaridade;Macapá;;C449;CID-10 C449;II;Neoplasias;AP
+2026-02-02;;71;Feminino;Branca;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-01-23;;54;Feminino;Parda;Sem escolaridade;Macapá;;C029;CID-10 C029;II;Neoplasias;AP
+2026-02-02;;74;Masculino;Branca;de 4 a 7 anos;Calçoene;;C61;CID-10 C61;II;Neoplasias;AP
+2026-01-26;;86;Masculino;Branca;de 8 a 11 anos;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-02-02;;40;Feminino;Parda;de 1 a 3 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-01-13;;89;Feminino;Parda;Ignorado;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-02-04;;61;Masculino;Parda;Ignorado;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-05-20;;57;Masculino;Parda;Ignorado;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-05-22;;84;Feminino;Amarela;de 1 a 3 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-04-29;;71;Feminino;Parda;de 4 a 7 anos;Macapá;;I519;CID-10 I519;IX;Doenças circulatórias;AP
+2026-05-28;;60;Masculino;Parda;de 8 a 11 anos;Macapá;;E117;CID-10 E117;IV;Diabetes mellitus;AP
+2026-05-22;;79;Masculino;Parda;Sem escolaridade;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-05-21;;85;Masculino;Parda;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-07-14;;92;Masculino;Branca;de 1 a 3 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-06-24;;44;Feminino;Parda;de 8 a 11 anos;Macapá;;I249;CID-10 I249;IX;Doenças circulatórias;AP
+2026-06-19;;34;Feminino;Parda;Sem escolaridade;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-06-27;;86;Masculino;Preta;de 1 a 3 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-07;;50;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-16;;79;Feminino;Parda;de 1 a 3 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-06-10;;68;Masculino;Parda;de 4 a 7 anos;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-07-07;;61;Feminino;Parda;Sem escolaridade;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-07-09;;52;Masculino;Branca;de 1 a 3 anos;Macapá;;J449;CID-10 J449;X;Doenças respiratórias crônicas;AP
+2026-07-03;;53;Masculino;Preta;de 1 a 3 anos;Macapá;;C760;CID-10 C760;II;Neoplasias;AP
+2026-07-09;;95;Masculino;Parda;Sem escolaridade;Macapá;;C140;CID-10 C140;II;Neoplasias;AP
+2026-07-26;;56;Feminino;Parda;Sem escolaridade;Santana;;C56;CID-10 C56;II;Neoplasias;AP
+2026-07-28;;40;Masculino;Parda;de 8 a 11 anos;Macapá;;C449;CID-10 C449;II;Neoplasias;AP
+2026-07-29;;58;Masculino;Preta;de 4 a 7 anos;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-08-03;;40;Masculino;Parda;de 8 a 11 anos;Macapá;;C719;CID-10 C719;II;Neoplasias;AP
+2026-07-14;;8;Masculino;Parda;Sem escolaridade;Macapá;;C920;CID-10 C920;II;Neoplasias;AP
+2026-02-12;;83;Feminino;Parda;de 1 a 3 anos;Oiapoque;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-02-13;;69;Masculino;Parda;de 8 a 11 anos;Oiapoque;;I710;CID-10 I710;IX;Doenças circulatórias;AP
+2026-01-04;;98;Feminino;Branca;Sem escolaridade;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-01-14;;85;Masculino;Parda;de 4 a 7 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-23;;90;Feminino;Parda;Sem escolaridade;Santana;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-14;;80;Feminino;Parda;de 8 a 11 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-24;;92;Feminino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-07;;78;Feminino;Parda;de 1 a 3 anos;Santana;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-04-18;;66;Masculino;Parda;Ignorado;Santana;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-04-19;;77;Masculino;Parda;Sem escolaridade;Santana;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-09;;94;Masculino;Preta;Sem escolaridade;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-30;;75;Masculino;Parda;Sem escolaridade;Santana;;C762;CID-10 C762;II;Neoplasias;AP
+2026-07-04;;52;Masculino;Preta;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-04;;84;Feminino;Branca;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-25;;59;Masculino;Parda;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-10;;91;Masculino;Preta;Ignorado;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-05-01;;80;Masculino;Preta;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-11;;86;Feminino;Parda;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-12;;70;Feminino;Branca;de 8 a 11 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-15;;64;Feminino;Parda;de 4 a 7 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-06-15;;66;Masculino;Branca;de 8 a 11 anos;Macapá;;C159;CID-10 C159;II;Neoplasias;AP
+2026-07-26;;77;Masculino;Parda;de 1 a 3 anos;Tartarugalzinho;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-04-19;;64;Masculino;Branca;de 8 a 11 anos;Santana;;E118;CID-10 E118;IV;Diabetes mellitus;AP
+2026-04-18;;105;Feminino;Branca;Sem escolaridade;Mazagão;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-04-15;;64;Masculino;Ignorado;de 1 a 3 anos;Amapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-17;;17;Masculino;Parda;de 8 a 11 anos;Macapá;;C761;CID-10 C761;II;Neoplasias;AP
+2026-07-12;;89;Feminino;Preta;de 8 a 11 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-06;;49;Feminino;Parda;de 4 a 7 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-05;;89;Masculino;Parda;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-03-06;;104;Masculino;Branca;Sem escolaridade;Mazagão;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-04-08;;82;Masculino;Parda;Sem escolaridade;Macapá;;I499;CID-10 I499;IX;Doenças circulatórias;AP
+2026-04-23;;85;Masculino;Branca;de 4 a 7 anos;Mazagão;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-04-13;;58;Feminino;Parda;de 4 a 7 anos;Macapá;;C250;CID-10 C250;II;Neoplasias;AP
+2026-04-18;;74;Masculino;Parda;de 4 a 7 anos;Calçoene;;C340;CID-10 C340;II;Neoplasias;AP
+2026-04-13;;55;Feminino;Parda;de 4 a 7 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-04-17;;87;Feminino;Branca;de 1 a 3 anos;Macapá;;C449;CID-10 C449;II;Neoplasias;AP
+2026-04-17;;76;Masculino;Parda;Sem escolaridade;Santana;;C61;CID-10 C61;II;Neoplasias;AP
+2026-04-16;;75;Masculino;Branca;de 8 a 11 anos;Santana;;C482;CID-10 C482;II;Neoplasias;AP
+2026-07-14;;70;Masculino;Parda;de 1 a 3 anos;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-07-14;;71;Masculino;Branca;de 8 a 11 anos;Macapá;;C340;CID-10 C340;II;Neoplasias;AP
+2026-07-14;;84;Feminino;Parda;de 8 a 11 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-07-13;;67;Feminino;Parda;de 1 a 3 anos;Macapá;;C900;CID-10 C900;II;Neoplasias;AP
+2026-07-12;;78;Masculino;Parda;Sem escolaridade;Calçoene;;C61;CID-10 C61;II;Neoplasias;AP
+2026-08-07;;70;Feminino;Parda;de 8 a 11 anos;Macapá;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-08-02;;44;Masculino;Parda;de 8 a 11 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-07-25;;58;Feminino;Parda;de 8 a 11 anos;Macapá;;C229;CID-10 C229;II;Neoplasias;AP
+2026-07-24;;67;Feminino;Parda;de 4 a 7 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-07-24;;50;Feminino;Parda;de 4 a 7 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-07-22;;55;Masculino;Parda;de 1 a 3 anos;Amapá;;C609;CID-10 C609;II;Neoplasias;AP
+2026-02-21;;81;Masculino;Branca;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-02-17;;13;Masculino;Parda;de 4 a 7 anos;Macapá;;C729;CID-10 C729;II;Neoplasias;AP
+2026-07-28;;79;Masculino;Parda;Sem escolaridade;Macapá;;C61;CID-10 C61;II;Neoplasias;AP
+2026-07-29;;82;Feminino;Parda;de 1 a 3 anos;Macapá;;I500;CID-10 I500;IX;Doenças circulatórias;AP
+2026-07-27;;76;Masculino;Parda;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-07-28;;94;Feminino;Parda;Sem escolaridade;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-26;;54;Masculino;Parda;Sem escolaridade;Macapá;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-07-30;;65;Feminino;Parda;de 4 a 7 anos;Porto Grande;;C64;CID-10 C64;II;Neoplasias;AP
+2026-07-27;;87;Masculino;Parda;de 8 a 11 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-24;;35;Feminino;Branca;Ignorado;Macapá;;I330;CID-10 I330;IX;Doenças circulatórias;AP
+2026-08-03;;59;Feminino;Preta;de 4 a 7 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-08-02;;76;Masculino;Parda;Sem escolaridade;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-07-20;;39;Feminino;Parda;de 4 a 7 anos;Santana;;C509;CID-10 C509;II;Neoplasias;AP
+2026-07-20;;70;Masculino;Parda;Ignorado;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-07-19;;75;Masculino;Branca;Ignorado;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-07-20;;68;Masculino;Branca;Sem escolaridade;Santana;;C760;CID-10 C760;II;Neoplasias;AP
+2026-07-20;;71;Masculino;Parda;Sem escolaridade;Macapá;;C189;CID-10 C189;II;Neoplasias;AP
+2026-07-17;;49;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-07-16;;74;Masculino;Parda;de 1 a 3 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-07-16;;58;Feminino;Branca;de 4 a 7 anos;Macapá;;C509;CID-10 C509;II;Neoplasias;AP
+2026-07-15;;77;Masculino;Parda;de 8 a 11 anos;Macapá;;C109;CID-10 C109;II;Neoplasias;AP
+2026-07-15;;62;Masculino;Parda;de 1 a 3 anos;Macapá;;C349;CID-10 C349;II;Neoplasias;AP
+2026-07-21;;79;Masculino;Parda;de 1 a 3 anos;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-05-18;;62;Masculino;Preta;de 1 a 3 anos;Vitória do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-15;;71;Feminino;Branca;de 1 a 3 anos;Macapá;;I251;CID-10 I251;IX;Doenças circulatórias;AP
+2026-07-25;;33;Masculino;Parda;de 1 a 3 anos;Macapá;;E141;CID-10 E141;IV;Diabetes mellitus;AP
+2026-07-28;;75;Masculino;Parda;de 1 a 3 anos;Porto Grande;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-01;;94;Masculino;Parda;de 1 a 3 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-06-30;;67;Masculino;Parda;Sem escolaridade;Macapá;;E105;CID-10 E105;IV;Diabetes mellitus;AP
+2026-08-01;;75;Masculino;Preta;de 1 a 3 anos;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-07-25;;42;Masculino;Parda;de 4 a 7 anos;Macapá;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-06-27;;92;Feminino;Branca;Sem escolaridade;Macapá;;E119;CID-10 E119;IV;Diabetes mellitus;AP
+2026-07-23;;52;Feminino;Parda;Ignorado;Macapá;;E107;CID-10 E107;IV;Diabetes mellitus;AP
+2026-07-25;;84;Feminino;Parda;de 1 a 3 anos;Cutias;;I639;CID-10 I639;IX;Doenças circulatórias;AP
+2026-07-28;;74;Feminino;Parda;de 8 a 11 anos;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-07-28;;66;Feminino;Parda;Ignorado;Macapá;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-07-29;;62;Masculino;Parda;Ignorado;Macapá;;C169;CID-10 C169;II;Neoplasias;AP
+2026-07-23;;69;Feminino;Branca;de 1 a 3 anos;Macapá;;I872;CID-10 I872;IX;Doenças circulatórias;AP
+2026-07-24;;66;Feminino;Preta;de 4 a 7 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-07-25;;57;Masculino;Parda;de 8 a 11 anos;Macapá;;E147;CID-10 E147;IV;Diabetes mellitus;AP
+2026-07-25;;62;Feminino;Parda;Ignorado;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-08-02;;63;Masculino;Branca;de 8 a 11 anos;Macapá;;C787;CID-10 C787;II;Neoplasias;AP
+2026-07-10;;70;Feminino;Branca;Sem escolaridade;Macapá;;C64;CID-10 C64;II;Neoplasias;AP
+2026-05-30;;63;Masculino;Parda;Ignorado;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-30;;93;Feminino;Preta;Sem escolaridade;Macapá;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-06-03;;74;Masculino;Preta;Sem escolaridade;Macapá;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-06-20;;102;Feminino;Preta;Sem escolaridade;Vitória do Jari;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-05-17;;93;Feminino;Branca;de 4 a 7 anos;Mazagão;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-07;;88;Masculino;Parda;de 4 a 7 anos;Macapá;;C710;CID-10 C710;II;Neoplasias;AP
+2026-05-10;;71;Feminino;Parda;de 1 a 3 anos;Mazagão;;J439;CID-10 J439;X;Doenças respiratórias crônicas;AP
+2026-05-12;;62;Masculino;Parda;de 4 a 7 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-20;;68;Feminino;Branca;de 8 a 11 anos;Cutias;;I678;CID-10 I678;IX;Doenças circulatórias;AP
+2026-05-05;;59;Masculino;Branca;de 1 a 3 anos;Oiapoque;;I519;CID-10 I519;IX;Doenças circulatórias;AP
+2026-05-18;;88;Feminino;Indígena;Sem escolaridade;Oiapoque;;I442;CID-10 I442;IX;Doenças circulatórias;AP
+2026-05-16;;57;Masculino;Parda;de 1 a 3 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-05-20;;85;Feminino;Parda;de 1 a 3 anos;Macapá;;J440;CID-10 J440;X;Doenças respiratórias crônicas;AP
+2026-05-17;;78;Masculino;Parda;Sem escolaridade;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-04-30;;90;Masculino;Parda;de 4 a 7 anos;Santana;;C690;CID-10 C690;II;Neoplasias;AP
+2026-04-30;;111;Feminino;Branca;Sem escolaridade;Santana;;I110;CID-10 I110;IX;Doenças circulatórias;AP
+2026-05-01;;80;Masculino;Parda;Sem escolaridade;Santana;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-05-06;;90;Masculino;Parda;Ignorado;Santana;;I10;CID-10 I10;IX;Doenças circulatórias;AP
+2026-05-06;;78;Masculino;Parda;Ignorado;Santana;;C349;CID-10 C349;II;Neoplasias;AP
+2026-04-08;;68;Masculino;Parda;de 1 a 3 anos;Santana;;C762;CID-10 C762;II;Neoplasias;AP
+2026-05-12;;77;Feminino;Branca;de 4 a 7 anos;Santana;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-05-13;;31;Feminino;Branca;Ignorado;Macapá;;I269;CID-10 I269;IX;Doenças circulatórias;AP
+2026-05-04;;91;Masculino;Preta;Ignorado;Macapá;;J441;CID-10 J441;X;Doenças respiratórias crônicas;AP
+2026-05-14;;104;Feminino;Parda;Sem escolaridade;Macapá;;C23;CID-10 C23;II;Neoplasias;AP
+2026-05-11;;48;Feminino;Parda;de 4 a 7 anos;Oiapoque;;I619;CID-10 I619;IX;Doenças circulatórias;AP
+2026-05-11;;46;Masculino;Branca;de 8 a 11 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-05-10;;53;Masculino;Parda;Ignorado;Macapá;;I498;CID-10 I498;IX;Doenças circulatórias;AP
+2026-03-05;;59;Masculino;Parda;de 1 a 3 anos;Porto Grande;;J459;CID-10 J459;X;Doenças respiratórias crônicas;AP
+2026-03-02;;60;Masculino;Parda;Sem escolaridade;Santana;;E149;CID-10 E149;IV;Diabetes mellitus;AP
+2026-03-01;;54;Feminino;Ignorado;de 8 a 11 anos;Macapá;;I694;CID-10 I694;IX;Doenças circulatórias;AP
+2026-03-02;;79;Feminino;Branca;de 1 a 3 anos;Macapá;;I64;CID-10 I64;IX;Doenças circulatórias;AP
+2026-02-28;;82;Masculino;Parda;de 4 a 7 anos;Macapá;;I350;CID-10 I350;IX;Doenças circulatórias;AP
+2026-02-23;;28;Feminino;Parda;de 8 a 11 anos;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-06-27;;70;Masculino;Preta;de 1 a 3 anos;Calçoene;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-08-08;;73;Masculino;Parda;de 1 a 3 anos;Laranjal do Jari;;I219;CID-10 I219;IX;Doenças circulatórias;AP
+2026-02-23;;68;Masculino;Branca;de 4 a 7 anos;Macapá;;I120;CID-10 I120;IX;Doenças circulatórias;AP
+2026-02-24;;76;Feminino;Amarela;Sem escolaridade;Macapá;;I509;CID-10 I509;IX;Doenças circulatórias;AP
+2026-02-23;;34;Feminino;Preta;Ignorado;Macapá;;C539;CID-10 C539;II;Neoplasias;AP
+2026-02-16;;43;Feminino;Parda;de 8 a 11 anos;Macapá;;I609;CID-10 I609;IX;Doenças circulatórias;AP
+2026-08-13;;55;Masculino;Parda;de 8 a 11 anos;Porto Grande;;I461;CID-10 I461;IX;Doenças circulatórias;AP
+2026-08-14;;34;Masculino;Parda;de 8 a 11 anos;Porto Grande;;E117;CID-10 E117;IV;Diabetes mellitus;AP
+2026-08-15;;62;Masculino;Parda;de 4 a 7 anos;Porto Grande;;I630;CID-10 I630;IX;Doenças circulatórias;AP

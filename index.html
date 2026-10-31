@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Painel — Óbitos por Doenças Crônicas em Minas Gerais</title>
+  <title>Painel — Óbitos por Doenças Crônicas no Brasil</title>
 
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -15,189 +15,16 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <style>
-    :root{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --border:#e2e8f0;
-      --text:#0f172a;
-      --muted:#64748b;
-      --primary:#2563eb;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    header{
-      padding:14px 20px;
-      background:#0f172a;
-      color:#fff;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    header h1{font-size:18px;margin:0}
-    header small{color:#cbd5e1}
-    .file-label{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#1e293b;
-      border:1px solid #334155;
-      padding:8px 12px;
-      border-radius:10px;
-      cursor:pointer;
-      font-size:13px;
-    }
-    .file-label input{display:none}
-    .wrap{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:16px;
-      padding:16px;
-    }
-    @media(max-width:1050px){
-      .wrap{grid-template-columns:1fr}
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:12px;
-      box-shadow:0 1px 2px rgba(0,0,0,.04);
-    }
-    .filters{
-      position:sticky;
-      top:16px;
-      align-self:start;
-      max-height:calc(100vh - 32px);
-      overflow:auto;
-    }
-    .filters h2{font-size:14px;margin:0 0 8px}
-    label{
-      display:block;
-      font-size:12px;
-      color:var(--muted);
-      margin:10px 0 4px;
-    }
-    select,input[type="text"],input[type="date"]{
-      width:100%;
-      padding:8px;
-      border:1px solid var(--border);
-      border-radius:9px;
-      background:#fff;
-      color:var(--text);
-      font-size:13px;
-    }
-    button{
-      width:100%;
-      margin-top:12px;
-      padding:9px 10px;
-      border:0;
-      border-radius:9px;
-      background:var(--primary);
-      color:#fff;
-      font-weight:600;
-      cursor:pointer;
-    }
-    button.secondary{
-      background:#e2e8f0;
-      color:#0f172a;
-    }
-    .kpis{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      margin-bottom:12px;
-    }
-    @media(max-width:700px){
-      .kpis{grid-template-columns:repeat(2,1fr)}
-    }
-    .kpi .v{font-size:24px;font-weight:800;line-height:1.2}
-    .kpi .l{font-size:12px;color:var(--muted)}
-    .grid2{
-      display:grid;
-      grid-template-columns:1.45fr 1fr;
-      gap:12px;
-    }
-    @media(max-width:1150px){
-      .grid2{grid-template-columns:1fr}
-    }
-    #map{
-      height:540px;
-      border-radius:12px;
-      z-index:1;
-      background: #e2e8f0; /* Fundo cinza claro enquanto o mapa carrega */
-    }
-    .chart-box{
-      height:280px;
-      position:relative;
-    }
-    .section-title{
-      display:flex;
-      justify-content:space-between;
-      align-items:baseline;
-      gap:8px;
-      margin:0 0 8px;
-    }
-    .section-title h3{font-size:14px;margin:0}
-    .section-title small{color:var(--muted);font-size:12px}
-    .table-wrap{
-      max-height:380px;
-      overflow:auto;
-      border:1px solid var(--border);
-      border-radius:10px;
-    }
-    table{
-      width:100%;
-      border-collapse:collapse;
-      font-size:12px;
-    }
-    th,td{
-      padding:7px 8px;
-      border-bottom:1px solid var(--border);
-      text-align:left;
-      vertical-align:top;
-    }
-    th{
-      position:sticky;
-      top:0;
-      background:#f1f5f9;
-      z-index:2;
-      font-weight:700;
-    }
-    tr:hover td{background:#f8fafc}
-    .badge{
-      display:inline-block;
-      padding:2px 7px;
-      border-radius:999px;
-      background:#e0f2fe;
-      color:#0369a1;
-      font-size:11px;
-      white-space:nowrap;
-    }
-    .muted{color:var(--muted)}
-    #status{
-      font-size:12px;
-      color:#cbd5e1;
-    }
-    .leaflet-popup-content{
-      font-size:12px;
-      line-height:1.45;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header>
   <div>
-    <h1>Painel de Óbitos por Doenças Crônicas — Minas Gerais</h1>
-    <small id="status">Aguardando carregamento do CSV...</small>
+    <h1>Painel de Óbitos por Doenças Crônicas — Brasil</h1>
+    <div id="status" class="load-status" data-state="success" role="status" aria-live="polite">
+      Marque um ou mais estados para carregar os dados.
+    </div>
   </div>
   <label class="file-label">
     Carregar CSV
@@ -208,8 +35,48 @@
 <div class="wrap">
   <!-- FILTROS -->
   <aside class="card filters">
-    <h2>Filtros</h2>
+    <div class="filters-heading">
+      <div><span class="eyebrow">EXPLORAÇÃO</span><h2>Filtros</h2></div>
+      <span class="filter-count">SIM · Brasil</span>
+    </div>
 
+    <section class="filter-group territory-group">
+    <h3>Território</h3>
+    <div class="state-picker">
+      <details id="statePicker" class="state-checklist">
+        <summary><span>Estados incluídos no mapa</span><small id="stateSelectionCount">0 selecionados</small></summary>
+        <div class="state-picker-body">
+          <p>Marque estados para carregar seus dados. O foco do mapa é ajustado separadamente.</p>
+          <label for="stateSearch">Buscar estado ou sigla</label>
+          <input id="stateSearch" type="text" autocomplete="off" placeholder="Ex.: Minas Gerais ou MG" />
+          <div class="state-picker-actions">
+            <button id="selectVisibleStatesBtn" type="button" class="secondary">Selecionar visíveis</button>
+            <button id="clearStatesBtn" type="button" class="secondary">Limpar seleção</button>
+          </div>
+          <div id="stateChecks" class="state-checks" aria-label="Selecionar estados"></div>
+          <small id="stateSearchStatus" class="state-search-status" aria-live="polite"></small>
+        </div>
+      </details>
+      <div id="selectedStateChips" class="selected-state-chips" role="group" aria-label="Estados selecionados" hidden></div>
+    </div>
+    <label for="muniSel">Município de residência</label>
+    <div class="municipality-combobox">
+      <input id="muniSel" type="text" role="combobox" aria-autocomplete="list"
+        aria-controls="muniOptions" aria-expanded="false" autocomplete="off"
+        placeholder="Carregue os estados primeiro" disabled />
+      <button id="muniToggle" class="municipality-toggle" type="button"
+        aria-label="Mostrar municípios" disabled><span aria-hidden="true">⌄</span></button>
+      <div id="muniMenu" class="municipality-menu" hidden>
+        <div id="muniResults" class="municipality-results" aria-live="polite"></div>
+        <div id="muniOptions" class="municipality-options" role="listbox">
+          <div id="muniSpacer" class="municipality-spacer"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="filter-group">
+    <h3>Período e perfil</h3>
     <label for="dateFrom">Data do óbito — de</label>
     <input type="date" id="dateFrom" />
 
@@ -224,20 +91,24 @@
 
     <label for="schoolSel">Escolaridade</label>
     <select id="schoolSel"></select>
+    </section>
 
+    <section class="filter-group">
+    <h3>Causa do óbito</h3>
     <label for="chapterSel">Capítulo CID</label>
     <select id="chapterSel"></select>
 
     <label for="categorySel">Categoria CID / Doença</label>
     <select id="categorySel"></select>
 
-    <label for="muniSel">Município de residência</label>
-    <select id="muniSel"></select>
-
     <label for="searchInput">Busca por CID, descrição ou categoria</label>
     <input type="text" id="searchInput" placeholder="Ex.: infarto, C169, diabetes..." />
+    </section>
 
-    <button id="resetBtn" class="secondary">Limpar filtros</button>
+    <div class="filter-actions">
+      <small>Os resultados são atualizados automaticamente quando você altera os filtros.</small>
+      <button id="resetBtn" class="secondary">Limpar filtros</button>
+    </div>
   </aside>
 
   <!-- CONTEÚDO -->
@@ -261,13 +132,36 @@
       </div>
     </div>
 
+    <details id="comparisonPanel" class="card state-comparison">
+      <summary>
+        <span><strong>Comparar estados</strong><small>Abra para ver a comparação lado a lado</small></span>
+        <i aria-hidden="true">⌄</i>
+      </summary>
+      <div class="comparison-controls">
+        <label>Estado A<select id="compareStateA" disabled><option>Carregue estados primeiro</option></select></label>
+        <span aria-hidden="true">×</span>
+        <label>Estado B<select id="compareStateB" disabled><option>Carregue estados primeiro</option></select></label>
+      </div>
+      <div id="comparisonEmpty" class="comparison-empty">Marque pelo menos dois estados para comparar.</div>
+      <div id="comparisonResults" hidden>
+        <div id="comparisonCards" class="comparison-cards"></div>
+        <div class="comparison-chart"><canvas id="comparisonChart"></canvas></div>
+      </div>
+    </details>
+
     <div class="grid2">
-      <section class="card">
+      <section class="card map-card">
         <div class="section-title">
-          <h3>Mapa de Minas Gerais — pontos de foco por município</h3>
-          <small>Círculo = volume de óbitos; popup = principais CIDs</small>
+          <h3>Doença mais frequente por município</h3>
+          <small>SIM 2026 · prévia · município de residência</small>
+        </div>
+        <div class="map-controls">
+          <small id="selectedStatesLabel">Nenhum estado selecionado · marque estados para carregar</small>
+          <label for="mapFocusSel">Foco do mapa</label>
+          <select id="mapFocusSel" aria-label="Foco do mapa"></select>
         </div>
         <div id="map"></div>
+        <div id="mapLegend" class="map-legend" aria-label="Legenda das doenças"></div>
       </section>
 
       <section class="card">
@@ -281,7 +175,7 @@
       </section>
     </div>
 
-    <div class="grid2" style="margin-top:12px">
+    <div class="grid2 spaced-section">
       <section class="card">
         <div class="section-title">
           <h3>Distribuição por capítulo CID</h3>
@@ -312,7 +206,7 @@
       </section>
     </div>
 
-    <section class="card" style="margin-top:12px">
+    <section class="card spaced-section">
       <div class="section-title">
         <h3>Detalhamento dos registros</h3>
         <small id="detailCount"></small>
@@ -336,549 +230,11 @@
   </main>
 </div>
 
-<script>
-/* ============================================================
-   1. Configurações e estado
-   ============================================================ */
-const MG_GEOJSON_URL = "https://raw.githubusercontent.com/tbrugz/geodata-br/master/geojson/geojs-31-mun.json";
-
-const state = {
-  rows: [],
-  filtered: [],
-  geo: null,
-  geoLayer: null,
-  markersLayer: null,
-  muniCentroids: new Map(),
-  muniLayers: new Map(),
-  counts: new Map(),
-  maxCount: 1
-};
-
-let causeChart = null;
-let chapterChart = null;
-
-const fmtNum = new Intl.NumberFormat("pt-BR");
-
-/* ============================================================
-   2. Utilidades
-   ============================================================ */
-function escapeHtml(s){
-  return String(s ?? "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
-  }[c]));
-}
-
-function norm(s){
-  return String(s ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase()
-    .trim();
-}
-
-function normText(s){
-  return String(s ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
-
-function parseNumberBR(v){
-  if(v == null || v === "") return null;
-  const n = Number(String(v).replace(",", "."));
-  return Number.isFinite(n) ? n : null;
-}
-
-function parseDate(v){
-  if(!v) return null;
-  const parts = String(v).slice(0,10).split("-").map(Number);
-  if(parts.length !== 3 || parts.some(n => !Number.isFinite(n))) return null;
-  const [y,m,d] = parts;
-  const dt = new Date(y, m - 1, d);
-  return isNaN(dt.getTime()) ? null : dt;
-}
-
-function fmtDateInput(d){
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2,"0");
-  const day = String(d.getDate()).padStart(2,"0");
-  return `${y}-${m}-${day}`;
-}
-
-function uniqueSorted(field){
-  return [...new Set(
-    state.rows
-      .map(r => r[field])
-      .filter(v => v !== undefined && v !== null && String(v).trim() !== "")
-  )].sort((a,b) => String(a).localeCompare(String(b), "pt-BR"));
-}
-
-function fillSelect(sel, values, placeholder){
-  sel.innerHTML = `<option value="">${escapeHtml(placeholder)}</option>` +
-    values.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
-}
-
-function aggregate(rows, field){
-  const m = new Map();
-  rows.forEach(r => {
-    const v = r[field] || "Não informado";
-    m.set(v, (m.get(v) || 0) + 1);
-  });
-  return m;
-}
-
-function destroyChart(chart){
-  if(chart) chart.destroy();
-  return null;
-}
-
-/* ============================================================
-   3. Mapa
-   ============================================================ */
-const map = L.map("map", { zoomControl: true }).setView([-18.5122, -44.5550], 6);
-
-// ALTERAÇÃO AQUI: Substituição dos tiles do OpenStreetMap pelo CARTO Positron
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 20
-}).addTo(map);
-
-state.markersLayer = L.layerGroup().addTo(map);
-
-function getMuniName(feature){
-  const p = feature?.properties || {};
-  return p.name || p.NM_MUN || p.nome || p.NOME || "";
-}
-
-function countColor(count, max){
-  if(!count) return "#94a3b8";
-  const t = Math.sqrt(count / Math.max(1, max));
-  return `hsl(${220 - 220 * t}, 75%, 55%)`;
-}
-
-function styleMuni(feature){
-  const key = norm(getMuniName(feature));
-  const count = (state.counts.get(key)?.count) || 0;
-  return {
-    color: "#334155",
-    weight: 0.6,
-    fillColor: countColor(count, state.maxCount),
-    fillOpacity: count ? 0.75 : 0.35
-  };
-}
-
-function popupMuni(key){
-  const item = state.counts.get(key);
-  const layer = state.muniLayers.get(key);
-  const name = item?.name || (layer?.feature ? getMuniName(layer.feature) : key);
-
-  if(!item){
-    return `<b>${escapeHtml(name)}</b><br><span>Sem óbitos no filtro atual.</span>`;
-  }
-
-  const top = [...item.causes.entries()]
-    .sort((a,b) => b[1] - a[1])
-    .slice(0, 6)
-    .map(([c,n]) => `${escapeHtml(c)}: <b>${n}</b>`)
-    .join("<br>");
-
-  return `
-    <b>${escapeHtml(name)}</b><br>
-    Óbitos: <b>${item.count}</b><br>
-    <small>Principais causas:<br>${top || "Não informado"}</small>
-  `;
-}
-
-async function loadMG(){
-  try{
-    const res = await fetch(MG_GEOJSON_URL);
-    if(!res.ok) throw new Error("Falha ao baixar GeoJSON");
-    const geo = await res.json();
-    state.geo = geo;
-
-    state.geoLayer = L.geoJSON(geo, {
-      style: styleMuni,
-      onEachFeature: (feature, layer) => {
-        const name = getMuniName(feature);
-        const key = norm(name);
-        if(!key) return;
-        state.muniCentroids.set(key, layer.getBounds().getCenter());
-        state.muniLayers.set(key, layer);
-        layer.bindPopup(`<b>${escapeHtml(name)}</b>`);
-      }
-    }).addTo(map);
-
-    map.fitBounds(state.geoLayer.getBounds(), { padding: [10,10] });
-    updateMap();
-  }catch(err){
-    console.error(err);
-    document.getElementById("status").textContent +=
-      " | Não foi possível carregar o GeoJSON de MG. Verifique a conexão ou troque a URL.";
-  }
-}
-
-function updateMap(){
-  if(!state.geoLayer) return;
-
-  const counts = new Map();
-
-  state.filtered.forEach(r => {
-    const key = norm(r.co_municipio_ibge_residencia);
-    if(!key) return;
-
-    let item = counts.get(key);
-    if(!item){
-      item = {
-        name: r.co_municipio_ibge_residencia || key,
-        count: 0,
-        causes: new Map()
-      };
-      counts.set(key, item);
-    }
-
-    item.count++;
-
-    const cause = r.categoria_cid_causa_basica || r.desc_cid_causa_basica || "Não informado";
-    item.causes.set(cause, (item.causes.get(cause) || 0) + 1);
-  });
-
-  state.counts = counts;
-  state.maxCount = Math.max(1, ...[...counts.values()].map(x => x.count));
-
-  state.geoLayer.eachLayer(layer => {
-    if(!layer.feature) return;
-    const key = norm(getMuniName(layer.feature));
-    layer.setStyle(styleMuni(layer.feature));
-    layer.setPopupContent(popupMuni(key));
-  });
-
-  state.markersLayer.clearLayers();
-
-  counts.forEach((item, key) => {
-    const center = state.muniCentroids.get(key);
-    if(!center) return;
-
-    const radius = Math.min(26, 4 + Math.sqrt(item.count) * 2.1);
-
-    L.circleMarker(center, {
-      radius,
-      color: "#0f172a",
-      weight: 1,
-      fillColor: countColor(item.count, state.maxCount),
-      fillOpacity: 0.85
-    })
-    .bindPopup(popupMuni(key))
-    .bindTooltip(`${escapeHtml(item.name)}: ${item.count}`, { sticky: true })
-    .addTo(state.markersLayer);
-  });
-}
-
-/* ============================================================
-   4. Carregamento e filtros do CSV
-   ============================================================ */
-function loadRows(rows){
-  state.rows = rows.map(r => {
-    const idade = parseNumberBR(r.nu_idade);
-    const text = normText([
-      r.desc_cid_causa_basica,
-      r.categoria_cid_causa_basica,
-      r.co_cid_causa_basica
-    ].join(" "));
-
-    return {
-      ...r,
-      _dt: parseDate(r.dt_obito),
-      _idade: idade,
-      _causeText: text
-    };
-  });
-
-  populateFilters();
-  setDateBounds();
-  refreshCategoryOptions();
-  applyFilters();
-
-  document.getElementById("status").textContent =
-    `${fmtNum.format(state.rows.length)} registros carregados.`;
-}
-
-function parseCSVText(text){
-  Papa.parse(text, {
-    delimiter: ";",
-    header: true,
-    skipEmptyLines: "greedy",
-    complete: (res) => {
-      const rows = res.data.map(r => {
-        const o = {};
-        Object.keys(r).forEach(k => {
-          const kk = k.replace(/^\uFEFF/, "").trim();
-          o[kk] = typeof r[k] === "string" ? r[k].trim() : r[k];
-        });
-        return o;
-      }).filter(r => r.dt_obito || r.co_cid_causa_basica || r.categoria_cid_causa_basica);
-
-      loadRows(rows);
-    },
-    error: (err) => {
-      console.error(err);
-      document.getElementById("status").textContent = "Erro ao ler o CSV.";
-    }
-  });
-}
-
-function populateFilters(){
-  fillSelect(document.getElementById("sexSel"), uniqueSorted("sg_sexo"), "Todos");
-  fillSelect(document.getElementById("raceSel"), uniqueSorted("tp_raca_cor"), "Todas");
-  fillSelect(document.getElementById("schoolSel"), uniqueSorted("tp_escolaridade"), "Todas");
-  fillSelect(document.getElementById("chapterSel"), uniqueSorted("capitulo_cid_causa_basica"), "Todos");
-  fillSelect(document.getElementById("muniSel"), uniqueSorted("co_municipio_ibge_residencia"), "Todos");
-}
-
-function setDateBounds(){
-  const dates = state.rows.map(r => r._dt).filter(Boolean).sort((a,b) => a - b);
-  if(!dates.length) return;
-
-  const min = fmtDateInput(dates[0]);
-  const max = fmtDateInput(dates[dates.length - 1]);
-
-  ["dateFrom","dateTo"].forEach(id => {
-    const el = document.getElementById(id);
-    el.min = min;
-    el.max = max;
-  });
-
-  document.getElementById("dateFrom").value = min;
-  document.getElementById("dateTo").value = max;
-}
-
-function refreshCategoryOptions(){
-  const chapter = document.getElementById("chapterSel").value;
-  const source = chapter
-    ? state.rows.filter(r => r.capitulo_cid_causa_basica === chapter)
-    : state.rows;
-
-  const cats = [...new Set(
-    source.map(r => r.categoria_cid_causa_basica)
-      .filter(v => v !== undefined && v !== null && String(v).trim() !== "")
-  )].sort((a,b) => String(a).localeCompare(String(b), "pt-BR"));
-
-  fillSelect(document.getElementById("categorySel"), cats, "Todas");
-}
-
-function applyFilters(){
-  const from = document.getElementById("dateFrom").value
-    ? parseDate(document.getElementById("dateFrom").value) : null;
-
-  const to = document.getElementById("dateTo").value
-    ? parseDate(document.getElementById("dateTo").value) : null;
-
-  const sex = document.getElementById("sexSel").value;
-  const race = document.getElementById("raceSel").value;
-  const school = document.getElementById("schoolSel").value;
-  const chapter = document.getElementById("chapterSel").value;
-  const category = document.getElementById("categorySel").value;
-  const muni = document.getElementById("muniSel").value;
-  const search = normText(document.getElementById("searchInput").value);
-
-  state.filtered = state.rows.filter(r => {
-    if(from && (!r._dt || r._dt < from)) return false;
-    if(to && (!r._dt || r._dt > to)) return false;
-    if(sex && r.sg_sexo !== sex) return false;
-    if(race && r.tp_raca_cor !== race) return false;
-    if(school && r.tp_escolaridade !== school) return false;
-    if(chapter && r.capitulo_cid_causa_basica !== chapter) return false;
-    if(category && r.categoria_cid_causa_basica !== category) return false;
-    if(muni && r.co_municipio_ibge_residencia !== muni) return false;
-    if(search && !r._causeText.includes(search)) return false;
-    return true;
-  });
-
-  updateKPIs();
-  updateMap();
-  updateCharts();
-  updateTables();
-}
-
-/* ============================================================
-   5. KPIs, gráficos e tabelas
-   ============================================================ */
-function updateKPIs(){
-  document.getElementById("kpiTotal").textContent = fmtNum.format(state.filtered.length);
-
-  const munis = new Set(
-    state.filtered
-      .map(r => r.co_municipio_ibge_residencia)
-      .filter(Boolean)
-  );
-  document.getElementById("kpiMunis").textContent = fmtNum.format(munis.size);
-
-  const causes = new Set(
-    state.filtered
-      .map(r => r.categoria_cid_causa_basica)
-      .filter(Boolean)
-  );
-  document.getElementById("kpiCausas").textContent = fmtNum.format(causes.size);
-
-  const ages = state.filtered
-    .map(r => r._idade)
-    .filter(n => n !== null && Number.isFinite(n));
-
-  document.getElementById("kpiIdade").textContent = ages.length
-    ? (ages.reduce((a,b) => a + b, 0) / ages.length).toFixed(1).replace(".", ",")
-    : "—";
-}
-
-function updateCharts(){
-  const palette = [
-    "#2563eb","#16a34a","#dc2626","#f59e0b","#7c3aed",
-    "#0891b2","#be123c","#4d7c0f","#c2410c","#64748b"
-  ];
-
-  const causeMap = aggregate(state.filtered, "categoria_cid_causa_basica");
-  const topCauses = [...causeMap.entries()]
-    .sort((a,b) => b[1] - a[1])
-    .slice(0, 10);
-
-  causeChart = destroyChart(causeChart);
-  causeChart = new Chart(document.getElementById("causeChart"), {
-    type: "bar",
-    data: {
-      labels: topCauses.map(x => x[0]),
-      datasets: [{
-        label: "Óbitos",
-        data: topCauses.map(x => x[1]),
-        backgroundColor: "#2563eb",
-        borderRadius: 5
-      }]
-    },
-    options: {
-      indexAxis: "y",
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { beginAtZero: true, ticks: { precision: 0 } }
-      }
-    }
-  });
-
-  const chapterMap = aggregate(state.filtered, "capitulo_cid_causa_basica");
-  const chapters = [...chapterMap.entries()].sort((a,b) => b[1] - a[1]);
-
-  chapterChart = destroyChart(chapterChart);
-  chapterChart = new Chart(document.getElementById("chapterChart"), {
-    type: "doughnut",
-    data: {
-      labels: chapters.map(x => x[0]),
-      datasets: [{
-        data: chapters.map(x => x[1]),
-        backgroundColor: chapters.map((_, i) => palette[i % palette.length]),
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { position: "bottom", labels: { boxWidth: 10, font: { size: 10 } } }
-      }
-    }
-  });
-}
-
-function updateTables(){
-  const topMunis = [...state.counts.entries()]
-    .sort((a,b) => b[1].count - a[1].count)
-    .slice(0, 15);
-
-  document.getElementById("muniTbody").innerHTML = topMunis.map(([key,item]) => {
-    const topCause = [...item.causes.entries()].sort((a,b) => b[1] - a[1])[0];
-    return `
-      <tr>
-        <td>${escapeHtml(item.name)}</td>
-        <td><span class="badge">${fmtNum.format(item.count)}</span></td>
-        <td>${escapeHtml(topCause ? topCause[0] : "—")}</td>
-      </tr>
-    `;
-  }).join("") || `<tr><td colspan="3" class="muted">Sem dados para os filtros selecionados.</td></tr>`;
-
-  document.getElementById("topMuniCount").textContent =
-    `${topMunis.length} municípios exibidos`;
-
-  const shown = state.filtered.slice(0, 100);
-  document.getElementById("detailTbody").innerHTML = shown.map(r => `
-    <tr>
-      <td>${escapeHtml(r.dt_obito)}</td>
-      <td>${escapeHtml(r.co_municipio_ibge_residencia)}</td>
-      <td>${escapeHtml(r.sg_sexo)}</td>
-      <td>${escapeHtml(r.nu_idade)}</td>
-      <td>${escapeHtml(r.co_cid_causa_basica)}</td>
-      <td>${escapeHtml(r.categoria_cid_causa_basica || r.desc_cid_causa_basica)}</td>
-    </tr>
-  `).join("") || `<tr><td colspan="6" class="muted">Sem registros para os filtros selecionados.</td></tr>`;
-
-  document.getElementById("detailCount").textContent =
-    `Mostrando ${Math.min(100, state.filtered.length)} de ${fmtNum.format(state.filtered.length)} registros`;
-}
-
-/* ============================================================
-   6. Eventos
-   ============================================================ */
-document.getElementById("csvFile").addEventListener("change", (e) => {
-  const file = e.target.files?.[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => parseCSVText(ev.target.result);
-  reader.readAsText(file, "UTF-8");
-});
-
-document.getElementById("chapterSel").addEventListener("change", () => {
-  refreshCategoryOptions();
-  applyFilters();
-});
-
-[
-  "dateFrom","dateTo","sexSel","raceSel","schoolSel",
-  "categorySel","muniSel","searchInput"
-].forEach(id => {
-  document.getElementById(id).addEventListener("input", applyFilters);
-});
-
-document.getElementById("resetBtn").addEventListener("click", () => {
-  const dateFrom = document.getElementById("dateFrom");
-  const dateTo = document.getElementById("dateTo");
-
-  dateFrom.value = dateFrom.min || "";
-  dateTo.value = dateTo.max || "";
-
-  ["sexSel","raceSel","schoolSel","chapterSel","categorySel","muniSel"].forEach(id => {
-    document.getElementById(id).value = "";
-  });
-
-  document.getElementById("searchInput").value = "";
-  refreshCategoryOptions();
-  applyFilters();
-});
-
-/* ============================================================
-   7. Inicialização
-   ============================================================ */
-loadMG();
-
-/* Tenta carregar automaticamente o CSV se estiver na mesma pasta e servido via HTTP.
-   Se não existir, use o botão "Carregar CSV". */
-fetch("dados_cronicas_ses_2026.csv")
-  .then(r => {
-    if(!r.ok) throw new Error("CSV não encontrado");
-    return r.text();
-  })
-  .then(txt => parseCSVText(txt))
-  .catch(() => {
-    document.getElementById("status").textContent =
-      "Carregue o arquivo dados_cronicas_ses_2026.csv pelo botão acima.";
-  });
-</script>
+<footer class="source-note">
+  Fonte: <a href="https://dadosabertos.saude.gov.br/dataset/sim" target="_blank" rel="noreferrer">Sistema de Informações sobre Mortalidade (SIM), Ministério da Saúde</a> · Base 2026, 2ª prévia (atualizada em 09/10/2026) · <a href="https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2026_csv.zip" target="_blank" rel="noreferrer">arquivo original (ZIP)</a>.
+  Recorte: CID-10 C00–C97, E10–E14, I00–I99 e J40–J47.
+</footer>
+
+<script src="app.js" defer></script>
 </body>
 </html>
