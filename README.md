@@ -18,20 +18,6 @@ python3 -m http.server 8000
 
 Depois acesse <http://localhost:8000>. Também é possível selecionar um CSV preparado pelo botão no cabeçalho; o arquivo começa a carregar ao ser escolhido.
 
-## Publicar no GitHub Pages
-
-Publique o conteúdo da raiz do repositório pelo branch `main`. O painel usa `index.html`, `app.js`, `styles.css`, `municipios_brasil.geojson` e os CSVs em `dados_estados/2026/`. Os arquivos CSV completos usados para preparar ou regenerar os dados não são necessários para abrir o site e ficam fora da publicação.
-
-## Atualizar os arquivos por estado
-
-Baixe o ZIP oficial mais recente do SIM e coloque o CSV tratado correspondente na pasta do projeto. Esses arquivos de origem não são versionados. Gere novamente os arquivos por estado com:
-
-```sh
-python3 gerar_dados_por_uf.py Mortalidade_Geral_2026_csv.zip dados_cronicas_brasil_2026_preliminar.csv dados_estados/2026
-```
-
-O gerador alinha os registros tratados com a base oficial pela data e causa básica e usa `CODMUNRES` para obter a UF. Ele interrompe a geração se as duas bases não estiverem alinhadas.
-
 ## Fontes
 
 - [Sistema de Informações sobre Mortalidade (SIM) — Ministério da Saúde](https://dadosabertos.saude.gov.br/dataset/sim)
