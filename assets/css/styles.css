@@ -101,6 +101,10 @@ body[data-rota="mapa"] .conteudo { max-width: 1440px; }
 .nav a:hover { color: var(--acc); }
 .nav a[aria-current] { color: var(--acc); border-bottom-color: var(--acc); }
 .nav .nav-sec { margin-left: auto; font-weight: 500; color: var(--muted); }
+/* Última atualização: visível em todas as telas */
+.atualizacao { order: 3; margin: 0; color: var(--muted); font-size: .85rem; white-space: nowrap; }
+.atualizacao-link { margin-left: 6px; }
+@media (max-width: 1180px) { .atualizacao-freq, .atualizacao-link { display: none; } }
 .so-estreito { display: none; }
 
 .status-geral { max-width: var(--largura); margin: 12px auto 0; padding: 10px 14px; border-radius: var(--raio-p); background: var(--acc-tint); color: var(--acc-forte); font-size: .95rem; }
@@ -227,6 +231,8 @@ button:disabled, input:disabled { cursor: not-allowed; opacity: .7; }
 }
 .manchete-titulo { font-size: 1.3rem; font-weight: 750; line-height: 1.3; }
 .manchete-nota { color: var(--ink-2); }
+.manchete-acao { margin-top: 8px !important; padding-top: 8px; border-top: 1px solid rgba(22,33,42,.12); color: var(--ink); }
+.entrada-publico { color: var(--ink-2); font-size: .95rem; margin-top: -12px; margin-bottom: 20px; }
 .manchete-acima { background: var(--acima-bg); }
 .manchete-acima .manchete-icone { background: var(--acima); }
 .manchete-acima .manchete-titulo { color: var(--acima); }
@@ -576,7 +582,8 @@ h3 .rot { margin-left: 6px; vertical-align: middle; }
   .conteudo { padding-top: 16px; }
 
   /* Navegação principal vira a barra fixa no rodapé da tela */
-  .topo-in { justify-content: center; }
+  .topo-in { justify-content: space-between; gap: 12px; }
+  .atualizacao { font-size: .8rem; }
   .nav {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 1400;
     height: calc(60px + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom);

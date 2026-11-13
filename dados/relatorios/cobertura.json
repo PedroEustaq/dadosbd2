@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-12",
+  "gerado_em": "2026-11-13",
   "matriz": [
     {
       "fonte": "SIM",
@@ -343,6 +343,7 @@
     "dados/relatorios/cnes_inpe.json",
     "dados/relatorios/cobertura.json",
     "dados/relatorios/legado_municipios.json",
+    "dados/relatorios/outliers.json",
     "dados/relatorios/populacao.json",
     "dados/relatorios/sim.json",
     "dados/relatorios/tabnet.json",

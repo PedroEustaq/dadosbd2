@@ -5,6 +5,9 @@ Uso:
   python3 scripts/atualizar_tudo.py            reaproveita os arquivos já baixados em dados/brutos
   python3 scripts/atualizar_tudo.py --refazer  baixa tudo de novo das fontes oficiais
 
+Para carregar a base no MySQL/MariaDB depois de atualizar:
+  python3 scripts/importar_mysql.py -- -u USUARIO -p
+
 Depois de atualizar, mude DATA_VERSION em assets/js/config.js e o sufixo ?v= dos
 arquivos em index.html, para que os navegadores não misturem versões em cache.
 """
@@ -22,9 +25,10 @@ PASSOS = [
     ["preparar_cnes_inpe.py"],
     ["montar_indicadores.py"],
     ["montar_conhecimento.py"],
+    ["detectar_outliers.py"],
     ["validar.py", "--tabnet"],
 ]
-SEM_REFAZER = {"montar_indicadores.py", "montar_conhecimento.py", "validar.py"}
+SEM_REFAZER = {"montar_indicadores.py", "montar_conhecimento.py", "detectar_outliers.py", "validar.py"}
 
 
 def main():

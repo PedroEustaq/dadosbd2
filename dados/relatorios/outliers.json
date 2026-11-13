@@ -1,0 +1,918 @@
+{
+  "gerado_em": "2026-11-13",
+  "regras": {
+    "invalidos": "contagem negativa, população ≤ 0, óbitos ou casos de dengue maiores que a população, percentual fora de 0–100: removidos (a validação falha se existirem)",
+    "taxa_tukey": "log10 da taxa; só municípios com ≥ 10 eventos esperados; moderado 1,5·IQR, extremo 3·IQR: mantidos e sinalizados",
+    "taxa_funil": "Poisson, esperado = taxa do Brasil × população, limite de 99,8% (|z| > 3,09) alargado pela sobredispersão (phi, Spiegelhalter 2005): mantidos e sinalizados",
+    "indicadores": "Tukey 3·IQR por indicador: mantidos e sinalizados",
+    "populacao": "razão estimativa 2024 / Censo 2022 fora de 0,667–1,5: mantida e sinalizada"
+  },
+  "invalidos": {
+    "contagem_negativa": 0,
+    "populacao_nao_positiva": 0,
+    "eventos_maiores_que_populacao": 0
+  },
+  "taxas": [
+    {
+      "evento": "dengue",
+      "ano": "2023",
+      "taxa_brasil": 810.19,
+      "municipios_com_populacao": 5570,
+      "elegiveis_tukey": 4985,
+      "tukey_log10": {
+        "q1": 42.81,
+        "mediana": 188.51,
+        "q3": 888.28,
+        "limites_moderado": [
+          0.45,
+          83970.84
+        ],
+        "limites_extremo": [
+          0.0,
+          7937936.53
+        ],
+        "moderado": 0,
+        "extremo": 0
+      },
+      "sobredispersao_phi": 133.0,
+      "funil_998": {
+        "acima": 405,
+        "abaixo": 86
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "Foz do Iguaçu (PR)",
+          "codigo": "4108304",
+          "observado": 45205,
+          "esperado": 2312.4,
+          "taxa": 15838.3
+        },
+        {
+          "municipio": "Presidente Prudente (SP)",
+          "codigo": "3541406",
+          "observado": 36160,
+          "esperado": 1828.3,
+          "taxa": 16023.5
+        },
+        {
+          "municipio": "Londrina (PR)",
+          "codigo": "4113700",
+          "observado": 45884,
+          "esperado": 4504.4,
+          "taxa": 8253.0
+        },
+        {
+          "municipio": "Joinville (SC)",
+          "codigo": "4209102",
+          "observado": 44681,
+          "esperado": 4993.3,
+          "taxa": 7249.7
+        },
+        {
+          "municipio": "Florianópolis (SC)",
+          "codigo": "4205407",
+          "observado": 35568,
+          "esperado": 4352.4,
+          "taxa": 6620.9
+        }
+      ]
+    },
+    {
+      "evento": "dengue",
+      "ano": "2024",
+      "taxa_brasil": 3088.14,
+      "municipios_com_populacao": 5570,
+      "elegiveis_tukey": 5485,
+      "tukey_log10": {
+        "q1": 161.52,
+        "mediana": 895.05,
+        "q3": 4141.29,
+        "limites_moderado": [
+          1.24,
+          537639.4
+        ],
+        "limites_extremo": [
+          0.01,
+          69798629.86
+        ],
+        "moderado": 0,
+        "extremo": 0
+      },
+      "sobredispersao_phi": 456.5,
+      "funil_998": {
+        "acima": 299,
+        "abaixo": 78
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "Brasília (DF)",
+          "codigo": "5300108",
+          "observado": 277897,
+          "esperado": 92113.7,
+          "taxa": 9316.6
+        },
+        {
+          "municipio": "Conselheiro Lafaiete (MG)",
+          "codigo": "3118304",
+          "observado": 38645,
+          "esperado": 4261.0,
+          "taxa": 28007.7
+        },
+        {
+          "municipio": "Belo Horizonte (MG)",
+          "codigo": "3106200",
+          "observado": 216681,
+          "esperado": 74620.0,
+          "taxa": 8967.3
+        },
+        {
+          "municipio": "São José dos Campos (SP)",
+          "codigo": "3549904",
+          "observado": 98230,
+          "esperado": 22381.5,
+          "taxa": 13553.5
+        },
+        {
+          "municipio": "Campinas (SP)",
+          "codigo": "3509502",
+          "observado": 121963,
+          "esperado": 36624.7,
+          "taxa": 10283.8
+        }
+      ]
+    },
+    {
+      "evento": "dengue",
+      "ano": "2025",
+      "taxa_brasil": 769.94,
+      "municipios_com_populacao": 5571,
+      "elegiveis_tukey": 5157,
+      "tukey_log10": {
+        "q1": 50.46,
+        "mediana": 173.92,
+        "q3": 718.21,
+        "limites_moderado": [
+          0.94,
+          38561.94
+        ],
+        "limites_extremo": [
+          0.02,
+          2070461.08
+        ],
+        "moderado": 0,
+        "extremo": 0
+      },
+      "sobredispersao_phi": 117.4,
+      "funil_998": {
+        "acima": 375,
+        "abaixo": 83
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "São José do Rio Preto (SP)",
+          "codigo": "3549805",
+          "observado": 54468,
+          "esperado": 3881.8,
+          "taxa": 10803.6
+        },
+        {
+          "municipio": "Mogi Guaçu (SP)",
+          "codigo": "3530706",
+          "observado": 25660,
+          "esperado": 1234.3,
+          "taxa": 16005.7
+        },
+        {
+          "municipio": "Presidente Prudente (SP)",
+          "codigo": "3541406",
+          "observado": 30127,
+          "esperado": 1807.1,
+          "taxa": 12836.1
+        },
+        {
+          "municipio": "Porto Alegre (RS)",
+          "codigo": "4314902",
+          "observado": 53519,
+          "esperado": 10692.8,
+          "taxa": 3853.6
+        },
+        {
+          "municipio": "São Carlos (SP)",
+          "codigo": "3548906",
+          "observado": 20466,
+          "esperado": 2051.3,
+          "taxa": 7681.7
+        }
+      ]
+    },
+    {
+      "evento": "internacoes",
+      "ano": "2023",
+      "taxa_brasil": 6507.05,
+      "municipios_com_populacao": 5570,
+      "elegiveis_tukey": 5570,
+      "tukey_log10": {
+        "q1": 5713.97,
+        "mediana": 7011.54,
+        "q3": 8693.57,
+        "limites_moderado": [
+          3044.72,
+          16315.05
+        ],
+        "limites_extremo": [
+          1622.4,
+          30618.13
+        ],
+        "moderado": 91,
+        "extremo": 7
+      },
+      "sobredispersao_phi": 81.4,
+      "funil_998": {
+        "acima": 226,
+        "abaixo": 74
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "Passagem Franca (MA)",
+          "codigo": "2107902",
+          "observado": 5136,
+          "esperado": 1120.5,
+          "taxa": 29825.8
+        },
+        {
+          "municipio": "Indiara (GO)",
+          "codigo": "5209952",
+          "observado": 4679,
+          "esperado": 1110.2,
+          "taxa": 27425.1
+        },
+        {
+          "municipio": "Governador Nunes Freire (MA)",
+          "codigo": "2104677",
+          "observado": 5227,
+          "esperado": 1505.0,
+          "taxa": 22600.3
+        },
+        {
+          "municipio": "Santo Antônio do Tauá (PA)",
+          "codigo": "1507003",
+          "observado": 5691,
+          "esperado": 1786.9,
+          "taxa": 20723.9
+        },
+        {
+          "municipio": "Tauá (CE)",
+          "codigo": "2313302",
+          "observado": 9687,
+          "esperado": 3984.1,
+          "taxa": 15821.5
+        }
+      ]
+    },
+    {
+      "evento": "internacoes",
+      "ano": "2024",
+      "taxa_brasil": 6603.04,
+      "municipios_com_populacao": 5570,
+      "elegiveis_tukey": 5570,
+      "tukey_log10": {
+        "q1": 5886.35,
+        "mediana": 7294.57,
+        "q3": 9140.95,
+        "limites_moderado": [
+          3041.79,
+          17689.21
+        ],
+        "limites_extremo": [
+          1571.85,
+          34231.5
+        ],
+        "moderado": 80,
+        "extremo": 3
+      },
+      "sobredispersao_phi": 96.6,
+      "funil_998": {
+        "acima": 206,
+        "abaixo": 71
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "Passagem Franca (MA)",
+          "codigo": "2107902",
+          "observado": 5503,
+          "esperado": 1161.6,
+          "taxa": 31281.3
+        },
+        {
+          "municipio": "Tauá (CE)",
+          "codigo": "2313302",
+          "observado": 11793,
+          "esperado": 4242.8,
+          "taxa": 18353.4
+        },
+        {
+          "municipio": "São Miguel do Araguaia (GO)",
+          "codigo": "5220207",
+          "observado": 5176,
+          "esperado": 1457.9,
+          "taxa": 23443.1
+        },
+        {
+          "municipio": "Treze de Maio (SC)",
+          "codigo": "4218400",
+          "observado": 2530,
+          "esperado": 500.8,
+          "taxa": 33355.3
+        },
+        {
+          "municipio": "Barueri (SP)",
+          "codigo": "3505708",
+          "observado": 34971,
+          "esperado": 21812.4,
+          "taxa": 10586.4
+        }
+      ]
+    },
+    {
+      "evento": "internacoes",
+      "ano": "2025",
+      "taxa_brasil": 6799.78,
+      "municipios_com_populacao": 5571,
+      "elegiveis_tukey": 5570,
+      "tukey_log10": {
+        "q1": 6018.32,
+        "mediana": 7521.98,
+        "q3": 9511.4,
+        "limites_moderado": [
+          3029.15,
+          18897.23
+        ],
+        "limites_extremo": [
+          1524.64,
+          37544.98
+        ],
+        "moderado": 60,
+        "extremo": 1
+      },
+      "sobredispersao_phi": 105.2,
+      "funil_998": {
+        "acima": 195,
+        "abaixo": 68
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "São Miguel do Araguaia (GO)",
+          "codigo": "5220207",
+          "observado": 6612,
+          "esperado": 1498.7,
+          "taxa": 30000.0
+        },
+        {
+          "municipio": "Tauá (CE)",
+          "codigo": "2313302",
+          "observado": 12105,
+          "esperado": 4396.4,
+          "taxa": 18722.4
+        },
+        {
+          "municipio": "Passagem Franca (MA)",
+          "codigo": "2107902",
+          "observado": 5132,
+          "esperado": 1196.2,
+          "taxa": 29174.0
+        },
+        {
+          "municipio": "Treze de Maio (SC)",
+          "codigo": "4218400",
+          "observado": 2530,
+          "esperado": 519.0,
+          "taxa": 33145.6
+        },
+        {
+          "municipio": "Alexandria (RN)",
+          "codigo": "2400505",
+          "observado": 3681,
+          "esperado": 955.9,
+          "taxa": 26184.4
+        }
+      ]
+    },
+    {
+      "evento": "obitos",
+      "ano": "2023",
+      "taxa_brasil": 720.59,
+      "municipios_com_populacao": 5570,
+      "elegiveis_tukey": 5552,
+      "tukey_log10": {
+        "q1": 633.97,
+        "mediana": 752.62,
+        "q3": 891.07,
+        "limites_moderado": [
+          380.46,
+          1484.79
+        ],
+        "limites_extremo": [
+          228.33,
+          2474.14
+        ],
+        "moderado": 129,
+        "extremo": 11
+      },
+      "sobredispersao_phi": 4.6,
+      "funil_998": {
+        "acima": 112,
+        "abaixo": 179
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "Rio de Janeiro (RJ)",
+          "codigo": "3304557",
+          "observado": 57145,
+          "esperado": 44757.3,
+          "taxa": 920.0
+        },
+        {
+          "municipio": "Recife (PE)",
+          "codigo": "2611606",
+          "observado": 13556,
+          "esperado": 10729.0,
+          "taxa": 910.5
+        },
+        {
+          "municipio": "Porto Alegre (RS)",
+          "codigo": "4314902",
+          "observado": 12158,
+          "esperado": 9604.3,
+          "taxa": 912.2
+        },
+        {
+          "municipio": "Santos (SP)",
+          "codigo": "3548500",
+          "observado": 4291,
+          "esperado": 3016.4,
+          "taxa": 1025.1
+        },
+        {
+          "municipio": "Duque de Caxias (RJ)",
+          "codigo": "3301702",
+          "observado": 7544,
+          "esperado": 5823.5,
+          "taxa": 933.5
+        }
+      ]
+    },
+    {
+      "evento": "obitos",
+      "ano": "2024",
+      "taxa_brasil": 717.41,
+      "municipios_com_populacao": 5570,
+      "elegiveis_tukey": 5554,
+      "tukey_log10": {
+        "q1": 637.8,
+        "mediana": 758.54,
+        "q3": 896.92,
+        "limites_moderado": [
+          382.45,
+          1495.75
+        ],
+        "limites_extremo": [
+          229.34,
+          2494.38
+        ],
+        "moderado": 144,
+        "extremo": 10
+      },
+      "sobredispersao_phi": 5.0,
+      "funil_998": {
+        "acima": 117,
+        "abaixo": 171
+      },
+      "maiores_excessos": [
+        {
+          "municipio": "Rio de Janeiro (RJ)",
+          "codigo": "3304557",
+          "observado": 58243,
+          "esperado": 48280.7,
+          "taxa": 865.4
+        },
+        {
+          "municipio": "Santos (SP)",
+          "codigo": "3548500",
+          "observado": 4725,
+          "esperado": 3081.7,
+          "taxa": 1099.9
+        },
+        {
+          "municipio": "Porto Alegre (RS)",
+          "codigo": "4314902",
+          "observado": 12904,
+          "esperado": 9967.1,
+          "taxa": 928.8
+        },
+        {
+          "municipio": "Recife (PE)",
+          "codigo": "2611606",
+          "observado": 14008,
+          "esperado": 11390.3,
+          "taxa": 882.3
+        },
+        {
+          "municipio": "Pelotas (RS)",
+          "codigo": "4314407",
+          "observado": 3455,
+          "esperado": 2411.4,
+          "taxa": 1027.9
+        }
+      ]
+    }
+  ],
+  "indicadores": [
+    {
+      "id": "area_km2",
+      "nome": "Área territorial",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 437,
+      "limites": [
+        -2260.812,
+        3492.173
+      ],
+      "mediana": 417.69
+    },
+    {
+      "id": "densidade",
+      "nome": "Densidade demográfica",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 430,
+      "limites": [
+        -115.477,
+        180.43
+      ],
+      "mediana": 24.29
+    },
+    {
+      "id": "pct_urbana",
+      "nome": "População em área urbana",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -41.693,
+        181.853
+      ],
+      "mediana": 70.835
+    },
+    {
+      "id": "pct_60mais",
+      "nome": "População com 60 anos ou mais",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 2,
+      "limites": [
+        -3.49,
+        38.09
+      ],
+      "mediana": 17.26
+    },
+    {
+      "id": "pct_0a4",
+      "nome": "População de 0 a 4 anos",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 38,
+      "limites": [
+        1.1,
+        11.6
+      ],
+      "mediana": 6.28
+    },
+    {
+      "id": "agua_rede",
+      "nome": "Domicílios abastecidos principalmente pela rede geral de água",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -18.223,
+        165.843
+      ],
+      "mediana": 75.78
+    },
+    {
+      "id": "agua_sem_rede",
+      "nome": "Domicílios sem ligação à rede geral de água",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -60.665,
+        101.7
+      ],
+      "mediana": 18.33
+    },
+    {
+      "id": "esgoto_rede",
+      "nome": "Domicílios com esgoto ligado à rede geral ou pluvial",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -187.06,
+        258.683
+      ],
+      "mediana": 32.27
+    },
+    {
+      "id": "esgoto_precario",
+      "nome": "Domicílios com esgotamento precário ou sem banheiro",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -152.95,
+        241.815
+      ],
+      "mediana": 40.715
+    },
+    {
+      "id": "sem_banheiro",
+      "nome": "Domicílios sem banheiro nem sanitário",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 516,
+      "limites": [
+        -2.64,
+        3.52
+      ],
+      "mediana": 0.08
+    },
+    {
+      "id": "lixo_coletado",
+      "nome": "Domicílios com lixo coletado",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -7.11,
+        171.25
+      ],
+      "mediana": 85.07
+    },
+    {
+      "id": "lixo_queimado_ou_jogado",
+      "nome": "Domicílios que queimam o lixo ou o jogam em terreno ou área pública",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -68.47,
+        101.42
+      ],
+      "mediana": 13.28
+    },
+    {
+      "id": "alfabetizacao",
+      "nome": "Taxa de alfabetização (15 anos ou mais)",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        44.82,
+        131.655
+      ],
+      "mediana": 90.625
+    },
+    {
+      "id": "renda_media",
+      "nome": "Rendimento domiciliar per capita médio",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 2,
+      "limites": [
+        -1471.513,
+        3764.26
+      ],
+      "mediana": 1182.54
+    },
+    {
+      "id": "renda_mediana",
+      "nome": "Rendimento domiciliar per capita mediano",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -1200.0,
+        3000.0
+      ],
+      "mediana": 900.0
+    },
+    {
+      "id": "moradores_por_domicilio",
+      "nome": "Média de moradores por domicílio",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 100,
+      "limites": [
+        1.757,
+        3.84
+      ],
+      "mediana": 2.78
+    },
+    {
+      "id": "ubs_10mil",
+      "nome": "Unidades básicas e postos de saúde",
+      "com_valor": 5571,
+      "sem_valor": 0,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 65,
+      "limites": [
+        -5.6,
+        14.77
+      ],
+      "mediana": 4.44
+    },
+    {
+      "id": "hospitais_100mil",
+      "nome": "Hospitais e unidades mistas",
+      "com_valor": 5571,
+      "sem_valor": 0,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 93,
+      "limites": [
+        -21.855,
+        29.14
+      ],
+      "mediana": 3.17
+    },
+    {
+      "id": "urgencia_100mil",
+      "nome": "Prontos-socorros e pronto atendimentos",
+      "com_valor": 5571,
+      "sem_valor": 0,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        0.0,
+        0.0
+      ],
+      "mediana": 0.0
+    },
+    {
+      "id": "focos_calor",
+      "nome": "Focos de calor (queimadas) no ano",
+      "com_valor": 5571,
+      "sem_valor": 0,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 496,
+      "limites": [
+        -47.0,
+        65.0
+      ],
+      "mediana": 4.0
+    },
+    {
+      "id": "focos_por_1000km2",
+      "nome": "Focos de calor por 1.000 km²",
+      "com_valor": 5570,
+      "sem_valor": 1,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 173,
+      "limites": [
+        -64.22,
+        88.765
+      ],
+      "mediana": 8.71
+    },
+    {
+      "id": "vab_agropecuaria",
+      "nome": "Participação da agropecuária no valor adicionado",
+      "com_valor": 5569,
+      "sem_valor": 2,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -73.93,
+        118.99
+      ],
+      "mediana": 19.01
+    },
+    {
+      "id": "vab_industria",
+      "nome": "Participação da indústria no valor adicionado",
+      "com_valor": 5569,
+      "sem_valor": 2,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 113,
+      "limites": [
+        -38.86,
+        61.52
+      ],
+      "mediana": 7.07
+    },
+    {
+      "id": "vab_servicos",
+      "nome": "Participação da serviços (exceto setor público) no valor adicionado",
+      "com_valor": 5569,
+      "sem_valor": 2,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -31.45,
+        92.87
+      ],
+      "mediana": 29.22
+    },
+    {
+      "id": "vab_adm_publica",
+      "nome": "Participação da administração, saúde e educação públicas no valor adicionado",
+      "com_valor": 5569,
+      "sem_valor": 2,
+      "fora_da_faixa_valida": 0,
+      "extremos_3iqr": 0,
+      "limites": [
+        -67.81,
+        127.77
+      ],
+      "mediana": 26.77
+    }
+  ],
+  "populacao": {
+    "municipios": 5571,
+    "com_ano_sem_valor": 1,
+    "saltos_2022_2024": 0,
+    "exemplos_saltos": []
+  },
+  "acima_em_todos_os_anos": {
+    "dengue": {
+      "anos": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "municipios": 8,
+      "exemplos": [
+        "Carmo da Mata (MG)",
+        "Nova Serrana (MG)",
+        "Ponte Nova (MG)",
+        "Vitória (ES)",
+        "Ribeirão Preto (SP)",
+        "São José do Rio Preto (SP)",
+        "Cambé (PR)",
+        "Jaguapitã (PR)"
+      ]
+    },
+    "internacoes": {
+      "anos": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "municipios": 111,
+      "exemplos": [
+        "Alta Floresta D'Oeste (RO)",
+        "Vilhena (RO)",
+        "Anamã (AM)",
+        "Augusto Corrêa (PA)",
+        "Brasil Novo (PA)",
+        "Igarapé-Miri (PA)",
+        "Ourilândia do Norte (PA)",
+        "Santo Antônio do Tauá (PA)"
+      ]
+    },
+    "obitos": {
+      "anos": [
+        "2023",
+        "2024"
+      ],
+      "municipios": 70,
+      "exemplos": [
+        "Recife (PE)",
+        "Coaraci (BA)",
+        "Belo Horizonte (MG)",
+        "Cataguases (MG)",
+        "Governador Valadares (MG)",
+        "Juiz de Fora (MG)",
+        "Santos Dumont (MG)",
+        "Araruama (RJ)"
+      ]
+    }
+  },
+  "total_sinalizados": 5746
+}

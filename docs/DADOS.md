@@ -13,6 +13,9 @@ Gerado a partir de `dados/indicadores/dicionario.json` e dos manifestos em `dado
 | Indicadores territoriais | `dados/indicadores/municipios.csv` + `dicionario.json` + `situacoes.json` | território × indicador |
 | Relações doença–fator | `dados/conhecimento/base.json` | tema (intervalos CID) × indicador, com papel, mecanismo, limitações, ações e referências |
 | Metadados | `dados/manifestos/*.json`, `dados/relatorios/*.json` | fonte |
+| Valores atípicos | `dados/relatorios/outliers.csv` e `outliers.json` | tipo × medida × ano × município |
+
+A mesma base é carregada em MySQL/MariaDB pelo `scripts/importar_mysql.py`, com o esquema de `sql/esquema.sql`: tabelas `uf`, `municipio`, `populacao`, `populacao_censo_idade`, `cid_capitulo`, `cid_grupo`, `cid_categoria`, `obito_municipio_cid`, `obito_municipio_perfil`, `obito_uf_cid`, `obito_uf_mes`, `internacao_municipio_capitulo`, `dengue_municipio`, `indicador`, `indicador_valor` (formato longo), `lacuna_dados`, `outlier`, `fonte` e `controle_carga`, e as visões `vw_taxa_obitos_capitulo` e `vw_resumo_municipio`. Valores ausentes não viram linha.
 
 ## Arquivos de eventos
 

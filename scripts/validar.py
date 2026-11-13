@@ -20,7 +20,7 @@ import os
 import re
 import sys
 
-from comum import DADOS, MANIFESTOS, NOME_UF, RELATORIOS, Territorios, gravar_json, hoje, ler_json
+from comum import DADOS, FREQUENCIA_FONTE, FREQUENCIA_PAINEL, MANIFESTOS, NOME_UF, RELATORIOS, Territorios, gravar_json, hoje, ler_json
 
 ORDEM = ["sim_mortalidade", "sih_sus", "sinan_dengue", "ibge_estimativas_populacao", "ibge_censo2022", "ibge_pib_municipios",
          "cnes_estabelecimentos", "inpe_queimadas", "cid10_datasus", "ibge_localidades"]
@@ -157,10 +157,10 @@ def main():
         caminho = os.path.join(MANIFESTOS, f"{ident}.json")
         conferir(os.path.exists(caminho), f"Manifesto ausente: {ident}", falhas)
         if os.path.exists(caminho):
-            manifestos.append(ler_json(caminho))
+            manifestos.append({**ler_json(caminho), "frequencia_fonte": FREQUENCIA_FONTE.get(ident, "não informada")})
     extras = sorted(set(os.path.basename(p)[:-5] for p in glob.glob(os.path.join(MANIFESTOS, "*.json"))) - set(ORDEM) - {"indice"})
     conferir(not extras, f"Manifestos fora do índice: {extras}", falhas)
-    gravar_json(os.path.join(MANIFESTOS, "indice.json"), {"gerado_em": hoje(), "fontes": manifestos}, compacto=False)
+    gravar_json(os.path.join(MANIFESTOS, "indice.json"), {"gerado_em": hoje(), "frequencia_painel": FREQUENCIA_PAINEL, "fontes": manifestos}, compacto=False)
 
     n_mun = len(codigos)
     matriz = []

@@ -281,6 +281,9 @@ async function iniciar(){
     return;
   }
   setStatus("", "success");
+  const at = base.atualizacao;
+  $("atualizacao").innerHTML = `<span class="sr-only">Última atualização dos dados: </span><span aria-hidden="true">Dados de </span>${h(formatarData(at.gerado_em))} <span class="atualizacao-freq">· atualização ${h(at.frequencia)}</span> <a class="atualizacao-link" href="#/fontes">como atualizamos</a>`;
+  $("atualizacao").hidden = false;
   ligarEventos();
   renderizar();
 }

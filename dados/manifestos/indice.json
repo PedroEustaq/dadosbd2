@@ -1,5 +1,6 @@
 {
-  "gerado_em": "2026-11-12",
+  "gerado_em": "2026-11-13",
+  "frequencia_painel": "mensal",
   "fontes": [
     {
       "id": "sim_mortalidade",
@@ -35,7 +36,8 @@
         "dados/relatorios/sim.json"
       ],
       "comando_atualizacao": "python3 scripts/preparar_sim.py --refazer",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "anual, com prévias do ano corrente revisadas ao longo do ano"
     },
     {
       "id": "sih_sus",
@@ -64,7 +66,8 @@
         "dados/saude/sih/indice.json"
       ],
       "comando_atualizacao": "python3 scripts/preparar_tabnet.py --refazer",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "mensal"
     },
     {
       "id": "sinan_dengue",
@@ -93,7 +96,8 @@
         "dados/saude/dengue/indice.json"
       ],
       "comando_atualizacao": "python3 scripts/preparar_tabnet.py --refazer",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "semanal"
     },
     {
       "id": "ibge_estimativas_populacao",
@@ -121,7 +125,8 @@
         "dados/populacao/municipios.csv",
         "dados/populacao/uf.csv"
       ],
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "anual"
     },
     {
       "id": "ibge_censo2022",
@@ -172,7 +177,8 @@
         "dados/populacao/censo2022_idade/*.csv",
         "dados/indicadores/municipios.csv"
       ],
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "decenal"
     },
     {
       "id": "ibge_pib_municipios",
@@ -201,7 +207,8 @@
       "arquivos_gerados": [
         "dados/indicadores/municipios.csv"
       ],
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "anual, com cerca de 2 anos de defasagem"
     },
     {
       "id": "cnes_estabelecimentos",
@@ -229,7 +236,8 @@
         "dados/indicadores/municipios.csv"
       ],
       "comando_atualizacao": "python3 scripts/preparar_cnes_inpe.py --refazer && python3 scripts/montar_indicadores.py",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "mensal"
     },
     {
       "id": "inpe_queimadas",
@@ -256,7 +264,8 @@
         "dados/indicadores/municipios.csv"
       ],
       "comando_atualizacao": "python3 scripts/preparar_cnes_inpe.py --refazer && python3 scripts/montar_indicadores.py",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "diária"
     },
     {
       "id": "cid10_datasus",
@@ -286,7 +295,8 @@
         "dados/relatorios/cid10.json"
       ],
       "comando_atualizacao": "python3 scripts/preparar_cid10.py --refazer",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "eventual (novas edições da OMS)"
     },
     {
       "id": "ibge_localidades",
@@ -315,7 +325,8 @@
         "dados/relatorios/territorios.json"
       ],
       "comando_atualizacao": "python3 scripts/preparar_territorios.py --refazer",
-      "coletado_em": "2026-11-12"
+      "coletado_em": "2026-11-12",
+      "frequencia_fonte": "eventual (criação de municípios)"
     }
   ]
 }

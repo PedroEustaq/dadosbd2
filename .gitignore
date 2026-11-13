@@ -2,3 +2,6 @@
 /dados/brutos/
 /Mortalidade_Geral_2026_csv.zip
 __pycache__/
+
+# Script SQL completo gerado por importar_mysql.py --gerar-sql (passa de 100 MB)
+/saude_territorio.sql

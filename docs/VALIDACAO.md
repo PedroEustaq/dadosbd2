@@ -56,9 +56,30 @@ Municípios homônimos: “Bom Jesus” existe em 2201903 (PI), 2401701 (RN), 25
 - Arquivos legados (`dados/estados/2026`, removidos): 465095 registros; 305 sem resolução por nome + UF (0.07%), todos “Não identificado (código)”. Detalhe em `dados/relatorios/legado_municipios.json`.
 - População: 5101837 sem p2022, p2024.
 
+## Outliers
+
+Gerado por `python3 scripts/detectar_outliers.py`. Valores impossíveis (contagem negativa, população ≤ 0, óbitos ou casos maiores que a população, percentual fora de 0–100): **0**. Casos sinalizados e mantidos: **5746**.
+
+| Evento | Ano | Sobredispersão (phi) | Tukey moderado | Tukey extremo | Funil acima | Funil abaixo |
+| --- | --- | --- | --- | --- | --- | --- |
+| dengue | 2023 | 133.0 | 0 | 0 | 405 | 86 |
+| dengue | 2024 | 456.5 | 0 | 0 | 299 | 78 |
+| dengue | 2025 | 117.4 | 0 | 0 | 375 | 83 |
+| internacoes | 2023 | 81.4 | 91 | 7 | 226 | 74 |
+| internacoes | 2024 | 96.6 | 80 | 3 | 206 | 71 |
+| internacoes | 2025 | 105.2 | 60 | 1 | 195 | 68 |
+| obitos | 2023 | 4.6 | 129 | 11 | 112 | 179 |
+| obitos | 2024 | 5.0 | 144 | 10 | 117 | 171 |
+
+Acima do esperado em todos os anos completos: internações 111 municípios, óbitos 70, dengue 8. Sem a correção de sobredispersão, o funil simples sinalizava milhares de municípios por evento (a variação real entre municípios é muito maior que a de Poisson), por isso ela foi adotada.
+
+## Importação no MySQL / MariaDB
+
+Testada em MariaDB 13.0 com `python3 scripts/importar_mysql.py` nos dois modos (LOAD DATA LOCAL e `--insert`): 19 tabelas, 3.807.915 linhas, contagem de linhas e soma da medida principal de cada tabela iguais às dos arquivos de origem. As consultas de `sql/consultas.sql` reproduzem os exemplos acima (São Paulo, I21, 2024: 6.425 óbitos, 54,01 por 100 mil; Campinas, capítulo IX, 2024: 2.392 óbitos, 201,69 por 100 mil) e não encontram chaves duplicadas. Não testado em MySQL 8 (a sintaxe usada é comum aos dois).
+
 ## Verificado no navegador
 
-As sete áreas foram abertas em um servidor local sem erros no console; conferidos: análise municipal com óbitos, internações e dengue, recorte por sexo e idade, combinação indisponível, mapa por estado e por município, ficha de categoria e de subcategoria, comparação, associação exploratória, busca por teclado e largura de 375 px sem rolagem horizontal.
+As quatro áreas (Explorar, Doenças, Comparar, Fontes) foram abertas em um servidor local, em 1440, 768 e 390 px, sem erros no console; conferidos: análise municipal com óbitos, internações e dengue, recorte por sexo e idade, combinação indisponível, mapa por estado e por município, ficha de categoria e de subcategoria, comparação, associação exploratória, busca por teclado e largura de 375 px sem rolagem horizontal.
 
 ## Não verificado
 

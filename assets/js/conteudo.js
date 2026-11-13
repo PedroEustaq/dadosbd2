@@ -506,12 +506,18 @@ const FORMULAS = [
 
 async function renderFontes(el, token){
   el.innerHTML = carregandoHtml("Carregando os manifestos das fontes...");
-  let manifestos, cobertura;
-  try{ [manifestos, cobertura] = await Promise.all([fetchJSON(PATHS.manifestos), fetchJSON(PATHS.cobertura)]); }
+  let manifestos, cobertura, outliers;
+  try{ [manifestos, cobertura, outliers] = await Promise.all([fetchJSON(PATHS.manifestos), fetchJSON(PATHS.cobertura), fetchJSON(PATHS.outliers)]); }
   catch(erro){ el.innerHTML = erroHtml(erro); return; }
   if(token !== renderToken) return;
   const lista = v => Array.isArray(v) ? v : [v];
-  const secoes = [["f-calculos", "Como os números são calculados"], ["f-regras", "Regras gerais"], ["f-cobertura", "Cobertura dos dados"], ["f-fontes", "Fontes de dados"], ["f-refs", "Referências de conteúdo"]];
+  const secoes = [["f-sobre", "Sobre o painel"], ["f-atualizacao", "Atualização"], ["f-calculos", "Como os números são calculados"], ["f-regras", "Regras gerais"],
+    ["f-tratamento", "Tratamento dos dados"], ["f-cobertura", "Cobertura dos dados"], ["f-fontes", "Fontes de dados"], ["f-refs", "Referências de conteúdo"]];
+  const persist = outliers.acima_em_todos_os_anos || {};
+  const taxaOut = (ev, ano) => outliers.taxas.find(t => t.evento === ev && t.ano === ano);
+  const ultimoAno = ev => outliers.taxas.filter(t => t.evento === ev).map(t => t.ano).sort().pop();
+  const obUlt = taxaOut("obitos", ultimoAno("obitos"));
+  const somaInv = Object.values(outliers.invalidos || {}).reduce((s, v) => s + v, 0);
   el.innerHTML = `
     <div class="pag-topo"><div>
       <h1 class="pag-titulo">Fontes e metodologia</h1>
@@ -524,6 +530,30 @@ async function renderFontes(el, token){
       { rotulo:"Municípios", valor: fmtNum.format(base.municipios.length), nota:"código IBGE de 7 dígitos" }
     ])}
     <nav class="indice" aria-label="Nesta página">${secoes.map(([id, t]) => `<a href="#${id}" data-ancora="${id}">${h(t)}</a>`).join("")}</nav>
+
+    <section id="f-sobre" class="bloco" tabindex="-1">
+      <h2>Sobre o painel</h2>
+      <dl class="def">
+        <dt>Para quem</dt><dd>Gestores e técnicos de secretarias municipais de saúde, conselheiros de saúde e jornalistas. A leitura inicial é para decisão rápida; os detalhes ficam abertos para quem precisa verificar.</dd>
+        <dt>Pergunta central</dt><dd>O meu município tem mais óbitos, internações ou casos de uma doença do que o esperado para a população — e quais fatores do território vale investigar?</dd>
+        <dt>Decisão que apoia</dt><dd>Onde priorizar investigação da vigilância, auditoria de registros e ações de prevenção. Cada resultado traz “O que fazer”: acima do esperado → confirmar na evolução, investigar fatores e acionar a vigilância; abaixo → checar sub-registro antes de comemorar; sem diferença → acompanhar.</dd>
+      </dl>
+      <h3>Problema encontrado nos dados</h3>
+      <p>Os dados de saúde estão dispersos em sistemas diferentes (SIM, SIH, SINAN, IBGE) e, em contagens absolutas, os municípios grandes sempre parecem piores. Comparando taxas com o esperado para a população, a análise mostrou que:</p>
+      <ul>
+        ${persist.internacoes ? `<li><strong>${fmtNum.format(persist.internacoes.municipios)} municípios</strong> ficaram acima do esperado em internações no SUS em todos os anos completos (${h(persist.internacoes.anos.join(", "))}), mesmo descontada a variação natural entre municípios. Excesso persistente pede verificação: pode ser carga real de doença, falta de atenção básica que evitaria internações ou padrão de registro a auditar.</li>` : ""}
+        ${persist.obitos ? `<li><strong>${fmtNum.format(persist.obitos.municipios)} municípios</strong> ficaram acima do esperado em óbitos por todas as causas em ${h(persist.obitos.anos.join(" e "))} (comparação sem ajuste por idade; a análise municipal mostra a versão ajustada).</li>` : ""}
+        ${obUlt ? `<li>Em ${h(obUlt.ano)}, ${fmtNum.format(obUlt.funil_998.acima)} municípios tiveram mortalidade geral acima e ${fmtNum.format(obUlt.funil_998.abaixo)} abaixo do limite de 99,8% — os “abaixo” incluem possíveis casos de sub-registro.</li>` : ""}
+      </ul>
+      <p>O painel é o MVP de uma ferramenta para transformar essa leitura em rotina: cada secretaria encontra o seu município, vê se está fora do esperado e recebe as pistas e ações relacionadas.</p>
+    </section>
+
+    <section id="f-atualizacao" class="bloco" tabindex="-1">
+      <h2>Atualização</h2>
+      <p><strong>Última atualização dos dados: ${h(formatarData(cobertura.gerado_em))}.</strong> Frequência do painel: <strong>${h(manifestos.frequencia_painel || "mensal")}</strong>, rodando <code>python3 scripts/atualizar_tudo.py</code>, que baixa as fontes, trata, valida e só publica se todas as verificações passarem. Anos ainda em andamento aparecem como “parcial” e não são comparados com anos completos.</p>
+      ${tabelaHtml([{ t:"Fonte" }, { t:"Frequência de publicação da fonte" }, { t:"Coletado em" }],
+        manifestos.fontes.map(m => [h(m.titulo), h(m.frequencia_fonte || "—"), h(formatarData(m.coletado_em))]), { legenda:"Frequência de cada fonte oficial" })}
+    </section>
 
     <section id="f-calculos" class="bloco" tabindex="-1">
       <h2>Como os números são calculados</h2>
@@ -541,6 +571,27 @@ async function renderFontes(el, token){
       </ul>
       ${mais("Códigos municipais e privacidade", `<p>Códigos municipais: IBGE de 7 dígitos; fontes com 6 dígitos são convertidas pela tabela oficial. Fontes só com nome são resolvidas por nome exato e UF, sem aproximação.</p>
         <p><strong>Privacidade:</strong> o painel publica apenas contagens agregadas. O detalhe por sexo e idade existe só no nível de capítulo; categorias aparecem apenas como total do município, como no tabulador público do Ministério da Saúde. Não foi adotado um limiar único de supressão: as contagens pequenas vêm de bases já públicas e são acompanhadas de aviso de instabilidade.</p>`)}
+    </section>
+
+    <section id="f-tratamento" class="bloco" tabindex="-1">
+      <h2>Tratamento dos dados</h2>
+      <p>A base publicada é gerada pelos scripts a partir dos arquivos oficiais e carregada também em MySQL/MariaDB (<code>scripts/importar_mysql.py</code>, esquema em <code>sql/esquema.sql</code>).</p>
+      ${kpisHtml([
+        { rotulo:"Valores impossíveis", tom: somaInv ? "acima" : "principal", valor: fmtNum.format(somaInv), nota:"negativos, população ≤ 0, mais casos que habitantes" },
+        { rotulo:"Linhas duplicadas", valor:"0", nota:"chaves únicas conferidas em todos os arquivos" },
+        { rotulo:"Atípicos sinalizados", valor: fmtNum.format(outliers.total_sinalizados), nota:"mantidos na base, listados para revisão" },
+        { rotulo:"Municípios sem população", valor: fmtNum.format(outliers.populacao?.com_ano_sem_valor ?? 0), nota:"em algum ano; taxa não calculada" }
+      ])}
+      ${mais("Dados ausentes ou faltantes", `<p>Nada é preenchido com zero, média ou valor de outro lugar. Combinação sem registro significa nenhum evento no arquivo publicado (e o painel avisa que isso não prova ausência da doença). População ou indicador sem valor publicado ficam como “indisponível”, com o motivo; no MySQL, não geram linha. Óbitos com município ignorado entram só no total da UF.</p>`)}
+      ${mais("Duplicidades", `<p>Cada arquivo tem uma chave (ano, município, causa…). A validação falha se a mesma chave aparecer duas vezes, e no MySQL as chaves primárias compostas impedem a repetição. Os totais por município, capítulo e UF são conferidos com o total de cada fonte, e os óbitos de 2023 bateram célula a célula com o TabNet (68.133 de 68.133).</p>`)}
+      ${mais("Outliers (valores atípicos)", `
+        <p><strong>Regra:</strong> taxas por município comparadas por dois métodos — Tukey sobre o logaritmo da taxa (só onde se esperam ao menos 10 eventos) e gráfico de funil de Poisson com limite de 99,8%, alargado pela variação natural entre municípios (sobredispersão). Indicadores do território: Tukey com 3 intervalos interquartis.</p>
+        <p><strong>Decisão:</strong> valores impossíveis seriam removidos (não há nenhum). Os atípicos são registros oficiais plausíveis e foram <strong>mantidos e sinalizados</strong>; a interface já protege a leitura com intervalo de 95%, aviso com menos de 10 eventos, mapa em cinza com menos de ${MIN_EVENTOS_MAPA} e listas que excluem taxas instáveis.</p>
+        ${tabelaHtml([{ t:"Evento" }, { t:"Ano" }, { t:"Tukey moderado", num:true }, { t:"Tukey extremo", num:true }, { t:"Funil: acima", num:true }, { t:"Funil: abaixo", num:true }],
+          outliers.taxas.map(t => [h(EVENTOS[t.evento]?.rotulo || t.evento), h(t.ano), fmtNum.format(t.tukey_log10.moderado), fmtNum.format(t.tukey_log10.extremo), fmtNum.format(t.funil_998.acima), fmtNum.format(t.funil_998.abaixo)]),
+          { legenda:"Municípios sinalizados por evento e ano (todas as causas, anos completos)" })}
+        <p>Lista completa: <a href="dados/relatorios/outliers.csv" download>outliers.csv</a> · resumo: <a href="dados/relatorios/outliers.json" target="_blank" rel="noopener">outliers.json</a>.</p>`)}
+      ${mais("Base em MySQL", `<p>19 tabelas (território, população, CID-10, óbitos, internações, dengue, indicadores, lacunas, outliers, fontes e controle de carga) e duas visões com as regras de negócio (taxa por 100 mil com a população do mesmo ano). A importação confere linhas e somas de cada tabela com os arquivos de origem. Consultas de exemplo em <code>sql/consultas.sql</code>.</p>`)}
     </section>
 
     <section id="f-cobertura" class="bloco" tabindex="-1">

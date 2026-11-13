@@ -6,7 +6,7 @@
 
 /* Mude a versão ao publicar dados novos: ela entra na URL dos arquivos
    e impede que o navegador misture atualizações diferentes em cache. */
-const DATA_VERSION = "2026-11-12";
+const DATA_VERSION = "2026-11-13";
 
 const PATHS = {
   estados: "dados/geo/estados.geojson",
@@ -33,7 +33,8 @@ const PATHS = {
   situacoes: "dados/indicadores/situacoes.json",
   conhecimento: "dados/conhecimento/base.json",
   manifestos: "dados/manifestos/indice.json",
-  cobertura: "dados/relatorios/cobertura.json"
+  cobertura: "dados/relatorios/cobertura.json",
+  outliers: "dados/relatorios/outliers.json"
 };
 
 const UF_BY_IBGE_PREFIX = {

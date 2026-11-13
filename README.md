@@ -31,6 +31,32 @@ A navegação é organizada por tarefa, em quatro entradas:
 
 A consulta ativa aparece numa linha compacta; o formulário abre só quando a pessoa pede (no celular, como folha inferior). A seleção (município, causa, evento, período, sexo, idade, aba) fica no endereço da página, que pode ser compartilhado.
 
+## Público, pergunta e decisão
+
+- **Para quem:** gestores e técnicos de secretarias municipais de saúde, conselheiros de saúde e jornalistas.
+- **Pergunta central:** o meu município tem mais óbitos, internações ou casos de uma doença do que o esperado para a população, e quais fatores do território vale investigar?
+- **Ação:** cada resultado traz “O que fazer”. Acima do esperado: confirmar na evolução, investigar fatores e acionar a vigilância. Abaixo: checar sub-registro antes de concluir. Sem diferença: acompanhar.
+- **Atualização:** a data dos dados aparece no topo de todas as telas. Meta de atualização mensal com `scripts/atualizar_tudo.py`; a frequência de cada fonte está na página Fontes.
+
+## Tratamento dos dados e MySQL
+
+| Etapa | Como é feito | Onde |
+| --- | --- | --- |
+| Ausentes | nada é preenchido com zero ou média; combinação sem registro = nenhum evento; população ou indicador sem valor = “indisponível”, com motivo | `scripts/preparar_*.py`, `dados/indicadores/situacoes.json` |
+| Duplicidades | chave única por arquivo conferida; totais fechados com cada fonte; chaves primárias no MySQL | `scripts/validar.py`, `sql/esquema.sql` |
+| Outliers | valores impossíveis removidos (nenhum encontrado); taxas atípicas por Tukey (log) e funil de Poisson 99,8% com sobredispersão; indicadores por Tukey 3·IQR; atípicos mantidos e sinalizados | `scripts/detectar_outliers.py`, `dados/relatorios/outliers.json` e `.csv` |
+| Nova base | arquivos agregados em `dados/`, gerados e validados por `scripts/atualizar_tudo.py` | `dados/` |
+| MySQL / MariaDB | 19 tabelas + 2 visões; carga com LOAD DATA (ou INSERT) e conferência de linhas e somas | `scripts/importar_mysql.py`, `sql/` |
+
+Importar no MySQL ou MariaDB (o usuário precisa poder criar o banco `saude_territorio`):
+
+```sh
+python3 scripts/importar_mysql.py -- -u SEU_USUARIO -p
+mysql -u SEU_USUARIO -p saude_territorio < sql/consultas.sql
+```
+
+Se o servidor recusar `LOAD DATA LOCAL INFILE`, use `--insert`. Para levar a base a outra máquina sem conexão direta, `python3 scripts/importar_mysql.py --gerar-sql saude_territorio.sql` grava um script completo (esquema + dados) para importar no MySQL Workbench.
+
 ## Executar localmente
 
 ```sh
@@ -41,7 +67,7 @@ Depois acesse <http://localhost:8000>. Abrir `index.html` direto do disco não f
 
 ## Publicar no GitHub Pages
 
-Publique a raiz do repositório pelo branch `main`. O site usa `index.html`, `assets/` e `dados/` (exceto `dados/brutos/`, que não é versionada). O arquivo `.nojekyll` já está na raiz. A única dependência externa em tempo de execução é o Leaflet, carregado por CDN.
+Publique a raiz do repositório pelo branch `main`; cada push atualiza o mesmo endereço em um ou dois minutos. Ao publicar dados novos, mude `DATA_VERSION` em `assets/js/config.js` e o sufixo `?v=` em `index.html` para que os navegadores não usem arquivos antigos do cache. O site usa `index.html`, `assets/` e `dados/` (exceto `dados/brutos/`, que não é versionada). O arquivo `.nojekyll` já está na raiz. A única dependência externa em tempo de execução é o Leaflet, carregado por CDN.
 
 ## Estrutura
 
@@ -62,7 +88,9 @@ dados/populacao/              denominadores
 dados/indicadores/            tabela municipal, dicionário e situações de ausência
 dados/conhecimento/base.json  relações doença–fator, ações e referências
 dados/manifestos/             um manifesto por fonte e o índice usado pelo site
-dados/relatorios/             validação, cobertura e pendências de junção
+dados/relatorios/             validação, cobertura, outliers e pendências de junção
+sql/esquema.sql               tabelas, chaves e visões do MySQL/MariaDB
+sql/consultas.sql             conferência da carga e consultas de análise
 dados/geo/                    malhas do mapa
 dados/brutos/                 downloads das fontes (não versionados)
 scripts/                      preparação e validação (Python 3, só biblioteca padrão)

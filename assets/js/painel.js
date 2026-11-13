@@ -206,7 +206,8 @@ async function renderInicio(el){
   el.innerHTML = `
     <div class="entrada">
       <h1>Como está a saúde no seu município?</h1>
-      <p class="entrada-sub">Veja o que os dados públicos registram sobre doenças, compare com outros lugares e investigue fatores do território.</p>
+      <p class="entrada-sub">Descubra se o seu município tem mais óbitos, internações ou casos de uma doença do que o esperado para a população — e quais fatores do território investigar.</p>
+      <p class="entrada-publico"><strong>Para quem:</strong> gestores e técnicos de secretarias municipais de saúde, conselheiros de saúde e jornalistas.</p>
       <div class="entrada-busca">
         <div class="segmentos" role="group" aria-label="Começar por">
           ${Object.entries(modos).map(([id, m]) => `<button type="button" data-modo="${id}" aria-pressed="${id === modoEntrada}">${m.rotulo}</button>`).join("")}
@@ -340,7 +341,7 @@ async function renderRankingMapa(token = renderToken){
       <section class="bloco"><h2>Maiores taxas — ${onde}</h2>${lista(estaveis.slice(0, n))}</section>
       <section class="bloco"><h2>Menores taxas — ${onde}</h2>${lista(estaveis.slice(-n).reverse())}</section>
     </div>
-    <p class="apoio">Taxas por 100 mil habitantes, na mesma escala dentro de cada lista.${fora ? ` ${fora} ${foco ? "municípios" : "estados"} com poucos eventos ou sem dado ficaram fora (taxa instável).` : ""} A lista completa está em “Ver como tabela”.</p>`;
+    <p class="apoio"><strong>O que fazer:</strong> os locais com maiores taxas são candidatos a investigação — abra a análise para ver se a diferença vai além do acaso e considera a idade da população. Taxas por 100 mil habitantes, na mesma escala dentro de cada lista.${fora ? ` ${fora} ${foco ? "municípios" : "estados"} com poucos eventos ou sem dado ficaram fora (taxa instável).` : ""} A lista completa está em “Ver como tabela”.</p>`;
   el.querySelectorAll("[data-foco]").forEach(b => b.addEventListener("click", () => setMapView(b.dataset.foco)));
 }
 
@@ -497,7 +498,8 @@ function resultadoHtml(a, comp){
       : `${h(fraseComparacao(c, ev))}. ${ajusteValido ? "O ajuste por idade e sexo mantém essa leitura." : "Sem ajuste por idade: lugares com mais idosos tendem a ter taxas maiores."}`;
     manchete = `<div class="manchete manchete-${principal.classe}">
       <span class="manchete-icone" aria-hidden="true">${{ acima:"▲", abaixo:"▼", compativel:"●" }[principal.classe]}</span>
-      <div><p class="manchete-titulo">${h(titulo)}</p><p class="manchete-nota">${nota}</p></div></div>`;
+      <div><p class="manchete-titulo">${h(titulo)}</p><p class="manchete-nota">${nota}</p>
+      ${oQueFazerHtml(principal.classe, c.poucos, a.evento)}</div></div>`;
   }else{
     manchete = `<div class="manchete manchete-neutro"><span class="manchete-icone" aria-hidden="true">–</span>
       <div><p class="manchete-titulo">Sem base para comparar</p><p class="manchete-nota">${semPop ? "Falta a população do período para calcular a taxa." : "Não há taxa de referência compatível para este recorte."}</p></div></div>`;
@@ -524,6 +526,20 @@ function resultadoHtml(a, comp){
     ${kpis}
     ${atencaoHtml(atencao)}
   </section>`;
+}
+
+/* Ação ligada ao resultado: o que fazer ao ver "acima", "abaixo" ou "sem diferença". */
+function oQueFazerHtml(classe, poucos, evento){
+  const fatores = `<a href="${h(linkPara({ rota:"fatores" }))}">fatores do território e melhorias</a>`;
+  const evolucao = `<a href="${h(linkPara({ rota:"municipio", visao:"evolucao" }))}">evolução</a>`;
+  let texto;
+  if(poucos) texto = `poucos registros: antes de agir, veja a ${evolucao} de vários anos ou um grupo de causas mais amplo.`;
+  else if(classe === "acima") texto = `confirme na ${evolucao} se o excesso se repete, veja os ${fatores} e leve o resultado à vigilância em saúde do município para investigar a causa.`;
+  else if(classe === "abaixo") texto = evento === "obitos"
+    ? `antes de concluir que está melhor, verifique sub-registro (óbitos por causas mal definidas, envio atrasado) e compare com municípios parecidos.`
+    : `antes de concluir que está melhor, verifique se há subnotificação ou atendimento fora do SUS e compare com municípios parecidos.`;
+  else texto = `não há sinal para priorizar com este indicador isolado; acompanhe a ${evolucao} e compare com outras doenças.`;
+  return `<p class="manchete-acao"><strong>O que fazer:</strong> ${texto}</p>`;
 }
 
 /* MEIO do painel: tendência ao longo dos anos, município × estado × Brasil. */

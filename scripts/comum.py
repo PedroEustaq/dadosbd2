@@ -36,6 +36,22 @@ NOME_UF = {
     "SP": "São Paulo", "SE": "Sergipe", "TO": "Tocantins",
 }
 
+# Com que frequência cada fonte oficial publica dados novos (o painel é atualizado
+# manualmente por scripts/atualizar_tudo.py; a meta é uma atualização por mês).
+FREQUENCIA_FONTE = {
+    "sim_mortalidade": "anual, com prévias do ano corrente revisadas ao longo do ano",
+    "sih_sus": "mensal",
+    "sinan_dengue": "semanal",
+    "ibge_estimativas_populacao": "anual",
+    "ibge_censo2022": "decenal",
+    "ibge_pib_municipios": "anual, com cerca de 2 anos de defasagem",
+    "cnes_estabelecimentos": "mensal",
+    "inpe_queimadas": "diária",
+    "cid10_datasus": "eventual (novas edições da OMS)",
+    "ibge_localidades": "eventual (criação de municípios)",
+}
+FREQUENCIA_PAINEL = "mensal"
+
 AGENTE = "painel-saude-territorial/1.0 (script de preparacao de dados publicos)"
 
 

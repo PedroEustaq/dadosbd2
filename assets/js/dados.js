@@ -17,15 +17,18 @@ const base = {
   dicionario: null,
   indPorId: new Map(),
   conhecimento: null,
+  atualizacao: null,           // {gerado_em, frequencia_painel}: mostrado no topo de todas as telas
   situacoes: {}                // indicador → {município: motivo da ausência}
 };
 
 async function carregarBase(){
-  const [mun, cid, pop, popUF, sim, sih, dengue, ind, dic, conhecimento, situacoes] = await Promise.all([
+  const [mun, cid, pop, popUF, sim, sih, dengue, ind, dic, conhecimento, situacoes, cobertura, manifestos] = await Promise.all([
     fetchJSON(PATHS.municipios), fetchJSON(PATHS.cid), fetchCSV(PATHS.populacao), fetchCSV(PATHS.populacaoUF),
     fetchJSON(PATHS.simIndice), fetchJSON(PATHS.sihIndice), fetchJSON(PATHS.dengueIndice),
-    fetchCSV(PATHS.indicadores), fetchJSON(PATHS.dicionario), fetchJSON(PATHS.conhecimento), fetchJSON(PATHS.situacoes)
+    fetchCSV(PATHS.indicadores), fetchJSON(PATHS.dicionario), fetchJSON(PATHS.conhecimento), fetchJSON(PATHS.situacoes),
+    fetchJSON(PATHS.cobertura), fetchJSON(PATHS.manifestos)
   ]);
+  base.atualizacao = { gerado_em: cobertura.gerado_em, frequencia: manifestos.frequencia_painel || "mensal" };
   base.situacoes = situacoes;
   base.municipios = mun.municipios.map(m => ({ ...m, busca: normText(m.n) }));
   base.municipios.forEach(m => base.munPorCodigo.set(m.c, m));
