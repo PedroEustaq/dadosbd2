@@ -99,11 +99,11 @@ const MUNICIPALITY_MIN_ZOOM = 6;
    Escala fixa (não muda com o zoom nem com os estados carregados), divergente e
    segura para daltonismo (azul–laranja). Cada classe também tem rótulo em texto. */
 const MAP_CLASSES = [
-  { max: 0.5, cor: "#2c6fb0", rotulo: "menos da metade da taxa do Brasil" },
-  { max: 0.8, cor: "#8ab8dc", rotulo: "20% a 50% abaixo" },
-  { max: 1.25, cor: "#e9e6df", rotulo: "próxima da taxa do Brasil (−20% a +25%)" },
-  { max: 2, cor: "#f0a868", rotulo: "25% a 100% acima" },
-  { max: Infinity, cor: "#c8501e", rotulo: "mais que o dobro da taxa do Brasil" }
+  { max: 0.5, cor: "#2c6fb0", curto: "menos da metade", rotulo: "menos da metade da taxa do Brasil" },
+  { max: 0.8, cor: "#8ab8dc", curto: "abaixo", rotulo: "20% a 50% abaixo" },
+  { max: 1.25, cor: "#e9e6df", curto: "próxima", rotulo: "próxima da taxa do Brasil (−20% a +25%)" },
+  { max: 2, cor: "#f0a868", curto: "acima", rotulo: "25% a 100% acima" },
+  { max: Infinity, cor: "#c8501e", curto: "mais que o dobro", rotulo: "mais que o dobro da taxa do Brasil" }
 ];
 const MAP_COLORS = {
   empty: "#f7f7f5",       // sem dado (população ou evento indisponível)
@@ -119,6 +119,7 @@ const MIN_EVENTOS_MAPA = 5;
 /* Seleção atual (sincronizada com a URL). */
 const sel = {
   rota: "inicio",
+  visao: "",        // aba da análise municipal: "" (panorama) | "evolucao" | "causas"
   mun: "",          // código IBGE de 7 dígitos
   causa: "todas",   // "todas" | "cap:9" | "g:I20-I25" | "c:I21"
   evento: "obitos",

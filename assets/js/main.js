@@ -1,22 +1,26 @@
 /* ============================================================
-   Inicialização, navegação por endereço (hash) e barra de seleção
+   Inicialização, navegação por endereço (hash) e consulta ativa
    ------------------------------------------------------------
    A seleção inteira fica no endereço da página:
      #/municipio?m=3509502&c=g:I20-I25&e=obitos&a=2024
    Assim o link pode ser compartilhado e o botão "voltar" funciona.
+
+   Navegação por tarefas: Explorar (entrada, análise municipal, fatores e
+   mapa), Doenças, Comparar e, como destino secundário, Fontes.
    ============================================================ */
 let renderToken = 0;   // cada renderização recebe um número; respostas antigas são descartadas
 let rotaAnterior = "";
 
 const ROTAS = {
-  inicio: { titulo:"Visão geral", render: (...a) => renderInicio(...a) },
-  mapa: { titulo:"Explorar o mapa", render: (...a) => renderMapa(...a) },
-  municipio: { titulo:"Meu município", render: (...a) => renderMunicipio(...a) },
-  doencas: { titulo:"Doenças e CID", render: (...a) => renderDoencas(...a) },
-  comparar: { titulo:"Comparar locais", render: (...a) => renderComparar(...a) },
-  fatores: { titulo:"Fatores e melhorias", render: (...a) => renderFatores(...a) },
-  fontes: { titulo:"Fontes e metodologia", render: (...a) => renderFontes(...a) }
+  inicio: { titulo:"Explorar", grupo:"explorar", render: (...a) => renderInicio(...a) },
+  mapa: { titulo:"Mapa", grupo:"explorar", consulta:["causa", "evento", "ano"], render: (...a) => renderMapa(...a) },
+  municipio: { titulo:"Análise municipal", grupo:"explorar", consulta:["mun", "causa", "evento", "ano", "sexo", "idade"], render: (...a) => renderMunicipio(...a) },
+  fatores: { titulo:"Fatores e melhorias", grupo:"explorar", consulta:["mun", "causa", "evento", "ano"], render: (...a) => renderFatores(...a) },
+  doencas: { titulo:"Doenças e CID", grupo:"doencas", render: (...a) => renderDoencas(...a) },
+  comparar: { titulo:"Comparar locais", grupo:"comparar", consulta:["causa", "evento", "ano", "sexo", "idade"], render: (...a) => renderComparar(...a) },
+  fontes: { titulo:"Fontes e metodologia", grupo:"fontes", render: (...a) => renderFontes(...a) }
 };
+const VISOES = ["", "evolucao", "causas"];
 
 function anoPadrao(evento){
   const anos = anosDe(evento);
@@ -35,6 +39,7 @@ function hashDe(s){
   if(s.idade) p.set("i", s.idade);
   if(s.comparar?.length) p.set("cmp", s.comparar.join(","));
   if(s.cid && s.rota === "doencas") p.set("cid", s.cid);
+  if(s.visao && s.rota === "municipio") p.set("v", s.visao);
   const q = p.toString();
   return `#/${s.rota}${q ? `?${q}` : ""}`;
 }
@@ -42,6 +47,7 @@ function hashDe(s){
 function linkPara(patch){
   const novo = { ...sel, ...patch };
   if(patch.evento && patch.evento !== sel.evento && !patch.ano && !anosDe(patch.evento).includes(novo.ano)) novo.ano = anoPadrao(patch.evento);
+  if(patch.rota && patch.rota !== sel.rota && patch.visao === undefined) novo.visao = "";
   return hashDe(novo);
 }
 
@@ -63,6 +69,7 @@ function lerHash(){
   sel.idade = GRUPOS_IDADE[p.get("i")] ? p.get("i") : "";
   sel.comparar = (p.get("cmp") || "").split(",").filter(l => UF_NAMES[l] || base.munPorCodigo.has(l)).slice(0, 6);
   sel.cid = p.get("cid") || "";
+  sel.visao = VISOES.includes(p.get("v")) ? p.get("v") : "";
 }
 
 /* ---------- Renderização ---------- */
@@ -72,20 +79,29 @@ async function renderizar(){
   const token = ++renderToken;
   const rota = ROTAS[sel.rota];
   document.title = `${rota.titulo} — Saúde no Território`;
+  document.body.dataset.rota = sel.rota;
   document.querySelectorAll(".view").forEach(v => { v.hidden = v.id !== `view-${sel.rota}`; });
+
+  // A navegação leva a seleção junto: trocar de área não apaga a consulta.
+  const destinos = {
+    explorar: linkPara({ rota: sel.mun ? "municipio" : "inicio" }),
+    doencas: linkPara({ rota:"doencas", cid:"" }),
+    comparar: linkPara({ rota:"comparar" }),
+    fontes: linkPara({ rota:"fontes" })
+  };
   document.querySelectorAll("#nav a").forEach(a => {
-    if(a.dataset.rota === sel.rota) a.setAttribute("aria-current", "page");
+    a.href = destinos[a.dataset.grupo];
+    if(a.dataset.grupo === rota.grupo) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
-  $("selbar").hidden = sel.rota === "fontes";
-  atualizarBarra();
+  document.querySelector(".marca").href = linkPara({ rota:"inicio" });
+  atualizarConsulta();
+
   const el = $(`view-${sel.rota}`);
-  const mudouRota = rotaAnterior !== sel.rota;
-  if(window.matchMedia("(max-width: 760px)").matches && document.activeElement?.closest?.("#selDet") == null) $("selDet").open = false;
-  if(mudouRota){
+  if(rotaAnterior !== sel.rota){
+    fecharConsulta(false);
     if(rotaAnterior){ window.scrollTo(0, 0); $("conteudo").focus({ preventScroll:true }); }
     rotaAnterior = sel.rota;
-    fecharMenu();
   }
   try{
     await rota.render(el, token);
@@ -95,33 +111,72 @@ async function renderizar(){
   }
 }
 
-/* ---------- Barra de seleção ---------- */
-function atualizarBarra(){
+/* ---------- Consulta ativa (linha compacta + painel de edição) ---------- */
+const ROTULO_CAMPO = { mun:"Município", causa:"Doença ou grupo", evento:"Evento", ano:"Período", recorte:"Recorte" };
+
+function atualizarConsulta(){
+  const rota = ROTAS[sel.rota];
+  const campos = rota.consulta;
+  $("consulta").hidden = !campos;
+  if(!campos) return;
   const causa = lerCausa(sel.causa);
-  const ev = EVENTOS[sel.evento];
+  const info = infoAno(sel.evento, sel.ano);
+  const valores = {
+    mun: sel.mun ? nomeLocal(sel.mun) : "Escolher município",
+    causa: sel.evento === "dengue" ? "Dengue" : (causa.tipo === "todas" ? "Todas as causas" : causa.curto),
+    evento: EVENTOS[sel.evento].rotulo,
+    ano: `${sel.ano}${info && !info.ano_completo ? " (parcial)" : ""}`
+  };
+  const recorte = [sel.sexo === "F" ? "Feminino" : sel.sexo === "M" ? "Masculino" : "", sel.idade ? GRUPOS_IDADE[sel.idade].rotulo : ""].filter(Boolean).join(", ");
+  const itens = campos.filter(c => valores[c]).map(c => [c, valores[c]]);
+  if(recorte && campos.includes("sexo")) itens.push(["recorte", recorte]);
+  $("consultaResumo").innerHTML = itens.map(([campo, valor]) =>
+    `<button class="seg${campo === "mun" && !sel.mun ? " seg-vazio" : ""}" type="button" data-abrir="${campo === "recorte" ? "sexo" : campo}" aria-haspopup="dialog" aria-expanded="false" title="Alterar ${h(ROTULO_CAMPO[campo].toLowerCase())}">
+      <span class="seg-rot">${h(ROTULO_CAMPO[campo])}</span><span class="seg-val">${h(valor)}</span></button>`).join("") +
+    `<button class="seg seg-editar" type="button" data-abrir="${campos[0]}" aria-haspopup="dialog" aria-expanded="false">Alterar</button>`;
+
+  // Alternância entre análise e mapa (mesma consulta, duas formas de ver)
+  const sw = $("visaoSwitch");
+  sw.hidden = rota.grupo !== "explorar";
+  if(!sw.hidden){
+    const noMapa = sel.rota === "mapa";
+    sw.innerHTML = `<a href="${h(linkPara({ rota:"municipio" }))}"${noMapa ? "" : ' aria-current="true"'}>Análise</a><a href="${h(linkPara({ rota:"mapa" }))}"${noMapa ? ' aria-current="true"' : ""}>Mapa</a>`;
+  }
+
+  // Campos do painel: só os que valem para esta área
+  document.querySelectorAll("#consultaPainel [data-campo]").forEach(div => { div.hidden = !campos.includes(div.dataset.campo); });
   if(document.activeElement !== $("munInput")) $("munInput").value = sel.mun ? nomeLocal(sel.mun) : "";
   if(document.activeElement !== $("causaInput")) $("causaInput").value = sel.evento === "dengue" ? "Dengue (notificações)" : (causa.tipo === "todas" ? "" : causa.rotulo);
   $("causaInput").disabled = sel.evento === "dengue";
   $("eventoSel").value = sel.evento;
   $("anoSel").innerHTML = anosDe(sel.evento).map(a => {
-    const info = infoAno(sel.evento, a);
-    return `<option value="${a}"${a === sel.ano ? " selected" : ""}>${a}${info.ano_completo ? "" : ` — parcial (${h(info.periodo.split(" (")[0])})`}</option>`;
+    const i = infoAno(sel.evento, a);
+    return `<option value="${a}"${a === sel.ano ? " selected" : ""}>${a}${i.ano_completo ? "" : ` — parcial (${h(i.periodo.split(" (")[0])})`}</option>`;
   }).join("");
   $("sexoSel").value = sel.sexo;
   $("idadeSel").value = sel.idade;
-  $("eventoExplica").textContent = ev.explica;
+  $("eventoExplica").textContent = EVENTOS[sel.evento].explica;
+}
 
-  const chips = [];
-  const chip = (texto, patch, rotulo) => chips.push(`<button class="chip" type="button" data-patch='${h(JSON.stringify(patch))}' aria-label="Remover filtro: ${h(rotulo || texto)}">${h(texto)} <span aria-hidden="true">×</span></button>`);
-  if(sel.mun) chip(nomeLocal(sel.mun), { mun:"" });
-  if(sel.evento !== "dengue" && causa.tipo !== "todas") chip(causa.rotulo.length > 60 ? `${causa.rotulo.slice(0, 58)}…` : causa.rotulo, { causa:"todas" }, causa.rotulo);
-  if(sel.evento !== "obitos") chip(ev.rotulo, { evento:"obitos", ...(sel.evento === "dengue" ? { causa:"todas" } : {}) });
-  if(sel.ano !== anoPadrao(sel.evento)) chip(`Período: ${sel.ano}`, { ano: anoPadrao(sel.evento) });
-  if(sel.sexo) chip(sel.sexo === "F" ? "Sexo feminino" : "Sexo masculino", { sexo:"" });
-  if(sel.idade) chip(GRUPOS_IDADE[sel.idade].rotulo, { idade:"" });
-  $("chips").innerHTML = chips.length ? chips.join("") : `<span class="hint">Nenhum filtro aplicado: Brasil, todas as causas, óbitos, ${h(sel.ano)}.</span>`;
-  $("limparBtn").disabled = !chips.length;
-  if(sel.sexo || sel.idade) $("avancados").open = true;
+let _segOrigem = null;
+function abrirConsulta(campo){
+  const painel = $("consultaPainel");
+  painel.hidden = false;
+  document.body.classList.add("consulta-aberta");
+  document.querySelectorAll("#consultaResumo .seg").forEach(b => b.setAttribute("aria-expanded", "true"));
+  const alvo = { mun:"munInput", causa:"causaInput", evento:"eventoSel", ano:"anoSel", sexo:"sexoSel", idade:"idadeSel" }[campo];
+  const el = $(alvo);
+  if(el && !el.disabled && !el.closest("[hidden]")) el.focus();
+  else painel.querySelector("input:not([disabled]), select")?.focus();
+}
+
+function fecharConsulta(devolverFoco = true){
+  const painel = $("consultaPainel");
+  if(painel.hidden) return;
+  painel.hidden = true;
+  document.body.classList.remove("consulta-aberta");
+  document.querySelectorAll("#consultaResumo .seg").forEach(b => b.setAttribute("aria-expanded", "false"));
+  if(devolverFoco) (document.querySelector(`#consultaResumo [data-abrir="${_segOrigem}"]`) || document.querySelector("#consultaResumo .seg"))?.focus();
 }
 
 /* ---------- Caixa de busca com sugestões (combobox acessível) ---------- */
@@ -161,23 +216,30 @@ function criarCombobox(input, lista, buscar, aoEscolher, { limparAoEscolher = fa
     if(e.key === "ArrowDown"){ e.preventDefault(); if(lista.hidden) abrir(); else if(itens.length) marcar((ativo + 1) % itens.length); }
     else if(e.key === "ArrowUp"){ e.preventDefault(); if(itens.length) marcar((ativo - 1 + itens.length) % itens.length); }
     else if(e.key === "Enter"){ if(!lista.hidden && itens.length){ e.preventDefault(); escolher(Math.max(ativo, 0)); } }
-    else if(e.key === "Escape"){ if(!lista.hidden){ e.preventDefault(); fechar(); } input.value = valorInicial; }
+    else if(e.key === "Escape"){ if(!lista.hidden){ e.preventDefault(); e.stopPropagation(); fechar(); input.value = valorInicial; } }
   });
-  input.addEventListener("blur", () => setTimeout(() => { fechar(); if(input.value !== valorInicial && document.activeElement !== input) atualizarBarra(); }, 150));
+  input.addEventListener("blur", () => setTimeout(fechar, 150));
   lista.addEventListener("mousedown", e => {
     const li = e.target.closest("li[data-i]");
     if(li){ e.preventDefault(); escolher(Number(li.dataset.i)); }
   });
+  return { atualizar: abrir };
 }
 
-function fecharMenu(){
-  $("nav").classList.remove("aberto");
-  $("menuToggle").setAttribute("aria-expanded", "false");
+async function copiarLink(botao){
+  const original = botao.textContent;
+  try{
+    await navigator.clipboard.writeText(location.href);
+    botao.textContent = "Link copiado";
+  }catch{
+    prompt("Copie o endereço desta consulta:", location.href);
+  }
+  setTimeout(() => { botao.textContent = original; }, 2500);
 }
 
 function ligarEventos(){
-  criarCombobox($("munInput"), $("munLista"), opcoesMunicipio, item => navegar({ mun:item.valor, ...(sel.rota === "inicio" ? { rota:"municipio" } : {}) }));
-  criarCombobox($("causaInput"), $("causaLista"), opcoesCausa, item => navegar({ causa:item.valor }));
+  criarCombobox($("munInput"), $("munLista"), opcoesMunicipio, item => { fecharConsulta(false); navegar({ mun:item.valor }); });
+  criarCombobox($("causaInput"), $("causaLista"), opcoesCausa, item => { fecharConsulta(false); navegar({ causa:item.valor }); });
   $("eventoSel").innerHTML = Object.entries(EVENTOS).map(([id, e]) => `<option value="${id}">${h(e.rotulo)}</option>`).join("");
   $("idadeSel").innerHTML = Object.entries(GRUPOS_IDADE).map(([id, g]) => `<option value="${id}">${h(g.rotulo)}</option>`).join("");
   $("eventoSel").addEventListener("change", e => {
@@ -188,31 +250,25 @@ function ligarEventos(){
   $("anoSel").addEventListener("change", e => navegar({ ano: e.target.value }));
   $("sexoSel").addEventListener("change", e => navegar({ sexo: e.target.value }));
   $("idadeSel").addEventListener("change", e => navegar({ idade: e.target.value }));
-  $("chips").addEventListener("click", e => {
-    const botao = e.target.closest("[data-patch]");
-    if(botao) navegar(JSON.parse(botao.dataset.patch));
+  $("limparBtn").addEventListener("click", () => { fecharConsulta(false); navegar({ mun: sel.rota === "municipio" || sel.rota === "fatores" ? sel.mun : "", causa:"todas", evento:"obitos", ano: anoPadrao("obitos"), sexo:"", idade:"" }); });
+  $("linkBtn").addEventListener("click", e => copiarLink(e.currentTarget));
+
+  $("consultaResumo").addEventListener("click", e => {
+    const botao = e.target.closest("[data-abrir]");
+    if(!botao) return;
+    if(!$("consultaPainel").hidden && _segOrigem === botao.dataset.abrir){ fecharConsulta(); return; }
+    _segOrigem = botao.dataset.abrir;
+    abrirConsulta(botao.dataset.abrir);
   });
-  $("limparBtn").addEventListener("click", () => navegar({ mun:"", causa:"todas", evento:"obitos", ano: anoPadrao("obitos"), sexo:"", idade:"" }));
-  $("linkBtn").addEventListener("click", async () => {
-    const botao = $("linkBtn");
-    try{
-      await navigator.clipboard.writeText(location.href);
-      botao.textContent = "Link copiado";
-    }catch{
-      prompt("Copie o endereço desta seleção:", location.href);
-    }
-    setTimeout(() => { botao.textContent = "Copiar link desta seleção"; }, 2500);
+  $("consultaFechar").addEventListener("click", () => fecharConsulta());
+  $("consultaOk").addEventListener("click", () => fecharConsulta());
+  document.addEventListener("keydown", e => { if(e.key === "Escape") fecharConsulta(); });
+  document.addEventListener("mousedown", e => {
+    if(!$("consultaPainel").hidden && !e.target.closest("#consulta")) fecharConsulta(false);
   });
+
   $("mapFocusSel").addEventListener("change", e => setMapView(e.target.value));
-  $("menuToggle").addEventListener("click", () => {
-    const aberto = $("nav").classList.toggle("aberto");
-    $("menuToggle").setAttribute("aria-expanded", String(aberto));
-  });
-  // Celular: a barra de seleção começa recolhida (os filtros aplicados continuam visíveis).
-  const estreita = window.matchMedia("(max-width: 760px)");
-  const ajustarSelecao = () => { $("selDet").open = !estreita.matches; };
-  ajustarSelecao();
-  estreita.addEventListener("change", ajustarSelecao);
+  $("mapTabelaBtn").addEventListener("click", () => alternarTabelaMapa());
   window.addEventListener("hashchange", renderizar);
 }
 

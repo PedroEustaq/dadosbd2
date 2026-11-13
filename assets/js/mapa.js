@@ -313,7 +313,7 @@ function setDetail(detail){
     map.closeTooltip(mapTooltip);
     mapa.stateBorderLayer?.eachLayer(layer => layer.setStyle(styleStateBorder(layer.feature)));
   }
-  setMapLevelHint(detail ? "Nível: municípios · afaste para ver os estados" : "Nível: estados · aproxime para ver os municípios");
+  setMapLevelHint(detail ? "Municípios · afaste para ver os estados" : "Estados · aproxime ou clique para ver os municípios");
   document.dispatchEvent(new CustomEvent("mapa:nivel"));
 }
 
@@ -375,9 +375,8 @@ function restyleMap(){
 }
 
 function legendaMapaHtml(){
-  const linha = (cor, texto) => `<span class="legend-item"><i class="legend-swatch" style="background:${cor}"></i>${h(texto)}</span>`;
-  return `<span class="legend-title">Taxa do local comparada à do Brasil</span>` +
-    MAP_CLASSES.map(c => linha(c.cor, c.rotulo)).join("") +
-    linha(MAP_COLORS.unstable, `poucos eventos (menos de ${MIN_EVENTOS_MAPA}): taxa instável`) +
-    linha(MAP_COLORS.empty, "sem dado");
+  const item = (cor, texto) => `<span class="leg"><i style="background:${cor}"></i>${h(texto)}</span>`;
+  return `<span class="leg-titulo">Taxa em relação à do Brasil</span>` +
+    MAP_CLASSES.map(c => item(c.cor, c.curto)).join("") +
+    item(MAP_COLORS.unstable, "poucos eventos") + item(MAP_COLORS.empty, "sem dado");
 }

@@ -3,107 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saúde no Território — doenças, municípios e fatores a investigar</title>
-  <meta name="description" content="Explore óbitos, internações e notificações por doença (CID-10) nos municípios brasileiros, compare com a população e investigue fatores territoriais com dados públicos e fontes rastreáveis." />
+  <title>Saúde no Território</title>
+  <meta name="description" content="Consulte óbitos, internações e notificações por doença nos municípios brasileiros, compare com a população e investigue fatores do território com dados públicos." />
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=2026-11-12" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=2026-11-13b" />
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="topbar">
-  <a class="brand" href="#/inicio">Saúde no Território</a>
-  <button id="menuToggle" class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false">Menu</button>
-  <nav id="nav" class="topnav" aria-label="Áreas do painel">
-    <a href="#/inicio" data-rota="inicio">Visão geral</a>
-    <a href="#/mapa" data-rota="mapa">Explorar o mapa</a>
-    <a href="#/municipio" data-rota="municipio">Meu município</a>
-    <a href="#/doencas" data-rota="doencas">Doenças e CID</a>
-    <a href="#/comparar" data-rota="comparar">Comparar locais</a>
-    <a href="#/fatores" data-rota="fatores">Fatores e melhorias</a>
-    <a href="#/fontes" data-rota="fontes">Fontes e metodologia</a>
-  </nav>
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#/inicio">Saúde no Território</a>
+    <!-- No celular esta navegação vira a barra fixa no rodapé da tela -->
+    <nav id="nav" class="nav" aria-label="Navegação principal">
+      <a href="#/inicio" data-grupo="explorar"><span>Explorar</span></a>
+      <a href="#/doencas" data-grupo="doencas"><span>Doenças</span></a>
+      <a href="#/comparar" data-grupo="comparar"><span>Comparar</span></a>
+      <a href="#/fontes" data-grupo="fontes" class="nav-sec"><span class="so-largo">Fontes e metodologia</span><span class="so-estreito">Fontes</span></a>
+    </nav>
+  </div>
 </header>
 
-<!-- Seleção: vale para todas as áreas e fica sincronizada com o endereço da página -->
-<section id="selbar" class="selbar" aria-label="Seleção atual">
-  <details id="selDet" class="sel-det" open>
-  <summary>Alterar município, doença, evento ou período</summary>
-  <div class="sel-fields">
-    <div class="field combo">
-      <label for="munInput">Município</label>
-      <input id="munInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false"
-        aria-controls="munLista" autocomplete="off" placeholder="Digite o nome, ex.: Campinas SP" />
-      <ul id="munLista" class="combo-list" role="listbox" aria-label="Municípios encontrados" hidden></ul>
-    </div>
-    <div class="field combo">
-      <label for="causaInput">Doença ou grupo (CID-10)</label>
-      <input id="causaInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false"
-        aria-controls="causaLista" autocomplete="off" placeholder="Ex.: infarto, diabetes, I21, dengue" />
-      <ul id="causaLista" class="combo-list" role="listbox" aria-label="Doenças e códigos encontrados" hidden></ul>
-    </div>
-    <div class="field">
-      <label for="eventoSel">Tipo de evento</label>
-      <select id="eventoSel"></select>
-    </div>
-    <div class="field field-ano">
-      <label for="anoSel">Período</label>
-      <select id="anoSel"></select>
+<!-- Consulta ativa: uma linha compacta; o formulário só abre quando a pessoa pede -->
+<section id="consulta" class="consulta" aria-label="Consulta ativa" hidden>
+  <div class="consulta-in">
+    <div id="consultaResumo" class="consulta-resumo"></div>
+    <div class="consulta-lado">
+      <div id="visaoSwitch" class="segmentos" role="group" aria-label="Forma de ver"></div>
+      <button id="linkBtn" class="btn-texto" type="button">Copiar link</button>
     </div>
   </div>
-  <details id="avancados" class="avancados">
-    <summary>Filtros avançados</summary>
-    <div class="sel-fields">
-      <div class="field">
+  <div id="consultaPainel" class="consulta-painel" role="dialog" aria-label="Alterar consulta" hidden>
+    <div class="painel-topo">
+      <h2>Alterar consulta</h2>
+      <button id="consultaFechar" class="btn-texto" type="button">Fechar</button>
+    </div>
+    <div class="campos">
+      <div class="campo combo" data-campo="mun">
+        <label for="munInput">Município</label>
+        <input id="munInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false"
+          aria-controls="munLista" autocomplete="off" placeholder="Nome do município, ex.: Campinas SP" />
+        <ul id="munLista" class="combo-list" role="listbox" aria-label="Municípios encontrados" hidden></ul>
+      </div>
+      <div class="campo combo" data-campo="causa">
+        <label for="causaInput">Doença ou grupo</label>
+        <input id="causaInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false"
+          aria-controls="causaLista" autocomplete="off" placeholder="Ex.: infarto, diabetes, I21" />
+        <ul id="causaLista" class="combo-list" role="listbox" aria-label="Doenças e códigos encontrados" hidden></ul>
+      </div>
+      <div class="campo" data-campo="evento">
+        <label for="eventoSel">Tipo de evento</label>
+        <select id="eventoSel"></select>
+      </div>
+      <div class="campo" data-campo="ano">
+        <label for="anoSel">Período</label>
+        <select id="anoSel"></select>
+      </div>
+      <div class="campo" data-campo="sexo">
         <label for="sexoSel">Sexo</label>
         <select id="sexoSel">
           <option value="">Todos</option><option value="F">Feminino</option><option value="M">Masculino</option>
         </select>
       </div>
-      <div class="field">
+      <div class="campo" data-campo="idade">
         <label for="idadeSel">Idade</label>
         <select id="idadeSel"></select>
       </div>
-      <p class="hint">Sexo e idade funcionam para óbitos por capítulo da CID-10 ou todas as causas, com a população do Censo 2022 do mesmo recorte.</p>
     </div>
-  </details>
-  </details>
-  <div class="sel-resumo">
-    <div id="chips" class="chips" role="group" aria-label="Filtros aplicados"></div>
-    <div class="sel-acoes">
-      <button id="limparBtn" class="btn ghost" type="button">Limpar filtros</button>
-      <button id="linkBtn" class="btn ghost" type="button">Copiar link desta seleção</button>
+    <p id="eventoExplica" class="apoio"></p>
+    <p class="apoio">Sexo e idade valem para óbitos por capítulo da CID-10 ou todas as causas.</p>
+    <div class="painel-acoes">
+      <button id="limparBtn" class="btn-texto" type="button">Limpar consulta</button>
+      <button id="consultaOk" class="btn" type="button">Ver resultado</button>
     </div>
   </div>
-  <p id="eventoExplica" class="hint evento-explica"></p>
 </section>
 
-<div id="status" class="load-status" data-state="loading" role="status" aria-live="polite">Carregando os dados de referência...</div>
+<div id="status" class="status-geral" data-state="loading" role="status" aria-live="polite">Carregando os dados de referência...</div>
 
-<main id="conteudo" class="content" tabindex="-1">
-  <section id="view-inicio" class="view" aria-labelledby="t-inicio" hidden></section>
+<main id="conteudo" class="conteudo" tabindex="-1">
+  <section id="view-inicio" class="view" hidden></section>
 
-  <section id="view-mapa" class="view" aria-labelledby="t-mapa" hidden>
-    <div class="card map-card">
-      <div class="card-head">
-        <div>
-          <h1 id="t-mapa" class="view-title">Explorar o mapa</h1>
-          <p id="mapSub" class="sub"></p>
-        </div>
-        <label class="inline-field" for="mapFocusSel">Foco do mapa
+  <section id="view-mapa" class="view view-larga" hidden>
+    <div class="pag-topo">
+      <div>
+        <h1 id="mapTitulo" class="pag-titulo"></h1>
+        <p id="mapSub" class="meta"></p>
+      </div>
+      <div class="controles">
+        <label class="controle" for="mapFocusSel">Área
           <select id="mapFocusSel"></select>
         </label>
+        <button id="mapTabelaBtn" class="btn-sec" type="button" aria-expanded="false" aria-controls="mapTabela">Ver como tabela</button>
       </div>
-      <div id="mapAviso"></div>
-      <div class="map-wrap">
-        <div id="map" role="application" aria-label="Mapa interativo. As mesmas informações estão na tabela logo abaixo."></div>
-        <div id="mapLegend" class="map-legend" aria-label="Legenda do mapa"></div>
-      </div>
-      <p class="hint">As cores mostram a posição em relação à taxa do Brasil; não indicam, sozinhas, risco aumentado, surto ou diferença estatística. Clique em um local para ver os números.</p>
     </div>
-    <div id="mapTabela" class="card"></div>
+    <div id="mapKpis"></div>
+    <div id="mapAviso"></div>
+    <div class="mapa-quadro">
+      <div id="map" role="application" aria-label="Mapa interativo. As mesmas informações estão em “Ver como tabela”."></div>
+      <div id="mapLegend" class="legenda" aria-label="Legenda do mapa"></div>
+    </div>
+    <div id="mapRanking" class="ranking"></div>
+    <div id="mapTabela" hidden></div>
   </section>
 
   <section id="view-municipio" class="view" hidden></section>
@@ -114,17 +117,16 @@
 </main>
 
 <footer class="rodape">
-  <p>Painel de consulta pública, feito com dados abertos do Ministério da Saúde, do IBGE e do INPE. Não substitui avaliação de profissionais de saúde nem a vigilância epidemiológica local.
-  Os dados mostram registros agregados: não permitem afirmar a causa de adoecimento de pessoas ou de um município. <a href="#/fontes">Fontes e metodologia</a></p>
+  <p>Dados públicos do Ministério da Saúde, do IBGE e do INPE. Registros agregados não permitem afirmar a causa de adoecimento de pessoas ou de um município. <a href="#/fontes">Fontes e metodologia</a></p>
 </footer>
 
-<script src="assets/js/config.js?v=2026-11-12" defer></script>
-<script src="assets/js/utils.js?v=2026-11-12" defer></script>
-<script src="assets/js/dados.js?v=2026-11-12" defer></script>
-<script src="assets/js/calculos.js?v=2026-11-12" defer></script>
-<script src="assets/js/mapa.js?v=2026-11-12" defer></script>
-<script src="assets/js/painel.js?v=2026-11-12" defer></script>
-<script src="assets/js/conteudo.js?v=2026-11-12" defer></script>
-<script src="assets/js/main.js?v=2026-11-12" defer></script>
+<script src="assets/js/config.js?v=2026-11-13b" defer></script>
+<script src="assets/js/utils.js?v=2026-11-13b" defer></script>
+<script src="assets/js/dados.js?v=2026-11-13b" defer></script>
+<script src="assets/js/calculos.js?v=2026-11-13b" defer></script>
+<script src="assets/js/mapa.js?v=2026-11-13b" defer></script>
+<script src="assets/js/painel.js?v=2026-11-13b" defer></script>
+<script src="assets/js/conteudo.js?v=2026-11-13b" defer></script>
+<script src="assets/js/main.js?v=2026-11-13b" defer></script>
 </body>
 </html>

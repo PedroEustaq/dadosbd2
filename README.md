@@ -19,15 +19,17 @@ Não integrado, com o motivo registrado em `dados/indicadores/dicionario.json` (
 
 ## Áreas do site
 
-1. **Visão geral** — busca por município ou doença e resumo do que há.
-2. **Explorar o mapa** — taxa do local em relação à do Brasil, por estado e por município, com tabela equivalente e exportação.
-3. **Meu município** — numerador, denominador, taxa, comparação com a UF (com intervalo de 95%), padronização por idade, municípios comparáveis, evolução, causas com mais registros e fatores a investigar.
-4. **Doenças e CID** — catálogo completo com busca e hierarquia; cada ficha separa classificação, dados disponíveis e conteúdo explicativo.
-5. **Comparar locais** — até 6 municípios ou estados com a mesma medida e período.
-6. **Fatores e melhorias** — perfil do território, relações documentadas, associação exploratória e ações com referências.
-7. **Fontes e metodologia** — fórmulas, matriz de cobertura, manifestos e relatórios de validação.
+A navegação é organizada por tarefa, em quatro entradas:
 
-A seleção (município, causa, evento, período, sexo, idade) fica no endereço da página, que pode ser compartilhado.
+1. **Explorar** — entrada com uma única busca (município ou doença) e números do Brasil; análise municipal e mapa como duas formas de ver a mesma consulta.
+   - *Análise municipal*: abas Panorama, Evolução, Fatores e melhorias e Principais causas. O panorama segue a ordem de um painel: no topo, a situação em uma frase e os números-chave (taxa, registros, estado, Brasil); no meio, a tendência por ano; na base, causas, fatores e, sob demanda, os números completos, o critério e a fonte.
+   - *Mapa*: números do Brasil no topo, mapa dominante (legenda fora do território), maiores e menores taxas abaixo e a tabela completa só quando pedida.
+   - *Fatores e melhorias*: síntese e números-chave, indicadores ligados à condição com detalhes em cada item, perfil completo e lacunas em expansões.
+2. **Doenças** — busca primeiro; a hierarquia da CID-10 fica num painel secundário. A ficha mostra números do Brasil, evolução, riscos e prevenção e, sob demanda, dados por fonte, subcategorias e classificação.
+3. **Comparar** — até 6 municípios ou estados: taxas na mesma escala, evolução por ano e, sob demanda, tabela, exportação e indicadores do território.
+4. **Fontes e metodologia** — índice por assunto, resumos curtos e detalhes (fórmulas, cobertura, manifestos, referências) sob demanda.
+
+A consulta ativa aparece numa linha compacta; o formulário abre só quando a pessoa pede (no celular, como folha inferior). A seleção (município, causa, evento, período, sexo, idade, aba) fica no endereço da página, que pode ser compartilhado.
 
 ## Executar localmente
 
