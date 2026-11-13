@@ -1,0 +1,29 @@
+{
+  "id": "sinan_dengue",
+  "titulo": "SINAN — Dengue: casos prováveis",
+  "instituicao": "Ministério da Saúde / SVSA — Sistema de Informação de Agravos de Notificação",
+  "pagina": "http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sinannet/cnv/denguebbr.def",
+  "recursos": [
+    "http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sinannet/cnv/denguebbr.def (Linha: Município de residência; Conteúdo: Casos prováveis; um período por ano)"
+  ],
+  "licenca": "Informações de saúde de acesso público (TabNet/DATASUS); citar a fonte.",
+  "versao": "Situação da base na data da coleta; anos recentes sujeitos a revisão",
+  "periodo_referencia": "2023, 2024, 2025, 2026 (ano de notificação)",
+  "granularidade": "município de residência",
+  "unidade": "casos prováveis",
+  "definicao": "Casos prováveis: todas as notificações, exceto as descartadas (definição do tabulador do Ministério da Saúde).",
+  "cobertura": "Municípios com notificação registrada no SINAN; o ano corrente é parcial.",
+  "campos": {
+    "mun": "código IBGE (7 dígitos)",
+    "ano": "ano de notificação",
+    "n": "casos prováveis"
+  },
+  "valores_ausentes": "Zero significa nenhuma notificação provável registrada; não prova ausência de transmissão (pode haver subnotificação).",
+  "limitacoes": "Notificações dependem da procura por atendimento e da vigilância local; caso provável não é caso confirmado por laboratório; não é incidência em sentido estrito; município de residência pode não ser o local de infecção.",
+  "arquivos_gerados": [
+    "dados/saude/dengue/casos.csv",
+    "dados/saude/dengue/indice.json"
+  ],
+  "comando_atualizacao": "python3 scripts/preparar_tabnet.py --refazer",
+  "coletado_em": "2026-11-12"
+}

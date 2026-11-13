@@ -1,0 +1,352 @@
+{
+  "gerado_em": "2026-11-12",
+  "matriz": [
+    {
+      "fonte": "SIM",
+      "desfecho": "Óbitos por causa básica (capítulo, grupo e categoria CID-10; sexo e idade por capítulo)",
+      "periodo": "2023: janeiro a dezembro",
+      "nivel": "município, UF, Brasil (subcategoria só por UF)",
+      "cobertura": "1.463.376 de 1.465.610 óbitos com município identificado",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIM",
+      "desfecho": "Óbitos por causa básica (capítulo, grupo e categoria CID-10; sexo e idade por capítulo)",
+      "periodo": "2024: janeiro a dezembro",
+      "nivel": "município, UF, Brasil (subcategoria só por UF)",
+      "cobertura": "1.525.090 de 1.527.369 óbitos com município identificado",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIM",
+      "desfecho": "Óbitos por causa básica (capítulo, grupo e categoria CID-10; sexo e idade por capítulo)",
+      "periodo": "2025: jan–set (ago, set com registro ainda incompleto)",
+      "nivel": "município, UF, Brasil (subcategoria só por UF)",
+      "cobertura": "935.960 de 937.033 óbitos com município identificado",
+      "situacao": "integrado (período parcial)"
+    },
+    {
+      "fonte": "SIM",
+      "desfecho": "Óbitos por causa básica (capítulo, grupo e categoria CID-10; sexo e idade por capítulo)",
+      "periodo": "2026: jan–ago (ago com registro ainda incompleto)",
+      "nivel": "município, UF, Brasil (subcategoria só por UF)",
+      "cobertura": "910.979 de 912.010 óbitos com município identificado",
+      "situacao": "integrado (período parcial)"
+    },
+    {
+      "fonte": "SIH/SUS",
+      "desfecho": "Internações no SUS por capítulo CID-10",
+      "periodo": "2023: janeiro a dezembro",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5571 municípios; somente rede SUS",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIH/SUS",
+      "desfecho": "Internações no SUS por capítulo CID-10",
+      "periodo": "2024: janeiro a dezembro",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5571 municípios; somente rede SUS",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIH/SUS",
+      "desfecho": "Internações no SUS por capítulo CID-10",
+      "periodo": "2025: janeiro a dezembro",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5571 municípios; somente rede SUS",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIH/SUS",
+      "desfecho": "Internações no SUS por capítulo CID-10",
+      "periodo": "2026: jan–set (competências já publicadas)",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5571 municípios; somente rede SUS",
+      "situacao": "integrado (período parcial)"
+    },
+    {
+      "fonte": "SINAN",
+      "desfecho": "Casos prováveis de dengue",
+      "periodo": "2023, 2024, 2025, 2026",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5571 municípios",
+      "situacao": "integrado (ano corrente parcial)"
+    },
+    {
+      "fonte": "SINAN, SIVEP-Gripe e outros agravos",
+      "desfecho": "Demais notificações",
+      "periodo": "—",
+      "nivel": "—",
+      "cobertura": "—",
+      "situacao": "não integrado"
+    },
+    {
+      "fonte": "IBGE",
+      "desfecho": "População total (denominador)",
+      "periodo": "2022 (Censo), 2024, 2025 e 2026 (estimativas)",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5570 municípios com todos os anos; 1 com lacuna",
+      "situacao": "integrado (sem estimativa para 2023)"
+    },
+    {
+      "fonte": "IBGE",
+      "desfecho": "População por sexo e idade",
+      "periodo": "2022 (Censo)",
+      "nivel": "município, UF, Brasil",
+      "cobertura": "5.570 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 4714",
+      "desfecho": "Demografia: Área territorial",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 4714",
+      "desfecho": "Demografia: Densidade demográfica",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 9923",
+      "desfecho": "Demografia: População em área urbana",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 9514",
+      "desfecho": "Demografia: População com 60 anos ou mais",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 9514",
+      "desfecho": "Demografia: População de 0 a 4 anos",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6803",
+      "desfecho": "Água, esgoto e resíduos: Domicílios abastecidos principalmente pela rede geral de água",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6803",
+      "desfecho": "Água, esgoto e resíduos: Domicílios sem ligação à rede geral de água",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6805",
+      "desfecho": "Água, esgoto e resíduos: Domicílios com esgoto ligado à rede geral ou pluvial",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6805",
+      "desfecho": "Água, esgoto e resíduos: Domicílios com esgotamento precário ou sem banheiro",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6805",
+      "desfecho": "Água, esgoto e resíduos: Domicílios sem banheiro nem sanitário",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6892",
+      "desfecho": "Água, esgoto e resíduos: Domicílios com lixo coletado",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 6892",
+      "desfecho": "Água, esgoto e resíduos: Domicílios que queimam o lixo ou o jogam em terreno ou área pública",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 9543",
+      "desfecho": "Vulnerabilidade social: Taxa de alfabetização (15 anos ou mais)",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 10295",
+      "desfecho": "Vulnerabilidade social: Rendimento domiciliar per capita médio",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 10295",
+      "desfecho": "Vulnerabilidade social: Rendimento domiciliar per capita mediano",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 9877",
+      "desfecho": "Vulnerabilidade social: Média de moradores por domicílio",
+      "periodo": "2022",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "cnes_estabelecimentos.csv",
+      "desfecho": "Acesso e capacidade de saúde: Unidades básicas e postos de saúde",
+      "periodo": "2025",
+      "nivel": "município",
+      "cobertura": "5571 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "cnes_estabelecimentos.csv",
+      "desfecho": "Acesso e capacidade de saúde: Hospitais e unidades mistas",
+      "periodo": "2025",
+      "nivel": "município",
+      "cobertura": "5571 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "cnes_estabelecimentos.csv",
+      "desfecho": "Acesso e capacidade de saúde: Prontos-socorros e pronto atendimentos",
+      "periodo": "2025",
+      "nivel": "município",
+      "cobertura": "5571 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "focos_br_todos-sats_2025.csv (satélite AQUA_M-T)",
+      "desfecho": "Ambiente: Focos de calor (queimadas) no ano",
+      "periodo": "2025",
+      "nivel": "município",
+      "cobertura": "5571 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "focos_br_todos-sats_2025.csv (satélite AQUA_M-T)",
+      "desfecho": "Ambiente: Focos de calor por 1.000 km²",
+      "periodo": "2025",
+      "nivel": "município",
+      "cobertura": "5570 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 5938",
+      "desfecho": "Trabalho e exposições: Participação da agropecuária no valor adicionado",
+      "periodo": "2021",
+      "nivel": "município",
+      "cobertura": "5569 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 5938",
+      "desfecho": "Trabalho e exposições: Participação da indústria no valor adicionado",
+      "periodo": "2021",
+      "nivel": "município",
+      "cobertura": "5569 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 5938",
+      "desfecho": "Trabalho e exposições: Participação da serviços (exceto setor público) no valor adicionado",
+      "periodo": "2021",
+      "nivel": "município",
+      "cobertura": "5569 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "SIDRA 5938",
+      "desfecho": "Trabalho e exposições: Participação da administração, saúde e educação públicas no valor adicionado",
+      "periodo": "2021",
+      "nivel": "município",
+      "cobertura": "5569 de 5571 municípios",
+      "situacao": "integrado"
+    },
+    {
+      "fonte": "—",
+      "desfecho": "Clima e desastres",
+      "periodo": "—",
+      "nivel": "—",
+      "cobertura": "sem indicador municipal",
+      "situacao": "não integrado"
+    },
+    {
+      "fonte": "—",
+      "desfecho": "Imunização",
+      "periodo": "—",
+      "nivel": "—",
+      "cobertura": "sem indicador municipal",
+      "situacao": "não integrado"
+    },
+    {
+      "fonte": "—",
+      "desfecho": "Vetores e contexto sanitário",
+      "periodo": "—",
+      "nivel": "—",
+      "cobertura": "sem indicador municipal",
+      "situacao": "parcial"
+    },
+    {
+      "fonte": "—",
+      "desfecho": "Comportamento e nutrição",
+      "periodo": "—",
+      "nivel": "—",
+      "cobertura": "sem indicador municipal",
+      "situacao": "fora do escopo"
+    },
+    {
+      "fonte": "—",
+      "desfecho": "Qualidade do ar",
+      "periodo": "—",
+      "nivel": "—",
+      "cobertura": "sem indicador municipal",
+      "situacao": "não integrado"
+    }
+  ],
+  "relatorios": [
+    "dados/relatorios/cid10.json",
+    "dados/relatorios/cnes_inpe.json",
+    "dados/relatorios/cobertura.json",
+    "dados/relatorios/legado_municipios.json",
+    "dados/relatorios/populacao.json",
+    "dados/relatorios/sim.json",
+    "dados/relatorios/tabnet.json",
+    "dados/relatorios/territorios.json",
+    "dados/relatorios/validacao.json"
+  ]
+}

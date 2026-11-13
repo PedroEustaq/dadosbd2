@@ -1,0 +1,74 @@
+{
+  "gerado_em": "2026-11-12",
+  "sih_2023": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 13214566,
+    "soma_dos_municipios": 13214566
+  },
+  "sih_2024": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 14036998,
+    "soma_dos_municipios": 14036998
+  },
+  "sih_2025": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 14512171,
+    "soma_dos_municipios": 14512171
+  },
+  "sih_2026": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 11059010,
+    "soma_dos_municipios": 11059010
+  },
+  "dengue_2023": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [
+      " MUNICIPIO IGNORADO - BA = 1",
+      " MUNICIPIO IGNORADO - GO = 1",
+      "000000 Ignorado ou exterior = 8"
+    ],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 1645350
+  },
+  "dengue_2024": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [
+      " MUNICIPIO IGNORADO - RO = 1",
+      " MUNICIPIO IGNORADO - BA = 1",
+      " MUNICIPIO IGNORADO - MG = 1",
+      " MUNICIPIO IGNORADO - RJ = 1",
+      " MUNICIPIO IGNORADO - SP = 1",
+      " MUNICIPIO IGNORADO - PR = 1",
+      "000000 Ignorado ou exterior = 21"
+    ],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 6564921
+  },
+  "dengue_2025": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [
+      " MUNICIPIO IGNORADO - SP = 1",
+      " MUNICIPIO IGNORADO - PR = 1",
+      "000000 Ignorado ou exterior = 9"
+    ],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 1643215
+  },
+  "dengue_2026": {
+    "municipios_com_linha": 5571,
+    "linhas_ignorado_ou_exterior_com_eventos": [
+      " MUNICIPIO IGNORADO - RO = 1",
+      "000000 Ignorado ou exterior = 7"
+    ],
+    "linhas_nao_resolvidas_com_eventos": [],
+    "total_da_fonte": 494921
+  }
+}

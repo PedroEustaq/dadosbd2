@@ -1,0 +1,54 @@
+{
+  "gerado_em": "2026-11-12",
+  "anos": {
+    "2023": {
+      "linhas": 1465610,
+      "obitos": 1465610,
+      "obitos_com_municipio": 1463376,
+      "municipio_ignorado_contado_so_na_uf": 2234,
+      "codigos_cid_fora_do_catalogo": {},
+      "codigos_de_municipio_nao_resolvidos": {}
+    },
+    "2024": {
+      "linhas": 1527369,
+      "obitos": 1527369,
+      "obitos_com_municipio": 1525090,
+      "municipio_ignorado_contado_so_na_uf": 2279,
+      "codigos_cid_fora_do_catalogo": {
+        "D969": 1,
+        "J489": 1,
+        "K390": 1
+      },
+      "codigos_de_municipio_nao_resolvidos": {}
+    },
+    "2025": {
+      "linhas": 937033,
+      "obitos": 937033,
+      "obitos_com_municipio": 935960,
+      "municipio_ignorado_contado_so_na_uf": 1072,
+      "municipio_nao_resolvido_contado_so_na_uf": 1,
+      "codigos_cid_fora_do_catalogo": {
+        "C369": 1,
+        "I599": 1,
+        "I969": 1,
+        "M789": 1
+      },
+      "codigos_de_municipio_nao_resolvidos": {
+        "416208": 1
+      }
+    },
+    "2026": {
+      "linhas": 912010,
+      "obitos": 912010,
+      "obitos_com_municipio": 910979,
+      "municipio_ignorado_contado_so_na_uf": 1031,
+      "codigos_cid_fora_do_catalogo": {},
+      "codigos_de_municipio_nao_resolvidos": {}
+    }
+  },
+  "regras": {
+    "residencia": "Contagem pelo município de residência (CODMUNRES). O município de ocorrência não é usado.",
+    "codigo_municipal": "CODMUNRES tem 6 dígitos; convertido para 7 pela tabela oficial do IBGE. Códigos terminados em 0000 são 'município ignorado' e entram só no total da UF.",
+    "cid": "Causa básica (CAUSABAS). Códigos fora do catálogo entram nos totais como '???' e são listados aqui."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "cid10_datasus",
+  "titulo": "CID-10 — tabelas em português (capítulos, grupos, categorias e subcategorias)",
+  "instituicao": "Ministério da Saúde / DATASUS (tradução CBCD/USP da classificação da OMS)",
+  "pagina": "http://www2.datasus.gov.br/cid10/V2008/cid10.htm",
+  "recursos": [
+    "http://www2.datasus.gov.br/cid10/V2008/downloads/CID10CSV.zip"
+  ],
+  "licenca": "Distribuição pública do DATASUS; a CID-10 é publicação da OMS.",
+  "versao": "CID-10 versão 2008",
+  "periodo_referencia": "edição de 2008",
+  "data_publicacao": "2007-10-01 (data dos arquivos)",
+  "granularidade": "classificação (sem território)",
+  "unidade": "código",
+  "definicao": "Capítulos, grupos (agrupamentos), categorias de 3 caracteres e subcategorias de 4 caracteres.",
+  "cobertura": "22 capítulos, 275 grupos, 2051 categorias e 12488 subcategorias",
+  "campos": {
+    "categorias": "[código, nome, índice do grupo, marcador, suplemento]",
+    "subcategorias": "[código, nome, restrição de sexo, pode ser causa básica, suplemento]"
+  },
+  "valores_ausentes": "Categorias sem subdivisão não têm subcategorias.",
+  "limitacoes": "Edição de 2008: não traz os códigos criados depois (ex.: U07 COVID-19), incluídos por suplemento documentado. Não há sinônimos oficiais no arquivo.",
+  "arquivos_gerados": [
+    "dados/referencia/cid10.json",
+    "dados/referencia/cid10_sub/*.json",
+    "dados/relatorios/cid10.json"
+  ],
+  "comando_atualizacao": "python3 scripts/preparar_cid10.py --refazer",
+  "coletado_em": "2026-11-12"
+}

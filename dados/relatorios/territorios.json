@@ -1,0 +1,198 @@
+{
+  "gerado_em": "2026-11-12",
+  "total_municipios_ibge": 5571,
+  "total_feicoes_malha": 5564,
+  "municipios_sem_geometria_na_malha": [
+    {
+      "codigo": "1504752",
+      "nome": "Mojuí dos Campos",
+      "uf": "PA"
+    },
+    {
+      "codigo": "2206720",
+      "nome": "Nazária",
+      "uf": "PI"
+    },
+    {
+      "codigo": "4212650",
+      "nome": "Pescaria Brava",
+      "uf": "SC"
+    },
+    {
+      "codigo": "4220000",
+      "nome": "Balneário Rincão",
+      "uf": "SC"
+    },
+    {
+      "codigo": "4314548",
+      "nome": "Pinto Bandeira",
+      "uf": "RS"
+    },
+    {
+      "codigo": "5006275",
+      "nome": "Paraíso das Águas",
+      "uf": "MS"
+    },
+    {
+      "codigo": "5101837",
+      "nome": "Boa Esperança do Norte",
+      "uf": "MT"
+    }
+  ],
+  "feicoes_da_malha_fora_da_tabela": [],
+  "nomes_diferentes_entre_malha_e_tabela": [
+    {
+      "codigo": "1400605",
+      "ibge": "São Luiz do Anauá",
+      "malha": "São Luiz"
+    },
+    {
+      "codigo": "1502954",
+      "ibge": "Eldorado do Carajás",
+      "malha": "Eldorado dos Carajás"
+    },
+    {
+      "codigo": "1506500",
+      "ibge": "Santa Izabel do Pará",
+      "malha": "Santa Isabel do Pará"
+    },
+    {
+      "codigo": "1708254",
+      "ibge": "Tabocão",
+      "malha": "Fortaleza do Tabocão"
+    },
+    {
+      "codigo": "1720499",
+      "ibge": "São Valério",
+      "malha": "São Valério da Natividade"
+    },
+    {
+      "codigo": "2306306",
+      "ibge": "Itapajé",
+      "malha": "Itapagé"
+    },
+    {
+      "codigo": "2400208",
+      "ibge": "Assú",
+      "malha": "Açu"
+    },
+    {
+      "codigo": "2401206",
+      "ibge": "Arez",
+      "malha": "Arês"
+    },
+    {
+      "codigo": "2401305",
+      "ibge": "Campo Grande",
+      "malha": "Augusto Severo"
+    },
+    {
+      "codigo": "2410306",
+      "ibge": "Serra Caiada",
+      "malha": "Presidente Juscelino"
+    },
+    {
+      "codigo": "2513653",
+      "ibge": "Joca Claudino",
+      "malha": "Santarém"
+    },
+    {
+      "codigo": "2515401",
+      "ibge": "São Vicente do Seridó",
+      "malha": "Seridó"
+    },
+    {
+      "codigo": "2516409",
+      "ibge": "Tacima",
+      "malha": "Campo de Santana"
+    },
+    {
+      "codigo": "2601607",
+      "ibge": "Belém do São Francisco",
+      "malha": "Belém de São Francisco"
+    },
+    {
+      "codigo": "2606903",
+      "ibge": "Iguaracy",
+      "malha": "Iguaraci"
+    },
+    {
+      "codigo": "2608503",
+      "ibge": "Lagoa de Itaenga",
+      "malha": "Lagoa do Itaenga"
+    },
+    {
+      "codigo": "2800100",
+      "ibge": "Amparo do São Francisco",
+      "malha": "Amparo de São Francisco"
+    },
+    {
+      "codigo": "2802601",
+      "ibge": "Graccho Cardoso",
+      "malha": "Gracho Cardoso"
+    },
+    {
+      "codigo": "2922250",
+      "ibge": "Muquém do São Francisco",
+      "malha": "Muquém de São Francisco"
+    },
+    {
+      "codigo": "2928505",
+      "ibge": "Santa Terezinha",
+      "malha": "Santa Teresinha"
+    },
+    {
+      "codigo": "3105509",
+      "ibge": "Barão do Monte Alto",
+      "malha": "Barão de Monte Alto"
+    },
+    {
+      "codigo": "3108909",
+      "ibge": "Brazópolis",
+      "malha": "Brasópolis"
+    },
+    {
+      "codigo": "3122900",
+      "ibge": "Dona Euzébia",
+      "malha": "Dona Eusébia"
+    },
+    {
+      "codigo": "3165206",
+      "ibge": "São Tomé das Letras",
+      "malha": "São Thomé das Letras"
+    },
+    {
+      "codigo": "3515004",
+      "ibge": "Embu das Artes",
+      "malha": "Embu"
+    },
+    {
+      "codigo": "3516101",
+      "ibge": "Florínea",
+      "malha": "Florínia"
+    },
+    {
+      "codigo": "3530805",
+      "ibge": "Mogi Mirim",
+      "malha": "Moji Mirim"
+    },
+    {
+      "codigo": "3550001",
+      "ibge": "São Luiz do Paraitinga",
+      "malha": "São Luís do Paraitinga"
+    },
+    {
+      "codigo": "5107008",
+      "ibge": "Poxoréu",
+      "malha": "Poxoréo"
+    },
+    {
+      "codigo": "5107800",
+      "ibge": "Santo Antônio de Leverger",
+      "malha": "Santo Antônio do Leverger"
+    }
+  ],
+  "nomes_repetidos_em_ufs_diferentes": 240,
+  "homonimos_na_mesma_uf": [],
+  "observacao": "Municípios sem geometria continuam disponíveis em buscas, tabelas e fichas; apenas não são desenhados no mapa."
+}

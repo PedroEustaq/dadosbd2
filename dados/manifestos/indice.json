@@ -1,0 +1,321 @@
+{
+  "gerado_em": "2026-11-12",
+  "fontes": [
+    {
+      "id": "sim_mortalidade",
+      "titulo": "SIM — Mortalidade geral (microdados)",
+      "instituicao": "Ministério da Saúde / SVSA / DAENT",
+      "pagina": "https://dadosabertos.saude.gov.br/dataset/sim",
+      "recursos": [
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2023_csv.zip",
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2024_csv.zip",
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2025_csv.zip",
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2026_csv.zip"
+      ],
+      "licenca": "Dados abertos do Ministério da Saúde (Creative Commons Atribuição, conforme o portal de dados abertos).",
+      "versao": "2023: publicado em 2026-10-29; 2024: publicado em 2026-08-31; 2025: publicado em 2026-08-31; 2026: publicado em 2026-10-02",
+      "periodo_referencia": "2023: janeiro a dezembro; 2024: janeiro a dezembro; 2025: jan–set (ago, set com registro ainda incompleto); 2026: jan–ago (ago com registro ainda incompleto)",
+      "granularidade": "município de residência (agregado a partir de registros individuais)",
+      "unidade": "óbitos",
+      "definicao": "Óbitos não fetais (TIPOBITO = 2) por causa básica (CID-10), contados no município de residência.",
+      "cobertura": "Todas as UFs. Anos: 2023, 2024, 2025, 2026. Anos recentes são prévias com meses incompletos (ver dados/saude/sim/indice.json).",
+      "campos": {
+        "mun": "código IBGE (7 dígitos)",
+        "cid3": "categoria CID-10",
+        "cap": "capítulo CID-10 (0 = código fora do catálogo)",
+        "sexo": "M, F ou I (ignorado)",
+        "faixa": "idade inicial da faixa de 5 anos; 80 = 80 anos ou mais; ign = ignorada",
+        "n": "óbitos"
+      },
+      "valores_ausentes": "Combinação ausente no arquivo significa nenhum óbito registrado com aquela combinação no arquivo publicado; em prévias, registros ainda podem chegar.",
+      "limitacoes": "Sub-registro e causas mal definidas variam entre municípios; prévias são incompletas e sofrem revisão; a causa básica não descreve todas as doenças presentes; o município de residência não é necessariamente o local de exposição.",
+      "arquivos_gerados": [
+        "dados/saude/sim/indice.json",
+        "dados/saude/sim/<ano>/...",
+        "dados/relatorios/sim.json"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_sim.py --refazer",
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "sih_sus",
+      "titulo": "SIH/SUS — Morbidade hospitalar do SUS, por local de residência",
+      "instituicao": "Ministério da Saúde / DATASUS",
+      "pagina": "http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sih/cnv/nrbr.def",
+      "recursos": [
+        "http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sih/cnv/nrbr.def (Linha: Município; Coluna: Capítulo CID-10; Conteúdo: Internações; Períodos: meses de processamento de cada ano)"
+      ],
+      "licenca": "Informações de saúde de acesso público (TabNet/DATASUS); citar a fonte.",
+      "versao": "Situação da base nacional na data da coleta; dados dos últimos meses sujeitos a atualização",
+      "periodo_referencia": "2023: janeiro a dezembro; 2024: janeiro a dezembro; 2025: janeiro a dezembro; 2026: jan–set (competências já publicadas)",
+      "granularidade": "município de residência",
+      "unidade": "internações (AIH aprovadas)",
+      "definicao": "Quantidade de internações pagas pelo SUS, pelo capítulo CID-10 do diagnóstico principal, por mês de processamento.",
+      "cobertura": "Somente internações financiadas pelo SUS. Capítulo XX (causas externas) e XXII não aparecem como diagnóstico principal.",
+      "campos": {
+        "mun": "código IBGE (7 dígitos)",
+        "cap": "capítulo CID-10",
+        "n": "internações"
+      },
+      "valores_ausentes": "'-' no TabNet é zero internações registradas; combinações zeradas não são gravadas.",
+      "limitacoes": "Não inclui internações particulares ou por planos de saúde; conta internações, não pessoas (reinternações e transferências contam mais de uma vez); depende da oferta de leitos e do acesso; período é o de processamento da AIH, não o da doença. Detalhe abaixo de capítulo não foi importado.",
+      "arquivos_gerados": [
+        "dados/saude/sih/<ano>.csv",
+        "dados/saude/sih/indice.json"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_tabnet.py --refazer",
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "sinan_dengue",
+      "titulo": "SINAN — Dengue: casos prováveis",
+      "instituicao": "Ministério da Saúde / SVSA — Sistema de Informação de Agravos de Notificação",
+      "pagina": "http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sinannet/cnv/denguebbr.def",
+      "recursos": [
+        "http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sinannet/cnv/denguebbr.def (Linha: Município de residência; Conteúdo: Casos prováveis; um período por ano)"
+      ],
+      "licenca": "Informações de saúde de acesso público (TabNet/DATASUS); citar a fonte.",
+      "versao": "Situação da base na data da coleta; anos recentes sujeitos a revisão",
+      "periodo_referencia": "2023, 2024, 2025, 2026 (ano de notificação)",
+      "granularidade": "município de residência",
+      "unidade": "casos prováveis",
+      "definicao": "Casos prováveis: todas as notificações, exceto as descartadas (definição do tabulador do Ministério da Saúde).",
+      "cobertura": "Municípios com notificação registrada no SINAN; o ano corrente é parcial.",
+      "campos": {
+        "mun": "código IBGE (7 dígitos)",
+        "ano": "ano de notificação",
+        "n": "casos prováveis"
+      },
+      "valores_ausentes": "Zero significa nenhuma notificação provável registrada; não prova ausência de transmissão (pode haver subnotificação).",
+      "limitacoes": "Notificações dependem da procura por atendimento e da vigilância local; caso provável não é caso confirmado por laboratório; não é incidência em sentido estrito; município de residência pode não ser o local de infecção.",
+      "arquivos_gerados": [
+        "dados/saude/dengue/casos.csv",
+        "dados/saude/dengue/indice.json"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_tabnet.py --refazer",
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "ibge_estimativas_populacao",
+      "instituicao": "IBGE",
+      "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+      "granularidade": "município, UF e Brasil",
+      "valores_ausentes": "'-' no SIDRA é zero; 'X' é valor suprimido para evitar identificação; '...' é indisponível. Suprimidos e indisponíveis ficam vazios nos arquivos e listados em dados/indicadores/situacoes.json.",
+      "comando_atualizacao": "python3 scripts/preparar_ibge.py --refazer && python3 scripts/montar_indicadores.py",
+      "titulo": "Estimativas da população residente (EstimaPop)",
+      "pagina": "https://sidra.ibge.gov.br/tabela/6579",
+      "recursos": [
+        "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2024,2025,2026"
+      ],
+      "versao": "Tabela SIDRA 6579",
+      "periodo_referencia": "2024, 2025 e 2026 (data de referência: 1º de julho de cada ano). Não há estimativa publicada para 2023.",
+      "unidade": "pessoas",
+      "definicao": "População residente estimada, total do município. Não há estimativa anual por idade e sexo para municípios.",
+      "cobertura": "2024: 5570 municípios; 2025: 5571 municípios; 2026: 5571 municípios",
+      "campos": {
+        "mun": "código IBGE",
+        "p2024…p2026": "população estimada"
+      },
+      "limitacoes": "Sem recorte de idade ou sexo: taxas específicas por idade usam a população do Censo 2022. Para 2023 o painel usa o Censo 2022 e indica a defasagem.",
+      "arquivos_gerados": [
+        "dados/populacao/municipios.csv",
+        "dados/populacao/uf.csv"
+      ],
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "ibge_censo2022",
+      "instituicao": "IBGE",
+      "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+      "granularidade": "município, UF e Brasil",
+      "valores_ausentes": "'-' no SIDRA é zero; 'X' é valor suprimido para evitar identificação; '...' é indisponível. Suprimidos e indisponíveis ficam vazios nos arquivos e listados em dados/indicadores/situacoes.json.",
+      "comando_atualizacao": "python3 scripts/preparar_ibge.py --refazer && python3 scripts/montar_indicadores.py",
+      "titulo": "Censo Demográfico 2022 — população, idade, domicílios, saneamento, alfabetização e rendimento",
+      "pagina": "https://sidra.ibge.gov.br/pesquisa/censo-demografico/demografico-2022/inicial",
+      "recursos": [
+        "https://apisidra.ibge.gov.br/values/t/4714/n6/all/v/93,6318,614/p/2022",
+        "https://apisidra.ibge.gov.br/values/t/9923/n6/all/v/93/p/2022/c1/6795,1",
+        "https://apisidra.ibge.gov.br/values/t/9514/n6/all/v/93/p/2022/c2/4,5/c287/6653,49108,49109,60040,60041,93070,93084,93085,93086,93087,93088,93089,93090,93091,93092,93093,93094,93095,93096,93097,93098/c286/113635",
+        "https://apisidra.ibge.gov.br/values/t/6803/n6/all/v/381/p/2022/c1821/72129,72144,72153",
+        "https://apisidra.ibge.gov.br/values/t/6805/n6/all/v/381/p/2022/c11558/46292,46290,72112,72113,92858,72114,72115,92861",
+        "https://apisidra.ibge.gov.br/values/t/6892/n6/all/v/381/p/2022/c67/10972,2520,72122,72124",
+        "https://apisidra.ibge.gov.br/values/t/9543/n6/all/v/2513/p/2022/c2/6794/c86/95251/c287/100362",
+        "https://apisidra.ibge.gov.br/values/t/10295/n6/all/v/13431,13534/p/2022/c2/6794/c86/95251/c58/95253",
+        "https://apisidra.ibge.gov.br/values/t/9877/n6/all/v/9325/p/2022/c11561/100679/c12237/104570/c11562/72593"
+      ],
+      "versao": "Resultados do universo e da amostra disponíveis no SIDRA na data da coleta",
+      "periodo_referencia": "2022 (data de referência: 1º de agosto de 2022)",
+      "unidade": "pessoas, domicílios, % e R$",
+      "definicao": "Tabelas SIDRA 4714, 9923, 9514, 6803, 6805, 6892, 9543, 10295 e 9877.",
+      "cobertura": "5570 municípios com população e área; ver cobertura por indicador em dados/indicadores/dicionario.json",
+      "campos": {
+        "area_km2": "Área territorial (km²)",
+        "densidade": "Densidade demográfica (hab./km²)",
+        "pct_urbana": "População em área urbana (%)",
+        "pct_60mais": "População com 60 anos ou mais (%)",
+        "pct_0a4": "População de 0 a 4 anos (%)",
+        "agua_rede": "Domicílios abastecidos principalmente pela rede geral de água (%)",
+        "agua_sem_rede": "Domicílios sem ligação à rede geral de água (%)",
+        "esgoto_rede": "Domicílios com esgoto ligado à rede geral ou pluvial (%)",
+        "esgoto_precario": "Domicílios com esgotamento precário ou sem banheiro (%)",
+        "sem_banheiro": "Domicílios sem banheiro nem sanitário (%)",
+        "lixo_coletado": "Domicílios com lixo coletado (%)",
+        "lixo_queimado_ou_jogado": "Domicílios que queimam o lixo ou o jogam em terreno ou área pública (%)",
+        "alfabetizacao": "Taxa de alfabetização (15 anos ou mais) (%)",
+        "renda_media": "Rendimento domiciliar per capita médio (R$ por mês)",
+        "renda_mediana": "Rendimento domiciliar per capita mediano (R$ por mês)",
+        "moradores_por_domicilio": "Média de moradores por domicílio (pessoas)"
+      },
+      "limitacoes": "Retrato de 2022: usado como contexto para eventos de saúde de anos posteriores, com a defasagem indicada. Rendimento vem da amostra do Censo.",
+      "arquivos_gerados": [
+        "dados/populacao/municipios.csv (coluna p2022)",
+        "dados/populacao/censo2022_idade/*.csv",
+        "dados/indicadores/municipios.csv"
+      ],
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "ibge_pib_municipios",
+      "instituicao": "IBGE",
+      "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+      "granularidade": "município, UF e Brasil",
+      "valores_ausentes": "'-' no SIDRA é zero; 'X' é valor suprimido para evitar identificação; '...' é indisponível. Suprimidos e indisponíveis ficam vazios nos arquivos e listados em dados/indicadores/situacoes.json.",
+      "comando_atualizacao": "python3 scripts/preparar_ibge.py --refazer && python3 scripts/montar_indicadores.py",
+      "titulo": "Produto Interno Bruto dos Municípios — valor adicionado por atividade",
+      "pagina": "https://sidra.ibge.gov.br/tabela/5938",
+      "recursos": [
+        "https://apisidra.ibge.gov.br/values/t/5938/n6/all/v/498,513,517,6575,525/p/2021"
+      ],
+      "versao": "Tabela SIDRA 5938 (referência 2010)",
+      "periodo_referencia": "2021 (último ano com valores nesta tabela; 2022 e 2023 constam como indisponíveis no SIDRA)",
+      "unidade": "% do valor adicionado bruto",
+      "definicao": "Participação de agropecuária, indústria, serviços e administração pública no valor adicionado bruto municipal.",
+      "cobertura": "5569 municípios",
+      "campos": {
+        "vab_agropecuaria": "Participação da agropecuária no valor adicionado",
+        "vab_industria": "Participação da indústria no valor adicionado",
+        "vab_servicos": "Participação da serviços (exceto setor público) no valor adicionado",
+        "vab_adm_publica": "Participação da administração, saúde e educação públicas no valor adicionado"
+      },
+      "limitacoes": "Perfil econômico não é medida de exposição ocupacional.",
+      "arquivos_gerados": [
+        "dados/indicadores/municipios.csv"
+      ],
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "cnes_estabelecimentos",
+      "titulo": "CNES — Cadastro Nacional de Estabelecimentos de Saúde (estabelecimentos)",
+      "instituicao": "Ministério da Saúde / DATASUS",
+      "pagina": "https://dadosabertos.saude.gov.br/dataset/cnes-cadastro-nacional-de-estabelecimentos-de-saude",
+      "recursos": [
+        "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/CNES/cnes_estabelecimentos.zip"
+      ],
+      "licenca": "Dados abertos do Ministério da Saúde; citar a fonte.",
+      "versao": "Arquivo datado de 2025-06-11",
+      "periodo_referencia": "situação do cadastro em 2025-06-11",
+      "granularidade": "estabelecimento (agregado por município)",
+      "unidade": "estabelecimentos por habitantes",
+      "definicao": "Contagem de estabelecimentos sem motivo de desabilitação, por tipo de unidade (TP_UNIDADE) e município (CO_IBGE).",
+      "cobertura": "457334 estabelecimentos ativos em 5571 municípios com ao menos um dos tipos contados",
+      "campos": {
+        "ubs_10mil": "Unidades básicas e postos de saúde (por 10.000 hab.)",
+        "hospitais_100mil": "Hospitais e unidades mistas (por 100.000 hab.)",
+        "urgencia_100mil": "Prontos-socorros e pronto atendimentos (por 100.000 hab.)"
+      },
+      "valores_ausentes": "Município sem estabelecimento do tipo recebe zero (observado no cadastro).",
+      "limitacoes": "Cadastro administrativo: presença de estabelecimento não demonstra acesso efetivo, funcionamento, equipe completa nem qualidade. Moradores podem ser atendidos em municípios vizinhos. Equipes, profissionais, leitos e cobertura da atenção primária (SISAB/e-Gestor) não foram importados.",
+      "arquivos_gerados": [
+        "dados/indicadores/municipios.csv"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_cnes_inpe.py --refazer && python3 scripts/montar_indicadores.py",
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "inpe_queimadas",
+      "titulo": "INPE — Programa Queimadas: focos de calor",
+      "instituicao": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+      "pagina": "https://terrabrasilis.dpi.inpe.br/queimadas/portal/",
+      "recursos": [
+        "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/Brasil_todos_sats/focos_br_todos-sats_2025.zip"
+      ],
+      "licenca": "Dados públicos do INPE; uso livre com citação da fonte.",
+      "versao": "Arquivo anual de 2025",
+      "periodo_referencia": "2025-01 a 2025-12",
+      "granularidade": "foco (ponto), agregado por município",
+      "unidade": "focos de calor",
+      "definicao": "Somente o satélite de referência (AQUA_M-T), usado pelo INPE para comparar anos e regiões; os demais satélites do arquivo repetem detecções e não são somados.",
+      "cobertura": "4287 municípios com ao menos um foco; 0 focos sem município resolvido",
+      "campos": {
+        "focos_calor": "focos no ano",
+        "focos_por_1000km2": "focos por 1.000 km²"
+      },
+      "valores_ausentes": "Município sem foco detectado recebe zero.",
+      "limitacoes": "Foco de calor detectado por satélite é um indicador indireto: não mede a área queimada, a concentração de fumaça nem a exposição das pessoas. A fumaça se desloca por centenas de quilômetros; um município sem focos pode receber fumaça de outros. Nuvens e queimadas pequenas reduzem a detecção. Qualidade do ar medida por estações não foi importada: não há rede nacional com cobertura municipal.",
+      "arquivos_gerados": [
+        "dados/indicadores/municipios.csv"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_cnes_inpe.py --refazer && python3 scripts/montar_indicadores.py",
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "cid10_datasus",
+      "titulo": "CID-10 — tabelas em português (capítulos, grupos, categorias e subcategorias)",
+      "instituicao": "Ministério da Saúde / DATASUS (tradução CBCD/USP da classificação da OMS)",
+      "pagina": "http://www2.datasus.gov.br/cid10/V2008/cid10.htm",
+      "recursos": [
+        "http://www2.datasus.gov.br/cid10/V2008/downloads/CID10CSV.zip"
+      ],
+      "licenca": "Distribuição pública do DATASUS; a CID-10 é publicação da OMS.",
+      "versao": "CID-10 versão 2008",
+      "periodo_referencia": "edição de 2008",
+      "data_publicacao": "2007-10-01 (data dos arquivos)",
+      "granularidade": "classificação (sem território)",
+      "unidade": "código",
+      "definicao": "Capítulos, grupos (agrupamentos), categorias de 3 caracteres e subcategorias de 4 caracteres.",
+      "cobertura": "22 capítulos, 275 grupos, 2051 categorias e 12488 subcategorias",
+      "campos": {
+        "categorias": "[código, nome, índice do grupo, marcador, suplemento]",
+        "subcategorias": "[código, nome, restrição de sexo, pode ser causa básica, suplemento]"
+      },
+      "valores_ausentes": "Categorias sem subdivisão não têm subcategorias.",
+      "limitacoes": "Edição de 2008: não traz os códigos criados depois (ex.: U07 COVID-19), incluídos por suplemento documentado. Não há sinônimos oficiais no arquivo.",
+      "arquivos_gerados": [
+        "dados/referencia/cid10.json",
+        "dados/referencia/cid10_sub/*.json",
+        "dados/relatorios/cid10.json"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_cid10.py --refazer",
+      "coletado_em": "2026-11-12"
+    },
+    {
+      "id": "ibge_localidades",
+      "titulo": "Tabela de municípios e UFs",
+      "instituicao": "IBGE",
+      "pagina": "https://servicodados.ibge.gov.br/api/docs/localidades",
+      "recursos": [
+        "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?view=nivelado"
+      ],
+      "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+      "versao": "Divisão territorial vigente na data da coleta",
+      "periodo_referencia": "vigente",
+      "granularidade": "município",
+      "unidade": "registro de município",
+      "definicao": "Código IBGE de 7 dígitos, nome e UF de cada município.",
+      "cobertura": "5571 municípios",
+      "campos": {
+        "c": "código IBGE (7 dígitos, texto)",
+        "n": "nome oficial",
+        "uf": "sigla da UF"
+      },
+      "valores_ausentes": "não há",
+      "limitacoes": "Fontes de saúde usam o código de 6 dígitos (sem dígito verificador); a conversão é feita pelos 6 primeiros dígitos, que são únicos na tabela (verificado no script).",
+      "arquivos_gerados": [
+        "dados/referencia/municipios.json",
+        "dados/relatorios/territorios.json"
+      ],
+      "comando_atualizacao": "python3 scripts/preparar_territorios.py --refazer",
+      "coletado_em": "2026-11-12"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "sih_sus",
+  "titulo": "SIH/SUS — Morbidade hospitalar do SUS, por local de residência",
+  "instituicao": "Ministério da Saúde / DATASUS",
+  "pagina": "http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sih/cnv/nrbr.def",
+  "recursos": [
+    "http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sih/cnv/nrbr.def (Linha: Município; Coluna: Capítulo CID-10; Conteúdo: Internações; Períodos: meses de processamento de cada ano)"
+  ],
+  "licenca": "Informações de saúde de acesso público (TabNet/DATASUS); citar a fonte.",
+  "versao": "Situação da base nacional na data da coleta; dados dos últimos meses sujeitos a atualização",
+  "periodo_referencia": "2023: janeiro a dezembro; 2024: janeiro a dezembro; 2025: janeiro a dezembro; 2026: jan–set (competências já publicadas)",
+  "granularidade": "município de residência",
+  "unidade": "internações (AIH aprovadas)",
+  "definicao": "Quantidade de internações pagas pelo SUS, pelo capítulo CID-10 do diagnóstico principal, por mês de processamento.",
+  "cobertura": "Somente internações financiadas pelo SUS. Capítulo XX (causas externas) e XXII não aparecem como diagnóstico principal.",
+  "campos": {
+    "mun": "código IBGE (7 dígitos)",
+    "cap": "capítulo CID-10",
+    "n": "internações"
+  },
+  "valores_ausentes": "'-' no TabNet é zero internações registradas; combinações zeradas não são gravadas.",
+  "limitacoes": "Não inclui internações particulares ou por planos de saúde; conta internações, não pessoas (reinternações e transferências contam mais de uma vez); depende da oferta de leitos e do acesso; período é o de processamento da AIH, não o da doença. Detalhe abaixo de capítulo não foi importado.",
+  "arquivos_gerados": [
+    "dados/saude/sih/<ano>.csv",
+    "dados/saude/sih/indice.json"
+  ],
+  "comando_atualizacao": "python3 scripts/preparar_tabnet.py --refazer",
+  "coletado_em": "2026-11-12"
+}

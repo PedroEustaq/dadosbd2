@@ -1,0 +1,51 @@
+{
+  "id": "ibge_censo2022",
+  "instituicao": "IBGE",
+  "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+  "granularidade": "município, UF e Brasil",
+  "valores_ausentes": "'-' no SIDRA é zero; 'X' é valor suprimido para evitar identificação; '...' é indisponível. Suprimidos e indisponíveis ficam vazios nos arquivos e listados em dados/indicadores/situacoes.json.",
+  "comando_atualizacao": "python3 scripts/preparar_ibge.py --refazer && python3 scripts/montar_indicadores.py",
+  "titulo": "Censo Demográfico 2022 — população, idade, domicílios, saneamento, alfabetização e rendimento",
+  "pagina": "https://sidra.ibge.gov.br/pesquisa/censo-demografico/demografico-2022/inicial",
+  "recursos": [
+    "https://apisidra.ibge.gov.br/values/t/4714/n6/all/v/93,6318,614/p/2022",
+    "https://apisidra.ibge.gov.br/values/t/9923/n6/all/v/93/p/2022/c1/6795,1",
+    "https://apisidra.ibge.gov.br/values/t/9514/n6/all/v/93/p/2022/c2/4,5/c287/6653,49108,49109,60040,60041,93070,93084,93085,93086,93087,93088,93089,93090,93091,93092,93093,93094,93095,93096,93097,93098/c286/113635",
+    "https://apisidra.ibge.gov.br/values/t/6803/n6/all/v/381/p/2022/c1821/72129,72144,72153",
+    "https://apisidra.ibge.gov.br/values/t/6805/n6/all/v/381/p/2022/c11558/46292,46290,72112,72113,92858,72114,72115,92861",
+    "https://apisidra.ibge.gov.br/values/t/6892/n6/all/v/381/p/2022/c67/10972,2520,72122,72124",
+    "https://apisidra.ibge.gov.br/values/t/9543/n6/all/v/2513/p/2022/c2/6794/c86/95251/c287/100362",
+    "https://apisidra.ibge.gov.br/values/t/10295/n6/all/v/13431,13534/p/2022/c2/6794/c86/95251/c58/95253",
+    "https://apisidra.ibge.gov.br/values/t/9877/n6/all/v/9325/p/2022/c11561/100679/c12237/104570/c11562/72593"
+  ],
+  "versao": "Resultados do universo e da amostra disponíveis no SIDRA na data da coleta",
+  "periodo_referencia": "2022 (data de referência: 1º de agosto de 2022)",
+  "unidade": "pessoas, domicílios, % e R$",
+  "definicao": "Tabelas SIDRA 4714, 9923, 9514, 6803, 6805, 6892, 9543, 10295 e 9877.",
+  "cobertura": "5570 municípios com população e área; ver cobertura por indicador em dados/indicadores/dicionario.json",
+  "campos": {
+    "area_km2": "Área territorial (km²)",
+    "densidade": "Densidade demográfica (hab./km²)",
+    "pct_urbana": "População em área urbana (%)",
+    "pct_60mais": "População com 60 anos ou mais (%)",
+    "pct_0a4": "População de 0 a 4 anos (%)",
+    "agua_rede": "Domicílios abastecidos principalmente pela rede geral de água (%)",
+    "agua_sem_rede": "Domicílios sem ligação à rede geral de água (%)",
+    "esgoto_rede": "Domicílios com esgoto ligado à rede geral ou pluvial (%)",
+    "esgoto_precario": "Domicílios com esgotamento precário ou sem banheiro (%)",
+    "sem_banheiro": "Domicílios sem banheiro nem sanitário (%)",
+    "lixo_coletado": "Domicílios com lixo coletado (%)",
+    "lixo_queimado_ou_jogado": "Domicílios que queimam o lixo ou o jogam em terreno ou área pública (%)",
+    "alfabetizacao": "Taxa de alfabetização (15 anos ou mais) (%)",
+    "renda_media": "Rendimento domiciliar per capita médio (R$ por mês)",
+    "renda_mediana": "Rendimento domiciliar per capita mediano (R$ por mês)",
+    "moradores_por_domicilio": "Média de moradores por domicílio (pessoas)"
+  },
+  "limitacoes": "Retrato de 2022: usado como contexto para eventos de saúde de anos posteriores, com a defasagem indicada. Rendimento vem da amostra do Censo.",
+  "arquivos_gerados": [
+    "dados/populacao/municipios.csv (coluna p2022)",
+    "dados/populacao/censo2022_idade/*.csv",
+    "dados/indicadores/municipios.csv"
+  ],
+  "coletado_em": "2026-11-12"
+}

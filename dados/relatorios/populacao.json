@@ -1,0 +1,15 @@
+{
+  "gerado_em": "2026-11-12",
+  "municipios_sem_populacao": {
+    "2022": [
+      "5101837 Boa Esperança do Norte/MT"
+    ],
+    "2024": [
+      "5101837 Boa Esperança do Norte/MT"
+    ],
+    "2025": [],
+    "2026": []
+  },
+  "soma_por_idade_diferente_do_total_2022": [],
+  "regra_denominador": "Óbitos e internações de 2024, 2025 e 2026 usam a estimativa do mesmo ano; 2023 usa o Censo 2022 (sem estimativa oficial para 2023). Taxas por idade e a padronização usam a pirâmide do Censo 2022."
+}

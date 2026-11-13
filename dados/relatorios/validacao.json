@@ -1,0 +1,68 @@
+{
+  "gerado_em": "2026-11-12",
+  "aprovado": true,
+  "verificacoes": [
+    "SIM 2023: 1,465,610 óbitos; 1,463,376 com município; arquivos por município, perfil, capítulo e UF com o mesmo total",
+    "SIM 2024: 1,527,369 óbitos; 1,525,090 com município; arquivos por município, perfil, capítulo e UF com o mesmo total",
+    "SIM 2025: 937,033 óbitos; 935,960 com município; arquivos por município, perfil, capítulo e UF com o mesmo total",
+    "SIM 2026: 912,010 óbitos; 910,979 com município; arquivos por município, perfil, capítulo e UF com o mesmo total",
+    "SIH 2023: 13,214,566 internações; soma dos municípios igual ao total da fonte",
+    "SIH 2024: 14,036,998 internações; soma dos municípios igual ao total da fonte",
+    "SIH 2025: 14,512,171 internações; soma dos municípios igual ao total da fonte",
+    "SIH 2026: 11,059,010 internações; soma dos municípios igual ao total da fonte",
+    "Dengue 2023: 1,645,350 casos prováveis; 10 sem município identificado",
+    "Dengue 2024: 6,564,921 casos prováveis; 27 sem município identificado",
+    "Dengue 2025: 1,643,215 casos prováveis; 11 sem município identificado",
+    "Dengue 2026: 494,921 casos prováveis; 8 sem município identificado",
+    "População: 5571 municípios; com algum ano sem valor: 1",
+    "Indicadores: 25 colunas conferidas com o dicionário; percentuais dentro de 0–100"
+  ],
+  "falhas": [],
+  "municipios_sem_populacao": {
+    "5101837": [
+      "p2022",
+      "p2024"
+    ]
+  },
+  "exemplos_de_calculo": [
+    {
+      "local": "São Paulo",
+      "codigo": "3550308",
+      "ano": 2024,
+      "cid": "I21",
+      "obitos": 6425,
+      "populacao_2024": 11895578,
+      "taxa_por_100mil": 54.01
+    },
+    {
+      "local": "Campinas",
+      "codigo": "3509502",
+      "ano": 2024,
+      "cid": "I00–I99",
+      "obitos": 2392,
+      "populacao_2024": 1185977,
+      "taxa_por_100mil": 201.69
+    },
+    {
+      "teste": "municípios homônimos",
+      "nome": "Bom Jesus",
+      "codigos": [
+        "2201903 (PI)",
+        "2401701 (RN)",
+        "2502201 (PB)",
+        "4202537 (SC)",
+        "4302303 (RS)"
+      ],
+      "resultado": "cada um tem código e arquivo de UF próprios; a busca por nome exige a UF"
+    }
+  ],
+  "conferencia_tabnet": {
+    "consulta": "TabNet SIM (obt10br.def), 2023, óbitos por residência, município × capítulo CID-10",
+    "celulas_comparadas": 68133,
+    "celulas_iguais": 68133,
+    "proporcao_igual": 1.0,
+    "total_tabnet": 1463376,
+    "total_painel": 1463376,
+    "observacao": "Diferenças pequenas são esperadas quando o arquivo de microdados e o tabulador foram atualizados em datas diferentes."
+  }
+}

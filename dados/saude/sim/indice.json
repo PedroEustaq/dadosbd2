@@ -1,0 +1,152 @@
+{
+  "anos": {
+    "2023": {
+      "ano": 2023,
+      "recurso": "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2023_csv.zip",
+      "publicado_em": "2026-10-29",
+      "ano_completo": true,
+      "periodo": "janeiro a dezembro",
+      "situacao": "Ano completo no arquivo. Os números podem mudar em novas publicações do Ministério da Saúde.",
+      "obitos": 1465610,
+      "obitos_com_municipio": 1463376,
+      "por_mes": [
+        117428,
+        105422,
+        120459,
+        121257,
+        129973,
+        129326,
+        131865,
+        123990,
+        119304,
+        121777,
+        122826,
+        121983
+      ],
+      "contagens": {
+        "linhas": 1465610,
+        "obitos": 1465610,
+        "obitos_com_municipio": 1463376,
+        "municipio_ignorado_contado_so_na_uf": 2234
+      },
+      "codigos_cid_fora_do_catalogo": 0
+    },
+    "2024": {
+      "ano": 2024,
+      "recurso": "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2024_csv.zip",
+      "publicado_em": "2026-08-31",
+      "ano_completo": true,
+      "periodo": "janeiro a dezembro",
+      "situacao": "Ano completo no arquivo. Os números podem mudar em novas publicações do Ministério da Saúde.",
+      "obitos": 1527369,
+      "obitos_com_municipio": 1525090,
+      "por_mes": [
+        120803,
+        115188,
+        133061,
+        132705,
+        137383,
+        131722,
+        135268,
+        132056,
+        125871,
+        123736,
+        116904,
+        122672
+      ],
+      "contagens": {
+        "linhas": 1527369,
+        "obitos": 1527369,
+        "obitos_com_municipio": 1525090,
+        "municipio_ignorado_contado_so_na_uf": 2279
+      },
+      "codigos_cid_fora_do_catalogo": 3
+    },
+    "2025": {
+      "ano": 2025,
+      "recurso": "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2025_csv.zip",
+      "publicado_em": "2026-08-31",
+      "ano_completo": false,
+      "periodo": "jan–set (ago, set com registro ainda incompleto)",
+      "situacao": "Arquivo parcial (prévia): não cobre o ano inteiro. Os números podem mudar em novas publicações do Ministério da Saúde.",
+      "obitos": 937033,
+      "obitos_com_municipio": 935960,
+      "por_mes": [
+        123614,
+        110983,
+        121914,
+        121365,
+        139494,
+        137783,
+        125685,
+        56140,
+        55,
+        0,
+        0,
+        0
+      ],
+      "contagens": {
+        "linhas": 937033,
+        "obitos": 937033,
+        "obitos_com_municipio": 935960,
+        "municipio_ignorado_contado_so_na_uf": 1072,
+        "municipio_nao_resolvido_contado_so_na_uf": 1
+      },
+      "codigos_cid_fora_do_catalogo": 4
+    },
+    "2026": {
+      "ano": 2026,
+      "recurso": "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2026_csv.zip",
+      "publicado_em": "2026-10-02",
+      "ano_completo": false,
+      "periodo": "jan–ago (ago com registro ainda incompleto)",
+      "situacao": "Arquivo parcial (prévia): não cobre o ano inteiro. Os números podem mudar em novas publicações do Ministério da Saúde.",
+      "obitos": 912010,
+      "obitos_com_municipio": 910979,
+      "por_mes": [
+        121883,
+        107925,
+        126160,
+        120937,
+        129525,
+        130869,
+        123330,
+        51381,
+        0,
+        0,
+        0,
+        0
+      ],
+      "contagens": {
+        "linhas": 912010,
+        "obitos": 912010,
+        "obitos_com_municipio": 910979,
+        "municipio_ignorado_contado_so_na_uf": 1031
+      },
+      "codigos_cid_fora_do_catalogo": 0
+    }
+  },
+  "fonte": "SIM — Sistema de Informações sobre Mortalidade (Ministério da Saúde)",
+  "evento": "óbitos não fetais por município de residência e causa básica (CID-10)",
+  "faixas": [
+    "0",
+    "5",
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "45",
+    "50",
+    "55",
+    "60",
+    "65",
+    "70",
+    "75",
+    "80",
+    "ign"
+  ],
+  "gerado_em": "2026-11-12"
+}

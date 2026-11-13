@@ -1,0 +1,29 @@
+{
+  "id": "ibge_localidades",
+  "titulo": "Tabela de municípios e UFs",
+  "instituicao": "IBGE",
+  "pagina": "https://servicodados.ibge.gov.br/api/docs/localidades",
+  "recursos": [
+    "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?view=nivelado"
+  ],
+  "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+  "versao": "Divisão territorial vigente na data da coleta",
+  "periodo_referencia": "vigente",
+  "granularidade": "município",
+  "unidade": "registro de município",
+  "definicao": "Código IBGE de 7 dígitos, nome e UF de cada município.",
+  "cobertura": "5571 municípios",
+  "campos": {
+    "c": "código IBGE (7 dígitos, texto)",
+    "n": "nome oficial",
+    "uf": "sigla da UF"
+  },
+  "valores_ausentes": "não há",
+  "limitacoes": "Fontes de saúde usam o código de 6 dígitos (sem dígito verificador); a conversão é feita pelos 6 primeiros dígitos, que são únicos na tabela (verificado no script).",
+  "arquivos_gerados": [
+    "dados/referencia/municipios.json",
+    "dados/relatorios/territorios.json"
+  ],
+  "comando_atualizacao": "python3 scripts/preparar_territorios.py --refazer",
+  "coletado_em": "2026-11-12"
+}

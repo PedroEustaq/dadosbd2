@@ -1,0 +1,185 @@
+{
+  "origem": "Nomes da malha geodata-br para o mesmo código IBGE (correspondência por código, não por semelhança)",
+  "nomes": [
+    {
+      "c": "1400605",
+      "uf": "RR",
+      "alternativo": "São Luiz",
+      "oficial": "São Luiz do Anauá"
+    },
+    {
+      "c": "1502954",
+      "uf": "PA",
+      "alternativo": "Eldorado dos Carajás",
+      "oficial": "Eldorado do Carajás"
+    },
+    {
+      "c": "1506500",
+      "uf": "PA",
+      "alternativo": "Santa Isabel do Pará",
+      "oficial": "Santa Izabel do Pará"
+    },
+    {
+      "c": "1708254",
+      "uf": "TO",
+      "alternativo": "Fortaleza do Tabocão",
+      "oficial": "Tabocão"
+    },
+    {
+      "c": "1720499",
+      "uf": "TO",
+      "alternativo": "São Valério da Natividade",
+      "oficial": "São Valério"
+    },
+    {
+      "c": "2306306",
+      "uf": "CE",
+      "alternativo": "Itapagé",
+      "oficial": "Itapajé"
+    },
+    {
+      "c": "2400208",
+      "uf": "RN",
+      "alternativo": "Açu",
+      "oficial": "Assú"
+    },
+    {
+      "c": "2401206",
+      "uf": "RN",
+      "alternativo": "Arês",
+      "oficial": "Arez"
+    },
+    {
+      "c": "2401305",
+      "uf": "RN",
+      "alternativo": "Augusto Severo",
+      "oficial": "Campo Grande"
+    },
+    {
+      "c": "2410306",
+      "uf": "RN",
+      "alternativo": "Presidente Juscelino",
+      "oficial": "Serra Caiada"
+    },
+    {
+      "c": "2513653",
+      "uf": "PB",
+      "alternativo": "Santarém",
+      "oficial": "Joca Claudino"
+    },
+    {
+      "c": "2515401",
+      "uf": "PB",
+      "alternativo": "Seridó",
+      "oficial": "São Vicente do Seridó"
+    },
+    {
+      "c": "2516409",
+      "uf": "PB",
+      "alternativo": "Campo de Santana",
+      "oficial": "Tacima"
+    },
+    {
+      "c": "2601607",
+      "uf": "PE",
+      "alternativo": "Belém de São Francisco",
+      "oficial": "Belém do São Francisco"
+    },
+    {
+      "c": "2606903",
+      "uf": "PE",
+      "alternativo": "Iguaraci",
+      "oficial": "Iguaracy"
+    },
+    {
+      "c": "2608503",
+      "uf": "PE",
+      "alternativo": "Lagoa do Itaenga",
+      "oficial": "Lagoa de Itaenga"
+    },
+    {
+      "c": "2800100",
+      "uf": "SE",
+      "alternativo": "Amparo de São Francisco",
+      "oficial": "Amparo do São Francisco"
+    },
+    {
+      "c": "2802601",
+      "uf": "SE",
+      "alternativo": "Gracho Cardoso",
+      "oficial": "Graccho Cardoso"
+    },
+    {
+      "c": "2922250",
+      "uf": "BA",
+      "alternativo": "Muquém de São Francisco",
+      "oficial": "Muquém do São Francisco"
+    },
+    {
+      "c": "2928505",
+      "uf": "BA",
+      "alternativo": "Santa Teresinha",
+      "oficial": "Santa Terezinha"
+    },
+    {
+      "c": "3105509",
+      "uf": "MG",
+      "alternativo": "Barão de Monte Alto",
+      "oficial": "Barão do Monte Alto"
+    },
+    {
+      "c": "3108909",
+      "uf": "MG",
+      "alternativo": "Brasópolis",
+      "oficial": "Brazópolis"
+    },
+    {
+      "c": "3122900",
+      "uf": "MG",
+      "alternativo": "Dona Eusébia",
+      "oficial": "Dona Euzébia"
+    },
+    {
+      "c": "3165206",
+      "uf": "MG",
+      "alternativo": "São Thomé das Letras",
+      "oficial": "São Tomé das Letras"
+    },
+    {
+      "c": "3515004",
+      "uf": "SP",
+      "alternativo": "Embu",
+      "oficial": "Embu das Artes"
+    },
+    {
+      "c": "3516101",
+      "uf": "SP",
+      "alternativo": "Florínia",
+      "oficial": "Florínea"
+    },
+    {
+      "c": "3530805",
+      "uf": "SP",
+      "alternativo": "Moji Mirim",
+      "oficial": "Mogi Mirim"
+    },
+    {
+      "c": "3550001",
+      "uf": "SP",
+      "alternativo": "São Luís do Paraitinga",
+      "oficial": "São Luiz do Paraitinga"
+    },
+    {
+      "c": "5107008",
+      "uf": "MT",
+      "alternativo": "Poxoréo",
+      "oficial": "Poxoréu"
+    },
+    {
+      "c": "5107800",
+      "uf": "MT",
+      "alternativo": "Santo Antônio do Leverger",
+      "oficial": "Santo Antônio de Leverger"
+    }
+  ]
+}

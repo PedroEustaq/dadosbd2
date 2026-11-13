@@ -1,3 +1,4 @@
-/dados_cronicas_ses_2026.csv
-/dados_cronicas_brasil_2026_preliminar.csv
+# Bases brutas usadas apenas para regenerar os dados publicados (não versionadas).
+/dados/brutos/
 /Mortalidade_Geral_2026_csv.zip
+__pycache__/

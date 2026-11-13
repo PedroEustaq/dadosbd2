@@ -1,0 +1,28 @@
+{
+  "id": "ibge_estimativas_populacao",
+  "instituicao": "IBGE",
+  "licenca": "Dados públicos do IBGE; uso livre com citação da fonte.",
+  "granularidade": "município, UF e Brasil",
+  "valores_ausentes": "'-' no SIDRA é zero; 'X' é valor suprimido para evitar identificação; '...' é indisponível. Suprimidos e indisponíveis ficam vazios nos arquivos e listados em dados/indicadores/situacoes.json.",
+  "comando_atualizacao": "python3 scripts/preparar_ibge.py --refazer && python3 scripts/montar_indicadores.py",
+  "titulo": "Estimativas da população residente (EstimaPop)",
+  "pagina": "https://sidra.ibge.gov.br/tabela/6579",
+  "recursos": [
+    "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2024,2025,2026"
+  ],
+  "versao": "Tabela SIDRA 6579",
+  "periodo_referencia": "2024, 2025 e 2026 (data de referência: 1º de julho de cada ano). Não há estimativa publicada para 2023.",
+  "unidade": "pessoas",
+  "definicao": "População residente estimada, total do município. Não há estimativa anual por idade e sexo para municípios.",
+  "cobertura": "2024: 5570 municípios; 2025: 5571 municípios; 2026: 5571 municípios",
+  "campos": {
+    "mun": "código IBGE",
+    "p2024…p2026": "população estimada"
+  },
+  "limitacoes": "Sem recorte de idade ou sexo: taxas específicas por idade usam a população do Censo 2022. Para 2023 o painel usa o Censo 2022 e indica a defasagem.",
+  "arquivos_gerados": [
+    "dados/populacao/municipios.csv",
+    "dados/populacao/uf.csv"
+  ],
+  "coletado_em": "2026-11-12"
+}

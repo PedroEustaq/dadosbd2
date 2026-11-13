@@ -1,0 +1,36 @@
+{
+  "id": "sim_mortalidade",
+  "titulo": "SIM — Mortalidade geral (microdados)",
+  "instituicao": "Ministério da Saúde / SVSA / DAENT",
+  "pagina": "https://dadosabertos.saude.gov.br/dataset/sim",
+  "recursos": [
+    "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2023_csv.zip",
+    "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2024_csv.zip",
+    "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2025_csv.zip",
+    "https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2026_csv.zip"
+  ],
+  "licenca": "Dados abertos do Ministério da Saúde (Creative Commons Atribuição, conforme o portal de dados abertos).",
+  "versao": "2023: publicado em 2026-10-29; 2024: publicado em 2026-08-31; 2025: publicado em 2026-08-31; 2026: publicado em 2026-10-02",
+  "periodo_referencia": "2023: janeiro a dezembro; 2024: janeiro a dezembro; 2025: jan–set (ago, set com registro ainda incompleto); 2026: jan–ago (ago com registro ainda incompleto)",
+  "granularidade": "município de residência (agregado a partir de registros individuais)",
+  "unidade": "óbitos",
+  "definicao": "Óbitos não fetais (TIPOBITO = 2) por causa básica (CID-10), contados no município de residência.",
+  "cobertura": "Todas as UFs. Anos: 2023, 2024, 2025, 2026. Anos recentes são prévias com meses incompletos (ver dados/saude/sim/indice.json).",
+  "campos": {
+    "mun": "código IBGE (7 dígitos)",
+    "cid3": "categoria CID-10",
+    "cap": "capítulo CID-10 (0 = código fora do catálogo)",
+    "sexo": "M, F ou I (ignorado)",
+    "faixa": "idade inicial da faixa de 5 anos; 80 = 80 anos ou mais; ign = ignorada",
+    "n": "óbitos"
+  },
+  "valores_ausentes": "Combinação ausente no arquivo significa nenhum óbito registrado com aquela combinação no arquivo publicado; em prévias, registros ainda podem chegar.",
+  "limitacoes": "Sub-registro e causas mal definidas variam entre municípios; prévias são incompletas e sofrem revisão; a causa básica não descreve todas as doenças presentes; o município de residência não é necessariamente o local de exposição.",
+  "arquivos_gerados": [
+    "dados/saude/sim/indice.json",
+    "dados/saude/sim/<ano>/...",
+    "dados/relatorios/sim.json"
+  ],
+  "comando_atualizacao": "python3 scripts/preparar_sim.py --refazer",
+  "coletado_em": "2026-11-12"
+}

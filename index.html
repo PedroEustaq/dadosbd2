@@ -3,238 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Painel — Óbitos por Doenças Crônicas no Brasil</title>
+  <title>Saúde no Território — doenças, municípios e fatores a investigar</title>
+  <meta name="description" content="Explore óbitos, internações e notificações por doença (CID-10) nos municípios brasileiros, compare com a população e investigue fatores territoriais com dados públicos e fontes rastreáveis." />
 
-  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- PapaParse -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=2026-11-12" />
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header>
-  <div>
-    <h1>Painel de Óbitos por Doenças Crônicas — Brasil</h1>
-    <div id="status" class="load-status" data-state="success" role="status" aria-live="polite">
-      Marque um ou mais estados para carregar os dados.
-    </div>
-  </div>
-  <label class="file-label">
-    Carregar CSV
-    <input type="file" id="csvFile" accept=".csv,text/csv" />
-  </label>
+<header class="topbar">
+  <a class="brand" href="#/inicio">Saúde no Território</a>
+  <button id="menuToggle" class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false">Menu</button>
+  <nav id="nav" class="topnav" aria-label="Áreas do painel">
+    <a href="#/inicio" data-rota="inicio">Visão geral</a>
+    <a href="#/mapa" data-rota="mapa">Explorar o mapa</a>
+    <a href="#/municipio" data-rota="municipio">Meu município</a>
+    <a href="#/doencas" data-rota="doencas">Doenças e CID</a>
+    <a href="#/comparar" data-rota="comparar">Comparar locais</a>
+    <a href="#/fatores" data-rota="fatores">Fatores e melhorias</a>
+    <a href="#/fontes" data-rota="fontes">Fontes e metodologia</a>
+  </nav>
 </header>
 
-<div class="wrap">
-  <!-- FILTROS -->
-  <aside class="card filters">
-    <div class="filters-heading">
-      <div><span class="eyebrow">EXPLORAÇÃO</span><h2>Filtros</h2></div>
-      <span class="filter-count">SIM · Brasil</span>
+<!-- Seleção: vale para todas as áreas e fica sincronizada com o endereço da página -->
+<section id="selbar" class="selbar" aria-label="Seleção atual">
+  <details id="selDet" class="sel-det" open>
+  <summary>Alterar município, doença, evento ou período</summary>
+  <div class="sel-fields">
+    <div class="field combo">
+      <label for="munInput">Município</label>
+      <input id="munInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false"
+        aria-controls="munLista" autocomplete="off" placeholder="Digite o nome, ex.: Campinas SP" />
+      <ul id="munLista" class="combo-list" role="listbox" aria-label="Municípios encontrados" hidden></ul>
     </div>
-
-    <section class="filter-group territory-group">
-    <h3>Território</h3>
-    <div class="state-picker">
-      <details id="statePicker" class="state-checklist">
-        <summary><span>Estados incluídos no mapa</span><small id="stateSelectionCount">0 selecionados</small></summary>
-        <div class="state-picker-body">
-          <p>Marque estados para carregar seus dados. O foco do mapa é ajustado separadamente.</p>
-          <label for="stateSearch">Buscar estado ou sigla</label>
-          <input id="stateSearch" type="text" autocomplete="off" placeholder="Ex.: Minas Gerais ou MG" />
-          <div class="state-picker-actions">
-            <button id="selectVisibleStatesBtn" type="button" class="secondary">Selecionar visíveis</button>
-            <button id="clearStatesBtn" type="button" class="secondary">Limpar seleção</button>
-          </div>
-          <div id="stateChecks" class="state-checks" aria-label="Selecionar estados"></div>
-          <small id="stateSearchStatus" class="state-search-status" aria-live="polite"></small>
-        </div>
-      </details>
-      <div id="selectedStateChips" class="selected-state-chips" role="group" aria-label="Estados selecionados" hidden></div>
+    <div class="field combo">
+      <label for="causaInput">Doença ou grupo (CID-10)</label>
+      <input id="causaInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false"
+        aria-controls="causaLista" autocomplete="off" placeholder="Ex.: infarto, diabetes, I21, dengue" />
+      <ul id="causaLista" class="combo-list" role="listbox" aria-label="Doenças e códigos encontrados" hidden></ul>
     </div>
-    <label for="muniSel">Município de residência</label>
-    <div class="municipality-combobox">
-      <input id="muniSel" type="text" role="combobox" aria-autocomplete="list"
-        aria-controls="muniOptions" aria-expanded="false" autocomplete="off"
-        placeholder="Carregue os estados primeiro" disabled />
-      <button id="muniToggle" class="municipality-toggle" type="button"
-        aria-label="Mostrar municípios" disabled><span aria-hidden="true">⌄</span></button>
-      <div id="muniMenu" class="municipality-menu" hidden>
-        <div id="muniResults" class="municipality-results" aria-live="polite"></div>
-        <div id="muniOptions" class="municipality-options" role="listbox">
-          <div id="muniSpacer" class="municipality-spacer"></div>
-        </div>
-      </div>
+    <div class="field">
+      <label for="eventoSel">Tipo de evento</label>
+      <select id="eventoSel"></select>
     </div>
-    </section>
-
-    <section class="filter-group">
-    <h3>Período e perfil</h3>
-    <label for="dateFrom">Data do óbito — de</label>
-    <input type="date" id="dateFrom" />
-
-    <label for="dateTo">Data do óbito — até</label>
-    <input type="date" id="dateTo" />
-
-    <label for="sexSel">Sexo</label>
-    <select id="sexSel"></select>
-
-    <label for="raceSel">Raça/Cor</label>
-    <select id="raceSel"></select>
-
-    <label for="schoolSel">Escolaridade</label>
-    <select id="schoolSel"></select>
-    </section>
-
-    <section class="filter-group">
-    <h3>Causa do óbito</h3>
-    <label for="chapterSel">Capítulo CID</label>
-    <select id="chapterSel"></select>
-
-    <label for="categorySel">Categoria CID / Doença</label>
-    <select id="categorySel"></select>
-
-    <label for="searchInput">Busca por CID, descrição ou categoria</label>
-    <input type="text" id="searchInput" placeholder="Ex.: infarto, C169, diabetes..." />
-    </section>
-
-    <div class="filter-actions">
-      <small>Os resultados são atualizados automaticamente quando você altera os filtros.</small>
-      <button id="resetBtn" class="secondary">Limpar filtros</button>
+    <div class="field field-ano">
+      <label for="anoSel">Período</label>
+      <select id="anoSel"></select>
     </div>
-  </aside>
-
-  <!-- CONTEÚDO -->
-  <main>
-    <div class="kpis">
-      <div class="card kpi">
-        <div class="v" id="kpiTotal">—</div>
-        <div class="l">Óbitos no filtro</div>
+  </div>
+  <details id="avancados" class="avancados">
+    <summary>Filtros avançados</summary>
+    <div class="sel-fields">
+      <div class="field">
+        <label for="sexoSel">Sexo</label>
+        <select id="sexoSel">
+          <option value="">Todos</option><option value="F">Feminino</option><option value="M">Masculino</option>
+        </select>
       </div>
-      <div class="card kpi">
-        <div class="v" id="kpiMunis">—</div>
-        <div class="l">Municípios de residência</div>
+      <div class="field">
+        <label for="idadeSel">Idade</label>
+        <select id="idadeSel"></select>
       </div>
-      <div class="card kpi">
-        <div class="v" id="kpiCausas">—</div>
-        <div class="l">Categorias CID distintas</div>
-      </div>
-      <div class="card kpi">
-        <div class="v" id="kpiIdade">—</div>
-        <div class="l">Idade média</div>
-      </div>
+      <p class="hint">Sexo e idade funcionam para óbitos por capítulo da CID-10 ou todas as causas, com a população do Censo 2022 do mesmo recorte.</p>
     </div>
-
-    <details id="comparisonPanel" class="card state-comparison">
-      <summary>
-        <span><strong>Comparar estados</strong><small>Abra para ver a comparação lado a lado</small></span>
-        <i aria-hidden="true">⌄</i>
-      </summary>
-      <div class="comparison-controls">
-        <label>Estado A<select id="compareStateA" disabled><option>Carregue estados primeiro</option></select></label>
-        <span aria-hidden="true">×</span>
-        <label>Estado B<select id="compareStateB" disabled><option>Carregue estados primeiro</option></select></label>
-      </div>
-      <div id="comparisonEmpty" class="comparison-empty">Marque pelo menos dois estados para comparar.</div>
-      <div id="comparisonResults" hidden>
-        <div id="comparisonCards" class="comparison-cards"></div>
-        <div class="comparison-chart"><canvas id="comparisonChart"></canvas></div>
-      </div>
-    </details>
-
-    <div class="grid2">
-      <section class="card map-card">
-        <div class="section-title">
-          <h3>Doença mais frequente por município</h3>
-          <small>SIM 2026 · prévia · município de residência</small>
-        </div>
-        <div class="map-controls">
-          <small id="selectedStatesLabel">Nenhum estado selecionado · marque estados para carregar</small>
-          <label for="mapFocusSel">Foco do mapa</label>
-          <select id="mapFocusSel" aria-label="Foco do mapa"></select>
-        </div>
-        <div id="map"></div>
-        <div id="mapLegend" class="map-legend" aria-label="Legenda das doenças"></div>
-      </section>
-
-      <section class="card">
-        <div class="section-title">
-          <h3>Top 10 doenças/categorias CID</h3>
-          <small>Óbitos no filtro</small>
-        </div>
-        <div class="chart-box">
-          <canvas id="causeChart"></canvas>
-        </div>
-      </section>
+  </details>
+  </details>
+  <div class="sel-resumo">
+    <div id="chips" class="chips" role="group" aria-label="Filtros aplicados"></div>
+    <div class="sel-acoes">
+      <button id="limparBtn" class="btn ghost" type="button">Limpar filtros</button>
+      <button id="linkBtn" class="btn ghost" type="button">Copiar link desta seleção</button>
     </div>
+  </div>
+  <p id="eventoExplica" class="hint evento-explica"></p>
+</section>
 
-    <div class="grid2 spaced-section">
-      <section class="card">
-        <div class="section-title">
-          <h3>Distribuição por capítulo CID</h3>
-          <small>Participação no total filtrado</small>
-        </div>
-        <div class="chart-box">
-          <canvas id="chapterChart"></canvas>
-        </div>
-      </section>
+<div id="status" class="load-status" data-state="loading" role="status" aria-live="polite">Carregando os dados de referência...</div>
 
-      <section class="card">
-        <div class="section-title">
-          <h3>Municípios com mais óbitos</h3>
-          <small id="topMuniCount"></small>
+<main id="conteudo" class="content" tabindex="-1">
+  <section id="view-inicio" class="view" aria-labelledby="t-inicio" hidden></section>
+
+  <section id="view-mapa" class="view" aria-labelledby="t-mapa" hidden>
+    <div class="card map-card">
+      <div class="card-head">
+        <div>
+          <h1 id="t-mapa" class="view-title">Explorar o mapa</h1>
+          <p id="mapSub" class="sub"></p>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Município de residência</th>
-                <th>Óbitos</th>
-                <th>Principal causa</th>
-              </tr>
-            </thead>
-            <tbody id="muniTbody"></tbody>
-          </table>
-        </div>
-      </section>
+        <label class="inline-field" for="mapFocusSel">Foco do mapa
+          <select id="mapFocusSel"></select>
+        </label>
+      </div>
+      <div id="mapAviso"></div>
+      <div class="map-wrap">
+        <div id="map" role="application" aria-label="Mapa interativo. As mesmas informações estão na tabela logo abaixo."></div>
+        <div id="mapLegend" class="map-legend" aria-label="Legenda do mapa"></div>
+      </div>
+      <p class="hint">As cores mostram a posição em relação à taxa do Brasil; não indicam, sozinhas, risco aumentado, surto ou diferença estatística. Clique em um local para ver os números.</p>
     </div>
+    <div id="mapTabela" class="card"></div>
+  </section>
 
-    <section class="card spaced-section">
-      <div class="section-title">
-        <h3>Detalhamento dos registros</h3>
-        <small id="detailCount"></small>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Data óbito</th>
-              <th>Município residência</th>
-              <th>Sexo</th>
-              <th>Idade</th>
-              <th>CID</th>
-              <th>Categoria / Doença</th>
-            </tr>
-          </thead>
-          <tbody id="detailTbody"></tbody>
-        </table>
-      </div>
-    </section>
-  </main>
-</div>
+  <section id="view-municipio" class="view" hidden></section>
+  <section id="view-doencas" class="view" hidden></section>
+  <section id="view-comparar" class="view" hidden></section>
+  <section id="view-fatores" class="view" hidden></section>
+  <section id="view-fontes" class="view" hidden></section>
+</main>
 
-<footer class="source-note">
-  Fonte: <a href="https://dadosabertos.saude.gov.br/dataset/sim" target="_blank" rel="noreferrer">Sistema de Informações sobre Mortalidade (SIM), Ministério da Saúde</a> · Base 2026, 2ª prévia (atualizada em 09/10/2026) · <a href="https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/SIM/csv/Mortalidade_Geral_2026_csv.zip" target="_blank" rel="noreferrer">arquivo original (ZIP)</a>.
-  Recorte: CID-10 C00–C97, E10–E14, I00–I99 e J40–J47.
+<footer class="rodape">
+  <p>Painel de consulta pública, feito com dados abertos do Ministério da Saúde, do IBGE e do INPE. Não substitui avaliação de profissionais de saúde nem a vigilância epidemiológica local.
+  Os dados mostram registros agregados: não permitem afirmar a causa de adoecimento de pessoas ou de um município. <a href="#/fontes">Fontes e metodologia</a></p>
 </footer>
 
-<script src="app.js" defer></script>
+<script src="assets/js/config.js?v=2026-11-12" defer></script>
+<script src="assets/js/utils.js?v=2026-11-12" defer></script>
+<script src="assets/js/dados.js?v=2026-11-12" defer></script>
+<script src="assets/js/calculos.js?v=2026-11-12" defer></script>
+<script src="assets/js/mapa.js?v=2026-11-12" defer></script>
+<script src="assets/js/painel.js?v=2026-11-12" defer></script>
+<script src="assets/js/conteudo.js?v=2026-11-12" defer></script>
+<script src="assets/js/main.js?v=2026-11-12" defer></script>
 </body>
 </html>

@@ -1,0 +1,116 @@
+{
+  "gerado_em": "2026-11-12",
+  "pasta": "dados/estados/2026",
+  "registros": 465095,
+  "resolvidos_por_nome_e_uf": 464790,
+  "nao_resolvidos": 305,
+  "proporcao_nao_resolvida": 0.00066,
+  "itens_nao_resolvidos": [
+    {
+      "nome": "Não identificado (422000)",
+      "uf": "SC",
+      "registros": 73
+    },
+    {
+      "nome": "Não identificado (330000)",
+      "uf": "RJ",
+      "registros": 48
+    },
+    {
+      "nome": "Não identificado (150475)",
+      "uf": "PA",
+      "registros": 33
+    },
+    {
+      "nome": "Não identificado (220672)",
+      "uf": "PI",
+      "registros": 30
+    },
+    {
+      "nome": "Não identificado (350000)",
+      "uf": "SP",
+      "registros": 24
+    },
+    {
+      "nome": "Não identificado (421265)",
+      "uf": "SC",
+      "registros": 24
+    },
+    {
+      "nome": "Não identificado (290000)",
+      "uf": "BA",
+      "registros": 14
+    },
+    {
+      "nome": "Não identificado (260000)",
+      "uf": "PE",
+      "registros": 13
+    },
+    {
+      "nome": "Não identificado (320000)",
+      "uf": "ES",
+      "registros": 8
+    },
+    {
+      "nome": "Não identificado (510183)",
+      "uf": "MT",
+      "registros": 6
+    },
+    {
+      "nome": "Não identificado (431454)",
+      "uf": "RS",
+      "registros": 5
+    },
+    {
+      "nome": "Não identificado (500627)",
+      "uf": "MS",
+      "registros": 5
+    },
+    {
+      "nome": "Não identificado (150000)",
+      "uf": "PA",
+      "registros": 4
+    },
+    {
+      "nome": "Não identificado (310000)",
+      "uf": "MG",
+      "registros": 4
+    },
+    {
+      "nome": "Não identificado (210000)",
+      "uf": "MA",
+      "registros": 3
+    },
+    {
+      "nome": "Não identificado (220000)",
+      "uf": "PI",
+      "registros": 3
+    },
+    {
+      "nome": "Não identificado (130000)",
+      "uf": "AM",
+      "registros": 2
+    },
+    {
+      "nome": "Não identificado (410000)",
+      "uf": "PR",
+      "registros": 2
+    },
+    {
+      "nome": "Não identificado (510000)",
+      "uf": "MT",
+      "registros": 2
+    },
+    {
+      "nome": "Não identificado (240000)",
+      "uf": "RN",
+      "registros": 1
+    },
+    {
+      "nome": "Não identificado (520000)",
+      "uf": "GO",
+      "registros": 1
+    }
+  ],
+  "observacao": "A coluna co_municipio_ibge_residencia dos arquivos legados contém nomes, não códigos. 'Não identificado (código)' são municípios que faltavam na tabela usada na preparação original."
+}

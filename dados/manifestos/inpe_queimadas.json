@@ -1,0 +1,27 @@
+{
+  "id": "inpe_queimadas",
+  "titulo": "INPE — Programa Queimadas: focos de calor",
+  "instituicao": "Instituto Nacional de Pesquisas Espaciais (INPE)",
+  "pagina": "https://terrabrasilis.dpi.inpe.br/queimadas/portal/",
+  "recursos": [
+    "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/anual/Brasil_todos_sats/focos_br_todos-sats_2025.zip"
+  ],
+  "licenca": "Dados públicos do INPE; uso livre com citação da fonte.",
+  "versao": "Arquivo anual de 2025",
+  "periodo_referencia": "2025-01 a 2025-12",
+  "granularidade": "foco (ponto), agregado por município",
+  "unidade": "focos de calor",
+  "definicao": "Somente o satélite de referência (AQUA_M-T), usado pelo INPE para comparar anos e regiões; os demais satélites do arquivo repetem detecções e não são somados.",
+  "cobertura": "4287 municípios com ao menos um foco; 0 focos sem município resolvido",
+  "campos": {
+    "focos_calor": "focos no ano",
+    "focos_por_1000km2": "focos por 1.000 km²"
+  },
+  "valores_ausentes": "Município sem foco detectado recebe zero.",
+  "limitacoes": "Foco de calor detectado por satélite é um indicador indireto: não mede a área queimada, a concentração de fumaça nem a exposição das pessoas. A fumaça se desloca por centenas de quilômetros; um município sem focos pode receber fumaça de outros. Nuvens e queimadas pequenas reduzem a detecção. Qualidade do ar medida por estações não foi importada: não há rede nacional com cobertura municipal.",
+  "arquivos_gerados": [
+    "dados/indicadores/municipios.csv"
+  ],
+  "comando_atualizacao": "python3 scripts/preparar_cnes_inpe.py --refazer && python3 scripts/montar_indicadores.py",
+  "coletado_em": "2026-11-12"
+}

@@ -1,0 +1,36 @@
+{
+  "anos": {
+    "2023": {
+      "ano": 2023,
+      "casos_provaveis": 1645350,
+      "casos_com_municipio": 1645340,
+      "municipios_na_tabela": 5571
+    },
+    "2024": {
+      "ano": 2024,
+      "casos_provaveis": 6564921,
+      "casos_com_municipio": 6564894,
+      "municipios_na_tabela": 5571
+    },
+    "2025": {
+      "ano": 2025,
+      "casos_provaveis": 1643215,
+      "casos_com_municipio": 1643204,
+      "municipios_na_tabela": 5571
+    },
+    "2026": {
+      "ano": 2026,
+      "casos_provaveis": 494921,
+      "casos_com_municipio": 494913,
+      "municipios_na_tabela": 5571
+    }
+  },
+  "fonte": "SINAN — Dengue, notificações registradas (TabNet/DATASUS)",
+  "evento": "casos prováveis de dengue por município de residência e ano de notificação",
+  "cid": [
+    "A90",
+    "A91",
+    "A97"
+  ],
+  "gerado_em": "2026-11-12"
+}

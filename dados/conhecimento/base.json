@@ -1,0 +1,1882 @@
+{
+  "meta": {
+    "revisado_em": "2026-11-12",
+    "natureza": "Curadoria do projeto a partir de fichas e páginas oficiais da OMS, OPAS, Ministério da Saúde e INCA. É informação geral da literatura: não descreve o que aconteceu em nenhum município.",
+    "cobertura": "17 temas. Códigos CID fora desses temas não têm conteúdo explicativo revisado.",
+    "enderecos_verificados_em": "2026-11-12"
+  },
+  "referencias": {
+    "oms_diarreia": {
+      "org": "OMS",
+      "titulo": "Diarrhoeal disease (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"
+    },
+    "oms_agua": {
+      "org": "OMS",
+      "titulo": "Drinking-water (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/drinking-water"
+    },
+    "oms_saneamento": {
+      "org": "OMS",
+      "titulo": "Sanitation (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/sanitation"
+    },
+    "ms_dda": {
+      "org": "Ministério da Saúde",
+      "titulo": "Doenças diarreicas agudas (DDA)",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dda"
+    },
+    "oms_dengue": {
+      "org": "OMS",
+      "titulo": "Dengue and severe dengue (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
+    },
+    "ms_dengue": {
+      "org": "Ministério da Saúde",
+      "titulo": "Dengue",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue"
+    },
+    "opas_dengue": {
+      "org": "OPAS",
+      "titulo": "Dengue",
+      "url": "https://www.paho.org/pt/topicos/dengue"
+    },
+    "oms_vetores": {
+      "org": "OMS",
+      "titulo": "Vector-borne diseases (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/vector-borne-diseases"
+    },
+    "oms_lepto": {
+      "org": "OMS",
+      "titulo": "Leptospirosis (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/leptospirosis"
+    },
+    "ms_lepto": {
+      "org": "Ministério da Saúde",
+      "titulo": "Leptospirose",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/l/leptospirose"
+    },
+    "oms_tb": {
+      "org": "OMS",
+      "titulo": "Tuberculosis (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/tuberculosis"
+    },
+    "ms_tb": {
+      "org": "Ministério da Saúde",
+      "titulo": "Tuberculose",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/t/tuberculose"
+    },
+    "oms_dpoc": {
+      "org": "OMS",
+      "titulo": "Chronic obstructive pulmonary disease (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/chronic-obstructive-pulmonary-disease-(copd)"
+    },
+    "oms_asma": {
+      "org": "OMS",
+      "titulo": "Asthma (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/asthma"
+    },
+    "ms_asma": {
+      "org": "Ministério da Saúde",
+      "titulo": "Asma",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/asma"
+    },
+    "oms_ar": {
+      "org": "OMS",
+      "titulo": "Ambient (outdoor) air pollution (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health"
+    },
+    "oms_ar_domestico": {
+      "org": "OMS",
+      "titulo": "Household air pollution (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health"
+    },
+    "oms_queimadas": {
+      "org": "OMS",
+      "titulo": "Wildfires (tema de saúde)",
+      "url": "https://www.who.int/health-topics/wildfires"
+    },
+    "ms_queimadas": {
+      "org": "Ministério da Saúde",
+      "titulo": "Queimadas e saúde",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/q/queimadas"
+    },
+    "oms_pneumonia": {
+      "org": "OMS",
+      "titulo": "Pneumonia in children (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/pneumonia"
+    },
+    "oms_influenza": {
+      "org": "OMS",
+      "titulo": "Influenza (seasonal) (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(seasonal)"
+    },
+    "ms_gripe": {
+      "org": "Ministério da Saúde",
+      "titulo": "Gripe (influenza)",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/g/gripe-influenza"
+    },
+    "oms_dcv": {
+      "org": "OMS",
+      "titulo": "Cardiovascular diseases (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)"
+    },
+    "oms_hipertensao": {
+      "org": "OMS",
+      "titulo": "Hypertension (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/hypertension"
+    },
+    "ms_avc": {
+      "org": "Ministério da Saúde",
+      "titulo": "Acidente vascular cerebral (AVC)",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/avc"
+    },
+    "ms_infarto": {
+      "org": "Ministério da Saúde",
+      "titulo": "Infarto",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infarto"
+    },
+    "ms_hipertensao": {
+      "org": "Ministério da Saúde",
+      "titulo": "Hipertensão (pressão alta)",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hipertensao"
+    },
+    "opas_dcv": {
+      "org": "OPAS",
+      "titulo": "Doenças cardiovasculares",
+      "url": "https://www.paho.org/pt/topicos/doencas-cardiovasculares"
+    },
+    "oms_diabetes": {
+      "org": "OMS",
+      "titulo": "Diabetes (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes"
+    },
+    "ms_diabetes": {
+      "org": "Ministério da Saúde",
+      "titulo": "Diabetes (diabetes mellitus)",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/diabetes"
+    },
+    "oms_dcnt": {
+      "org": "OMS",
+      "titulo": "Noncommunicable diseases (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases"
+    },
+    "oms_cancer": {
+      "org": "OMS",
+      "titulo": "Cancer (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/cancer"
+    },
+    "ms_cancer": {
+      "org": "Ministério da Saúde",
+      "titulo": "Câncer",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer"
+    },
+    "inca_prevencao": {
+      "org": "INCA",
+      "titulo": "Causas e prevenção do câncer",
+      "url": "https://www.gov.br/inca/pt-br/assuntos/causas-e-prevencao-do-cancer"
+    },
+    "oms_transito": {
+      "org": "OMS",
+      "titulo": "Road traffic injuries (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries"
+    },
+    "opas_transito": {
+      "org": "OPAS",
+      "titulo": "Segurança no trânsito",
+      "url": "https://www.paho.org/pt/topicos/seguranca-no-transito"
+    },
+    "oms_violencia": {
+      "org": "OMS",
+      "titulo": "Youth violence (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/youth-violence"
+    },
+    "oms_suicidio": {
+      "org": "OMS",
+      "titulo": "Suicide (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    "ms_suicidio": {
+      "org": "Ministério da Saúde",
+      "titulo": "Prevenção do suicídio",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/suicidio-prevencao"
+    },
+    "oms_neonatal": {
+      "org": "OMS",
+      "titulo": "Newborn mortality (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/newborn-mortality"
+    },
+    "oms_materna": {
+      "org": "OMS",
+      "titulo": "Maternal mortality (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/maternal-mortality"
+    },
+    "ms_crianca": {
+      "org": "Ministério da Saúde",
+      "titulo": "Saúde da criança",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca"
+    },
+    "oms_quedas": {
+      "org": "OMS",
+      "titulo": "Falls (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/falls"
+    },
+    "oms_envelhecimento": {
+      "org": "OMS",
+      "titulo": "Ageing and health (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/ageing-and-health"
+    },
+    "opas_envelhecimento": {
+      "org": "OPAS",
+      "titulo": "Envelhecimento saudável",
+      "url": "https://www.paho.org/pt/topicos/envelhecimento-saudavel"
+    },
+    "oms_esquisto": {
+      "org": "OMS",
+      "titulo": "Schistosomiasis (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/schistosomiasis"
+    },
+    "ms_esquisto": {
+      "org": "Ministério da Saúde",
+      "titulo": "Esquistossomose",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/esquistossomose"
+    },
+    "oms_hepa": {
+      "org": "OMS",
+      "titulo": "Hepatitis A (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/hepatitis-a"
+    },
+    "ms_hepatites": {
+      "org": "Ministério da Saúde",
+      "titulo": "Hepatites virais",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hepatites-virais"
+    },
+    "oms_chagas": {
+      "org": "OMS",
+      "titulo": "Chagas disease (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)"
+    },
+    "ms_chagas": {
+      "org": "Ministério da Saúde",
+      "titulo": "Doença de Chagas",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/doenca-de-chagas"
+    },
+    "oms_determinantes": {
+      "org": "OMS",
+      "titulo": "Social determinants of health (tema de saúde)",
+      "url": "https://www.who.int/health-topics/social-determinants-of-health"
+    },
+    "oms_aps": {
+      "org": "OMS",
+      "titulo": "Primary health care (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/primary-health-care"
+    },
+    "opas_aps": {
+      "org": "OPAS",
+      "titulo": "Atenção primária à saúde",
+      "url": "https://www.paho.org/pt/topicos/atencao-primaria-saude"
+    },
+    "oms_clima": {
+      "org": "OMS",
+      "titulo": "Climate change (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health"
+    },
+    "oms_calor": {
+      "org": "OMS",
+      "titulo": "Heat and health (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health"
+    },
+    "oms_imunizacao": {
+      "org": "OMS",
+      "titulo": "Immunization coverage (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/immunization-coverage"
+    },
+    "ms_vacinacao": {
+      "org": "Ministério da Saúde",
+      "titulo": "Calendário Nacional de Vacinação",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/calendario-nacional-de-vacinacao"
+    },
+    "oms_sepse": {
+      "org": "OMS",
+      "titulo": "Sepsis (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/sepsis"
+    },
+    "oms_demencia": {
+      "org": "OMS",
+      "titulo": "Dementia (ficha informativa)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/dementia"
+    }
+  },
+  "acoes": {
+    "esgoto": {
+      "tipo": "poder_publico",
+      "texto": "Ampliar a coleta e o tratamento de esgoto e eliminar lançamentos a céu aberto, priorizando as áreas sem rede.",
+      "problema": "Contato de pessoas, água e alimentos com fezes.",
+      "refs": [
+        "oms_saneamento",
+        "oms_diarreia"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "agua": {
+      "tipo": "poder_publico",
+      "texto": "Ampliar o abastecimento regular de água tratada e monitorar a qualidade da água distribuída e das soluções alternativas (poços, carros-pipa).",
+      "problema": "Consumo de água contaminada e armazenamento improvisado em casa.",
+      "refs": [
+        "oms_agua",
+        "ms_dda"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "residuos": {
+      "tipo": "poder_publico",
+      "texto": "Regularizar a coleta de lixo e eliminar pontos de descarte irregular.",
+      "problema": "Acúmulo de resíduos que juntam água parada, atraem roedores e contaminam o solo.",
+      "refs": [
+        "ms_dengue",
+        "ms_lepto"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "criadouros": {
+      "tipo": "comunidade",
+      "texto": "Organizar mutirões e vistorias semanais para eliminar recipientes com água parada em casas, quintais e terrenos.",
+      "problema": "Criadouros do mosquito Aedes aegypti perto das moradias.",
+      "refs": [
+        "ms_dengue",
+        "opas_dengue"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "higiene": {
+      "tipo": "populacao",
+      "texto": "Lavar as mãos com água e sabão, tratar ou ferver a água quando a origem não for segura e higienizar os alimentos.",
+      "problema": "Transmissão fecal-oral de vírus, bactérias e parasitas.",
+      "refs": [
+        "oms_diarreia",
+        "ms_dda"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "enchente": {
+      "tipo": "populacao",
+      "texto": "Evitar contato com água e lama de enchente; se inevitável, usar botas e luvas e procurar atendimento se houver febre nos dias seguintes.",
+      "problema": "Contato com água contaminada pela urina de roedores.",
+      "refs": [
+        "ms_lepto",
+        "oms_lepto"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "aps": {
+      "tipo": "poder_publico",
+      "texto": "Fortalecer a atenção primária: equipes completas, busca ativa, acompanhamento regular de pessoas com doenças crônicas e acesso a medicamentos.",
+      "problema": "Diagnóstico tardio e falta de acompanhamento de condições tratáveis.",
+      "refs": [
+        "oms_aps",
+        "opas_aps"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "urgencia": {
+      "tipo": "poder_publico",
+      "texto": "Organizar a rede de urgência (transporte, regulação e referência hospitalar) para reduzir o tempo até o atendimento.",
+      "problema": "Atraso no atendimento de eventos agudos como infarto, AVC e traumas.",
+      "refs": [
+        "ms_avc",
+        "ms_infarto"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "cronicas_pop": {
+      "tipo": "populacao",
+      "texto": "Medir a pressão e a glicemia periodicamente, manter o tratamento prescrito, não fumar, reduzir o sal e o álcool e praticar atividade física.",
+      "problema": "Fatores de risco modificáveis das doenças cardiovasculares e do diabetes.",
+      "refs": [
+        "oms_dcv",
+        "ms_hipertensao",
+        "ms_diabetes"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "rastreio": {
+      "tipo": "poder_publico",
+      "texto": "Garantir acesso aos exames de rastreamento e ao diagnóstico em tempo oportuno, com encaminhamento ao tratamento.",
+      "problema": "Diagnóstico de câncer em estágio avançado.",
+      "refs": [
+        "oms_cancer",
+        "inca_prevencao"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "fumaca_gestao": {
+      "tipo": "poder_publico",
+      "texto": "Prevenir e combater queimadas, emitir alertas em episódios de fumaça e preparar os serviços de saúde para o aumento de atendimentos respiratórios.",
+      "problema": "Exposição da população à fumaça de queimadas.",
+      "refs": [
+        "ms_queimadas",
+        "oms_queimadas"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "fumaca_pop": {
+      "tipo": "populacao",
+      "texto": "Em dias de fumaça, evitar esforço ao ar livre, manter portas e janelas fechadas quando possível e não queimar lixo ou restos de vegetação.",
+      "problema": "Inalação de partículas finas da fumaça.",
+      "refs": [
+        "ms_queimadas",
+        "oms_ar"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "vacinas": {
+      "tipo": "poder_publico",
+      "texto": "Manter a vacinação em dia (influenza, pneumocócica e demais vacinas do calendário), com busca ativa dos grupos prioritários.",
+      "problema": "Infecções preveníveis por vacina e suas complicações.",
+      "refs": [
+        "ms_vacinacao",
+        "oms_imunizacao"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "tb_busca": {
+      "tipo": "poder_publico",
+      "texto": "Fazer busca ativa de pessoas com tosse por três semanas ou mais, examinar os contatos e apoiar o tratamento até o fim.",
+      "problema": "Transmissão continuada por casos não diagnosticados ou com tratamento interrompido.",
+      "refs": [
+        "ms_tb",
+        "oms_tb"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "moradia": {
+      "tipo": "poder_publico",
+      "texto": "Melhorar as condições de moradia e reduzir o adensamento, com políticas habitacionais e de proteção social.",
+      "problema": "Ambientes fechados, pouco ventilados e com muitas pessoas facilitam a transmissão respiratória.",
+      "refs": [
+        "oms_tb",
+        "oms_determinantes"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "transito": {
+      "tipo": "poder_publico",
+      "texto": "Gerenciar a velocidade, fiscalizar álcool ao volante, capacete e cinto, e adequar as vias a pedestres, ciclistas e motociclistas.",
+      "problema": "Fatores de risco conhecidos para lesões e mortes no trânsito.",
+      "refs": [
+        "oms_transito",
+        "opas_transito"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "violencia": {
+      "tipo": "poder_publico",
+      "texto": "Combinar políticas de proteção social, educação, oportunidades para jovens e redução do acesso a armas e ao álcool.",
+      "problema": "Fatores sociais associados à violência interpessoal.",
+      "refs": [
+        "oms_violencia"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "saude_mental": {
+      "tipo": "poder_publico",
+      "texto": "Ampliar o acesso ao cuidado em saúde mental e treinar as equipes para identificar e acompanhar pessoas em risco.",
+      "problema": "Falta de acesso a cuidado e acompanhamento.",
+      "refs": [
+        "oms_suicidio",
+        "ms_suicidio"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "prenatal": {
+      "tipo": "poder_publico",
+      "texto": "Garantir pré-natal de qualidade desde o início da gestação, parto em serviço com capacidade adequada e acompanhamento do recém-nascido.",
+      "problema": "Complicações evitáveis da gestação, do parto e dos primeiros dias de vida.",
+      "refs": [
+        "oms_neonatal",
+        "oms_materna",
+        "ms_crianca"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "quedas": {
+      "tipo": "comunidade",
+      "texto": "Adaptar casas e espaços públicos (iluminação, corrimãos, calçadas) e oferecer atividade física orientada para pessoas idosas.",
+      "problema": "Risco de quedas em pessoas idosas.",
+      "refs": [
+        "oms_quedas",
+        "opas_envelhecimento"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    },
+    "registro": {
+      "tipo": "poder_publico",
+      "texto": "Investigar os óbitos com causa mal definida e qualificar o preenchimento da declaração de óbito.",
+      "problema": "Causas mal definidas escondem o perfil real de mortalidade do município.",
+      "refs": [
+        "oms_aps"
+      ],
+      "limitacoes": "Não é possível estimar, com os dados deste painel, quanto a ação reduziria os casos neste município."
+    }
+  },
+  "temas": [
+    {
+      "id": "diarreicas",
+      "nome": "Doenças infecciosas intestinais (diarreias)",
+      "cid": [
+        "A00-A09"
+      ],
+      "descricao": "Infecções do intestino por vírus, bactérias ou parasitas, que causam diarreia e podem levar à desidratação, mais grave em crianças pequenas e idosos.",
+      "transmissao": "Principalmente fecal-oral: água ou alimentos contaminados por fezes e mãos sujas.",
+      "risco": [
+        "Água sem tratamento adequado",
+        "Falta de esgotamento sanitário e de banheiro",
+        "Higiene insuficiente das mãos e dos alimentos",
+        "Desnutrição e idade inferior a 5 anos"
+      ],
+      "prevencao": [
+        "Água tratada e saneamento",
+        "Lavagem das mãos com sabão",
+        "Aleitamento materno e vacinação contra rotavírus",
+        "Reidratação oral precoce nos casos"
+      ],
+      "refs": [
+        "oms_diarreia",
+        "ms_dda",
+        "oms_agua",
+        "oms_saneamento"
+      ],
+      "fatores": [
+        {
+          "indicador": "esgoto_precario",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Esgoto sem coleta adequada contamina o solo, a água e os alimentos com microrganismos das fezes.",
+          "refs": [
+            "oms_saneamento",
+            "oms_diarreia"
+          ],
+          "acoes": [
+            "esgoto",
+            "higiene"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "agua_sem_rede",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Sem rede geral, é mais comum o uso de fontes sem tratamento e o armazenamento improvisado de água.",
+          "refs": [
+            "oms_agua",
+            "ms_dda"
+          ],
+          "acoes": [
+            "agua",
+            "higiene"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Poço profundo ou nascente protegida podem fornecer água segura. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "sem_banheiro",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "A falta de banheiro leva à defecação a céu aberto, que espalha os agentes das diarreias.",
+          "refs": [
+            "oms_saneamento"
+          ],
+          "acoes": [
+            "esgoto"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "pct_0a4",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "Crianças menores de 5 anos adoecem mais e têm formas mais graves.",
+          "refs": [
+            "oms_diarreia"
+          ],
+          "acoes": [],
+          "limitacoes": "É uma característica da população. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "ms_dda",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "dengue",
+      "nome": "Dengue e outras arboviroses",
+      "cid": [
+        "A90-A92",
+        "A97-A97"
+      ],
+      "descricao": "Infecções virais transmitidas pelo mosquito Aedes aegypti. A maioria dos casos é leve, mas a dengue pode evoluir para formas graves.",
+      "transmissao": "Picada da fêmea do mosquito Aedes aegypti infectada. Não passa diretamente de pessoa para pessoa.",
+      "risco": [
+        "Recipientes com água parada perto das casas",
+        "Abastecimento irregular de água, que leva ao armazenamento em tonéis e caixas",
+        "Coleta de lixo insuficiente",
+        "Calor e chuva, que favorecem o mosquito",
+        "Áreas urbanas densas"
+      ],
+      "prevencao": [
+        "Eliminar criadouros semanalmente",
+        "Tampar caixas-d'água e reservatórios",
+        "Coleta regular de lixo",
+        "Vacinação para os grupos indicados pelo Ministério da Saúde",
+        "Procurar atendimento ao primeiro sinal de alarme"
+      ],
+      "refs": [
+        "oms_dengue",
+        "ms_dengue",
+        "opas_dengue",
+        "oms_vetores"
+      ],
+      "fatores": [
+        {
+          "indicador": "lixo_queimado_ou_jogado",
+          "papel": "condição para o vetor",
+          "atencao": "maior",
+          "porque": "Lixo descartado em terrenos acumula água da chuva e vira criadouro do mosquito.",
+          "refs": [
+            "ms_dengue",
+            "oms_dengue"
+          ],
+          "acoes": [
+            "residuos",
+            "criadouros"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "agua_sem_rede",
+          "papel": "condição para o vetor",
+          "atencao": "maior",
+          "porque": "Sem rede regular, as famílias guardam água em recipientes que, destampados, viram criadouros.",
+          "refs": [
+            "oms_dengue",
+            "opas_dengue"
+          ],
+          "acoes": [
+            "agua",
+            "criadouros"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. O Censo não mede a intermitência do abastecimento. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "pct_urbana",
+          "papel": "contexto",
+          "atencao": "maior",
+          "porque": "O Aedes aegypti é um mosquito adaptado ao ambiente urbano e às moradias.",
+          "refs": [
+            "oms_dengue"
+          ],
+          "acoes": [
+            "criadouros"
+          ],
+          "limitacoes": "Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "densidade",
+          "papel": "contexto",
+          "atencao": "maior",
+          "porque": "Maior densidade de pessoas e moradias facilita a circulação do vírus entre mosquitos e pessoas.",
+          "refs": [
+            "oms_dengue"
+          ],
+          "acoes": [],
+          "limitacoes": "Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "ms_dengue",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "leptospirose",
+      "nome": "Leptospirose",
+      "cid": [
+        "A27-A27"
+      ],
+      "descricao": "Infecção bacteriana que pode causar febre, dores musculares e, nas formas graves, comprometimento dos rins, do fígado e dos pulmões.",
+      "transmissao": "Contato da pele ou mucosas com água ou lama contaminadas pela urina de animais infectados, principalmente ratos; comum após enchentes.",
+      "risco": [
+        "Enchentes e alagamentos",
+        "Esgoto a céu aberto",
+        "Acúmulo de lixo e presença de roedores",
+        "Trabalho com esgoto, lixo ou em áreas alagadas"
+      ],
+      "prevencao": [
+        "Controle de roedores e coleta de lixo",
+        "Drenagem e saneamento",
+        "Evitar contato com água de enchente",
+        "Atendimento rápido em caso de febre após exposição"
+      ],
+      "refs": [
+        "oms_lepto",
+        "ms_lepto"
+      ],
+      "fatores": [
+        {
+          "indicador": "esgoto_precario",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Esgoto a céu aberto e valas favorecem roedores e o contato das pessoas com água contaminada.",
+          "refs": [
+            "ms_lepto"
+          ],
+          "acoes": [
+            "esgoto",
+            "enchente"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "lixo_queimado_ou_jogado",
+          "papel": "condição para o reservatório",
+          "atencao": "maior",
+          "porque": "Lixo acumulado oferece alimento e abrigo para ratos.",
+          "refs": [
+            "ms_lepto"
+          ],
+          "acoes": [
+            "residuos"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "tuberculose",
+      "nome": "Tuberculose",
+      "cid": [
+        "A15-A19"
+      ],
+      "descricao": "Infecção causada pelo bacilo de Koch, que atinge principalmente os pulmões. Tem cura com tratamento completo, oferecido pelo SUS.",
+      "transmissao": "Pelo ar, quando a pessoa com tuberculose pulmonar tosse, fala ou espirra.",
+      "risco": [
+        "Moradias com muitas pessoas e pouca ventilação",
+        "Pobreza e desnutrição",
+        "Infecção pelo HIV, diabetes, tabagismo e uso de álcool",
+        "Privação de liberdade e situação de rua"
+      ],
+      "prevencao": [
+        "Vacina BCG ao nascer",
+        "Diagnóstico precoce de quem tem tosse por 3 semanas ou mais",
+        "Tratamento completo",
+        "Avaliação dos contatos",
+        "Ambientes ventilados"
+      ],
+      "refs": [
+        "oms_tb",
+        "ms_tb"
+      ],
+      "fatores": [
+        {
+          "indicador": "moradores_por_domicilio",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Mais pessoas por domicílio aumentam o contato prolongado em ambiente fechado, que favorece a transmissão.",
+          "refs": [
+            "oms_tb"
+          ],
+          "acoes": [
+            "moradia",
+            "tb_busca"
+          ],
+          "limitacoes": "A média de moradores é um indicador indireto: não considera o tamanho nem a ventilação das casas. O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_tb",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Renda é um marcador amplo de condições de vida, não uma causa direta. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "ms_tb",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "resp_cronicas",
+      "nome": "Doenças respiratórias crônicas (DPOC, asma, bronquite, enfisema)",
+      "cid": [
+        "J40-J47"
+      ],
+      "descricao": "Doenças de longa duração das vias aéreas e dos pulmões, que causam falta de ar, tosse e chiado e podem ter crises graves.",
+      "transmissao": null,
+      "risco": [
+        "Tabagismo (principal causa da DPOC)",
+        "Poluição do ar externa e dentro de casa (fogão a lenha, queima de lixo)",
+        "Fumaça de queimadas",
+        "Poeiras e produtos químicos no trabalho",
+        "Infecções respiratórias repetidas na infância"
+      ],
+      "prevencao": [
+        "Não fumar e evitar a fumaça do cigarro",
+        "Reduzir a exposição à fumaça e à poluição",
+        "Vacinação contra gripe e pneumonia",
+        "Acompanhamento regular e uso correto dos medicamentos"
+      ],
+      "refs": [
+        "oms_dpoc",
+        "oms_asma",
+        "ms_asma",
+        "oms_ar"
+      ],
+      "fatores": [
+        {
+          "indicador": "focos_por_1000km2",
+          "papel": "agravamento (indicador indireto)",
+          "atencao": "maior",
+          "porque": "A fumaça de queimadas contém partículas finas que desencadeiam crises e agravam doenças respiratórias.",
+          "refs": [
+            "oms_queimadas",
+            "ms_queimadas",
+            "oms_ar"
+          ],
+          "acoes": [
+            "fumaca_gestao",
+            "fumaca_pop"
+          ],
+          "limitacoes": "Focos de calor não medem fumaça nem exposição; a fumaça viaja entre municípios e o efeito é mais visível em atendimentos e internações de curto prazo do que em óbitos anuais. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "lixo_queimado_ou_jogado",
+          "papel": "agravamento (indicador indireto)",
+          "atencao": "maior",
+          "porque": "A queima de lixo perto das moradias produz fumaça irritante para as vias aéreas.",
+          "refs": [
+            "oms_ar_domestico",
+            "oms_ar"
+          ],
+          "acoes": [
+            "residuos",
+            "fumaca_pop"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. O indicador soma lixo queimado e lixo jogado em terreno. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "pct_60mais",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "O risco cresce com a idade. Municípios com mais idosos têm mais eventos mesmo sem risco maior em cada idade; por isso a comparação padronizada por idade é a mais justa.",
+          "refs": [
+            "oms_dpoc"
+          ],
+          "acoes": [],
+          "limitacoes": "É uma característica da população, não um fator a ser 'corrigido'. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "oms_dpoc",
+            "ms_asma",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "pneumonia",
+      "nome": "Gripe e pneumonia",
+      "cid": [
+        "J09-J18"
+      ],
+      "descricao": "Infecções respiratórias agudas. A pneumonia é a inflamação dos pulmões, mais grave em crianças pequenas, idosos e pessoas com doenças crônicas.",
+      "transmissao": "Gotículas e secreções respiratórias de pessoas infectadas; alguns agentes já vivem nas vias aéreas.",
+      "risco": [
+        "Idade inferior a 5 anos ou superior a 60",
+        "Doenças crônicas e baixa imunidade",
+        "Fumaça dentro de casa e poluição do ar",
+        "Aglomeração domiciliar",
+        "Vacinação incompleta"
+      ],
+      "prevencao": [
+        "Vacinas contra influenza, pneumococo, Hib e sarampo",
+        "Aleitamento materno",
+        "Ambientes ventilados e sem fumaça",
+        "Tratamento precoce"
+      ],
+      "refs": [
+        "oms_pneumonia",
+        "oms_influenza",
+        "ms_gripe"
+      ],
+      "fatores": [
+        {
+          "indicador": "pct_60mais",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "O risco cresce com a idade. Municípios com mais idosos têm mais eventos mesmo sem risco maior em cada idade; por isso a comparação padronizada por idade é a mais justa.",
+          "refs": [
+            "oms_influenza"
+          ],
+          "acoes": [],
+          "limitacoes": "É uma característica da população, não um fator a ser 'corrigido'. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "moradores_por_domicilio",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Mais pessoas dividindo o mesmo ambiente facilitam a transmissão de infecções respiratórias.",
+          "refs": [
+            "oms_pneumonia"
+          ],
+          "acoes": [
+            "moradia",
+            "vacinas"
+          ],
+          "limitacoes": "Indicador indireto de adensamento. O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "focos_por_1000km2",
+          "papel": "agravamento (indicador indireto)",
+          "atencao": "maior",
+          "porque": "A poluição do ar por fumaça aumenta o risco e a gravidade das infecções respiratórias.",
+          "refs": [
+            "oms_ar",
+            "oms_queimadas"
+          ],
+          "acoes": [
+            "fumaca_gestao",
+            "fumaca_pop"
+          ],
+          "limitacoes": "Focos de calor não medem fumaça nem exposição. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "oms_pneumonia",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "circulatorias",
+      "nome": "Doenças do aparelho circulatório (infarto, AVC, hipertensão, insuficiência cardíaca)",
+      "cid": [
+        "I00-I99"
+      ],
+      "descricao": "Doenças do coração e dos vasos sanguíneos. Infarto e AVC são as formas agudas mais conhecidas e estão entre as principais causas de morte.",
+      "transmissao": null,
+      "risco": [
+        "Pressão alta, diabetes e colesterol elevado",
+        "Tabagismo e uso nocivo de álcool",
+        "Alimentação com excesso de sal e ultraprocessados, sedentarismo e obesidade",
+        "Idade",
+        "Poluição do ar",
+        "Pobreza e dificuldade de acesso ao cuidado"
+      ],
+      "prevencao": [
+        "Controle da pressão, da glicemia e do colesterol",
+        "Não fumar, reduzir sal e álcool, praticar atividade física",
+        "Acompanhamento na atenção primária",
+        "Reconhecer sinais de infarto e AVC e acionar o SAMU 192"
+      ],
+      "refs": [
+        "oms_dcv",
+        "oms_hipertensao",
+        "ms_avc",
+        "ms_infarto",
+        "ms_hipertensao",
+        "opas_dcv"
+      ],
+      "fatores": [
+        {
+          "indicador": "pct_60mais",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "O risco cresce com a idade. Municípios com mais idosos têm mais eventos mesmo sem risco maior em cada idade; por isso a comparação padronizada por idade é a mais justa.",
+          "refs": [
+            "oms_dcv"
+          ],
+          "acoes": [],
+          "limitacoes": "É uma característica da população, não um fator a ser 'corrigido'. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "oms_hipertensao",
+            "ms_hipertensao",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "urgencia_100mil",
+          "papel": "acesso ao cuidado de urgência",
+          "atencao": "menor",
+          "porque": "No infarto e no AVC, o tempo até o atendimento muda o desfecho.",
+          "refs": [
+            "ms_avc",
+            "ms_infarto"
+          ],
+          "acoes": [
+            "urgencia"
+          ],
+          "limitacoes": "Conta estabelecimentos, não mede tempo de resposta; o SAMU e hospitais de municípios vizinhos não aparecem aqui. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_dcv",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Renda é um marcador amplo de condições de vida, não uma causa direta. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "alfabetizacao",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Menor escolaridade se associa a menos acesso a informação e a serviços de saúde e a maior exposição a fatores de risco.",
+          "refs": [
+            "oms_dcv",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "diabetes",
+      "nome": "Diabetes mellitus",
+      "cid": [
+        "E10-E14"
+      ],
+      "descricao": "Doença crônica em que o açúcar no sangue fica elevado. Sem controle, causa complicações no coração, nos rins, nos olhos e nos nervos.",
+      "transmissao": null,
+      "risco": [
+        "Excesso de peso e sedentarismo",
+        "Alimentação inadequada",
+        "Histórico familiar",
+        "Idade",
+        "Dificuldade de acesso a diagnóstico, medicamentos e acompanhamento"
+      ],
+      "prevencao": [
+        "Alimentação saudável e atividade física",
+        "Exames periódicos para diagnóstico precoce",
+        "Tratamento contínuo e cuidado com os pés, os olhos e os rins"
+      ],
+      "refs": [
+        "oms_diabetes",
+        "ms_diabetes",
+        "oms_dcnt"
+      ],
+      "fatores": [
+        {
+          "indicador": "pct_60mais",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "O risco cresce com a idade. Municípios com mais idosos têm mais eventos mesmo sem risco maior em cada idade; por isso a comparação padronizada por idade é a mais justa.",
+          "refs": [
+            "oms_diabetes"
+          ],
+          "acoes": [],
+          "limitacoes": "É uma característica da população, não um fator a ser 'corrigido'. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "oms_diabetes",
+            "ms_diabetes",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_diabetes",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Renda é um marcador amplo de condições de vida, não uma causa direta. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "alfabetizacao",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Menor escolaridade se associa a menos acesso a informação e a serviços de saúde e a maior exposição a fatores de risco.",
+          "refs": [
+            "oms_dcnt",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "neoplasias",
+      "nome": "Neoplasias (cânceres)",
+      "cid": [
+        "C00-D48"
+      ],
+      "descricao": "Grupo de mais de cem doenças em que células crescem de forma desordenada. As causas e a prevenção variam conforme o tipo de câncer.",
+      "transmissao": null,
+      "risco": [
+        "Tabagismo e álcool",
+        "Alimentação inadequada, excesso de peso e sedentarismo",
+        "Infecções (HPV, hepatites B e C, H. pylori)",
+        "Exposição solar, radiação e agentes químicos no ambiente e no trabalho",
+        "Idade"
+      ],
+      "prevencao": [
+        "Não fumar e limitar o álcool",
+        "Vacinas contra HPV e hepatite B",
+        "Proteção solar",
+        "Rastreamento (colo do útero, mama, intestino) e diagnóstico precoce"
+      ],
+      "refs": [
+        "oms_cancer",
+        "ms_cancer",
+        "inca_prevencao"
+      ],
+      "fatores": [
+        {
+          "indicador": "pct_60mais",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "O risco cresce com a idade. Municípios com mais idosos têm mais eventos mesmo sem risco maior em cada idade; por isso a comparação padronizada por idade é a mais justa.",
+          "refs": [
+            "oms_cancer"
+          ],
+          "acoes": [],
+          "limitacoes": "É uma característica da população, não um fator a ser 'corrigido'. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "hospitais_100mil",
+          "papel": "acesso ao diagnóstico e ao tratamento",
+          "atencao": "menor",
+          "porque": "O diagnóstico tardio reduz a chance de cura; ele depende de acesso a exames e serviços especializados.",
+          "refs": [
+            "oms_cancer",
+            "inca_prevencao"
+          ],
+          "acoes": [
+            "rastreio"
+          ],
+          "limitacoes": "O tratamento oncológico é regionalizado: a ausência de hospital no município não significa falta de acesso, e a presença não garante oncologia. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "inca_prevencao",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_cancer",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Renda é um marcador amplo de condições de vida, não uma causa direta. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "transito",
+      "nome": "Acidentes de transporte",
+      "cid": [
+        "V01-V99"
+      ],
+      "descricao": "Lesões e mortes de pedestres, ciclistas, motociclistas e ocupantes de veículos. São causas externas, não doenças.",
+      "transmissao": null,
+      "risco": [
+        "Velocidade excessiva",
+        "Álcool e direção",
+        "Não uso de capacete, cinto e cadeirinha",
+        "Vias inseguras para pedestres e motociclistas",
+        "Demora no atendimento às vítimas"
+      ],
+      "prevencao": [
+        "Gestão de velocidade e fiscalização",
+        "Infraestrutura segura",
+        "Uso de capacete e cinto",
+        "Atendimento pré-hospitalar rápido"
+      ],
+      "refs": [
+        "oms_transito",
+        "opas_transito"
+      ],
+      "fatores": [
+        {
+          "indicador": "urgencia_100mil",
+          "papel": "acesso ao cuidado de urgência",
+          "atencao": "menor",
+          "porque": "O atendimento rápido após o trauma reduz mortes e sequelas.",
+          "refs": [
+            "oms_transito"
+          ],
+          "acoes": [
+            "urgencia",
+            "transito"
+          ],
+          "limitacoes": "Não mede o tempo de resposta. O óbito é contado no município de residência da vítima, que pode não ser o local do acidente. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "agressoes",
+      "nome": "Agressões (violência interpessoal)",
+      "cid": [
+        "X85-Y09"
+      ],
+      "descricao": "Lesões e mortes provocadas intencionalmente por outra pessoa. São causas externas, não doenças.",
+      "transmissao": null,
+      "risco": [
+        "Desigualdade e pobreza concentrada",
+        "Baixa escolaridade e falta de oportunidades para jovens",
+        "Acesso a armas de fogo",
+        "Uso nocivo de álcool e mercados ilegais de drogas"
+      ],
+      "prevencao": [
+        "Políticas de proteção social e educação",
+        "Programas para jovens",
+        "Controle de armas e do álcool",
+        "Policiamento orientado a problemas e apoio às vítimas"
+      ],
+      "refs": [
+        "oms_violencia"
+      ],
+      "fatores": [
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_violencia",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Renda é um marcador amplo de condições de vida, não uma causa direta. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "alfabetizacao",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Menor escolaridade se associa a menos acesso a informação e a serviços de saúde e a maior exposição a fatores de risco.",
+          "refs": [
+            "oms_violencia",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "pct_urbana",
+          "papel": "contexto",
+          "atencao": "maior",
+          "porque": "A violência letal se concentra em áreas urbanas com desigualdade.",
+          "refs": [
+            "oms_violencia"
+          ],
+          "acoes": [
+            "violencia"
+          ],
+          "limitacoes": "Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "suicidio",
+      "nome": "Lesões autoprovocadas (suicídio)",
+      "cid": [
+        "X60-X84"
+      ],
+      "descricao": "Mortes por lesões autoprovocadas intencionalmente. O suicídio é prevenível. Se você ou alguém próximo precisa de ajuda, ligue 188 (CVV) ou procure um serviço de saúde.",
+      "transmissao": null,
+      "risco": [
+        "Transtornos mentais sem cuidado, em especial depressão e uso de álcool",
+        "Tentativa anterior",
+        "Isolamento, perdas e crises financeiras",
+        "Acesso a meios letais"
+      ],
+      "prevencao": [
+        "Acesso a cuidado em saúde mental",
+        "Restrição do acesso a meios",
+        "Comunicação responsável sobre o tema",
+        "Acompanhamento de quem já tentou"
+      ],
+      "refs": [
+        "oms_suicidio",
+        "ms_suicidio"
+      ],
+      "fatores": [
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária é a porta de entrada para identificar sofrimento mental e encaminhar o cuidado.",
+          "refs": [
+            "oms_suicidio",
+            "ms_suicidio"
+          ],
+          "acoes": [
+            "saude_mental"
+          ],
+          "limitacoes": "Não mede a oferta de saúde mental (CAPS, psicólogos, psiquiatras). Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "perinatal",
+      "nome": "Afecções perinatais e causas maternas",
+      "cid": [
+        "P00-P96",
+        "O00-O99"
+      ],
+      "descricao": "Condições da gestação, do parto e dos primeiros dias de vida, como prematuridade, asfixia ao nascer, infecções e complicações obstétricas.",
+      "transmissao": null,
+      "risco": [
+        "Pré-natal ausente, tardio ou de baixa qualidade",
+        "Parto sem assistência adequada",
+        "Hipertensão, diabetes e infecções na gestação",
+        "Gravidez na adolescência e vulnerabilidade social"
+      ],
+      "prevencao": [
+        "Pré-natal desde o início da gestação",
+        "Parto em serviço com estrutura adequada",
+        "Cuidado ao recém-nascido e aleitamento materno"
+      ],
+      "refs": [
+        "oms_neonatal",
+        "oms_materna",
+        "ms_crianca"
+      ],
+      "fatores": [
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico e ao cuidado",
+          "atencao": "menor",
+          "porque": "A atenção primária identifica cedo e acompanha condições que, sem cuidado, evoluem para internação ou morte.",
+          "refs": [
+            "oms_neonatal",
+            "oms_aps"
+          ],
+          "acoes": [
+            "aps"
+          ],
+          "limitacoes": "Número de unidades não mede equipe, horário, resolutividade nem qualidade. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "hospitais_100mil",
+          "papel": "acesso ao cuidado no parto",
+          "atencao": "menor",
+          "porque": "Complicações do parto e do recém-nascido exigem serviço com capacidade de resposta.",
+          "refs": [
+            "oms_materna",
+            "oms_neonatal"
+          ],
+          "acoes": [
+            "prenatal"
+          ],
+          "limitacoes": "Não mede leitos obstétricos ou neonatais nem a distância até a maternidade de referência. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_materna",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Renda é um marcador amplo de condições de vida, não uma causa direta. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "quedas",
+      "nome": "Quedas",
+      "cid": [
+        "W00-W19"
+      ],
+      "descricao": "Quedas são causas externas de lesão. Em pessoas idosas, podem causar fraturas e levar à morte.",
+      "transmissao": null,
+      "risco": [
+        "Idade avançada",
+        "Problemas de equilíbrio, visão e uso de vários medicamentos",
+        "Casas e calçadas com obstáculos e pouca iluminação"
+      ],
+      "prevencao": [
+        "Adaptação dos ambientes",
+        "Atividade física para força e equilíbrio",
+        "Revisão de medicamentos"
+      ],
+      "refs": [
+        "oms_quedas",
+        "oms_envelhecimento"
+      ],
+      "fatores": [
+        {
+          "indicador": "pct_60mais",
+          "papel": "contexto demográfico",
+          "atencao": "maior",
+          "porque": "O risco cresce com a idade. Municípios com mais idosos têm mais eventos mesmo sem risco maior em cada idade; por isso a comparação padronizada por idade é a mais justa.",
+          "refs": [
+            "oms_quedas"
+          ],
+          "acoes": [
+            "quedas"
+          ],
+          "limitacoes": "É uma característica da população, não um fator a ser 'corrigido'. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "hidricas_outros",
+      "nome": "Esquistossomose e hepatite A",
+      "cid": [
+        "B65-B65",
+        "B15-B15"
+      ],
+      "descricao": "Infecções ligadas à contaminação da água por fezes: a esquistossomose (verme transmitido em águas com caramujos) e a hepatite A (vírus).",
+      "transmissao": "Esquistossomose: contato da pele com água doce contaminada. Hepatite A: via fecal-oral, por água e alimentos contaminados.",
+      "risco": [
+        "Falta de esgotamento sanitário",
+        "Uso de rios e lagoas contaminados para banho, trabalho ou lazer",
+        "Água sem tratamento"
+      ],
+      "prevencao": [
+        "Saneamento básico",
+        "Água tratada",
+        "Vacina contra hepatite A (calendário infantil)",
+        "Diagnóstico e tratamento dos casos"
+      ],
+      "refs": [
+        "oms_esquisto",
+        "ms_esquisto",
+        "oms_hepa",
+        "ms_hepatites"
+      ],
+      "fatores": [
+        {
+          "indicador": "esgoto_precario",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Fezes lançadas no ambiente contaminam a água onde as pessoas se expõem.",
+          "refs": [
+            "oms_esquisto",
+            "oms_hepa"
+          ],
+          "acoes": [
+            "esgoto",
+            "agua",
+            "higiene"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        },
+        {
+          "indicador": "agua_sem_rede",
+          "papel": "transmissão",
+          "atencao": "maior",
+          "porque": "Sem água tratada, cresce o uso de fontes que podem estar contaminadas.",
+          "refs": [
+            "oms_hepa",
+            "ms_esquisto"
+          ],
+          "acoes": [
+            "agua"
+          ],
+          "limitacoes": "O indicador é de 2022 e pode não refletir a situação atual. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "chagas",
+      "nome": "Doença de Chagas",
+      "cid": [
+        "B57-B57"
+      ],
+      "descricao": "Infecção pelo parasita Trypanosoma cruzi. Muitos óbitos atuais são de pessoas infectadas décadas atrás, que desenvolveram a forma crônica cardíaca ou digestiva.",
+      "transmissao": "Pelo inseto barbeiro, por alimentos contaminados (transmissão oral), de mãe para filho e, mais raramente, por transfusão ou transplante.",
+      "risco": [
+        "Moradias que abrigam o barbeiro (frestas, pau a pique)",
+        "Consumo de alimentos contaminados, como açaí e caldo de cana sem higiene",
+        "Ter vivido em área endêmica"
+      ],
+      "prevencao": [
+        "Melhoria das moradias e controle do vetor",
+        "Boas práticas na manipulação de alimentos",
+        "Triagem em gestantes e bancos de sangue",
+        "Diagnóstico e tratamento"
+      ],
+      "refs": [
+        "oms_chagas",
+        "ms_chagas"
+      ],
+      "fatores": [
+        {
+          "indicador": "renda_mediana",
+          "papel": "determinante social (associação indireta)",
+          "atencao": "menor",
+          "porque": "Baixa renda se associa a piores condições de moradia, alimentação e acesso a serviços, o que aumenta o risco e dificulta o tratamento.",
+          "refs": [
+            "oms_chagas",
+            "oms_determinantes"
+          ],
+          "acoes": [],
+          "limitacoes": "A mortalidade atual reflete exposições antigas, muitas vezes em outro município: o indicador de hoje pouco explica os óbitos de hoje. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    },
+    {
+      "id": "mal_definidas",
+      "nome": "Sintomas, sinais e causas mal definidas",
+      "cid": [
+        "R00-R99"
+      ],
+      "descricao": "Códigos usados quando a declaração de óbito não permite identificar a doença que causou a morte. Uma proporção alta indica problema na qualidade da informação, não uma doença específica.",
+      "transmissao": null,
+      "risco": [
+        "Óbitos sem assistência médica",
+        "Preenchimento incompleto da declaração de óbito",
+        "Falta de investigação do óbito"
+      ],
+      "prevencao": [
+        "Investigação dos óbitos mal definidos",
+        "Capacitação para o preenchimento da declaração de óbito",
+        "Acesso a serviços de saúde"
+      ],
+      "refs": [
+        "oms_aps"
+      ],
+      "fatores": [
+        {
+          "indicador": "ubs_10mil",
+          "papel": "acesso ao diagnóstico",
+          "atencao": "menor",
+          "porque": "Onde o acesso a serviços é menor, mais pessoas morrem sem diagnóstico registrado.",
+          "refs": [
+            "oms_aps"
+          ],
+          "acoes": [
+            "registro",
+            "aps"
+          ],
+          "limitacoes": "Muitos óbitos mal definidos subestimam todas as outras causas no município. Dados agregados: não mostram se as pessoas que adoeceram eram as expostas ao fator."
+        }
+      ]
+    }
+  ],
+  "termos_populares": [
+    {
+      "termo": "infarto",
+      "sel": "c:I21"
+    },
+    {
+      "termo": "ataque cardiaco",
+      "sel": "c:I21"
+    },
+    {
+      "termo": "avc",
+      "sel": "g:I60-I69"
+    },
+    {
+      "termo": "derrame",
+      "sel": "g:I60-I69"
+    },
+    {
+      "termo": "pressao alta",
+      "sel": "g:I10-I15"
+    },
+    {
+      "termo": "hipertensao",
+      "sel": "g:I10-I15"
+    },
+    {
+      "termo": "cancer",
+      "sel": "g:C00-C97"
+    },
+    {
+      "termo": "tumor",
+      "sel": "cap:2"
+    },
+    {
+      "termo": "diabetes",
+      "sel": "g:E10-E14"
+    },
+    {
+      "termo": "dengue",
+      "sel": "c:A90"
+    },
+    {
+      "termo": "covid",
+      "sel": "c:B34"
+    },
+    {
+      "termo": "coronavirus",
+      "sel": "c:B34"
+    },
+    {
+      "termo": "pneumonia",
+      "sel": "g:J09-J18"
+    },
+    {
+      "termo": "gripe",
+      "sel": "g:J09-J18"
+    },
+    {
+      "termo": "tuberculose",
+      "sel": "g:A15-A19"
+    },
+    {
+      "termo": "aids",
+      "sel": "g:B20-B24"
+    },
+    {
+      "termo": "hiv",
+      "sel": "g:B20-B24"
+    },
+    {
+      "termo": "diarreia",
+      "sel": "g:A00-A09"
+    },
+    {
+      "termo": "alzheimer",
+      "sel": "c:G30"
+    },
+    {
+      "termo": "asma",
+      "sel": "c:J45"
+    },
+    {
+      "termo": "bronquite",
+      "sel": "g:J40-J47"
+    },
+    {
+      "termo": "enfisema",
+      "sel": "c:J43"
+    },
+    {
+      "termo": "dpoc",
+      "sel": "c:J44"
+    },
+    {
+      "termo": "suicidio",
+      "sel": "g:X60-X84"
+    },
+    {
+      "termo": "homicidio",
+      "sel": "g:X85-Y09"
+    },
+    {
+      "termo": "assassinato",
+      "sel": "g:X85-Y09"
+    },
+    {
+      "termo": "acidente de transito",
+      "sel": "g:V01-V99"
+    },
+    {
+      "termo": "queda",
+      "sel": "g:W00-W19"
+    },
+    {
+      "termo": "afogamento",
+      "sel": "g:W65-W74"
+    },
+    {
+      "termo": "cirrose",
+      "sel": "c:K74"
+    },
+    {
+      "termo": "insuficiencia renal",
+      "sel": "g:N17-N19"
+    },
+    {
+      "termo": "sepse",
+      "sel": "c:A41"
+    },
+    {
+      "termo": "infeccao generalizada",
+      "sel": "c:A41"
+    },
+    {
+      "termo": "chagas",
+      "sel": "c:B57"
+    },
+    {
+      "termo": "leptospirose",
+      "sel": "c:A27"
+    },
+    {
+      "termo": "esquistossomose",
+      "sel": "c:B65"
+    },
+    {
+      "termo": "barriga d'agua",
+      "sel": "c:B65"
+    },
+    {
+      "termo": "hepatite",
+      "sel": "g:B15-B19"
+    },
+    {
+      "termo": "meningite",
+      "sel": "c:G03"
+    },
+    {
+      "termo": "depressao",
+      "sel": "c:F32"
+    },
+    {
+      "termo": "alcoolismo",
+      "sel": "c:F10"
+    },
+    {
+      "termo": "desnutricao",
+      "sel": "g:E40-E46"
+    },
+    {
+      "termo": "obesidade",
+      "sel": "c:E66"
+    },
+    {
+      "termo": "cancer de mama",
+      "sel": "c:C50"
+    },
+    {
+      "termo": "cancer de pulmao",
+      "sel": "c:C34"
+    },
+    {
+      "termo": "cancer de prostata",
+      "sel": "c:C61"
+    },
+    {
+      "termo": "cancer de colo do utero",
+      "sel": "c:C53"
+    },
+    {
+      "termo": "cancer de intestino",
+      "sel": "c:C18"
+    },
+    {
+      "termo": "cancer de estomago",
+      "sel": "c:C16"
+    },
+    {
+      "termo": "cancer de pele",
+      "sel": "c:C44"
+    },
+    {
+      "termo": "cancer de figado",
+      "sel": "c:C22"
+    },
+    {
+      "termo": "anemia",
+      "sel": "g:D50-D53"
+    },
+    {
+      "termo": "parkinson",
+      "sel": "c:G20"
+    },
+    {
+      "termo": "epilepsia",
+      "sel": "c:G40"
+    },
+    {
+      "termo": "insuficiencia cardiaca",
+      "sel": "c:I50"
+    },
+    {
+      "termo": "malaria",
+      "sel": "g:B50-B64"
+    }
+  ],
+  "aviso_termos": "Termos populares são atalhos de busca definidos neste projeto; não são sinônimos oficiais da CID-10."
+}
