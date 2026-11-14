@@ -316,18 +316,18 @@ TEMAS = [
 ]
 
 TERMOS = [
-    ("infarto", "c:I21"), ("ataque cardiaco", "c:I21"), ("avc", "g:I60-I69"), ("derrame", "g:I60-I69"), ("pressao alta", "g:I10-I15"),
-    ("hipertensao", "g:I10-I15"), ("cancer", "g:C00-C97"), ("tumor", "cap:2"), ("diabetes", "g:E10-E14"), ("dengue", "c:A90"),
-    ("covid", "c:B34"), ("coronavirus", "c:B34"), ("pneumonia", "g:J09-J18"), ("gripe", "g:J09-J18"), ("tuberculose", "g:A15-A19"),
-    ("aids", "g:B20-B24"), ("hiv", "g:B20-B24"), ("diarreia", "g:A00-A09"), ("alzheimer", "c:G30"), ("asma", "c:J45"),
-    ("bronquite", "g:J40-J47"), ("enfisema", "c:J43"), ("dpoc", "c:J44"), ("suicidio", "g:X60-X84"), ("homicidio", "g:X85-Y09"),
-    ("assassinato", "g:X85-Y09"), ("acidente de transito", "g:V01-V99"), ("queda", "g:W00-W19"), ("afogamento", "g:W65-W74"),
-    ("cirrose", "c:K74"), ("insuficiencia renal", "g:N17-N19"), ("sepse", "c:A41"), ("infeccao generalizada", "c:A41"),
-    ("chagas", "c:B57"), ("leptospirose", "c:A27"), ("esquistossomose", "c:B65"), ("barriga d'agua", "c:B65"), ("hepatite", "g:B15-B19"),
-    ("meningite", "c:G03"), ("depressao", "c:F32"), ("alcoolismo", "c:F10"), ("desnutricao", "g:E40-E46"), ("obesidade", "c:E66"),
-    ("cancer de mama", "c:C50"), ("cancer de pulmao", "c:C34"), ("cancer de prostata", "c:C61"), ("cancer de colo do utero", "c:C53"),
-    ("cancer de intestino", "c:C18"), ("cancer de estomago", "c:C16"), ("cancer de pele", "c:C44"), ("cancer de figado", "c:C22"),
-    ("anemia", "g:D50-D53"), ("parkinson", "c:G20"), ("epilepsia", "c:G40"), ("insuficiencia cardiaca", "c:I50"), ("malaria", "g:B50-B64"),
+    ("infarto", "c:I21"), ("ataque cardíaco", "c:I21"), ("AVC", "g:I60-I69"), ("derrame", "g:I60-I69"), ("pressão alta", "g:I10-I15"),
+    ("hipertensão", "g:I10-I15"), ("câncer", "g:C00-C97"), ("tumor", "cap:2"), ("diabetes", "g:E10-E14"), ("dengue", "c:A90"),
+    ("covid-19", "c:B34"), ("coronavírus", "c:B34"), ("pneumonia", "g:J09-J18"), ("gripe", "g:J09-J18"), ("tuberculose", "g:A15-A19"),
+    ("aids", "g:B20-B24"), ("HIV", "g:B20-B24"), ("diarreia", "g:A00-A09"), ("alzheimer", "c:G30"), ("asma", "c:J45"),
+    ("bronquite", "g:J40-J47"), ("enfisema", "c:J43"), ("DPOC", "c:J44"), ("suicídio", "g:X60-X84"), ("homicídio", "g:X85-Y09"),
+    ("assassinato", "g:X85-Y09"), ("acidente de trânsito", "g:V01-V99"), ("queda", "g:W00-W19"), ("afogamento", "g:W65-W74"),
+    ("cirrose", "c:K74"), ("insuficiência renal", "g:N17-N19"), ("sepse", "c:A41"), ("infecção generalizada", "c:A41"),
+    ("chagas", "c:B57"), ("leptospirose", "c:A27"), ("esquistossomose", "c:B65"), ("barriga d'água", "c:B65"), ("hepatite", "g:B15-B19"),
+    ("meningite", "c:G03"), ("depressão", "c:F32"), ("alcoolismo", "c:F10"), ("desnutrição", "g:E40-E46"), ("obesidade", "c:E66"),
+    ("câncer de mama", "c:C50"), ("câncer de pulmão", "c:C34"), ("câncer de próstata", "c:C61"), ("câncer de colo do útero", "c:C53"),
+    ("câncer de intestino", "c:C18"), ("câncer de estômago", "c:C16"), ("câncer de pele", "c:C44"), ("câncer de fígado", "c:C22"),
+    ("anemia", "g:D50-D53"), ("parkinson", "c:G20"), ("epilepsia", "c:G40"), ("insuficiência cardíaca", "c:I50"), ("malária", "g:B50-B64"),
 ]
 
 

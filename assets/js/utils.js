@@ -142,6 +142,9 @@ function spearman(xs, ys){
 }
 
 /* ---------- Exportação ---------- */
+/* Decimal no padrão brasileiro para o CSV (o Excel em português lê "54,01"). */
+const decimalCSV = (v, casas = 2) => v == null || !Number.isFinite(v) ? "" : v.toFixed(casas).replace(".", ",");
+
 function baixarCSV(nome, linhas, notas = []){
   const celula = v => {
     const s = String(v ?? "");

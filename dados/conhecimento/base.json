@@ -1658,11 +1658,11 @@
       "sel": "c:I21"
     },
     {
-      "termo": "ataque cardiaco",
+      "termo": "ataque cardíaco",
       "sel": "c:I21"
     },
     {
-      "termo": "avc",
+      "termo": "AVC",
       "sel": "g:I60-I69"
     },
     {
@@ -1670,15 +1670,15 @@
       "sel": "g:I60-I69"
     },
     {
-      "termo": "pressao alta",
+      "termo": "pressão alta",
       "sel": "g:I10-I15"
     },
     {
-      "termo": "hipertensao",
+      "termo": "hipertensão",
       "sel": "g:I10-I15"
     },
     {
-      "termo": "cancer",
+      "termo": "câncer",
       "sel": "g:C00-C97"
     },
     {
@@ -1694,11 +1694,11 @@
       "sel": "c:A90"
     },
     {
-      "termo": "covid",
+      "termo": "covid-19",
       "sel": "c:B34"
     },
     {
-      "termo": "coronavirus",
+      "termo": "coronavírus",
       "sel": "c:B34"
     },
     {
@@ -1718,7 +1718,7 @@
       "sel": "g:B20-B24"
     },
     {
-      "termo": "hiv",
+      "termo": "HIV",
       "sel": "g:B20-B24"
     },
     {
@@ -1742,15 +1742,15 @@
       "sel": "c:J43"
     },
     {
-      "termo": "dpoc",
+      "termo": "DPOC",
       "sel": "c:J44"
     },
     {
-      "termo": "suicidio",
+      "termo": "suicídio",
       "sel": "g:X60-X84"
     },
     {
-      "termo": "homicidio",
+      "termo": "homicídio",
       "sel": "g:X85-Y09"
     },
     {
@@ -1758,7 +1758,7 @@
       "sel": "g:X85-Y09"
     },
     {
-      "termo": "acidente de transito",
+      "termo": "acidente de trânsito",
       "sel": "g:V01-V99"
     },
     {
@@ -1774,7 +1774,7 @@
       "sel": "c:K74"
     },
     {
-      "termo": "insuficiencia renal",
+      "termo": "insuficiência renal",
       "sel": "g:N17-N19"
     },
     {
@@ -1782,7 +1782,7 @@
       "sel": "c:A41"
     },
     {
-      "termo": "infeccao generalizada",
+      "termo": "infecção generalizada",
       "sel": "c:A41"
     },
     {
@@ -1798,7 +1798,7 @@
       "sel": "c:B65"
     },
     {
-      "termo": "barriga d'agua",
+      "termo": "barriga d'água",
       "sel": "c:B65"
     },
     {
@@ -1810,7 +1810,7 @@
       "sel": "c:G03"
     },
     {
-      "termo": "depressao",
+      "termo": "depressão",
       "sel": "c:F32"
     },
     {
@@ -1818,7 +1818,7 @@
       "sel": "c:F10"
     },
     {
-      "termo": "desnutricao",
+      "termo": "desnutrição",
       "sel": "g:E40-E46"
     },
     {
@@ -1826,35 +1826,35 @@
       "sel": "c:E66"
     },
     {
-      "termo": "cancer de mama",
+      "termo": "câncer de mama",
       "sel": "c:C50"
     },
     {
-      "termo": "cancer de pulmao",
+      "termo": "câncer de pulmão",
       "sel": "c:C34"
     },
     {
-      "termo": "cancer de prostata",
+      "termo": "câncer de próstata",
       "sel": "c:C61"
     },
     {
-      "termo": "cancer de colo do utero",
+      "termo": "câncer de colo do útero",
       "sel": "c:C53"
     },
     {
-      "termo": "cancer de intestino",
+      "termo": "câncer de intestino",
       "sel": "c:C18"
     },
     {
-      "termo": "cancer de estomago",
+      "termo": "câncer de estômago",
       "sel": "c:C16"
     },
     {
-      "termo": "cancer de pele",
+      "termo": "câncer de pele",
       "sel": "c:C44"
     },
     {
-      "termo": "cancer de figado",
+      "termo": "câncer de fígado",
       "sel": "c:C22"
     },
     {
@@ -1870,11 +1870,11 @@
       "sel": "c:G40"
     },
     {
-      "termo": "insuficiencia cardiaca",
+      "termo": "insuficiência cardíaca",
       "sel": "c:I50"
     },
     {
-      "termo": "malaria",
+      "termo": "malária",
       "sel": "g:B50-B64"
     }
   ],

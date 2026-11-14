@@ -1,0 +1,285 @@
+{
+ "ano": "2024",
+ "volume": {
+  "obitos": 4842022,
+  "internacoes": 52822745,
+  "dengue": 10348407,
+  "municipios": 5571,
+  "categorias_cid": 2051
+ },
+ "qualidade": {
+  "aprovado": true,
+  "verificacoes": 14,
+  "invalidos": 0,
+  "sinalizados": 5746
+ },
+ "obitos_brasil": 1527369,
+ "taxa_brasil": 718.5,
+ "p1_causas": [
+  {
+   "nome": "Doenças do aparelho circulatório",
+   "n": 397555,
+   "pct": 26.0
+  },
+  {
+   "nome": "Neoplasias [tumores]",
+   "n": 262692,
+   "pct": 17.2
+  },
+  {
+   "nome": "Doenças do aparelho respiratório",
+   "n": 194592,
+   "pct": 12.7
+  },
+  {
+   "nome": "Causas externas de morbidade e de mortalidade",
+   "n": 158250,
+   "pct": 10.4
+  },
+  {
+   "nome": "Doenças endócrinas, nutricionais e metabólicas",
+   "n": 88371,
+   "pct": 5.8
+  },
+  {
+   "nome": "Doenças do aparelho digestivo",
+   "n": 80927,
+   "pct": 5.3
+  }
+ ],
+ "p2_meses": [
+  {
+   "mes": "jan",
+   "n": 120803
+  },
+  {
+   "mes": "fev",
+   "n": 115188
+  },
+  {
+   "mes": "mar",
+   "n": 133061
+  },
+  {
+   "mes": "abr",
+   "n": 132705
+  },
+  {
+   "mes": "mai",
+   "n": 137383
+  },
+  {
+   "mes": "jun",
+   "n": 131722
+  },
+  {
+   "mes": "jul",
+   "n": 135268
+  },
+  {
+   "mes": "ago",
+   "n": 132056
+  },
+  {
+   "mes": "set",
+   "n": 125871
+  },
+  {
+   "mes": "out",
+   "n": 123736
+  },
+  {
+   "mes": "nov",
+   "n": 116904
+  },
+  {
+   "mes": "dez",
+   "n": 122672
+  }
+ ],
+ "p3_ufs": [
+  {
+   "uf": "RS",
+   "nome": "Rio Grande do Sul",
+   "taxa": 893.2
+  },
+  {
+   "uf": "RJ",
+   "nome": "Rio de Janeiro",
+   "taxa": 859.8
+  },
+  {
+   "uf": "MG",
+   "nome": "Minas Gerais",
+   "taxa": 766.1
+  },
+  {
+   "uf": "SP",
+   "nome": "São Paulo",
+   "taxa": 763.4
+  },
+  {
+   "uf": "PR",
+   "nome": "Paraná",
+   "taxa": 752.9
+  },
+  {
+   "uf": "PE",
+   "nome": "Pernambuco",
+   "taxa": 741.8
+  },
+  {
+   "uf": "PB",
+   "nome": "Paraíba",
+   "taxa": 720.6
+  },
+  {
+   "uf": "BA",
+   "nome": "Bahia",
+   "taxa": 712.0
+  },
+  {
+   "uf": "AL",
+   "nome": "Alagoas",
+   "taxa": 697.7
+  },
+  {
+   "uf": "PI",
+   "nome": "Piauí",
+   "taxa": 694.0
+  },
+  {
+   "uf": "CE",
+   "nome": "Ceará",
+   "taxa": 683.2
+  },
+  {
+   "uf": "ES",
+   "nome": "Espírito Santo",
+   "taxa": 680.7
+  },
+  {
+   "uf": "MS",
+   "nome": "Mato Grosso do Sul",
+   "taxa": 680.3
+  },
+  {
+   "uf": "RN",
+   "nome": "Rio Grande do Norte",
+   "taxa": 680.3
+  },
+  {
+   "uf": "GO",
+   "nome": "Goiás",
+   "taxa": 650.1
+  },
+  {
+   "uf": "SC",
+   "nome": "Santa Catarina",
+   "taxa": 647.3
+  },
+  {
+   "uf": "SE",
+   "nome": "Sergipe",
+   "taxa": 630.6
+  },
+  {
+   "uf": "TO",
+   "nome": "Tocantins",
+   "taxa": 595.7
+  },
+  {
+   "uf": "MT",
+   "nome": "Mato Grosso",
+   "taxa": 593.4
+  },
+  {
+   "uf": "RO",
+   "nome": "Rondônia",
+   "taxa": 577.8
+  },
+  {
+   "uf": "MA",
+   "nome": "Maranhão",
+   "taxa": 571.5
+  },
+  {
+   "uf": "DF",
+   "nome": "Distrito Federal",
+   "taxa": 529.5
+  },
+  {
+   "uf": "PA",
+   "nome": "Pará",
+   "taxa": 523.0
+  },
+  {
+   "uf": "AP",
+   "nome": "Amapá",
+   "taxa": 485.3
+  },
+  {
+   "uf": "AC",
+   "nome": "Acre",
+   "taxa": 483.6
+  },
+  {
+   "uf": "AM",
+   "nome": "Amazonas",
+   "taxa": 471.4
+  },
+  {
+   "uf": "RR",
+   "nome": "Roraima",
+   "taxa": 424.8
+  }
+ ],
+ "p4_dengue": [
+  {
+   "ano": "2023",
+   "n": 1645350,
+   "parcial": false
+  },
+  {
+   "ano": "2024",
+   "n": 6564921,
+   "parcial": false
+  },
+  {
+   "ano": "2025",
+   "n": 1643215,
+   "parcial": true
+  },
+  {
+   "ano": "2026",
+   "n": 494921,
+   "parcial": true
+  }
+ ],
+ "p5_esgoto": [
+  {
+   "faixa": "25% com melhor esgoto",
+   "esgoto_precario_mediana": 6.8,
+   "municipios": 1392,
+   "taxa": 393.3
+  },
+  {
+   "faixa": "2º quarto",
+   "esgoto_precario_mediana": 27.6,
+   "municipios": 1392,
+   "taxa": 474.6
+  },
+  {
+   "faixa": "3º quarto",
+   "esgoto_precario_mediana": 56.1,
+   "municipios": 1392,
+   "taxa": 542.3
+  },
+  {
+   "faixa": "25% com pior esgoto",
+   "esgoto_precario_mediana": 88.8,
+   "municipios": 1394,
+   "taxa": 641.2
+  }
+ ]
+}

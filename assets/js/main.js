@@ -12,12 +12,15 @@ let renderToken = 0;   // cada renderização recebe um número; respostas antig
 let rotaAnterior = "";
 
 const ROTAS = {
-  inicio: { titulo:"Explorar", grupo:"explorar", render: (...a) => renderInicio(...a) },
-  mapa: { titulo:"Mapa", grupo:"explorar", consulta:["causa", "evento", "ano"], render: (...a) => renderMapa(...a) },
+  projeto: { titulo:"Apresentação", grupo:"projeto", render: (...a) => renderProjeto(...a) },
+  inicio: { titulo:"Municípios", grupo:"explorar", render: (...a) => renderInicio(...a) },
+  mapa: { titulo:"Mapa", grupo:"mapa", consulta:["causa", "evento", "ano"], render: (...a) => renderMapa(...a) },
   municipio: { titulo:"Análise municipal", grupo:"explorar", consulta:["mun", "causa", "evento", "ano", "sexo", "idade"], render: (...a) => renderMunicipio(...a) },
   fatores: { titulo:"Fatores e melhorias", grupo:"explorar", consulta:["mun", "causa", "evento", "ano"], render: (...a) => renderFatores(...a) },
   doencas: { titulo:"Doenças e CID", grupo:"doencas", render: (...a) => renderDoencas(...a) },
-  comparar: { titulo:"Comparar locais", grupo:"comparar", consulta:["causa", "evento", "ano", "sexo", "idade"], render: (...a) => renderComparar(...a) },
+  comparar: { titulo:"Comparar", grupo:"comparar",
+    consulta: () => sel.modoCmp === "doencas" ? ["evento", "ano"] : ["causa", "evento", "ano", "sexo", "idade"],
+    render: (...a) => sel.modoCmp === "doencas" ? renderCompararDoencas(...a) : renderComparar(...a) },
   fontes: { titulo:"Fontes e metodologia", grupo:"fontes", render: (...a) => renderFontes(...a) }
 };
 const VISOES = ["", "evolucao", "causas"];
@@ -38,6 +41,11 @@ function hashDe(s){
   if(s.sexo) p.set("s", s.sexo);
   if(s.idade) p.set("i", s.idade);
   if(s.comparar?.length) p.set("cmp", s.comparar.join(","));
+  if(s.rota === "comparar" && s.modoCmp === "doencas"){
+    p.set("mc", "doencas");
+    if(s.causasCmp?.length) p.set("cc", s.causasCmp.join(","));
+    if(s.localCmp && s.localCmp !== "BR") p.set("cl", s.localCmp);
+  }
   if(s.cid && s.rota === "doencas") p.set("cid", s.cid);
   if(s.visao && s.rota === "municipio") p.set("v", s.visao);
   const q = p.toString();
@@ -60,7 +68,7 @@ function navegar(patch){
 function lerHash(){
   const [caminho, consulta = ""] = location.hash.replace(/^#\/?/, "").split("?");
   const p = new URLSearchParams(consulta);
-  sel.rota = ROTAS[caminho] ? caminho : "inicio";
+  sel.rota = ROTAS[caminho] ? caminho : "projeto";
   sel.mun = base.munPorCodigo.has(p.get("m")) ? p.get("m") : "";
   sel.evento = EVENTOS[p.get("e")] ? p.get("e") : "obitos";
   sel.causa = lerCausa(p.get("c") || "todas").id;
@@ -69,6 +77,10 @@ function lerHash(){
   sel.idade = GRUPOS_IDADE[p.get("i")] ? p.get("i") : "";
   sel.comparar = (p.get("cmp") || "").split(",").filter(l => UF_NAMES[l] || base.munPorCodigo.has(l)).slice(0, 6);
   sel.cid = p.get("cid") || "";
+  sel.modoCmp = p.get("mc") === "doencas" ? "doencas" : "";
+  sel.causasCmp = [...new Set((p.get("cc") || "").split(",").map(c => lerCausa(c).id).filter(c => c !== "todas"))].slice(0, 6);
+  const cl = p.get("cl") || "";
+  sel.localCmp = UF_NAMES[cl] || base.munPorCodigo.has(cl) ? cl : (sel.mun || "BR");
   sel.visao = VISOES.includes(p.get("v")) ? p.get("v") : "";
 }
 
@@ -84,6 +96,8 @@ async function renderizar(){
 
   // A navegação leva a seleção junto: trocar de área não apaga a consulta.
   const destinos = {
+    projeto: "#/projeto",
+    mapa: linkPara({ rota:"mapa" }),
     explorar: linkPara({ rota: sel.mun ? "municipio" : "inicio" }),
     doencas: linkPara({ rota:"doencas", cid:"" }),
     comparar: linkPara({ rota:"comparar" }),
@@ -116,7 +130,7 @@ const ROTULO_CAMPO = { mun:"Município", causa:"Doença ou grupo", evento:"Event
 
 function atualizarConsulta(){
   const rota = ROTAS[sel.rota];
-  const campos = rota.consulta;
+  const campos = typeof rota.consulta === "function" ? rota.consulta() : rota.consulta;
   $("consulta").hidden = !campos;
   if(!campos) return;
   const causa = lerCausa(sel.causa);
@@ -137,7 +151,7 @@ function atualizarConsulta(){
 
   // Alternância entre análise e mapa (mesma consulta, duas formas de ver)
   const sw = $("visaoSwitch");
-  sw.hidden = rota.grupo !== "explorar";
+  sw.hidden = true;   // o mapa agora é item do menu principal
   if(!sw.hidden){
     const noMapa = sel.rota === "mapa";
     sw.innerHTML = `<a href="${h(linkPara({ rota:"municipio" }))}"${noMapa ? "" : ' aria-current="true"'}>Análise</a><a href="${h(linkPara({ rota:"mapa" }))}"${noMapa ? ' aria-current="true"' : ""}>Mapa</a>`;
@@ -159,25 +173,13 @@ function atualizarConsulta(){
 }
 
 let _segOrigem = null;
+/* Os filtros ficam sempre visíveis: "abrir" só leva o foco ao campo pedido. */
 function abrirConsulta(campo){
-  const painel = $("consultaPainel");
-  painel.hidden = false;
-  document.body.classList.add("consulta-aberta");
-  document.querySelectorAll("#consultaResumo .seg").forEach(b => b.setAttribute("aria-expanded", "true"));
   const alvo = { mun:"munInput", causa:"causaInput", evento:"eventoSel", ano:"anoSel", sexo:"sexoSel", idade:"idadeSel" }[campo];
   const el = $(alvo);
-  if(el && !el.disabled && !el.closest("[hidden]")) el.focus();
-  else painel.querySelector("input:not([disabled]), select")?.focus();
+  if(el && !el.closest("[hidden]")){ el.scrollIntoView({ block:"nearest" }); el.focus(); }
 }
-
-function fecharConsulta(devolverFoco = true){
-  const painel = $("consultaPainel");
-  if(painel.hidden) return;
-  painel.hidden = true;
-  document.body.classList.remove("consulta-aberta");
-  document.querySelectorAll("#consultaResumo .seg").forEach(b => b.setAttribute("aria-expanded", "false"));
-  if(devolverFoco) (document.querySelector(`#consultaResumo [data-abrir="${_segOrigem}"]`) || document.querySelector("#consultaResumo .seg"))?.focus();
-}
+function fecharConsulta(){}
 
 /* ---------- Caixa de busca com sugestões (combobox acessível) ---------- */
 function criarCombobox(input, lista, buscar, aoEscolher, { limparAoEscolher = false } = {}){

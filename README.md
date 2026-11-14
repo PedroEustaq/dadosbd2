@@ -19,14 +19,16 @@ Não integrado, com o motivo registrado em `dados/indicadores/dicionario.json` (
 
 ## Áreas do site
 
-A navegação é organizada por tarefa, em quatro entradas:
+**Apresentação** (`#/projeto`, página inicial) — roteiro linear para a apresentação oral, na ordem do guia do trabalho: base de dados → pipeline Bronze/Prata/Ouro → modelo estrela no MySQL → cinco perguntas de negócio respondidas com gráficos → acesso ao dashboard. Um índice fixo (1 a 5) acompanha a rolagem. Os números vêm de `dados/relatorios/apresentacao.json`, gerado por `scripts/montar_apresentacao.py`.
 
-1. **Explorar** — entrada com uma única busca (município ou doença) e números do Brasil; análise municipal e mapa como duas formas de ver a mesma consulta.
+O **Dashboard** continua organizado por tarefa, em quatro entradas:
+
+1. **Dashboard** (antes “Explorar”) — entrada com uma única busca (município ou doença) e números do Brasil; análise municipal e mapa como duas formas de ver a mesma consulta.
    - *Análise municipal*: abas Panorama, Evolução, Fatores e melhorias e Principais causas. O panorama segue a ordem de um painel: no topo, a situação em uma frase e os números-chave (taxa, registros, estado, Brasil); no meio, a tendência por ano; na base, causas, fatores e, sob demanda, os números completos, o critério e a fonte.
    - *Mapa*: números do Brasil no topo, mapa dominante (legenda fora do território), maiores e menores taxas abaixo e a tabela completa só quando pedida.
    - *Fatores e melhorias*: síntese e números-chave, indicadores ligados à condição com detalhes em cada item, perfil completo e lacunas em expansões.
 2. **Doenças** — busca primeiro; a hierarquia da CID-10 fica num painel secundário. A ficha mostra números do Brasil, evolução, riscos e prevenção e, sob demanda, dados por fonte, subcategorias e classificação.
-3. **Comparar** — até 6 municípios ou estados: taxas na mesma escala, evolução por ano e, sob demanda, tabela, exportação e indicadores do território.
+3. **Comparar** — duas formas: *entre municípios e estados* (até 6 locais, mesma doença) e *entre doenças* (até 6 doenças no mesmo local: Brasil, estado ou município), com taxa, situação em relação ao esperado, evolução por ano e exportação CSV.
 4. **Fontes e metodologia** — índice por assunto, resumos curtos e detalhes (fórmulas, cobertura, manifestos, referências) sob demanda.
 
 A consulta ativa aparece numa linha compacta; o formulário abre só quando a pessoa pede (no celular, como folha inferior). A seleção (município, causa, evento, período, sexo, idade, aba) fica no endereço da página, que pode ser compartilhado.
@@ -56,6 +58,10 @@ mysql -u SEU_USUARIO -p saude_territorio < sql/consultas.sql
 ```
 
 Se o servidor recusar `LOAD DATA LOCAL INFILE`, use `--insert`. Para levar a base a outra máquina sem conexão direta, `python3 scripts/importar_mysql.py --gerar-sql saude_territorio.sql` grava um script completo (esquema + dados) para importar no MySQL Workbench.
+
+## Formato dos números
+
+Tudo segue o padrão brasileiro: milhar com ponto e decimal com vírgula (1.527.369; 718,5), inclusive nos relatórios de validação e nos CSV exportados, que abrem direto no Excel em português (separador `;`, decimal `,`).
 
 ## Executar localmente
 

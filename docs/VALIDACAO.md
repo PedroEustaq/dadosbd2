@@ -4,18 +4,18 @@ Gerado em 2026-11-12 por `python3 scripts/validar.py --tabnet`. Resultado: **apr
 
 ## Verificações automáticas
 
-- SIM 2023: 1,465,610 óbitos; 1,463,376 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
-- SIM 2024: 1,527,369 óbitos; 1,525,090 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
-- SIM 2025: 937,033 óbitos; 935,960 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
-- SIM 2026: 912,010 óbitos; 910,979 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
-- SIH 2023: 13,214,566 internações; soma dos municípios igual ao total da fonte
-- SIH 2024: 14,036,998 internações; soma dos municípios igual ao total da fonte
-- SIH 2025: 14,512,171 internações; soma dos municípios igual ao total da fonte
-- SIH 2026: 11,059,010 internações; soma dos municípios igual ao total da fonte
-- Dengue 2023: 1,645,350 casos prováveis; 10 sem município identificado
-- Dengue 2024: 6,564,921 casos prováveis; 27 sem município identificado
-- Dengue 2025: 1,643,215 casos prováveis; 11 sem município identificado
-- Dengue 2026: 494,921 casos prováveis; 8 sem município identificado
+- SIM 2023: 1.465.610 óbitos; 1.463.376 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
+- SIM 2024: 1.527.369 óbitos; 1.525.090 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
+- SIM 2025: 937.033 óbitos; 935.960 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
+- SIM 2026: 912.010 óbitos; 910.979 com município; arquivos por município, perfil, capítulo e UF com o mesmo total
+- SIH 2023: 13.214.566 internações; soma dos municípios igual ao total da fonte
+- SIH 2024: 14.036.998 internações; soma dos municípios igual ao total da fonte
+- SIH 2025: 14.512.171 internações; soma dos municípios igual ao total da fonte
+- SIH 2026: 11.059.010 internações; soma dos municípios igual ao total da fonte
+- Dengue 2023: 1.645.350 casos prováveis; 10 sem município identificado
+- Dengue 2024: 6.564.921 casos prováveis; 27 sem município identificado
+- Dengue 2025: 1.643.215 casos prováveis; 11 sem município identificado
+- Dengue 2026: 494.921 casos prováveis; 8 sem município identificado
 - População: 5571 municípios; com algum ano sem valor: 1
 - Indicadores: 25 colunas conferidas com o dicionário; percentuais dentro de 0–100
 

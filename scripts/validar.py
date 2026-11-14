@@ -20,7 +20,7 @@ import os
 import re
 import sys
 
-from comum import DADOS, FREQUENCIA_FONTE, FREQUENCIA_PAINEL, MANIFESTOS, NOME_UF, RELATORIOS, Territorios, gravar_json, hoje, ler_json
+from comum import DADOS, FREQUENCIA_FONTE, FREQUENCIA_PAINEL, MANIFESTOS, NOME_UF, RELATORIOS, Territorios, gravar_json, hoje, ler_json, br
 
 ORDEM = ["sim_mortalidade", "sih_sus", "sinan_dengue", "ibge_estimativas_populacao", "ibge_censo2022", "ibge_pib_municipios",
          "cnes_estabelecimentos", "inpe_queimadas", "cid10_datasus", "ibge_localidades"]
@@ -68,7 +68,7 @@ def main():
         total_cap = sum(int(l[2]) for l in linhas)
         conferir(total_mun == total_perfil == total_cap == info["obitos_com_municipio"], f"SIM {ano}: totais municipais não fecham", falhas)
         conferir(total_uf == info["obitos"] == sum(info["por_mes"]), f"SIM {ano}: total por UF não fecha", falhas)
-        feitos.append(f"SIM {ano}: {total_uf:,} óbitos; {total_mun:,} com município; arquivos por município, perfil, capítulo e UF com o mesmo total")
+        feitos.append(f"SIM {ano}: {br(total_uf)} óbitos; {br(total_mun)} com município; arquivos por município, perfil, capítulo e UF com o mesmo total")
 
     # ---------- SIH e dengue ----------
     sih = ler_json(os.path.join(DADOS, "saude", "sih", "indice.json"))
@@ -77,13 +77,13 @@ def main():
         conferir(all(l[0] in codigos for l in linhas), f"SIH {ano}: município fora da tabela", falhas)
         conferir(len({(l[0], l[1]) for l in linhas}) == len(linhas), f"SIH {ano}: linhas duplicadas", falhas)
         conferir(sum(int(l[2]) for l in linhas) == info["internacoes_com_municipio"], f"SIH {ano}: total não fecha", falhas)
-        feitos.append(f'SIH {ano}: {info["internacoes"]:,} internações; soma dos municípios igual ao total da fonte')
+        feitos.append(f'SIH {ano}: {br(info["internacoes"])} internações; soma dos municípios igual ao total da fonte')
     dengue = ler_json(os.path.join(DADOS, "saude", "dengue", "indice.json"))
     _c, linhas = ler_csv(os.path.join(DADOS, "saude", "dengue", "casos.csv"))
     conferir(all(l[0] in codigos for l in linhas), "Dengue: município fora da tabela", falhas)
     for ano, info in sorted(dengue["anos"].items()):
         conferir(sum(int(l[2]) for l in linhas if l[1] == ano) == info["casos_com_municipio"], f"Dengue {ano}: total não fecha", falhas)
-        feitos.append(f'Dengue {ano}: {info["casos_provaveis"]:,} casos prováveis; {info["casos_provaveis"] - info["casos_com_municipio"]} sem município identificado')
+        feitos.append(f'Dengue {ano}: {br(info["casos_provaveis"])} casos prováveis; {info["casos_provaveis"] - info["casos_com_municipio"]} sem município identificado')
 
     # ---------- População e indicadores ----------
     cab, linhas = ler_csv(os.path.join(DADOS, "populacao", "municipios.csv"))
@@ -145,7 +145,7 @@ def main():
             "total_tabnet": sum(fonte.values()), "total_painel": sum(nosso.values()),
             "observacao": "Diferenças pequenas são esperadas quando o arquivo de microdados e o tabulador foram atualizados em datas diferentes.",
         }
-        feitos.append(f'TabNet × painel (SIM 2023): {iguais:,} de {len(chaves):,} células iguais; totais {tabnet_resumo["total_tabnet"]:,} × {tabnet_resumo["total_painel"]:,}')
+        feitos.append(f'TabNet × painel (SIM 2023): {br(iguais)} de {br(len(chaves))} células iguais; totais {br(tabnet_resumo["total_tabnet"])} × {br(tabnet_resumo["total_painel"])}')
     else:
         anterior = os.path.join(RELATORIOS, "validacao.json")
         if os.path.exists(anterior):
@@ -166,7 +166,7 @@ def main():
     matriz = []
     for ano, info in sorted(sim["anos"].items()):
         matriz.append({"fonte": "SIM", "desfecho": "Óbitos por causa básica (capítulo, grupo e categoria CID-10; sexo e idade por capítulo)", "periodo": f'{ano}: {info["periodo"]}',
-                       "nivel": "município, UF, Brasil (subcategoria só por UF)", "cobertura": f'{info["obitos_com_municipio"]:,} de {info["obitos"]:,} óbitos com município identificado'.replace(",", "."),
+                       "nivel": "município, UF, Brasil (subcategoria só por UF)", "cobertura": f'{br(info["obitos_com_municipio"])} de {br(info["obitos"])} óbitos com município identificado',
                        "situacao": "integrado" + ("" if info["ano_completo"] else " (período parcial)")})
     for ano, info in sorted(sih["anos"].items()):
         matriz.append({"fonte": "SIH/SUS", "desfecho": "Internações no SUS por capítulo CID-10", "periodo": f'{ano}: {info["periodo"]}', "nivel": "município, UF, Brasil",
