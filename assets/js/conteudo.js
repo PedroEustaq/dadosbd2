@@ -11,7 +11,7 @@ function indiceCid(){
   if(_indiceCid) return _indiceCid;
   const cid = base.cid;
   _indiceCid = [
-    ...cid.capitulos.map(c => ({ valor:`cap:${c.n}`, codigo:`${c.ini}–${c.fim}`, nome:`Capítulo ${c.rom} — ${c.nome}`, busca: normText(c.nome), tipo:"capítulo" })),
+    ...cid.capitulos.map(c => ({ valor:`cap:${c.n}`, codigo:`${c.ini}–${c.fim}`, nome:`Capítulo ${c.rom}: ${c.nome}`, busca: normText(c.nome), tipo:"capítulo" })),
     ...cid.grupos.map(g => ({ valor:`g:${g.ini}-${g.fim}`, codigo:`${g.ini}–${g.fim}`, nome:g.nome, busca: normText(g.nome), tipo:"grupo" })),
     ...cid.categorias.map(([codigo, nome]) => ({ valor:`c:${codigo}`, codigo, nome, busca: normText(nome), tipo:"categoria" }))
   ];
@@ -55,7 +55,8 @@ function buscarCid(texto, limite = 10, comSub = false){
   }
   // Termos populares: o mais específico primeiro ("câncer de mama" antes de "câncer").
   base.conhecimento.termos_populares
-    .map(t => ({ t, nota: t.termo === q ? 0 : t.termo.startsWith(q) ? 1 : (q.length >= 4 && t.termo.includes(q)) ? 2 : (q.length >= 4 && q.includes(t.termo)) ? 3 : -1 }))
+    .map(t => ({ t, k: normText(t.termo) }))
+    .map(({ t, k }) => ({ t, nota: k === q ? 0 : k.startsWith(q) ? 1 : (q.length >= 4 && k.includes(q)) ? 2 : (q.length >= 4 && q.includes(k)) ? 3 : -1 }))
     .filter(x => x.nota >= 0)
     .sort((a, b) => a.nota - b.nota || b.t.termo.length - a.t.termo.length)
     .forEach(({ t }) => {
@@ -104,19 +105,17 @@ let _arvoreAberta = false;
 async function renderDoencas(el, token){
   const meta = base.cid.meta;
   el.innerHTML = `
-    <div class="pag-topo"><div>
-      <h1 class="pag-titulo">Doenças e condições</h1>
-      <p class="meta">CID-10 completa: ${fmtNum.format(meta.totais.capitulos)} capítulos, ${fmtNum.format(meta.totais.grupos)} agrupamentos, ${fmtNum.format(meta.totais.categorias)} categorias e ${fmtNum.format(meta.totais.subcategorias)} subcategorias</p>
-    </div></div>
-    <div class="busca-cid">
-      <label for="cidBusca">Buscar por nome, código ou termo popular</label>
-      <input id="cidBusca" type="search" autocomplete="off" placeholder="Ex.: infarto, pneumonia, derrame, I21.9" />
-    </div>
-    <div class="cid-layout${sel.cid ? " tem-ficha" : ""}">
-      <div id="cidFicha" class="cid-ficha"></div>
-      <aside class="cid-lado" aria-label="Resultados e classificação">
-        <div id="cidLista" aria-live="polite"></div>
+    ${cabecalhoPagina({ titulo:"Doenças e condições",
+      contexto:`CID-10: ${fmtNum.format(meta.totais.capitulos)} capítulos · ${fmtNum.format(meta.totais.grupos)} agrupamentos · ${fmtNum.format(meta.totais.categorias)} categorias · ${fmtNum.format(meta.totais.subcategorias)} subcategorias` })}
+    <div class="grade grade-lateral${sel.cid ? " tem-ficha" : ""}">
+      <aside class="cartao painel-lateral" aria-label="Buscar doença">
+        <div class="cartao-corpo">
+          <label for="cidBusca" class="campo-rotulo">Buscar por nome, código ou termo popular</label>
+          <input id="cidBusca" type="search" autocomplete="off" placeholder="Ex.: infarto, derrame, I21" />
+          <div id="cidLista" aria-live="polite"></div>
+        </div>
       </aside>
+      <div id="cidFicha" class="grade-col"></div>
     </div>`;
   const busca = $("cidBusca");
   busca.value = _buscaCid;
@@ -178,8 +177,8 @@ async function renderFichaCid(token){
   if(!el) return;
   if(!sel.cid){
     el.innerHTML = `<div class="estado estado-vazio"><h2>Escolha uma doença ou condição</h2>
-      <p>Busque pelo nome que você conhece ou escolha uma das buscas frequentes. A ficha mostra os números do Brasil, a evolução, o que se sabe sobre riscos e prevenção e como analisar no seu município.</p>
-      <p class="apoio">A CID também classifica sintomas, lesões, causas externas e motivos de contato com serviços de saúde, que não são doenças. Ter um código no catálogo não significa que existam dados locais para ele: cada ficha mostra o que há.</p></div>`;
+      <p>Digite o nome popular (“derrame”, “pressão alta”) ou o código da CID-10 (“I21”). Ou escolha uma das sugestões ao lado.</p>
+</div>`;
     return;
   }
   let sub = null, causa;
@@ -194,7 +193,7 @@ async function renderFichaCid(token){
   const cap = base.cid.capitulos[causa.cap - 1];
   const cat = causa.tipo === "c" ? base.catPorCodigo.get(causa.ini) : null;
   const grupo = cat ? base.cid.grupos[cat.grupo] : null;
-  const trilha = [`<a href="${h(linkPara({ rota:"doencas", cid:`cap:${cap.n}` }))}">Cap. ${h(cap.rom)} — ${h(cap.nome)}</a>`];
+  const trilha = [`<a href="${h(linkPara({ rota:"doencas", cid:`cap:${cap.n}` }))}">Cap. ${h(cap.rom)}: ${h(cap.nome)}</a>`];
   if(grupo) trilha.push(`<a href="${h(linkPara({ rota:"doencas", cid:`g:${grupo.ini}-${grupo.fim}` }))}">${h(grupo.ini)}–${h(grupo.fim)} ${h(grupo.nome)}</a>`);
   if(sub) trilha.push(`<a href="${h(linkPara({ rota:"doencas", cid:causa.id }))}">${h(causa.rotulo)}</a>`);
   const codigo = sub ? `${sub.codigo.slice(0, 3)}.${sub.codigo.slice(3)}` : causa.codigo;
@@ -209,22 +208,25 @@ async function renderFichaCid(token){
   ].filter(Boolean);
 
   el.innerHTML = `<article class="ficha" aria-labelledby="fichaTitulo">
-      <nav class="trilha" aria-label="Posição na classificação">${trilha.join(' <span aria-hidden="true">›</span> ')}</nav>
-      <h2 id="fichaTitulo" class="ficha-titulo"><span class="codigo">${h(codigo)}</span> ${h(nome)}</h2>
-      <p class="meta">${h(nivel)} da CID-10</p>
-      <div class="acoes no-print">
-        <a class="btn" href="${h(linkPara({ rota: sel.mun ? "municipio" : "mapa", causa: causa.id, evento:"obitos", visao:"" }))}">${sel.mun ? `Analisar em ${h(nomeLocal(sel.mun))}` : "Ver no mapa do Brasil"}</a>
-        ${sel.mun ? `<a class="btn-sec" href="${h(linkPara({ rota:"mapa", causa: causa.id, evento:"obitos" }))}">Ver no mapa</a>` : `<button class="btn-sec" type="button" onclick="navegar({ rota:'municipio', causa:'${h(causa.id)}', evento:'obitos' })">Analisar em um município</button>`}
-      </div>
-      <div id="cidKpis">${carregandoHtml("Somando os registros do Brasil...")}</div>
-      ${atencaoHtml(avisos)}
-      <div id="cidTend"></div>
-      <section class="bloco" aria-labelledby="riscoTitulo">
-        <h3 id="riscoTitulo">Riscos e prevenção ${rot("literatura")}</h3>
-        ${temas.length ? temas.map(t => temaHtml(t.tema, t.relacao)).join("")
-          : `<p><strong>Sem conteúdo explicativo revisado para este código.</strong> O painel mostra só os números quando não há texto revisado; nada é preenchido automaticamente.</p>`}
+      <section class="cartao ficha-cab">
+        <div class="cartao-corpo">
+          <nav class="trilha" aria-label="Posição na classificação">${trilha.join(' <span aria-hidden="true">›</span> ')}</nav>
+          <h2 id="fichaTitulo" class="ficha-titulo"><span class="codigo">${h(codigo)}</span> ${h(nome)}</h2>
+          <p class="meta">${h(nivel)} da CID-10</p>
+          <div id="cidKpis">${carregandoHtml("Somando os registros do Brasil...")}</div>
+          ${atencaoHtml(avisos)}
+        </div>
+        <footer class="cartao-rodape acoes no-print">
+          <a class="btn" href="${h(linkPara({ rota: sel.mun ? "municipio" : "mapa", causa: causa.id, evento:"obitos", visao:"" }))}">${sel.mun ? `Analisar em ${h(nomeLocal(sel.mun))}` : "Ver no mapa do Brasil"}</a>
+          ${sel.mun ? `<a class="btn-sec" href="${h(linkPara({ rota:"mapa", causa: causa.id, evento:"obitos" }))}">Ver no mapa</a>` : `<button class="btn-sec" type="button" onclick="navegar({ rota:'municipio', causa:'${h(causa.id)}', evento:'obitos' })">Analisar em um município</button>`}
+          <a class="btn-sec" href="${h(linkPara({ rota:"comparar", modoCmp:"doencas", causasCmp:[causa.id] }))}">Comparar com outras doenças</a>
+        </footer>
       </section>
-      <div id="cidDetalhes"></div>
+      <div id="cidTend"></div>
+      ${cartao({ titulo:`Riscos e prevenção ${rot("literatura")}`,
+        corpo: temas.length ? temas.map(t => temaHtml(t.tema, t.relacao)).join("")
+          : `<p><strong>Sem conteúdo explicativo revisado para este código.</strong> O painel mostra só os números quando não há texto revisado; nada é preenchido automaticamente.</p>` })}
+      <section class="cartao cartao-detalhes" aria-label="Mais informações"><div id="cidDetalhes" class="cartao-corpo"></div></section>
     </article>`;
 
   try{
@@ -245,15 +247,13 @@ async function renderFichaCid(token){
     // TOPO: números-chave
     $("cidKpis").innerHTML = kpisHtml([
       { rotulo:`Óbitos no Brasil em ${h(ano)}`, tom:"principal", valor: fmtNum.format(atual.n), nota: atual.info.ano_completo ? "ano completo" : `período parcial: ${h(atual.info.periodo)}` },
-      { rotulo:"Taxa do Brasil", valor: fmtValor(atual.taxa), nota:"óbitos por 100 mil habitantes" },
-      { rotulo:"Estados com registro", valor:`${atual.ufs} <small>de 27</small>`, nota: atual.n ? "" : "zero registros não prova ausência" },
-      { rotulo:"Dados municipais", valor: sub ? "não" : "sim", nota: sub ? `use a categoria ${h(causa.codigo)}` : `óbitos${dispSih.ok ? ", internações" : ""}${dispDengue.ok ? ", notificações" : ""}` }
+      { rotulo:"Taxa do Brasil", valor: fmtValor(atual.taxa), nota:"óbitos por 100 mil habitantes" }
     ]);
 
     // MEIO: tendência no Brasil
-    $("cidTend").innerHTML = `<section class="bloco"><h3>Evolução no Brasil</h3>
-      ${tendenciaSvg([{ nome:"Brasil", pontos: dados.map(d => ({ ano:d.ano, valor:d.taxa, parcial:!d.info.ano_completo })) }],
-        { titulo:"Taxa de mortalidade no Brasil por ano", unidade:"Óbitos por 100 mil habitantes, por causa básica" })}</section>`;
+    $("cidTend").innerHTML = cartao({ titulo:"Evolução no Brasil", descricao:"Óbitos por 100 mil habitantes, por causa básica",
+      corpo: tendenciaSvg([{ nome:"Brasil", pontos: dados.map(d => ({ ano:d.ano, valor:d.taxa, parcial:!d.info.ano_completo })) }],
+        { titulo:"Taxa de mortalidade no Brasil por ano" }) });
 
     // BASE: detalhes sob demanda
     let subsHtml = "";
@@ -309,9 +309,9 @@ function temaHtml(tema, relacao){
    ============================================================ */
 const TIPOS_ACAO = { poder_publico:"Poder público", comunidade:"Comunidade", populacao:"Orientações gerais" };
 const SITUACAO_FATOR = {
-  atencao: { texto:"Merece atenção", classe:"situ-atencao", simbolo:"▲" },
-  intermediario: { texto:"Faixa intermediária na UF", classe:"", simbolo:"" },
-  favoravel: { texto:"Menos desfavorável que a maioria da UF", classe:"", simbolo:"" },
+  atencao: { texto:"Entre os piores do estado", classe:"situ-atencao", simbolo:"▲" },
+  intermediario: { texto:"Na média do estado", classe:"", simbolo:"" },
+  favoravel: { texto:"Melhor que a maioria do estado", classe:"", simbolo:"" },
   sem_dado: { texto:"Sem valor local", classe:"situ-sem", simbolo:"" }
 };
 
@@ -344,7 +344,6 @@ function fatorHtml(f, mun, causaFatores){
   const { def, ind, atencao: at, fator } = f;
   const uf = ufDe(mun);
   const defasagem = Number(sel.ano) - def.ano;
-  const acoes = [...f.acoes].map(id => ({ id, ...base.conhecimento.acoes[id] })).filter(a => a.texto);
   const valor = ind.disponivel
     ? `<span class="f-valor">${fmtValor(ind.valor, def.casas)} <small>${h(def.unidade)}</small></span>`
     : `<span class="f-valor f-sem">—</span>`;
@@ -355,8 +354,6 @@ function fatorHtml(f, mun, causaFatores){
     <p>${rot("literatura")} <strong>Por que investigar:</strong> ${h(fator.porque)}</p>
     ${at.nivel === "atencao" ? `<p>${rot("hipotese")} O valor local é desfavorável e o fator é reconhecido para a condição. É uma hipótese a investigar com a vigilância local, não uma causa comprovada dos registros deste município.</p>` : ""}
     ${defasagem ? `<p class="apoio">O indicador é de ${def.ano} e os eventos de saúde, de ${h(sel.ano)}: serve como contexto, não como medida do mesmo momento.</p>` : ""}
-    ${acoes.length ? `<h4>Melhorias e prevenção relacionadas</h4><ul class="acoes-lista">${acoes.map(a => `<li><span class="acao-tipo">${h(TIPOS_ACAO[a.tipo] || "")}</span> ${h(a.texto)}
-      <small>Problema que enfrenta: ${h(a.problema)} Limite: ${h(a.limitacoes)}</small></li>`).join("")}</ul>` : ""}
     <div class="assoc" data-ind="${h(def.id)}" data-causa="${h(causaFatores.id)}"><button class="btn-sec no-print" type="button">Calcular a associação entre os municípios da UF</button></div>
     <p class="apoio"><strong>Limitações:</strong> ${h(fator.limitacoes)} ${h(def.limitacoes || "")}</p>
     <p class="apoio"><strong>Indicador:</strong> ${h(def.definicao)} Fonte: ${h(def.tabela)}, ${def.ano}. Cobertura: ${fmtNum.format(def.cobertura.municipios_com_valor)} de ${fmtNum.format(def.cobertura.municipios_total)} municípios.</p>
@@ -368,8 +365,54 @@ function fatorHtml(f, mun, causaFatores){
       <span class="f-ref">${ind.refUF != null ? `UF ${fmtValor(ind.refUF, def.casas)} · BR ${fmtValor(ind.refBR, def.casas)}` : ""}</span>
       ${situacaoHtml(at)}
     </div>
-    ${mais("Por que investigar, melhorias e limitações", detalhe)}
+    ${mais("Por que importa e limites", detalhe)}
   </li>`;
+}
+
+/* Melhorias: junta as ações de todos os fatores, sem repetir.
+   Prioritárias = ligadas a algum indicador que merece atenção no município. */
+function melhoriasDaCausa(lista){
+  const porId = new Map();
+  for(const f of lista){
+    for(const id of f.acoes){
+      const acao = base.conhecimento.acoes[id];
+      if(!acao?.texto) continue;
+      if(!porId.has(id)) porId.set(id, { id, ...acao, fatores: [], prioridade: false });
+      const item = porId.get(id);
+      item.fatores.push(f);
+      if(f.atencao.nivel === "atencao") item.prioridade = true;
+    }
+  }
+  const ordem = { poder_publico: 0, comunidade: 1, populacao: 2 };
+  return [...porId.values()].sort((a, b) => (b.prioridade - a.prioridade) || ((ordem[a.tipo] ?? 9) - (ordem[b.tipo] ?? 9)));
+}
+
+function melhoriaHtml(m){
+  const motivo = m.fatores.filter(f => f.atencao.nivel === "atencao").map(f =>
+    { const u = f.def.unidade === "%" ? "%" : ` ${f.def.unidade}`;
+      return `${h(f.def.nome)}: ${fmtValor(f.ind.valor, f.def.casas)}${h(u)}, contra ${fmtValor(f.ind.refUF, f.def.casas)}${h(u)} no estado`; });
+  return `<li class="melhoria${m.prioridade ? " melhoria-prio" : ""}">
+    <span class="melhoria-quem">${h(TIPOS_ACAO[m.tipo] || "")}</span>
+    <p class="melhoria-texto">${h(m.texto)}</p>
+    <p class="melhoria-por">${motivo.length ? `<strong>Por que aqui:</strong> ${motivo.join("; ")}` : `<strong>Enfrenta:</strong> ${h(m.problema)}`}</p>
+  </li>`;
+}
+
+function melhoriasHtml(lista){
+  const todas = melhoriasDaCausa(lista);
+  if(!todas.length) return "";
+  const prio = todas.filter(m => m.prioridade), outras = todas.filter(m => !m.prioridade);
+  return cartao({
+    titulo: "O que pode melhorar",
+    nivel: 3,
+    classe: "melhorias",
+    descricao: prio.length ? "Primeiro as ações ligadas aos indicadores em que o município está entre os piores do estado."
+      : "Nenhum indicador está entre os piores do estado; estas são as ações recomendadas para a condição em geral.",
+    corpo: prio.length
+      ? `<ol class="melhorias-lista">${prio.map(melhoriaHtml).join("")}</ol>
+         ${outras.length ? mais(`Outras ações recomendadas para esta condição (${outras.length})`, `<ol class="melhorias-lista">${outras.map(melhoriaHtml).join("")}</ol>`) : ""}`
+      : `<ol class="melhorias-lista">${outras.map(melhoriaHtml).join("")}</ol>`
+  });
 }
 
 /* Botões de associação exploratória (calculada sob demanda). */
@@ -398,91 +441,70 @@ function ligarFatores(el){
   }));
 }
 
-async function renderFatores(el, token){
-  const mun = sel.mun && base.munPorCodigo.has(sel.mun) ? sel.mun : "";
-  if(!mun){
-    el.innerHTML = semMunicipioHtml("Fatores e melhorias", "Escolha um município para ver os indicadores do território ligados à doença, a situação de cada um no estado e as melhorias relacionadas.");
-    return;
-  }
+/* Seção "Fatores e melhorias" da página do município. */
+function secaoFatoresHtml(mun){
   const causa = lerCausa(sel.causa);
   const causaFatores = sel.evento === "dengue" ? lerCausa("c:A90") : causa;
   const dic = base.dicionario;
   const temas = temasDaCausa(causaFatores);
   const lista = causaFatores.tipo === "todas" ? [] : fatoresDaCausa(mun, causaFatores);
   const emAtencao = lista.filter(f => f.atencao.nivel === "atencao");
-  const semDado = lista.filter(f => !f.ind.disponivel);
   const ordenada = [...emAtencao, ...lista.filter(f => f.atencao.nivel !== "atencao")];
-
-  // TOPO: síntese em uma frase + números-chave
-  let manchete;
-  if(causaFatores.tipo === "todas"){
-    manchete = `<div class="manchete manchete-neutro"><span class="manchete-icone" aria-hidden="true">?</span><div>
-      <p class="manchete-titulo">Escolha uma doença para ver os fatores ligados a ela</p>
-      <p class="manchete-nota">Para “todas as causas” não há uma relação específica. Abaixo, o perfil completo do território.</p>
-      <p><button class="btn-sec" type="button" onclick="_segOrigem='causa';abrirConsulta('causa')">Escolher doença</button></p></div></div>`;
-  }else if(!lista.length){
-    manchete = `<div class="manchete manchete-neutro"><span class="manchete-icone" aria-hidden="true">–</span><div>
-      <p class="manchete-titulo">Os dados disponíveis não bastam para explicar este padrão</p>
-      <p class="manchete-nota">Não há relações documentadas e revisadas entre <em>${h(causaFatores.rotulo)}</em> e os indicadores do território. Isso não significa que não existam fatores.</p></div></div>`;
-  }else if(emAtencao.length){
-    manchete = `<div class="manchete manchete-acima"><span class="manchete-icone" aria-hidden="true">▲</span><div>
-      <p class="manchete-titulo">${emAtencao.length} de ${lista.length} indicadores ligados a ${h(causaFatores.curto)} merecem atenção</p>
-      <p class="manchete-nota">Estão entre os 25% mais desfavoráveis dos municípios de ${h(UF_NAMES[ufDe(mun)])}: ${emAtencao.map(f => h(f.def.nome)).join(", ")}. São pistas para investigar, não causas comprovadas.</p></div></div>`;
-  }else{
-    manchete = `<div class="manchete manchete-compativel"><span class="manchete-icone" aria-hidden="true">●</span><div>
-      <p class="manchete-titulo">Nenhum indicador ligado a ${h(causaFatores.curto)} está entre os mais desfavoráveis da UF</p>
-      <p class="manchete-nota">Isso não descarta os fatores: os indicadores são indiretos${semDado.length ? `, ${semDado.length} não têm valor local` : ""} e vários determinantes não têm dado municipal.</p></div></div>`;
-  }
-  const defasados = lista.some(f => f.def.ano !== Number(sel.ano));
-  const kpis = lista.length ? kpisHtml([
-    { rotulo:"Indicadores ligados à condição", tom:"principal", valor: String(lista.length), nota:`de ${temas.length} ${plural(temas.length, "tema")} da literatura` },
-    { rotulo:"Merecem atenção", tom: emAtencao.length ? "acima" : "", valor: String(emAtencao.length), nota:"quarto mais desfavorável da UF" },
-    { rotulo:"Sem valor local", tom: semDado.length ? "sem" : "", valor: String(semDado.length), nota: semDado.length ? "falta de dado não é situação boa" : "todos com valor" },
-    { rotulo:"Indicadores do território", valor: String(dic.indicadores.length), nota:`em ${dic.dimensoes.length} dimensões (perfil completo abaixo)` }
-  ]) : "";
 
   const perfil = dic.dimensoes.map(dim => {
     const inds = dic.indicadores.filter(i => i.dimensao === dim);
-    return `<h3>${h(dim)}</h3>${tabelaHtml(
+    return `<h4>${h(dim)}</h4>${tabelaHtml(
       [{ t:"Indicador" }, { t:"Ano" }, { t:"Município", num:true }, { t: ufDe(mun), num:true }, { t:"Brasil", num:true }, { t:"Posição na UF" }],
       inds.map(i => {
         const il = indicadorLocal(mun, i.id);
         return [`${h(i.nome)} <small>(${h(i.unidade)})</small>`, String(i.ano),
           il.disponivel ? fmtValor(il.valor, i.casas) : `<small>${h(motivoSemIndicador(mun, i.id))}</small>`, fmtValor(il.refUF, i.casas), fmtValor(il.refBR, i.casas),
           il.disponivel ? `maior que ${Math.round(il.percentilUF)}%` : "—"];
-      }), { legenda:`${dim}${inds.some(i => i.ref_tipo.startsWith("mediana")) ? " — para focos de calor, as referências são medianas dos municípios" : ""}` })}`;
+      }))}`;
   }).join("");
-
-  el.innerHTML = `${cabecalhoMunicipio("fatores")}
-    <section class="resultado" aria-label="Síntese">
-      <p class="sobre">Fatores do território · ${h(causaFatores.tipo === "todas" ? "todas as causas" : causaFatores.rotulo)}</p>
-      ${manchete}
-      ${kpis}
-      ${atencaoHtml([
-        lista.length ? "Dados agregados não mostram se as pessoas que adoeceram eram as expostas. Uma relação conhecida na literatura não prova que ela explica os números deste município." : "",
-        defasados ? `Os indicadores são de anos diferentes dos eventos (${h(sel.ano)}): servem como contexto.` : ""
-      ].filter(Boolean))}
-    </section>
-    ${lista.length ? `<section class="bloco" aria-labelledby="fatTitulo">
-      <div class="sec-topo"><h2 id="fatTitulo">Indicadores ligados à condição</h2></div>
-      <p class="meta">Primeiro os que merecem atenção; a ordem não é um ranking de causas. Abra cada um para ver por que investigar, as melhorias e os limites.</p>
-      <ul class="fatores">${ordenada.map(f => fatorHtml(f, mun, causaFatores)).join("")}</ul>
-    </section>` : ""}
-    <div class="detalhes">
-      ${temas.length ? mais(`Sobre a condição: riscos e prevenção (${temas.length} ${plural(temas.length, "tema")})`, temas.map(t => temaHtml(t.tema, t.relacao)).join("")) : ""}
+  const extras = `<div class="extras">
+      ${temas.length ? mais(`Riscos e prevenção da doença`, temas.map(t => temaHtml(t.tema, t.relacao)).join("")) : ""}
       ${mais(`Perfil completo do território (${dic.indicadores.length} indicadores)`, `
-        <p class="apoio">Indicadores municipais de fontes oficiais. “Posição na UF” é relativa e não diz, sozinha, se o valor é bom ou ruim.</p>${perfil}
-        <button id="perfilCsv" class="btn-sec no-print" type="button">Exportar CSV</button>`, { aberto: causaFatores.tipo === "todas" })}
+        <p class="apoio">“Posição na UF” é relativa e não diz, sozinha, se o valor é bom ou ruim.</p>${perfil}
+        <button id="perfilCsv" class="btn-sec no-print" type="button">Exportar CSV</button>`)}
       ${mais("O que ainda não está no painel", `
-        <p>Estas dimensões foram avaliadas e não têm indicador municipal integrado. Não aparecem como zero nem são preenchidas com valores de estados ou capitais.</p>
-        ${tabelaHtml([{ t:"Dimensão" }, { t:"Situação" }, { t:"Motivo verificado" }], dic.lacunas.map(l => [h(l.dimensao), h(l.situacao), h(l.motivo)]), { legenda:"Lacunas de dados" })}
-        <p>Hábitos e condições individuais (tabagismo, alimentação, atividade física) também não têm medida para todos os municípios.</p>`)}
+        ${tabelaHtml([{ t:"Dimensão" }, { t:"Situação" }, { t:"Motivo verificado" }], dic.lacunas.map(l => [h(l.dimensao), h(l.situacao), h(l.motivo)]))}`)}
     </div>`;
+
+  let corpo;
+  if(causaFatores.tipo === "todas"){
+    corpo = `<p class="secao-intro">Os fatores e as melhorias dependem da doença. Escolha uma em <a href="#" data-foco-campo="causa">“Doença ou grupo”</a>, nos filtros acima.</p>`;
+  }else if(!lista.length){
+    corpo = `<p class="secao-intro">Não há relações documentadas entre ${h(causaFatores.curto.toLowerCase())} e os indicadores do território.</p>`;
+  }else{
+    corpo = `<p class="secao-intro">${emAtencao.length
+        ? `<strong>${emAtencao.length === 1 ? "1 ponto de atenção" : `${emAtencao.length} pontos de atenção`}:</strong> ${emAtencao.map(f => h(f.def.nome.toLowerCase())).join(", ")}. O município está entre os 25% piores do estado nesse indicador. É pista para investigar, não causa comprovada.`
+        : `Nenhum fator ligado a ${h(causaFatores.curto.toLowerCase())} está entre os 25% piores do estado.`}</p>
+      ${melhoriasHtml(lista)}
+      ${recolhivel({ titulo:"Situação do município em cada fator",
+        resumo:`${lista.length} ${plural(lista.length, "fator", "fatores")} · ${emAtencao.length ? `${emAtencao.length} entre os piores do estado` : "nenhum entre os piores do estado"} · comparado aos outros municípios do estado`,
+        corpo:`<ul class="fatores">${ordenada.map(f => fatorHtml(f, mun, causaFatores)).join("")}</ul>` })}`;
+  }
+  return `<section id="sec-melhorias" class="secao" aria-labelledby="sec-melhorias-t">
+    <h2 id="sec-melhorias-t" class="secao-titulo">Fatores e melhorias</h2>
+    ${corpo}
+    ${extras}
+  </section>`;
+}
+
+function ligarSecaoFatores(el, mun){
+  const dic = base.dicionario;
+  el.querySelectorAll("[data-foco-campo]").forEach(a => a.addEventListener("click", ev => { ev.preventDefault(); abrirConsulta(a.dataset.focoCampo); }));
   $("perfilCsv")?.addEventListener("click", () => baixarCSV(`perfil_${mun}.csv`,
     [["indicador", "dimensao", "unidade", "ano", "municipio", "uf", "brasil", "fonte"], ...dic.indicadores.map(i => { const il = indicadorLocal(mun, i.id);
       return [i.nome, i.dimensao, i.unidade, i.ano, il.valor ?? "indisponível", il.refUF ?? "", il.refBR ?? "", i.tabela]; })],
     [`Município: ${nomeLocal(mun)} (${mun})`, "Valores vazios ou 'indisponível' não são zero.", `Dados versão ${DATA_VERSION}`]));
   ligarFatores(el);
+}
+
+/* Link antigo #/fatores: abre a página do município já na seção de fatores. */
+async function renderFatores(el, token){
+  await renderMunicipio(el, token);
 }
 
 /* ============================================================
@@ -511,7 +533,7 @@ async function renderFontes(el, token){
   catch(erro){ el.innerHTML = erroHtml(erro); return; }
   if(token !== renderToken) return;
   const lista = v => Array.isArray(v) ? v : [v];
-  const secoes = [["f-sobre", "Sobre o painel"], ["f-atualizacao", "Atualização"], ["f-calculos", "Como os números são calculados"], ["f-regras", "Regras gerais"],
+  const secoes = [["f-sobre", "Achados"], ["f-atualizacao", "Atualização"], ["f-calculos", "Como os números são calculados"], ["f-regras", "Regras gerais"],
     ["f-tratamento", "Tratamento dos dados"], ["f-cobertura", "Cobertura dos dados"], ["f-fontes", "Fontes de dados"], ["f-refs", "Referências de conteúdo"]];
   const persist = outliers.acima_em_todos_os_anos || {};
   const taxaOut = (ev, ano) => outliers.taxas.find(t => t.evento === ev && t.ano === ano);
@@ -519,49 +541,35 @@ async function renderFontes(el, token){
   const obUlt = taxaOut("obitos", ultimoAno("obitos"));
   const somaInv = Object.values(outliers.invalidos || {}).reduce((s, v) => s + v, 0);
   el.innerHTML = `
-    <div class="pag-topo"><div>
-      <h1 class="pag-titulo">Fontes e metodologia</h1>
-      <p class="meta">Dados públicos oficiais, preparados por scripts reproduzíveis (pasta <code>scripts/</code>) · atualizados em ${h(formatarData(cobertura.gerado_em))} · versão ${h(DATA_VERSION)}</p>
-    </div></div>
-    ${kpisHtml([
-      { rotulo:"Fontes de dados", tom:"principal", valor: String(manifestos.fontes.length), nota:"com manifesto de origem e licença" },
-      { rotulo:"Indicadores do território", valor: String(base.dicionario.indicadores.length), nota:`${base.dicionario.lacunas.length} lacunas documentadas` },
-      { rotulo:"Temas revisados", valor: String(base.conhecimento.temas.length), nota:`${Object.keys(base.conhecimento.referencias).length} referências` },
-      { rotulo:"Municípios", valor: fmtNum.format(base.municipios.length), nota:"código IBGE de 7 dígitos" }
-    ])}
-    <nav class="indice" aria-label="Nesta página">${secoes.map(([id, t]) => `<a href="#${id}" data-ancora="${id}">${h(t)}</a>`).join("")}</nav>
+    ${cabecalhoPagina({ titulo:"Fontes e metodologia", contexto:`Dados atualizados em ${h(formatarData(cobertura.gerado_em))} · versão ${h(DATA_VERSION)}` })}
+    <div class="grade grade-lateral grade-fontes">
+    <nav class="cartao painel-lateral indice" aria-label="Nesta página"><div class="cartao-corpo">${secoes.map(([id, t]) => `<a href="#${id}" data-ancora="${id}">${h(t)}</a>`).join("")}</div></nav>
+    <div class="grade-col">
 
-    <section id="f-sobre" class="bloco" tabindex="-1">
-      <h2>Sobre o painel</h2>
-      <dl class="def">
-        <dt>Para quem</dt><dd>Gestores e técnicos de secretarias municipais de saúde, conselheiros de saúde e jornalistas. A leitura inicial é para decisão rápida; os detalhes ficam abertos para quem precisa verificar.</dd>
-        <dt>Pergunta central</dt><dd>O meu município tem mais óbitos, internações ou casos de uma doença do que o esperado para a população — e quais fatores do território vale investigar?</dd>
-        <dt>Decisão que apoia</dt><dd>Onde priorizar investigação da vigilância, auditoria de registros e ações de prevenção. Cada resultado traz “O que fazer”: acima do esperado → confirmar na evolução, investigar fatores e acionar a vigilância; abaixo → checar sub-registro antes de comemorar; sem diferença → acompanhar.</dd>
-      </dl>
-      <h3>Problema encontrado nos dados</h3>
-      <p>Os dados de saúde estão dispersos em sistemas diferentes (SIM, SIH, SINAN, IBGE) e, em contagens absolutas, os municípios grandes sempre parecem piores. Comparando taxas com o esperado para a população, a análise mostrou que:</p>
+    <section id="f-sobre" class="cartao cartao-texto" tabindex="-1">
+      <h2>Achados</h2>
+      <p>Comparando taxas com o esperado para a população (e não contagens absolutas, que sempre favorecem municípios pequenos):</p>
       <ul>
         ${persist.internacoes ? `<li><strong>${fmtNum.format(persist.internacoes.municipios)} municípios</strong> ficaram acima do esperado em internações no SUS em todos os anos completos (${h(persist.internacoes.anos.join(", "))}), mesmo descontada a variação natural entre municípios. Excesso persistente pede verificação: pode ser carga real de doença, falta de atenção básica que evitaria internações ou padrão de registro a auditar.</li>` : ""}
         ${persist.obitos ? `<li><strong>${fmtNum.format(persist.obitos.municipios)} municípios</strong> ficaram acima do esperado em óbitos por todas as causas em ${h(persist.obitos.anos.join(" e "))} (comparação sem ajuste por idade; a análise municipal mostra a versão ajustada).</li>` : ""}
         ${obUlt ? `<li>Em ${h(obUlt.ano)}, ${fmtNum.format(obUlt.funil_998.acima)} municípios tiveram mortalidade geral acima e ${fmtNum.format(obUlt.funil_998.abaixo)} abaixo do limite de 99,8% — os “abaixo” incluem possíveis casos de sub-registro.</li>` : ""}
       </ul>
-      <p>O painel é o MVP de uma ferramenta para transformar essa leitura em rotina: cada secretaria encontra o seu município, vê se está fora do esperado e recebe as pistas e ações relacionadas.</p>
     </section>
 
-    <section id="f-atualizacao" class="bloco" tabindex="-1">
+    <section id="f-atualizacao" class="cartao cartao-texto" tabindex="-1">
       <h2>Atualização</h2>
       <p><strong>Última atualização dos dados: ${h(formatarData(cobertura.gerado_em))}.</strong> Frequência do painel: <strong>${h(manifestos.frequencia_painel || "mensal")}</strong>, rodando <code>python3 scripts/atualizar_tudo.py</code>, que baixa as fontes, trata, valida e só publica se todas as verificações passarem. Anos ainda em andamento aparecem como “parcial” e não são comparados com anos completos.</p>
       ${tabelaHtml([{ t:"Fonte" }, { t:"Frequência de publicação da fonte" }, { t:"Coletado em" }],
         manifestos.fontes.map(m => [h(m.titulo), h(m.frequencia_fonte || "—"), h(formatarData(m.coletado_em))]), { legenda:"Frequência de cada fonte oficial" })}
     </section>
 
-    <section id="f-calculos" class="bloco" tabindex="-1">
+    <section id="f-calculos" class="cartao cartao-texto" tabindex="-1">
       <h2>Como os números são calculados</h2>
       <p>As taxas dividem os eventos pela população do mesmo período e multiplicam por 100 mil. As comparações usam intervalos de 95% para não tratar variação ao acaso como diferença real. Abra cada item para ver a regra.</p>
       ${FORMULAS.map(([t, d]) => mais(h(t), `<p>${h(d)}</p>`)).join("")}
     </section>
 
-    <section id="f-regras" class="bloco" tabindex="-1">
+    <section id="f-regras" class="cartao cartao-texto" tabindex="-1">
       <h2>Regras gerais</h2>
       <ul>
         <li>Anos parciais (prévias) não são projetados para 12 meses nem comparados a anos completos sem aviso.</li>
@@ -573,7 +581,7 @@ async function renderFontes(el, token){
         <p><strong>Privacidade:</strong> o painel publica apenas contagens agregadas. O detalhe por sexo e idade existe só no nível de capítulo; categorias aparecem apenas como total do município, como no tabulador público do Ministério da Saúde. Não foi adotado um limiar único de supressão: as contagens pequenas vêm de bases já públicas e são acompanhadas de aviso de instabilidade.</p>`)}
     </section>
 
-    <section id="f-tratamento" class="bloco" tabindex="-1">
+    <section id="f-tratamento" class="cartao cartao-texto" tabindex="-1">
       <h2>Tratamento dos dados</h2>
       <p>A base publicada é gerada pelos scripts a partir dos arquivos oficiais e carregada também em MySQL/MariaDB (<code>scripts/importar_mysql.py</code>, esquema em <code>sql/esquema.sql</code>).</p>
       ${kpisHtml([
@@ -594,7 +602,7 @@ async function renderFontes(el, token){
       ${mais("Base em MySQL", `<p>19 tabelas (território, população, CID-10, óbitos, internações, dengue, indicadores, lacunas, outliers, fontes e controle de carga) e duas visões com as regras de negócio (taxa por 100 mil com a população do mesmo ano). A importação confere linhas e somas de cada tabela com os arquivos de origem. Consultas de exemplo em <code>sql/consultas.sql</code>.</p>`)}
     </section>
 
-    <section id="f-cobertura" class="bloco" tabindex="-1">
+    <section id="f-cobertura" class="cartao cartao-texto" tabindex="-1">
       <h2>Cobertura dos dados</h2>
       <p>Óbitos por município e causa (todas as categorias da CID-10), internações no SUS por capítulo e notificações de dengue. Incidência de outras doenças não está disponível.</p>
       ${mais("Matriz de cobertura por fonte, período e nível territorial", `
@@ -603,7 +611,7 @@ async function renderFontes(el, token){
         <p>Relatórios de validação: ${cobertura.relatorios.map(r => `<a href="${h(r)}" target="_blank" rel="noopener">${h(r.split("/").pop())}</a>`).join(" · ")}</p>`)}
     </section>
 
-    <section id="f-fontes" class="bloco" tabindex="-1">
+    <section id="f-fontes" class="cartao cartao-texto" tabindex="-1">
       <h2>Fontes de dados</h2>
       <p>Cada fonte tem um manifesto com página de origem, licença, período, definição, valores ausentes, limitações e o comando de atualização.</p>
       ${manifestos.fontes.map(m => mais(`<strong>${h(m.titulo)}</strong> <small>${h(m.instituicao)} · ${h(m.periodo_referencia)}</small>`, `
@@ -624,11 +632,12 @@ async function renderFontes(el, token){
         </dl>`)).join("")}
     </section>
 
-    <section id="f-refs" class="bloco" tabindex="-1">
+    <section id="f-refs" class="cartao cartao-texto" tabindex="-1">
       <h2>Referências de conteúdo</h2>
       <p>${h(base.conhecimento.meta.natureza)} Endereços verificados em ${h(formatarData(base.conhecimento.meta.enderecos_verificados_em))}.</p>
       ${mais(`Lista de referências (${Object.keys(base.conhecimento.referencias).length})`, refsHtml(Object.keys(base.conhecimento.referencias)))}
-    </section>`;
+    </section>
+    </div></div>`;
   // Âncoras internas sem mexer na rota (a URL usa o hash para navegar).
   el.querySelectorAll("[data-ancora]").forEach(a => a.addEventListener("click", ev => {
     ev.preventDefault();

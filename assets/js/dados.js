@@ -33,6 +33,11 @@ async function carregarBase(){
   base.municipios = mun.municipios.map(m => ({ ...m, busca: normText(m.n) }));
   base.municipios.forEach(m => base.munPorCodigo.set(m.c, m));
   base.cid = cid;
+  // Nomes oficiais da CID usam colchetes e flexões como "(os)"; na tela ficam mais legíveis.
+  const legivel = nome => String(nome).replace(/\s*\((?:os|as|a|o)\)/g, "").replace(/\[([^\]]+)\]/g, "($1)").replace(/\s{2,}/g, " ").trim();
+  cid.capitulos.forEach(c => { c.nome = legivel(c.nome); });
+  cid.grupos.forEach(g => { g.nome = legivel(g.nome); });
+  cid.categorias.forEach(c => { c[1] = legivel(c[1]); });
   cid.categorias.forEach(([codigo, nome, g, classif, sup]) => {
     base.catPorCodigo.set(codigo, { codigo, nome, grupo: g, cap: cid.grupos[g].cap, classif, sup: Boolean(sup) });
   });
@@ -106,7 +111,7 @@ function lerCausa(texto){
   const [tipo, valor] = texto.split(":");
   if(tipo === "cap"){
     const cap = cid.capitulos.find(c => String(c.n) === valor);
-    if(cap) return { id:texto, tipo:"cap", ini:cap.ini, fim:cap.fim, cap:cap.n, rotulo:`Capítulo ${cap.rom} — ${cap.nome}`, curto:cap.nome, codigo:`${cap.ini}–${cap.fim}`, natureza:cap.tipo };
+    if(cap) return { id:texto, tipo:"cap", ini:cap.ini, fim:cap.fim, cap:cap.n, rotulo:`Capítulo ${cap.rom}: ${cap.nome}`, curto:cap.nome, codigo:`${cap.ini}–${cap.fim}`, natureza:cap.tipo };
   }
   if(tipo === "g"){
     const [ini, fim] = (valor || "").split("-");

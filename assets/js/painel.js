@@ -33,6 +33,48 @@ function mais(titulo, corpo, { aberto = false, id = "" } = {}){
   return `<details class="mais"${id ? ` id="${id}"` : ""}${aberto ? " open" : ""}><summary>${titulo}</summary><div class="mais-corpo">${corpo}</div></details>`;
 }
 
+/* ---------- Estrutura das páginas ----------
+   Toda página usa as mesmas peças:
+   cabecalhoPagina  → contexto, título, descrição e ações da página
+   cartao           → seção com cabeçalho (título + ações), corpo e rodapé
+   grade            → disposição das seções: "dupla" (2/3 + 1/3), "lateral"
+                      (painel de controle à esquerda + resultado) ou "par" */
+function cabecalhoPagina({ titulo, contexto = "", descricao = "", acoes = "", id = "" }){
+  return `<header class="pg-cab">
+    <div class="pg-cab-texto">
+      ${contexto ? `<p class="pg-contexto">${contexto}</p>` : ""}
+      <h1${id ? ` id="${id}"` : ""}>${titulo}</h1>
+      ${descricao ? `<p class="pg-descricao">${descricao}</p>` : ""}
+    </div>
+    ${acoes ? `<div class="pg-acoes no-print">${acoes}</div>` : ""}
+  </header>`;
+}
+
+let _cartaoSeq = 0;
+function cartao({ titulo = "", descricao = "", acoes = "", corpo = "", rodape = "", id = "", classe = "", nivel = 2 }){
+  const tid = `ct${++_cartaoSeq}`;
+  return `<section class="cartao${classe ? ` ${classe}` : ""}"${id ? ` id="${id}"` : ""}${titulo ? ` aria-labelledby="${tid}"` : ""}>
+    ${titulo || acoes ? `<header class="cartao-cab">
+      <div>${titulo ? `<h${nivel} id="${tid}" class="cartao-titulo">${titulo}</h${nivel}>` : ""}${descricao ? `<p class="cartao-descricao">${descricao}</p>` : ""}</div>
+      ${acoes ? `<div class="cartao-acoes no-print">${acoes}</div>` : ""}
+    </header>` : ""}
+    <div class="cartao-corpo">${corpo}</div>
+    ${rodape ? `<footer class="cartao-rodape">${rodape}</footer>` : ""}
+  </section>`;
+}
+
+/* Bloco recolhível: título e resumo sempre visíveis; o conteúdo abre num clique. */
+function recolhivel({ titulo, resumo = "", corpo = "", id = "", aberto = false }){
+  return `<details class="recolhivel"${id ? ` id="${id}"` : ""}${aberto ? " open" : ""}>
+    <summary><span class="recolhivel-texto"><span class="recolhivel-titulo">${titulo}</span>${resumo ? `<span class="recolhivel-resumo">${resumo}</span>` : ""}</span>
+      <span class="recolhivel-acao" aria-hidden="true"></span></summary>
+    <div class="recolhivel-corpo">${corpo}</div>
+  </details>`;
+}
+
+const grade = (tipo, ...partes) => `<div class="grade grade-${tipo}">${partes.filter(Boolean).join("")}</div>`;
+const coluna = (...partes) => `<div class="grade-col">${partes.filter(Boolean).join("")}</div>`;
+
 function refsHtml(ids){
   const refs = base.conhecimento.referencias;
   return `<ul class="refs">${ids.filter(id => refs[id]).map(id =>
@@ -100,7 +142,7 @@ function tendenciaSvg(series, { titulo = "", unidade = "", categorica = false } 
       ${rotulos.map(r => `<text class="tl-rotulo tl-rotulo-${r.i}${r.s.ref ? " tl-ref" : ""}" x="${x(r.ult.ano) + 10}" y="${r.ry + 4}">${h(r.s.nome.length > 18 ? r.s.nome.slice(0, 17) + "…" : r.s.nome)}</text>`).join("")}
     </svg>
     ${series.length > 1 ? `<ul class="tl-legenda">${series.map((s, i) => `<li class="tl-serie-${i}${s.ref ? " tl-ref" : ""}"><svg width="22" height="10" aria-hidden="true"><line x1="1" x2="21" y1="5" y2="5" /></svg>${h(s.nome)}</li>`).join("")}</ul>` : ""}
-    <figcaption>${h(unidade)}${temParcial ? " · * período parcial (ponto vazado e linha tracejada): o valor é menor por cobrir menos meses, não indica queda." : ""}</figcaption>
+    <figcaption>${h(unidade)}${temParcial ? " · * ano parcial: cobre menos meses, não indica queda." : ""}</figcaption>
   </figure>`;
 }
 
@@ -203,13 +245,25 @@ async function renderInicio(el){
     mun: { rotulo:"Município", placeholder:"Digite o nome do município", buscar: opcoesMunicipio, escolher: item => navegar({ rota:"municipio", mun:item.valor }) },
     causa: { rotulo:"Doença", placeholder:"Ex.: infarto, dengue, câncer de mama, J18", buscar: opcoesCausa, escolher: item => navegar({ rota: sel.mun ? "municipio" : "mapa", causa:item.valor }) }
   };
+  const ICONES = {
+    mapa: '<path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/>',
+    locais: '<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>',
+    doencas: '<path d="M3 12h4l3-8 4 16 3-8h4"/>',
+    busca: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>',
+    fontes: '<path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 8h8M8 12h6"/>'
+  };
+  const atalhos = [
+    ["mapa", "Mapa do Brasil", linkPara({ rota:"mapa" })],
+    ["locais", "Comparar municípios", linkPara({ rota:"comparar", modoCmp:"" })],
+    ["doencas", "Comparar doenças", linkPara({ rota:"comparar", modoCmp:"doencas" })],
+    ["busca", "Buscar uma doença", linkPara({ rota:"doencas", cid:"" })],
+    ["fontes", "Fontes e metodologia", "#/fontes"]
+  ];
   el.innerHTML = `
     <div class="entrada">
-      <h1>Como está a saúde no seu município?</h1>
-      <p class="entrada-sub">Descubra se o seu município tem mais óbitos, internações ou casos de uma doença do que o esperado para a população — e quais fatores do território investigar.</p>
-      <p class="entrada-publico"><strong>Para quem:</strong> gestores e técnicos de secretarias municipais de saúde, conselheiros de saúde e jornalistas.</p>
-      <div class="entrada-busca">
-        <div class="segmentos" role="group" aria-label="Começar por">
+      <section class="busca-principal" aria-labelledby="entradaTitulo">
+        <h1 id="entradaTitulo">Consultar um município</h1>
+        <div class="segmentos" role="group" aria-label="Buscar por">
           ${Object.entries(modos).map(([id, m]) => `<button type="button" data-modo="${id}" aria-pressed="${id === modoEntrada}">${m.rotulo}</button>`).join("")}
         </div>
         <div class="combo">
@@ -217,17 +271,19 @@ async function renderInicio(el){
           <input id="entradaBusca" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="entradaLista" autocomplete="off" />
           <ul id="entradaLista" class="combo-list" role="listbox" aria-label="Resultados" hidden></ul>
         </div>
-      </div>
-      <p class="entrada-atalhos">
-        <a href="${h(linkPara({ rota:"mapa" }))}">Explorar o mapa do Brasil</a>
-        <a href="${h(linkPara({ rota:"comparar" }))}">Comparar municípios</a>
-        <a href="${h(linkPara({ rota:"doencas", cid:"" }))}">Consultar a CID-10</a>
-      </p>
-      <section class="entrada-brasil" aria-labelledby="brTitulo">
-        <h2 id="brTitulo">Brasil, último ano completo</h2>
+      </section>
+
+      <section class="secao" aria-labelledby="acessoTitulo">
+        <h2 id="acessoTitulo" class="secao-titulo">Acesso rápido</h2>
+        <nav class="acesso-rapido" aria-labelledby="acessoTitulo">
+          ${atalhos.map(([icone, nome, link]) => `<a href="${h(link)}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONES[icone]}</svg><span>${h(nome)}</span></a>`).join("")}
+        </nav>
+      </section>
+
+      <section class="secao" aria-labelledby="brTitulo">
+        <h2 id="brTitulo" class="secao-titulo">Brasil no último ano completo</h2>
         <div id="entradaKpis">${carregandoHtml("Somando os registros do Brasil...")}</div>
       </section>
-      <p class="apoio">Óbitos, internações no SUS e notificações de dengue de 2023 a 2026, com dados do Ministério da Saúde, do IBGE e do INPE. Sem cadastro.</p>
     </div>`;
   renderKpisBrasil();
   const input = $("entradaBusca");
@@ -312,7 +368,6 @@ function renderKpisMapa(){
   const extremos = ALL_UFS.map(uf => ({ uf, ...mapa.ufs.get(uf) })).filter(u => u.taxa != null).sort((a, b) => b.taxa - a.taxa);
   $("mapKpis").innerHTML = kpisHtml([
     { rotulo:"Taxa do Brasil", tom:"principal", valor: fmtValor(mapa.taxaBR), nota:`${h(ev.plural)} por 100 mil habitantes` },
-    { rotulo:`${h(ev.rotulo)} no Brasil`, valor: fmtNum.format(mapa.brasil?.n ?? 0), nota: h(rotuloPeriodo(mapa.consulta.evento, mapa.consulta.ano)) },
     { rotulo:"Estados bem acima do Brasil", tom: acima ? "acima" : "", valor: `${acima} <small>de 27</small>`, nota: extremos[0] ? `maior taxa: ${h(UF_NAMES[extremos[0].uf])}` : "" },
     { rotulo:"Estados bem abaixo do Brasil", tom: abaixo ? "abaixo" : "", valor: `${abaixo} <small>de 27</small>`, nota: extremos.length ? `menor taxa: ${h(UF_NAMES[extremos[extremos.length - 1].uf])}` : "" }
   ], "kpis-mapa");
@@ -337,11 +392,9 @@ async function renderRankingMapa(token = renderToken){
   const nomeItem = i => foco ? `<a href="${h(linkPara({ rota:"municipio", mun:i.codigo }))}">${h(i.nome)}</a>` : `<button class="link-button" type="button" data-foco="${i.codigo}">${h(i.nome)}</button>`;
   const lista = arr => barrasHtml(arr.map(i => ({ nome: nomeItem(i), valor: i.taxa, texto: fmtValor(i.taxa) })));
   const onde = foco ? `municípios de ${h(UF_NAMES[foco])}` : "estados";
-  el.innerHTML = `<div class="duas">
-      <section class="bloco"><h2>Maiores taxas — ${onde}</h2>${lista(estaveis.slice(0, n))}</section>
-      <section class="bloco"><h2>Menores taxas — ${onde}</h2>${lista(estaveis.slice(-n).reverse())}</section>
-    </div>
-    <p class="apoio"><strong>O que fazer:</strong> os locais com maiores taxas são candidatos a investigação — abra a análise para ver se a diferença vai além do acaso e considera a idade da população. Taxas por 100 mil habitantes, na mesma escala dentro de cada lista.${fora ? ` ${fora} ${foco ? "municípios" : "estados"} com poucos eventos ou sem dado ficaram fora (taxa instável).` : ""} A lista completa está em “Ver como tabela”.</p>`;
+  el.innerHTML = cartao({ titulo:`Maiores taxas entre os ${onde}`, corpo: lista(estaveis.slice(0, n)), nivel:2 }) +
+    cartao({ titulo:`Menores taxas entre os ${onde}`, corpo: lista(estaveis.slice(-n).reverse()), nivel:2,
+      rodape: `${foco ? "Clique num município para abrir a análise." : "Clique num estado para ver os municípios."}${fora ? ` ${fora} ${foco ? "municípios" : "estados"} com poucos eventos ficaram fora (taxa instável).` : ""}` });
   el.querySelectorAll("[data-foco]").forEach(b => b.addEventListener("click", () => setMapView(b.dataset.foco)));
 }
 
@@ -372,23 +425,23 @@ async function renderTabelaMapa(token = renderToken){
     const m = medidaMapa(item);
     return m.estado === "ok" ? MAP_CLASSES[m.classe].rotulo : (m.estado === "instavel" ? "poucos eventos: taxa instável" : "sem dado");
   };
-  el.innerHTML = `
-    <div class="sec-topo"><h2>${foco ? `Municípios de ${h(UF_NAMES[foco])}` : "Estados"}</h2>
-      <button id="mapCsv" class="btn-texto" type="button">Exportar CSV</button></div>
-    <p class="apoio">Ordenada pela taxa, não pelo total (que acompanha o tamanho da população).</p>
-    ${tabelaHtml(
+  el.innerHTML = cartao({
+    titulo: foco ? `Municípios de ${h(UF_NAMES[foco])}` : "Estados",
+    descricao: "Ordenada pela taxa, não pelo total (que acompanha o tamanho da população).",
+    acoes: `<button id="mapCsv" class="btn-texto" type="button">Exportar CSV</button>`,
+    corpo: `${tabelaHtml(
       [{ t: foco ? "Município" : "Estado" }, { t:"Taxa por 100 mil", num:true }, { t: ev.rotulo, num:true }, { t:"População", num:true }, { t:"Em relação ao Brasil" }],
       mostrar.map(l => [
         foco ? `<a href="${h(linkPara({ rota:"municipio", mun:l.codigo }))}">${h(l.nome)}</a>` : `<button class="link-button" type="button" data-foco="${l.codigo}">${h(l.nome)}</button>`,
         fmtValor(l.taxa), l.n == null ? "—" : fmtNum.format(l.n), l.pop == null ? "sem população" : fmtNum.format(l.pop), h(classe(l))
-      ]), { legenda:`${ev.taxa} — ${tituloCausa(mapa.consulta.evento, mapa.consulta.causa)} — ${rotuloPeriodo(mapa.consulta.evento, mapa.consulta.ano)}` })}
-    ${foco && linhas.length > mostrar.length ? `<button id="mapMais" class="btn-sec" type="button">Mostrar os ${linhas.length} municípios</button>` : ""}
-    ${linhaFonte(mapa.consulta.evento, mapa.consulta.ano)}`;
+      ]), { legenda:`${ev.taxa}, ${tituloCausa(mapa.consulta.evento, mapa.consulta.causa)}, ${rotuloPeriodo(mapa.consulta.evento, mapa.consulta.ano)}` })}
+    ${foco && linhas.length > mostrar.length ? `<button id="mapMais" class="btn-sec" type="button">Mostrar os ${linhas.length} municípios</button>` : ""}`,
+    rodape: linhaFonte(mapa.consulta.evento, mapa.consulta.ano) });
   el.querySelectorAll("[data-foco]").forEach(b => b.addEventListener("click", () => setMapView(b.dataset.foco)));
   $("mapMais")?.addEventListener("click", () => { mapa._tabelaTudo = true; renderTabelaMapa(); });
   $("mapCsv").addEventListener("click", () => baixarCSV(`mapa_${mapa.consulta.evento}_${mapa.consulta.ano}.csv`,
     [["local", "codigo", "eventos", "populacao", "taxa_por_100mil", "em_relacao_ao_brasil"],
-      ...linhas.map(l => [l.nome, l.codigo, l.n ?? "", l.pop ?? "", l.taxa == null ? "" : l.taxa.toFixed(2), classe(l)])],
+      ...linhas.map(l => [l.nome, l.codigo, l.n ?? "", l.pop ?? "", l.taxa == null ? "" : decimalCSV(l.taxa), classe(l)])],
     notasExportacao(mapa.consulta.evento, mapa.consulta.causa, mapa.consulta.ano)));
 }
 document.addEventListener("mapa:nivel", () => { mapa._tabelaTudo = false; renderRankingMapa(); renderTabelaMapa(); });
@@ -399,24 +452,15 @@ document.addEventListener("mapa:nivel", () => { mapa._tabelaTudo = false; render
 let nivelCausas = "capitulo";
 
 /* Cabeçalho comum à análise e aos fatores: nome do lugar e abas de aprofundamento. */
-function cabecalhoMunicipio(aba, acoes = ""){
+/* Cabeçalho da página do município: nome, estado e população; atalhos para as seções. */
+function cabecalhoMunicipio(acoes = ""){
   const m = base.munPorCodigo.get(sel.mun);
   const populacao = popDe(sel.mun, sel.ano) || popDe(sel.mun, "2025");
-  const abas = [
-    ["panorama", "Panorama", linkPara({ rota:"municipio", visao:"" })],
-    ["evolucao", "Evolução", linkPara({ rota:"municipio", visao:"evolucao" })],
-    ["fatores", "Fatores e melhorias", linkPara({ rota:"fatores" })],
-    ["causas", "Principais causas", linkPara({ rota:"municipio", visao:"causas" })]
-  ];
-  return `<header class="local">
-      <div>
-        <h1>${h(m.n)}</h1>
-        <p class="meta">${h(UF_NAMES[m.uf])} · ${populacao ? `${fmtNum.format(populacao.valor)} habitantes` : "população não disponível"}</p>
-      </div>
-      ${acoes ? `<div class="local-acoes no-print">${acoes}</div>` : ""}
-    </header>
-    <nav class="abas no-print" aria-label="Seções da análise">${abas.map(([id, t, link]) =>
-      `<a href="${h(link)}"${id === aba ? ' aria-current="page"' : ""}>${h(t)}</a>`).join("")}</nav>`;
+  const secoes = [["sec-resultado", "Resultado"], ["sec-evolucao", "Evolução"], ["sec-melhorias", "Fatores e melhorias"], ["sec-causas", "Principais causas"]];
+  return `${cabecalhoPagina({
+      contexto: `${h(UF_NAMES[m.uf])} · ${populacao ? `${fmtNum.format(populacao.valor)} habitantes` : "população não disponível"}`,
+      titulo: h(m.n), acoes })}
+    <nav class="nesta-pagina no-print" aria-label="Nesta página">${secoes.map(([id, t]) => `<a href="#${id}" data-ancora="${id}">${h(t)}</a>`).join("")}</nav>`;
 }
 
 function semMunicipioHtml(titulo, texto){
@@ -426,15 +470,15 @@ function semMunicipioHtml(titulo, texto){
 
 async function renderMunicipio(el, token){
   if(!sel.mun || !base.munPorCodigo.has(sel.mun)){
-    el.innerHTML = semMunicipioHtml("Análise municipal", "Escolha um município para ver a taxa, a comparação com o estado, a evolução e os fatores a investigar.");
+    el.innerHTML = semMunicipioHtml("Município", "Escolha um município no filtro acima para ver o resultado, a evolução, os fatores e as melhorias.");
     return;
   }
   const causa = lerCausa(sel.causa);
   const opcoes = { causa, evento: sel.evento, ano: sel.ano, sexo: sel.sexo, idade: sel.idade };
-  const aba = sel.visao || "panorama";
-  el.innerHTML = `${cabecalhoMunicipio(aba, `<button id="csvBtn" class="btn-texto" type="button">Exportar CSV</button><button id="imprimirBtn" class="btn-texto" type="button">Imprimir</button>`)}
+  el.innerHTML = `${cabecalhoMunicipio(`<a class="btn-sec" href="${h(linkPara({ rota:"mapa" }))}">Ver no mapa</a><button id="csvBtn" class="btn-texto" type="button">Exportar CSV</button><button id="imprimirBtn" class="btn-texto" type="button">Imprimir</button>`)}
     <div id="munCorpo">${carregandoHtml("Calculando os indicadores do município...")}</div>`;
   $("imprimirBtn").addEventListener("click", () => window.print());
+  ligarAncoras(el);
   const corpo = $("munCorpo");
 
   let analise, serie;
@@ -447,29 +491,51 @@ async function renderMunicipio(el, token){
   if(token !== renderToken) return;
   $("csvBtn").addEventListener("click", () => exportarMunicipio(analise, serie));
 
-  if(aba === "evolucao"){ corpo.innerHTML = evolucaoHtml(serie, opcoes); return; }
-  if(aba === "causas"){ corpo.innerHTML = `<div id="munCausas"></div>`; renderCausasMunicipio(token); return; }
-
   let comp = null;
   try{ comp = analise.disponivel && !sel.sexo && !sel.idade ? await comparaveis(sel.mun, causa, sel.evento, sel.ano) : null; }
   catch(erro){ console.error(erro); }
   if(token !== renderToken) return;
-  // Hierarquia do painel: topo = situação e números-chave; meio = tendência; base = quebras e detalhes.
-  corpo.innerHTML = `${resultadoHtml(analise, comp)}
-    ${tendenciaMunicipioHtml(serie, opcoes)}
-    <div class="duas"><section id="panCausas" class="bloco"></section><section id="panFatores" class="bloco"></section></div>
-    ${verificacaoHtml(analise, comp)}`;
-  $("panFatores").innerHTML = resumoFatoresHtml(sel.mun, causa, sel.evento);
-  renderTopCausas(token);
+
+  // Uma página só, sempre na mesma ordem: resultado → evolução → fatores e melhorias → causas → detalhes.
+  corpo.innerHTML = `
+    <section id="sec-resultado" class="secao" aria-label="Resultado">${resultadoHtml(analise, comp)}</section>
+    <section id="sec-evolucao" class="secao" aria-labelledby="sec-evolucao-t">
+      <h2 id="sec-evolucao-t" class="secao-titulo">Evolução</h2>
+      ${tendenciaMunicipioHtml(serie, opcoes) || `<p class="secao-intro">Não há anos suficientes com taxa para desenhar a evolução.</p>`}
+      <div class="extras">${mais("Tabela ano a ano", evolucaoHtml(serie, opcoes))}</div>
+    </section>
+    ${secaoFatoresHtml(sel.mun)}
+    <section id="sec-causas" class="secao" aria-labelledby="sec-causas-t">
+      <h2 id="sec-causas-t" class="secao-titulo">Principais causas</h2>
+      ${recolhivel({ titulo:`Causas com mais ${h(EVENTOS[sel.evento].plural)} em ${h(base.munPorCodigo.get(sel.mun).n)}`,
+        resumo:`<span id="munCausasResumo">${h(rotuloPeriodo(sel.evento, sel.ano))}</span>`,
+        corpo:`<div id="munCausas">${carregandoHtml("Somando as causas...")}</div>` })}
+    </section>
+    <section class="secao" aria-label="Detalhes do cálculo">${verificacaoHtml(analise, comp)}</section>`;
+  ligarSecaoFatores(corpo, sel.mun);
+  ligarAncoras(corpo);
+  renderCausasMunicipio(token);
+
+  // Links antigos (#/fatores, ?v=evolucao, ?v=causas) abrem direto na seção correspondente.
+  const alvo = sel.rota === "fatores" ? "sec-melhorias" : { evolucao:"sec-evolucao", causas:"sec-causas" }[sel.visao];
+  if(alvo){
+    requestAnimationFrame(() => $(alvo)?.scrollIntoView({ block:"start" }));
+    history.replaceState(null, "", linkPara({ rota:"municipio", visao:"" }));
+  }
+}
+
+function ligarAncoras(el){
+  el.querySelectorAll("[data-ancora]").forEach(a => a.addEventListener("click", ev => {
+    ev.preventDefault();
+    $(a.dataset.ancora)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" });
+  }));
 }
 
 /* TOPO do painel: a situação em uma frase (manchete) e os números-chave.
    Deve ser entendido em poucos segundos. */
 function resultadoHtml(a, comp){
   const ev = EVENTOS[a.evento];
-  const recorte = [a.sexo ? (a.sexo === "F" ? "sexo feminino" : "sexo masculino") : "", a.idade ? GRUPOS_IDADE[a.idade].rotulo : ""].filter(Boolean).join(", ");
-  const sobre = `<p class="sobre">${h(ev.taxa)} · ${h(tituloCausa(a.evento, a.causa))} · ${h(rotuloPeriodo(a.evento, a.ano))}${recorte ? ` · ${h(recorte)}` : ""}</p>`;
-  if(!a.disponivel) return `<section class="resultado">${sobre}${indisponivelHtml(a, a.causa)}</section>`;
+  if(!a.disponivel) return `<section class="resultado">${indisponivelHtml(a, a.causa)}</section>`;
 
   const semPop = !a.pop;
   const uf = ufDe(a.local);
@@ -494,8 +560,8 @@ function resultadoHtml(a, comp){
     const aoRef = ehMunicipio(a.local) ? `ao estado (${uf})` : "ao Brasil";
     const titulo = { acima:`Acima do esperado em relação ${aoRef}`, abaixo:`Abaixo do esperado em relação ${aoRef}`, compativel:`Sem diferença clara em relação ${aoRef}` }[principal.classe];
     const nota = ajusteMuda
-      ? `<strong>Já considerando a idade e o sexo da população</strong>: ${h(fraseComparacao(p, ev))}. Sem esse ajuste a leitura seria “${h({ acima:"acima", abaixo:"abaixo", compativel:"sem diferença clara" }[c.classe])}” — prefira a comparação ajustada.`
-      : `${h(fraseComparacao(c, ev))}. ${ajusteValido ? "O ajuste por idade e sexo mantém essa leitura." : "Sem ajuste por idade: lugares com mais idosos tendem a ter taxas maiores."}`;
+      ? `Considerando idade e sexo da população: ${h(fraseComparacao(p, ev))}.`
+      : `${h(fraseComparacao(c, ev)).replace(/^./, l => l.toUpperCase())}.`;
     manchete = `<div class="manchete manchete-${principal.classe}">
       <span class="manchete-icone" aria-hidden="true">${{ acima:"▲", abaixo:"▼", compativel:"●" }[principal.classe]}</span>
       <div><p class="manchete-titulo">${h(titulo)}</p><p class="manchete-nota">${nota}</p>
@@ -507,21 +573,17 @@ function resultadoHtml(a, comp){
 
   const refUF = (a.refs || []).find(r => r.local !== "BR");
   const refBR = (a.refs || []).find(r => r.local === "BR");
-  const difPct = (v, r) => v != null && r ? `${v >= r ? "+" : "−"}${fmtNum.format(Math.round(Math.abs(v / r - 1) * 100))}% em relação a esta` : "";
   const kpis = kpisHtml([
     { rotulo:"Taxa por 100 mil habitantes", tom:"principal",
       valor: semPop ? "não calculada" : fmtValor(a.taxa),
       nota: semPop ? "sem população no período" : `${h(ev.plural)} por 100 mil` },
     { rotulo:`${h(ev.rotulo)} registrados`, valor: fmtNum.format(a.n),
-      nota: a.pop ? `entre ${fmtNum.format(a.pop.valor)} habitantes` : "" },
-    refUF ? { rotulo:`Taxa do estado (${h(refUF.local)})`, valor: fmtValor(refUF.taxa),
-      nota: semPop ? "" : h(difPct(a.taxa, refUF.taxa)).replace("em relação a esta", "no município") } : null,
-    refBR ? { rotulo:"Taxa do Brasil", valor: fmtValor(refBR.taxa),
-      nota: semPop ? "" : h(difPct(a.taxa, refBR.taxa)).replace("em relação a esta", "no município") } : null
+      nota: "no período" },
+    refUF ? { rotulo:`Taxa do estado (${h(refUF.local)})`, valor: fmtValor(refUF.taxa), nota: "referência" } : null,
+    refBR ? { rotulo:"Taxa do Brasil", valor: fmtValor(refBR.taxa), nota: "referência" } : null
   ].filter(Boolean));
 
   return `<section class="resultado" aria-label="Resumo">
-    ${sobre}
     ${manchete}
     ${kpis}
     ${atencaoHtml(atencao)}
@@ -530,15 +592,15 @@ function resultadoHtml(a, comp){
 
 /* Ação ligada ao resultado: o que fazer ao ver "acima", "abaixo" ou "sem diferença". */
 function oQueFazerHtml(classe, poucos, evento){
-  const fatores = `<a href="${h(linkPara({ rota:"fatores" }))}">fatores do território e melhorias</a>`;
-  const evolucao = `<a href="${h(linkPara({ rota:"municipio", visao:"evolucao" }))}">evolução</a>`;
+  const fatores = `<a href="#sec-melhorias" data-ancora="sec-melhorias">fatores e melhorias</a>`;
+  const evolucao = `<a href="#sec-evolucao" data-ancora="sec-evolucao">evolução</a>`;
   let texto;
   if(poucos) texto = `poucos registros: antes de agir, veja a ${evolucao} de vários anos ou um grupo de causas mais amplo.`;
-  else if(classe === "acima") texto = `confirme na ${evolucao} se o excesso se repete, veja os ${fatores} e leve o resultado à vigilância em saúde do município para investigar a causa.`;
+  else if(classe === "acima") texto = `veja na ${evolucao} se o excesso se repete nos outros anos e consulte os ${fatores}. Se se repetir, é caso para a vigilância em saúde do município.`;
   else if(classe === "abaixo") texto = evento === "obitos"
     ? `antes de concluir que está melhor, verifique sub-registro (óbitos por causas mal definidas, envio atrasado) e compare com municípios parecidos.`
     : `antes de concluir que está melhor, verifique se há subnotificação ou atendimento fora do SUS e compare com municípios parecidos.`;
-  else texto = `não há sinal para priorizar com este indicador isolado; acompanhe a ${evolucao} e compare com outras doenças.`;
+  else texto = `o município está dentro do esperado. Acompanhe a ${evolucao} ao longo dos anos.`;
   return `<p class="manchete-acao"><strong>O que fazer:</strong> ${texto}</p>`;
 }
 
@@ -558,11 +620,11 @@ function tendenciaMunicipioHtml(serie, opcoes){
     { nome: "Brasil", pontos: serie.map(s => ponto(s, "BR")) }
   ];
   const defasada = serie.some(s => s.pop?.defasado);
-  return `<section class="bloco" aria-labelledby="tendTitulo">
-    <div class="sec-topo"><h2 id="tendTitulo">Evolução da taxa</h2>
-      <a class="seguir no-print" href="${h(linkPara({ rota:"municipio", visao:"evolucao" }))}">Tabela ano a ano</a></div>
-    ${tendenciaSvg(series, { titulo:`${ev.taxa} por ano`, unidade:`${ev.taxa} por 100 mil habitantes${defasada ? " · em anos sem estimativa oficial de população, foi usado o Censo 2022" : ""}` })}
-  </section>`;
+  return cartao({
+    titulo: "Taxa por ano", nivel: 3,
+    descricao: `Município, estado e Brasil · ${h(ev.taxa.toLowerCase())} por 100 mil habitantes`,
+    corpo: tendenciaSvg(series, { titulo:`${ev.taxa} por ano`, unidade: defasada ? "Em anos sem estimativa oficial de população, foi usado o Censo 2022." : "" })
+  });
 }
 
 /* BASE do painel: números completos, critério e fonte (verificação sob demanda). */
@@ -587,60 +649,59 @@ function verificacaoHtml(a, comp){
     <p><strong>Termos.</strong> ${h(GLOSSARIO.taxa)} ${h(GLOSSARIO.residencia)} ${h(a.evento === "dengue" ? GLOSSARIO.notificacao : a.evento === "obitos" ? GLOSSARIO.preliminar : ev.explica)}</p>
     ${a.evento === "obitos" && info ? `<p>${h(info.situacao || "")} Arquivo publicado em ${h(formatarData(info.publicado_em))}.</p>` : ""}
     ${linhaFonte(a.evento, a.ano)}`;
-  return mais("Como chegamos a este resultado: números completos, critério e fonte", corpo);
+  return cartao({ classe:"cartao-detalhes", corpo: mais("Detalhes do cálculo e fonte", corpo) });
 }
 
 /* Resumo de fatores do panorama: no máximo três linhas e o caminho para a análise completa. */
 function resumoFatoresHtml(mun, causa, evento){
   const causaFatores = evento === "dengue" ? lerCausa("c:A90") : causa;
   const link = linkPara({ rota:"fatores" });
-  const topo = `<div class="sec-topo"><h2>Fatores do território a investigar</h2></div>`;
+  const titulo = "Fatores e melhorias";
   if(causaFatores.tipo === "todas"){
-    return `${topo}<p>Escolha uma doença ou grupo para ver os fatores do território ligados a ela.</p><p><a class="seguir" href="${h(link)}">Ver o perfil do território</a></p>`;
+    return cartao({ titulo, corpo:`<p>Escolha uma doença ou grupo para ver os fatores do território ligados a ela.</p>`, rodape:`<a class="seguir" href="${h(link)}">Ver o perfil do território</a>` });
   }
   const lista = fatoresDaCausa(mun, causaFatores);
   if(!lista.length){
-    return `${topo}<p>Não há relações documentadas entre esta condição e os indicadores do território. Os dados disponíveis não bastam para explicar o padrão.</p><p><a class="seguir" href="${h(link)}">Ver o perfil do território e o que falta</a></p>`;
+    return cartao({ titulo, corpo:`<p>Não há relações documentadas entre esta condição e os indicadores do território.</p>`, rodape:`<a class="seguir" href="${h(link)}">Ver o perfil do território</a>` });
   }
   const emAtencao = lista.filter(f => f.atencao.nivel === "atencao");
   const mostrar = (emAtencao.length ? emAtencao : lista).slice(0, 3);
-  return `${topo}
+  return cartao({ titulo, rodape:`<a class="seguir" href="${h(link)}">Ver todas as melhorias</a>`, corpo: `
     <p>${emAtencao.length
-      ? `<strong>${emAtencao.length} de ${lista.length}</strong> indicadores ligados a esta condição estão entre os mais desfavoráveis do estado. São pistas para investigar, não causas comprovadas.`
+      ? `<strong>${emAtencao.length === 1 ? "1 ponto de atenção" : `${emAtencao.length} pontos de atenção`}</strong> entre ${lista.length} fatores ligados a esta condição (25% piores do estado).`
       : `Nenhum dos ${lista.length} indicadores ligados a esta condição está entre os mais desfavoráveis do estado. Isso não descarta os fatores: os indicadores são indiretos.`}</p>
     <ul class="lista-fatores">${mostrar.map(f => `<li><span>${h(f.def.nome)}</span>
       <span class="lf-valor">${f.ind.disponivel ? `${fmtValor(f.ind.valor, f.def.casas)} <small>${h(f.def.unidade)} · estado ${fmtValor(f.ind.refUF, f.def.casas)}</small>` : "<small>sem valor local</small>"}</span></li>`).join("")}</ul>
-    <p><a class="seguir" href="${h(link)}">Ver análise completa e melhorias</a></p>`;
+    ${(() => { const m = melhoriasDaCausa(lista)[0]; return m ? `<p class="lf-melhoria"><strong>${m.prioridade ? "Melhoria prioritária" : "Melhoria recomendada"}:</strong> ${h(m.texto)}</p>` : ""; })()}` });
 }
 
 async function renderTopCausas(token){
   const el = $("panCausas");
   if(!el) return;
   if(sel.evento === "dengue"){ el.remove(); return; }
-  el.innerHTML = carregandoHtml("Somando as causas...");
+  el.innerHTML = cartao({ titulo:"Principais causas", corpo: carregandoHtml("Somando as causas...") });
   let itens;
   try{ itens = await principaisCausas(sel.mun, sel.evento, sel.ano, "capitulo", 5); }catch(erro){ console.error(erro); el.remove(); return; }
   if(token !== renderToken) return;
-  if(!itens.length){ el.innerHTML = `<h2>Principais causas</h2><p>Nenhum registro neste período no arquivo publicado. Ausência de registro não é ausência de doença.</p>`; return; }
+  if(!itens.length){ el.innerHTML = cartao({ titulo:"Principais causas", corpo:`<p>Nenhum registro neste período no arquivo publicado. Ausência de registro não é ausência de doença.</p>` }); return; }
   const ev = EVENTOS[sel.evento];
-  el.innerHTML = `<div class="sec-topo"><h2>Principais causas de ${h(ev.plural)}</h2></div>
-    <p class="meta">Capítulos da CID-10 com mais registros no município, ${h(rotuloPeriodo(sel.evento, sel.ano))}</p>
-    ${barrasHtml(itens.map(i => ({ nome:`<a href="${h(linkPara({ causa: i.causa.id }))}">${h(i.causa.curto)}</a>`, valor: i.n, texto: fmtNum.format(i.n) })))}
-    <p><a class="seguir" href="${h(linkPara({ rota:"municipio", visao:"causas" }))}">Ver todas as causas</a></p>`;
+  el.innerHTML = cartao({
+    titulo: `Principais causas de ${h(ev.plural)}`,
+    descricao: `Capítulos da CID-10, ${h(rotuloPeriodo(sel.evento, sel.ano))}`,
+    corpo: barrasHtml(itens.map(i => ({ nome:`<a href="${h(linkPara({ causa: i.causa.id }))}">${h(i.causa.curto)}</a>`, valor: i.n, texto: fmtNum.format(i.n) }))),
+    rodape: `<a class="seguir" href="${h(linkPara({ rota:"municipio", visao:"causas" }))}">Ver todas as causas</a>`
+  });
 }
 
 function evolucaoHtml(serie, opcoes){
   const ev = EVENTOS[opcoes.evento];
   const validos = serie.filter(s => s.disponivel && s.taxa != null);
-  if(!serie.some(s => s.disponivel)) return `<section>${indisponivelHtml(serie[0] || {}, opcoes.causa)}</section>`;
+  if(!serie.some(s => s.disponivel)) return indisponivelHtml(serie[0] || {}, opcoes.causa);
   const maximo = Math.max(...validos.map(s => s.taxa), 0.0001);
   const atencao = [];
   if(serie.some(s => s.info && !s.info.ano_completo)) atencao.push("Barras listradas são períodos parciais: a taxa é menor porque cobre menos meses, não porque houve queda.");
   if(serie.some(s => s.pop?.defasado)) atencao.push("População com o ano entre parênteses: não há estimativa oficial para o ano dos eventos; foi usado o Censo indicado.");
-  return `<section>
-    <h2>${h(tituloCausa(opcoes.evento, opcoes.causa))}</h2>
-    <p class="meta">${h(ev.taxa)} por 100 mil habitantes, em cada período disponível</p>
-    <div class="table-wrap"><table class="tabela-serie">
+  return `<div class="table-wrap"><table class="tabela-serie">
       <caption>${h(ev.rotulo)} e taxa por 100 mil habitantes por ano</caption>
       <thead><tr><th scope="col">Ano</th><th scope="col" class="num">Taxa</th><th scope="col"><span class="sr-only">Gráfico da taxa</span></th><th scope="col" class="num">${h(ev.rotulo)}</th><th scope="col" class="num">População</th><th scope="col">Período coberto</th></tr></thead>
       <tbody>${serie.map(s => {
@@ -653,9 +714,7 @@ function evolucaoHtml(serie, opcoes){
           <td class="num">${s.pop ? fmtNum.format(s.pop.valor) + (s.pop.defasado ? ` <small>(${h(s.pop.ano)})</small>` : "") : "—"}</td>
           <td>${h(s.info.periodo)}</td></tr>`;
       }).join("")}</tbody></table></div>
-    ${atencaoHtml(atencao)}
-    ${linhaFonte(opcoes.evento, sel.ano)}
-  </section>`;
+    ${atencaoHtml(atencao)}`;
 }
 
 async function renderCausasMunicipio(token = renderToken){
@@ -672,12 +731,12 @@ async function renderCausasMunicipio(token = renderToken){
   try{ itens = await principaisCausas(sel.mun, sel.evento, sel.ano, nivelCausas); }
   catch(erro){ el.innerHTML = erroHtml(erro); return; }
   if(token !== renderToken) return;
-  el.innerHTML = `<section>
-    <div class="sec-topo"><div><h2>O que mais registra ${h(ev.plural)}</h2>
-      <p class="meta">${h(rotuloPeriodo(sel.evento, sel.ano))} · escolha uma causa para analisá-la</p></div>
-      ${niveis.length > 1 ? `<div class="segmentos no-print" role="group" aria-label="Nível de detalhe">${niveis.map(([id, t]) => `<button type="button" aria-pressed="${id === nivelCausas}" data-nivel="${id}">${h(t)}</button>`).join("")}</div>` : ""}
-    </div>
-    ${itens.length ? tabelaHtml(
+  el.innerHTML = cartao({
+    titulo: "",
+    descricao: `${h(rotuloPeriodo(sel.evento, sel.ano))} · clique numa causa para analisá-la`,
+    acoes: niveis.length > 1 ? `<div class="segmentos" role="group" aria-label="Nível de detalhe">${niveis.map(([id, t]) => `<button type="button" aria-pressed="${id === nivelCausas}" data-nivel="${id}">${h(t)}</button>`).join("")}</div>` : "",
+    rodape: linhaFonte(sel.evento, sel.ano),
+    corpo: `${itens.length ? tabelaHtml(
       [{ t:"Causa" }, { t: ev.rotulo, num:true }, { t:"Parte do total", num:true }, { t:"Taxa por 100 mil", num:true }, { t:`Em relação ao estado (${ufDe(sel.mun)})` }],
       itens.map(i => [
         `<a href="${h(linkPara({ causa: i.causa.id, visao:"" }))}">${h(i.causa.rotulo)}</a>`,
@@ -686,10 +745,10 @@ async function renderCausasMunicipio(token = renderToken){
       : `<div class="estado estado-indisponivel"><p>Nenhum registro neste período no arquivo publicado. Ausência de registro não é o mesmo que ausência de doença.</p></div>`}
     <p class="apoio">“Parte do total” é a participação de cada causa nos ${h(ev.plural)} ${nivelCausas === "capitulo" ? "do município" : "listados neste nível"} no período; não é taxa por população.
     ${sel.evento === "obitos" ? "Causas externas e causas mal definidas não são doenças." : ""}</p>
-    ${atencaoHtml([alertaPeriodo(sel.evento, sel.ano)].filter(Boolean))}
-    ${linhaFonte(sel.evento, sel.ano)}
-  </section>`;
+    ${atencaoHtml([alertaPeriodo(sel.evento, sel.ano)].filter(Boolean))}` });
   el.querySelectorAll("[data-nivel]").forEach(b => b.addEventListener("click", () => { nivelCausas = b.dataset.nivel; renderCausasMunicipio(); }));
+  const resumo = $("munCausasResumo");
+  if(resumo && itens.length) resumo.textContent = `${itens.length} causas · a primeira é ${itens[0].causa.curto.toLowerCase()} (${fmtPct.format(itens[0].participacao ?? 0)} do total)`;
 }
 
 function exportarMunicipio(analise, serie){
@@ -699,7 +758,7 @@ function exportarMunicipio(analise, serie){
   for(const s of serie){
     for(const r of s.disponivel ? [s, ...(s.refs || [])] : []){
       linhas.push([nomeLocal(r.local), ehMunicipio(r.local) ? r.local : "", ev.rotulo, causa, s.ano, s.info.periodo, r.n, r.pop?.valor ?? "", r.pop?.origem ?? "sem população",
-        r.taxa == null ? "" : r.taxa.toFixed(2), s.info.ano_completo ? "ano completo" : "período parcial"]);
+        r.taxa == null ? "" : decimalCSV(r.taxa), s.info.ano_completo ? "ano completo" : "período parcial"]);
     }
   }
   baixarCSV(`${normText(base.munPorCodigo.get(analise.local).n).replace(/ /g, "_")}_${analise.evento}.csv`, linhas, [
@@ -717,26 +776,29 @@ async function renderComparar(el, token){
   const locais = sel.comparar.filter(l => UF_NAMES[l] || base.munPorCodigo.has(l));
   const cheio = locais.length >= 6;
   el.innerHTML = `
-    <div class="pag-topo"><div>
-      <h1 class="pag-titulo">Comparar locais</h1>
-      <p class="meta">${h(ev.taxa)} por 100 mil habitantes · ${h(tituloCausa(sel.evento, causa))} · ${h(rotuloPeriodo(sel.evento, sel.ano))}</p>
-    </div></div>
-    <div class="adicionar no-print">
-      <div class="combo">
-        <label for="cmpLocal">Adicionar município ou estado${cheio ? " (limite de 6 atingido)" : ""}</label>
-        <input id="cmpLocal" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cmpLista" autocomplete="off" placeholder="Ex.: Recife, Bahia" ${cheio ? "disabled" : ""} />
-        <ul id="cmpLista" class="combo-list" role="listbox" aria-label="Locais encontrados" hidden></ul>
-      </div>
-      <div class="chips">${locais.map(l => `<button class="chip" type="button" data-remover="${h(l)}" aria-label="Remover ${h(nomeLocal(l))} da comparação">${h(nomeLocal(l))} <span aria-hidden="true">×</span></button>`).join("")}</div>
-    </div>
-    <div id="cmpResultado"></div>`;
+    ${cabecalhoComparar("locais", `Mesma doença em lugares diferentes · ${h(tituloCausa(sel.evento, causa))} · ${h(rotuloPeriodo(sel.evento, sel.ano))}`)}
+    <div class="grade grade-lateral">
+      <aside class="cartao painel-lateral no-print" aria-label="Locais comparados">
+        <header class="cartao-cab"><div><h2 class="cartao-titulo">Locais</h2><p class="cartao-descricao">De 2 a 6 municípios ou estados.</p></div></header>
+        <div class="cartao-corpo">
+          <div class="combo">
+            <label for="cmpLocal" class="campo-rotulo">Adicionar${cheio ? " (limite atingido)" : ""}</label>
+            <input id="cmpLocal" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cmpLista" autocomplete="off" placeholder="Ex.: Recife, Bahia" ${cheio ? "disabled" : ""} />
+            <ul id="cmpLista" class="combo-list" role="listbox" aria-label="Locais encontrados" hidden></ul>
+          </div>
+          <ul class="selecionados">${locais.map(l => `<li><span>${h(nomeLocal(l))}</span><button type="button" class="remover" data-remover="${h(l)}" aria-label="Remover ${h(nomeLocal(l))}">×</button></li>`).join("")}</ul>
+        </div>
+        <footer class="cartao-rodape">Doença e ano: nos filtros, no alto da página.</footer>
+      </aside>
+      <div id="cmpResultado" class="grade-col"></div>
+    </div>`;
   const adicionar = local => { if(local && !sel.comparar.includes(local) && sel.comparar.length < 6) navegar({ comparar: [...sel.comparar, local] }); };
   criarCombobox($("cmpLocal"), $("cmpLista"), opcoesLocal, item => adicionar(item.valor), { limparAoEscolher:true });
   el.querySelectorAll("[data-remover]").forEach(b => b.addEventListener("click", () => navegar({ comparar: sel.comparar.filter(l => l !== b.dataset.remover) })));
 
   const saida = $("cmpResultado");
   if(!locais.length){
-    saida.innerHTML = `<div class="estado estado-vazio"><p>Adicione dois ou mais locais para comparar a mesma medida no mesmo período.</p>
+    saida.innerHTML = `<div class="estado estado-vazio"><p>Adicione pelo menos dois locais.</p>
       ${sel.mun ? `<button class="btn-sec" type="button" id="cmpSugestao">Começar com ${h(nomeLocal(sel.mun))} e o estado</button>` : ""}</div>`;
     $("cmpSugestao")?.addEventListener("click", () => navegar({ comparar: [sel.mun, ufDe(sel.mun)] }));
     return;
@@ -749,25 +811,27 @@ async function renderComparar(el, token){
   if(token !== renderToken) return;
   if(!analises[0].disponivel){ saida.innerHTML = indisponivelHtml(analises[0], causa); return; }
   const ic = a => a.pop && a.n != null ? intervaloPoisson(a.n).map(v => v / a.pop.valor * POR) : null;
-  const temUF = locais.some(l => UF_NAMES[l]), temMun = locais.some(ehMunicipio);
   const municipios = locais.filter(ehMunicipio);
   const indicadores = base.dicionario.indicadores.filter(i => i.id !== "area_km2");
   const atencao = [alertaPeriodo(sel.evento, sel.ano)];
   if(analises.some(a => !a.pop)) atencao.push("Há local sem população publicada neste ano: a taxa dele não foi calculada.");
-  if(temUF && temMun) atencao.push("Estados reúnem realidades muito diferentes e têm taxas mais estáveis que municípios pequenos.");
-  saida.innerHTML = `<section>
-      ${barrasHtml(analises.map(a => {
+  saida.innerHTML = `
+    ${atencaoHtml(atencao.filter(Boolean))}
+    ${cartao({
+      titulo: `${h(ev.taxa)} por 100 mil habitantes`,
+      descricao: "Ao lado de cada taxa, o intervalo de 95%. Se as faixas se sobrepõem, a diferença pode ser acaso.",
+      corpo: barrasHtml(analises.map(a => {
         const faixa = ic(a);
         return { nome: h(a.local === "BR" ? "Brasil (referência)" : nomeLocal(a.local)), valor: a.taxa,
           texto: a.taxa == null ? "sem população" : `${fmtValor(a.taxa)} <small>${faixa ? `${fmtValor(faixa[0])} a ${fmtValor(faixa[1])}` : ""}</small>`, destaque: a.local !== "BR" };
-      }))}
-      <p class="apoio">Ao lado de cada taxa, o intervalo de 95%. Quando os intervalos de dois locais se sobrepõem, a diferença pode ser fruto do acaso. Taxas sem ajuste por idade.</p>
-      ${atencaoHtml(atencao.filter(Boolean))}
-      <section class="bloco" id="cmpTend" aria-labelledby="cmpTendTitulo"><h2 id="cmpTendTitulo">Evolução da taxa</h2>${carregandoHtml("Calculando a série por ano...")}</section>
-      ${mais("Dados completos e exportação", `
+      }))
+    })}
+    ${cartao({ id:"cmpTend", titulo:"Evolução por ano", corpo: carregandoHtml("Calculando a série por ano...") })}
+    <section class="cartao cartao-detalhes" aria-label="Mais informações"><div class="cartao-corpo">
+      ${mais("Tabela e exportação", `
         ${tabelaHtml([{ t:"Local" }, { t: ev.rotulo, num:true }, { t:"População", num:true }, { t:"Taxa por 100 mil", num:true }, { t:"Intervalo de 95%", num:true }],
           analises.map(a => { const f = ic(a); return [h(nomeLocal(a.local)), fmtNum.format(a.n), a.pop ? fmtNum.format(a.pop.valor) : "sem população", fmtValor(a.taxa), f ? `${fmtValor(f[0])} a ${fmtValor(f[1])}` : "—"]; }),
-          { legenda:`${ev.taxa} — mesma medida, período e filtros para todos os locais` })}
+          { legenda:`${ev.taxa}: mesma medida, período e filtros para todos os locais` })}
         <p>${h(GLOSSARIO.taxa)} ${h(GLOSSARIO.ic)}</p>
         <button id="cmpCsv" class="btn-sec no-print" type="button">Exportar CSV</button>
         ${linhaFonte(sel.evento, sel.ano)}`)}
@@ -778,19 +842,137 @@ async function renderComparar(el, token){
             ...municipios.map(l => { const v = base.indicadores.get(l)?.[i.id]; return v == null ? h(motivoSemIndicador(l, i.id)) : fmtValor(v, i.casas); }),
             `${fmtValor(i.ref.BR, i.casas)}${i.ref_tipo.startsWith("mediana") ? " <small>(mediana)</small>" : ""}`]),
           { legenda:"Indicadores territoriais dos municípios comparados" })}`) : ""}
-    </section>`;
-  // MEIO: tendência de cada local ao longo dos anos disponíveis.
+    </div></section>`;
   Promise.all([...locais, "BR"].map(l => serieAnual(l, { causa, evento: sel.evento, ano: sel.ano, sexo: sel.sexo, idade: sel.idade })))
     .then(series => {
-      if(token !== renderToken || !$("cmpTend")) return;
+      const alvo = $("cmpTend")?.querySelector(".cartao-corpo");
+      if(token !== renderToken || !alvo) return;
       const svg = tendenciaSvg(series.map((serie, i) => ({
         nome: i === locais.length ? "Brasil" : nomeLocal(locais[i]), ref: i === locais.length,
         pontos: serie.map(s => ({ ano: s.ano, valor: s.disponivel ? s.taxa ?? null : null, parcial: !s.info?.ano_completo }))
-      })), { titulo:`${ev.taxa} por ano`, unidade:`${ev.taxa} por 100 mil habitantes`, categorica:true });
-      $("cmpTend").innerHTML = svg ? `<h2 id="cmpTendTitulo">Evolução da taxa</h2>${svg}` : "";
-      if(!svg) $("cmpTend").remove();
+      })), { titulo:`${ev.taxa} por ano`, categorica:true });
+      if(svg) alvo.innerHTML = svg; else $("cmpTend").remove();
     }).catch(erro => { console.error(erro); $("cmpTend")?.remove(); });
   $("cmpCsv").addEventListener("click", () => baixarCSV(`comparacao_${sel.evento}_${sel.ano}.csv`,
-    [["local", "eventos", "populacao", "taxa_por_100mil"], ...analises.map(a => [nomeLocal(a.local), a.n, a.pop?.valor ?? "", a.taxa == null ? "" : a.taxa.toFixed(2)])],
+    [["local", "eventos", "populacao", "taxa_por_100mil"], ...analises.map(a => [nomeLocal(a.local), a.n, a.pop?.valor ?? "", a.taxa == null ? "" : decimalCSV(a.taxa)])],
     notasExportacao(sel.evento, causa, sel.ano)));
+}
+
+/* ============================================================
+   Comparar: cabeçalho com as duas formas de comparação
+   ============================================================ */
+function cabecalhoComparar(ativo, contexto = ""){
+  const abas = [
+    ["locais", "Entre municípios e estados", linkPara({ rota:"comparar", modoCmp:"" })],
+    ["doencas", "Entre doenças", linkPara({ rota:"comparar", modoCmp:"doencas" })]
+  ];
+  return `${cabecalhoPagina({ titulo:"Comparar", contexto })}
+    <nav class="abas no-print" aria-label="Tipo de comparação">${abas.map(([id, t, link]) =>
+      `<a href="${h(link)}"${id === ativo ? ' aria-current="page"' : ""}>${h(t)}</a>`).join("")}</nav>`;
+}
+
+/* ============================================================
+   Comparar doenças num mesmo local (até 6)
+   ============================================================ */
+const SUGESTOES_CMP_DOENCAS = ["g:I20-I25", "g:I60-I69", "g:C00-C97", "g:E10-E14", "g:J09-J18"];
+
+async function renderCompararDoencas(el, token){
+  const local = sel.localCmp || "BR";
+  const ev = EVENTOS[sel.evento];
+  const causas = sel.causasCmp.map(lerCausa);
+  const cheio = causas.length >= 6;
+  el.innerHTML = `
+    ${cabecalhoComparar("doencas", `Várias doenças no mesmo lugar · ${h(ev.taxa)} · ${h(rotuloPeriodo(sel.evento, sel.ano))}`)}
+    <div class="grade grade-lateral">
+      <aside class="cartao painel-lateral no-print" aria-label="O que comparar">
+        <div class="cartao-corpo">
+          <div class="combo">
+            <label for="cdLocal" class="campo-rotulo">Onde</label>
+            <input id="cdLocal" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cdLocalLista" autocomplete="off" placeholder="Brasil" value="${h(local === "BR" ? "" : nomeLocal(local))}" />
+            <ul id="cdLocalLista" class="combo-list" role="listbox" aria-label="Locais encontrados" hidden></ul>
+            ${local === "BR" ? "" : `<button class="link-button" type="button" id="cdBrasil">Voltar para o Brasil</button>`}
+          </div>
+          <div class="combo">
+            <label for="cdCausa" class="campo-rotulo">Doenças${cheio ? " (limite de 6)" : " (até 6)"}</label>
+            <input id="cdCausa" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cdCausaLista" autocomplete="off" placeholder="Ex.: infarto, diabetes, AVC" ${cheio ? "disabled" : ""} />
+            <ul id="cdCausaLista" class="combo-list" role="listbox" aria-label="Doenças encontradas" hidden></ul>
+          </div>
+          <ul class="selecionados">${causas.map(c => `<li><span>${h(c.curto)}</span><button type="button" class="remover" data-remover="${h(c.id)}" aria-label="Remover ${h(c.curto)}">×</button></li>`).join("")}</ul>
+        </div>
+        <footer class="cartao-rodape">Registro e ano: nos filtros, no alto da página.</footer>
+      </aside>
+      <div id="cdResultado" class="grade-col"></div>
+    </div>`;
+
+  criarCombobox($("cdLocal"), $("cdLocalLista"), texto => [{ valor:"BR", titulo:"Brasil", detalhe:"país", texto:"Brasil" }, ...opcoesLocal(texto)].filter((o, i) => i > 0 || !texto || "brasil".startsWith(normText(texto))),
+    item => navegar({ localCmp: item.valor }));
+  $("cdBrasil")?.addEventListener("click", () => navegar({ localCmp:"BR" }));
+  const adicionar = id => { if(id && id !== "todas" && !sel.causasCmp.includes(id) && sel.causasCmp.length < 6) navegar({ causasCmp: [...sel.causasCmp, id] }); };
+  criarCombobox($("cdCausa"), $("cdCausaLista"), texto => opcoesCausa(texto).filter(o => o.valor !== "todas"), item => adicionar(item.valor), { limparAoEscolher:true });
+  el.querySelectorAll("[data-remover]").forEach(b => b.addEventListener("click", () => navegar({ causasCmp: sel.causasCmp.filter(c => c !== b.dataset.remover) })));
+
+  const saida = $("cdResultado");
+  if(sel.evento === "dengue"){
+    saida.innerHTML = `<div class="estado estado-vazio"><p>Dengue é uma doença só. Para comparar doenças, troque o registro para óbitos ou internações nos filtros acima.</p></div>`;
+    return;
+  }
+  if(causas.length < 2){
+    saida.innerHTML = `<div class="estado estado-vazio">
+      <p>Escolha pelo menos duas doenças, ou comece por um exemplo:</p>
+      <button class="btn-sec" type="button" id="cdExemplo">Coração, AVC, câncer, diabetes e pneumonia</button></div>`;
+    $("cdExemplo").addEventListener("click", () => navegar({ causasCmp: SUGESTOES_CMP_DOENCAS }));
+    return;
+  }
+
+  saida.innerHTML = carregandoHtml("Calculando...");
+  let analises;
+  try{
+    analises = await Promise.all(causas.map(causa => analisar(local, { causa, evento: sel.evento, ano: sel.ano })));
+  }catch(erro){ if(token === renderToken) saida.innerHTML = erroHtml(erro); return; }
+  if(token !== renderToken) return;
+
+  const validas = analises.filter(a => a.disponivel && a.taxa != null).sort((a, b) => b.taxa - a.taxa);
+  const fora = analises.filter(a => !(a.disponivel && a.taxa != null));
+  const lider = validas[0], ultimo = validas[validas.length - 1];
+  const vezes = lider && ultimo && ultimo.taxa > 0 ? lider.taxa / ultimo.taxa : null;
+  const situacao = a => {
+    const c = a.padronizado && a.padronizado.classe !== "indisponivel" ? a.padronizado : a.comparacao;
+    if(!c || c.classe === "indisponivel" || local === "BR") return "";
+    return statusHtml(c);
+  };
+  const ref = ehMunicipio(local) ? `o estado (${ufDe(local)})` : "o Brasil";
+
+  saida.innerHTML = `
+    ${lider ? `<p class="cd-resumo">${h(nomeLocal(local))}: a maior taxa é de <strong>${h(lider.causa.curto.toLowerCase())}</strong>, com ${fmtValor(lider.taxa)} ${h(ev.plural)} por 100 mil habitantes${vezes && validas.length > 1 ? `, ${fmt1.format(vezes)} vezes a de ${h(ultimo.causa.curto.toLowerCase())}` : ""}.</p>` : ""}
+    ${atencaoHtml([alertaPeriodo(sel.evento, sel.ano), ...fora.map(a => `${h(a.causa.curto)}: ${h(a.motivo || "sem dado para este recorte")}.`)].filter(Boolean))}
+    ${cartao({ titulo:"Taxa por 100 mil habitantes", descricao: h(nomeLocal(local)), corpo: `
+      ${barrasHtml(validas.map(a => ({ nome: `<a href="${h(linkPara({ rota: ehMunicipio(local) ? "municipio" : "doencas", mun: ehMunicipio(local) ? local : sel.mun, causa: a.causa.id, cid: a.causa.id }))}">${h(a.causa.curto)}</a>`,
+        valor: a.taxa, texto: `${fmtValor(a.taxa)} <small>${fmtNum.format(a.n)} ${h(ev.plural)}</small>` })))}
+      ${local !== "BR" ? `<h3 class="cd-sub">Em relação ao esperado para ${h(ref)}</h3>
+        <ul class="cd-situacao">${validas.map(a => `<li><span>${h(a.causa.curto)}</span>${situacao(a) || "<small>sem base para comparar</small>"}</li>`).join("")}</ul>` : ""}` })}
+    ${cartao({ id:"cdTend", titulo:"Evolução por ano", corpo: carregandoHtml("Calculando a série...") })}
+    <section class="cartao cartao-detalhes" aria-label="Mais informações"><div class="cartao-corpo">
+    ${mais("Tabela e exportação", `
+      ${tabelaHtml([{ t:"Doença" }, { t:"Código CID-10" }, { t: ev.rotulo, num:true }, { t:"Taxa por 100 mil", num:true }],
+        validas.map(a => [h(a.causa.curto), h(a.causa.codigo || ""), fmtNum.format(a.n), fmtValor(a.taxa)]),
+        { legenda:`${nomeLocal(local)} · ${ev.taxa} · ${rotuloPeriodo(sel.evento, sel.ano)}` })}
+      <p class="apoio">Cada doença é contada pela causa principal registrada. Grupos e capítulos podem se sobrepor (um capítulo inclui seus grupos), então os valores não devem ser somados.</p>
+      <button id="cdCsv" class="btn-sec no-print" type="button">Exportar CSV</button>
+      ${linhaFonte(sel.evento, sel.ano)}`)}
+    </div></section>`;
+
+  $("cdCsv").addEventListener("click", () => baixarCSV(`doencas_${normText(nomeLocal(local)).replace(/ /g, "_")}_${sel.evento}_${sel.ano}.csv`,
+    [["doenca", "cid10", "eventos", "taxa_por_100mil"], ...validas.map(a => [a.causa.curto, a.causa.codigo || "", a.n, decimalCSV(a.taxa)])],
+    notasExportacao(sel.evento, lerCausa("todas"), sel.ano)));
+
+  Promise.all(validas.map(a => serieAnual(local, { causa: a.causa, evento: sel.evento, ano: sel.ano })))
+    .then(series => {
+      const alvo = $("cdTend")?.querySelector(".cartao-corpo");
+      if(token !== renderToken || !alvo) return;
+      const svg = tendenciaSvg(series.map((serie, i) => ({
+        nome: validas[i].causa.curto,
+        pontos: serie.map(s => ({ ano: s.ano, valor: s.disponivel ? s.taxa ?? null : null, parcial: !s.info?.ano_completo }))
+      })), { titulo:`${ev.taxa} por ano`, categorica:true });
+      if(svg) alvo.innerHTML = svg; else $("cdTend").remove();
+    }).catch(erro => { console.error(erro); $("cdTend")?.remove(); });
 }

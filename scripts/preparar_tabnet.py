@@ -16,7 +16,7 @@ import re
 import sys
 
 import tabnet
-from comum import (BRUTOS, DADOS, UF_POR_PREFIXO, Territorios, gravar_csv, gravar_json, gravar_manifesto,
+from comum import (BRUTOS, DADOS, UF_POR_PREFIXO, Territorios, gravar_csv, gravar_json, gravar_manifesto, br,
                    gravar_relatorio, hoje)
 
 REFAZER = "--refazer" in sys.argv
@@ -88,7 +88,7 @@ def sih(territorios, relatorio):
         }
         relatorio[f"sih_{ano}"]["total_da_fonte"] = total_fonte
         relatorio[f"sih_{ano}"]["soma_dos_municipios"] = soma
-        print(f"SIH {ano}: {total_fonte:,} internações; {len(dados)} municípios; meses {meses[0]}–{meses[-1]}; fora de município: {fora_total}")
+        print(f"SIH {ano}: {br(total_fonte)} internações; {len(dados)} municípios; meses {meses[0]}–{meses[-1]}; fora de município: {fora_total}")
     indice.update({
         "fonte": "SIH/SUS — Morbidade hospitalar do SUS por local de residência (TabNet/DATASUS)",
         "evento": "internações (AIH aprovadas) no SUS por município de residência e capítulo CID-10 do diagnóstico principal",
@@ -139,7 +139,7 @@ def dengue(territorios, relatorio):
         indice["anos"][str(ano)] = {"ano": ano, "casos_provaveis": total_fonte, "casos_com_municipio": soma,
                                     "municipios_na_tabela": len(dados)}
         relatorio[f"dengue_{ano}"]["total_da_fonte"] = total_fonte
-        print(f"Dengue {ano}: {total_fonte:,} casos prováveis; {len(dados)} municípios; fora de município: {fora_total}")
+        print(f"Dengue {ano}: {br(total_fonte)} casos prováveis; {len(dados)} municípios; fora de município: {fora_total}")
     gravar_csv(os.path.join(DADOS, "saude", "dengue", "casos.csv"), ["mun", "ano", "n"], registros)
     indice.update({
         "fonte": "SINAN — Dengue, notificações registradas (TabNet/DATASUS)",

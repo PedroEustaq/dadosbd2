@@ -27,8 +27,9 @@ PASSOS = [
     ["montar_conhecimento.py"],
     ["detectar_outliers.py"],
     ["validar.py", "--tabnet"],
+    ["montar_apresentacao.py"],
 ]
-SEM_REFAZER = {"montar_indicadores.py", "montar_conhecimento.py", "detectar_outliers.py", "validar.py"}
+SEM_REFAZER = {"montar_indicadores.py", "montar_conhecimento.py", "detectar_outliers.py", "validar.py", "montar_apresentacao.py"}
 
 
 def main():

@@ -19,7 +19,7 @@ import sys
 import time
 import urllib.parse
 
-from comum import (BRUTOS, DADOS, PREFIXO_POR_UF, UF_POR_PREFIXO, Territorios, baixar, gravar_csv, gravar_json,
+from comum import (BRUTOS, DADOS, PREFIXO_POR_UF, UF_POR_PREFIXO, Territorios, baixar, gravar_csv, gravar_json, br,
                    gravar_manifesto, hoje, ler_json)
 
 API = "https://apisidra.ibge.gov.br/values"
@@ -162,7 +162,7 @@ def main():
     sem_pop = {a: sorted(c for c in codigos if a not in pop.get(c, {})) for a in anos_pop}
     for a in anos_pop:
         soma = sum(pop[c].get(a, 0) for c in codigos if c in pop)
-        print(f"população {a}: soma municipal {soma:,} | Brasil {pop['BR'].get(a, 0):,} | municípios sem valor: {len(sem_pop[a])}")
+        print(f"população {a}: soma municipal {br(soma)} | Brasil {br(pop['BR'].get(a, 0))} | municípios sem valor: {len(sem_pop[a])}")
 
     area, sit = simples(censo, 6318)
     registrar({"id": "area_km2", "nome": "Área territorial", "dimensao": "Demografia", "unidade": "km²", "ano": 2022,

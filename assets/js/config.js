@@ -6,7 +6,7 @@
 
 /* Mude a versão ao publicar dados novos: ela entra na URL dos arquivos
    e impede que o navegador misture atualizações diferentes em cache. */
-const DATA_VERSION = "2026-11-13";
+const DATA_VERSION = "2026-11-14";
 
 const PATHS = {
   estados: "dados/geo/estados.geojson",
@@ -120,6 +120,9 @@ const MIN_EVENTOS_MAPA = 5;
 /* Seleção atual (sincronizada com a URL). */
 const sel = {
   rota: "inicio",
+  modoCmp: "",      // comparação: "" (entre locais) | "doencas" (entre doenças)
+  causasCmp: [],    // doenças comparadas (ids de causa)
+  localCmp: "BR",   // local da comparação entre doenças
   visao: "",        // aba da análise municipal: "" (panorama) | "evolucao" | "causas"
   mun: "",          // código IBGE de 7 dígitos
   causa: "todas",   // "todas" | "cap:9" | "g:I20-I25" | "c:I21"

@@ -20,6 +20,11 @@ DADOS = os.path.join(RAIZ, "dados")
 MANIFESTOS = os.path.join(DADOS, "manifestos")
 RELATORIOS = os.path.join(DADOS, "relatorios")
 
+def br(numero):
+    """Inteiro no padrão brasileiro: 1465610 -> '1.465.610'."""
+    return f"{numero:,.0f}".replace(",", ".")
+
+
 UF_POR_PREFIXO = {
     "11": "RO", "12": "AC", "13": "AM", "14": "RR", "15": "PA", "16": "AP", "17": "TO",
     "21": "MA", "22": "PI", "23": "CE", "24": "RN", "25": "PB", "26": "PE", "27": "AL", "28": "SE", "29": "BA",
